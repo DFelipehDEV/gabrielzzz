@@ -1,9 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=27 format=3 uid="uid://d1o4lkpnxtmdh"]
 
+[ext_resource type="Texture2D" uid="uid://boud3vvd16k0x" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Albedo.jpg" id="1_8jbbx"]
+[ext_resource type="Texture2D" uid="uid://bawtanmcdcn8d" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_AO.jpg" id="2_dqnrq"]
 [ext_resource type="Texture2D" uid="uid://dmj2okbsxd3ir" path="res://Concrete_Castinsitu_xevlegbs_2K_surface_ms/xevlegbs_2K_Albedo.jpg" id="2_duhd7"]
 [ext_resource type="Texture2D" uid="uid://fg2ap02o2gml" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Displacement.jpg" id="3_5v2yw"]
 [ext_resource type="Texture2D" uid="uid://d0f25fnfbbdg" path="res://RicardoTex1.jpg" id="3_fa08j"]
 [ext_resource type="Texture2D" uid="uid://ba3wu1t8banmh" path="res://Concrete_Castinsitu_xevlegbs_2K_surface_ms/xevlegbs_2K_Normal.jpg" id="4_naqwc"]
+[ext_resource type="Texture2D" uid="uid://dycdc5jc5upqp" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Normal.jpg" id="4_sed0r"]
 [ext_resource type="Texture2D" uid="uid://dehyq0gg80hb2" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Roughness.jpg" id="5_1bse8"]
 [ext_resource type="Texture2D" uid="uid://dfrdy5qikutby" path="res://Brick_Modern_vh1sccu_2K_surface_ms/vh1sccu_2K_Albedo.jpg" id="6_2jyk6"]
 [ext_resource type="Texture2D" uid="uid://2q4bkt3qyel" path="res://Brick_Modern_vh1sccu_2K_surface_ms/vh1sccu_2K_Normal.jpg" id="7_deo7o"]
@@ -30,22 +33,23 @@ sdfgi_use_occlusion = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oen64"]
 albedo_color = Color(0.808998, 0.808998, 0.808998, 1)
-albedo_texture = ExtResource("2_duhd7")
-metallic = 1.0
+albedo_texture = ExtResource("1_8jbbx")
 metallic_specular = 0.0
 metallic_texture = ExtResource("3_5v2yw")
-roughness = 0.75
+roughness = 0.36
 roughness_texture = ExtResource("5_1bse8")
 normal_enabled = true
-normal_scale = 4.6
-normal_texture = ExtResource("4_naqwc")
-rim_enabled = true
+normal_scale = 0.64
+normal_texture = ExtResource("4_sed0r")
 rim_tint = 1.0
 clearcoat_roughness = 1.0
-uv1_scale = Vector3(0.25, 0.25, 0.25)
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_dqnrq")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
+uv1_triplanar_sharpness = 0.329877
 uv1_world_triplanar = true
-texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3i8da"]
 albedo_color = Color(0.475087, 0.492714, 0.207766, 1)
