@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://xhxwfd43olgf"]
+
+[ext_resource type="PackedScene" uid="uid://l5rp3tc1l1qm" path="res://vl0jbem_LOD0.fbx" id="1_664f6"]
+[ext_resource type="Material" uid="uid://dkc0h7suf58pe" path="res://TableTex1.tres" id="2_j20mg"]
+
+[node name="vl0jbem_LOD0" instance=ExtResource("1_664f6")]
+
+[node name="Aset_interior_furniture_M_vl0jbem_00_LOD0" parent="world_root" index="0"]
+material_override = ExtResource("2_j20mg")
