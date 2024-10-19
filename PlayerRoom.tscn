@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=31 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="Texture2D" uid="uid://boud3vvd16k0x" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Albedo.jpg" id="1_8jbbx"]
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_61mhc"]
+[ext_resource type="PackedScene" uid="uid://dvjxtf6l4ftx1" path="res://player/arm/anatomy_-_male_arm.glb" id="2_4cxxr"]
 [ext_resource type="Texture2D" uid="uid://bawtanmcdcn8d" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_AO.jpg" id="2_dqnrq"]
 [ext_resource type="Texture2D" uid="uid://dmj2okbsxd3ir" path="res://Concrete_Castinsitu_xevlegbs_2K_surface_ms/xevlegbs_2K_Albedo.jpg" id="2_duhd7"]
 [ext_resource type="Texture2D" uid="uid://fg2ap02o2gml" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Displacement.jpg" id="3_5v2yw"]
@@ -21,16 +22,19 @@
 [ext_resource type="PackedScene" uid="uid://bx5j4g21atnqb" path="res://lighbulb.tscn" id="16_6ax1c"]
 [ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://speakers/speakers_low_poly1.glb" id="16_rfkj3"]
 [ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://office/estadioHD.png" id="17_kek8h"]
+[ext_resource type="Script" path="res://office/phone/IphoneXLowpoly.cs" id="19_w31hh"]
+[ext_resource type="PackedScene" uid="uid://clt1sfs0wbkeo" path="res://office/phone/iphone_x_lowpoly.glb" id="22_qkgxp"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
-background_color = Color(0.0254259, 0.043142, 0.106906, 1)
 tonemap_mode = 2
 tonemap_exposure = 0.37
 ssao_enabled = true
-ssil_enabled = true
-sdfgi_enabled = true
+ssil_sharpness = 1.0
 sdfgi_use_occlusion = true
+fog_light_color = Color(0.641934, 0.641934, 0.641934, 1)
+fog_density = 0.1451
+volumetric_fog_albedo = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oen64"]
 albedo_color = Color(0.808998, 0.808998, 0.808998, 1)
@@ -88,23 +92,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bjlio")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.77948, -0.626427, 0, 0.626427, 0.77948, 0, 20.6174, 0)
-light_bake_mode = 1
-shadow_enabled = true
-shadow_blur = 0.495
-directional_shadow_mode = 0
-
 [node name="Player" parent="." instance=ExtResource("1_61mhc")]
-transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 12.896, -5.842)
+transform = Transform3D(-0.940223, 0, -0.34056, 0, 1, 0, 0.34056, 0, -0.940223, 0, 12.896, -5.842)
+
+[node name="Sketchfab_Scene2" parent="Player" instance=ExtResource("2_4cxxr")]
+transform = Transform3D(0.151645, -0.0779809, -0.104512, -0.115972, -0.0073669, -0.162777, 0.0596178, 0.184024, -0.0508037, 0.0696207, -0.0629864, -0.154881)
+
+[node name="Phone" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100166, 0, -0.276538)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Player/Phone"]
+transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0271126, 0.0495281, -0.00421333)
+spot_range = 11.91
+spot_angle = 25.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Player/Phone"]
+transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0283132, 0.0577784, -0.019412)
+omni_range = 0.113396
+omni_attenuation = 1.318
+
+[node name="PhoneModel" parent="Player/Phone" instance=ExtResource("22_qkgxp")]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+script = ExtResource("19_w31hh")
 
 [node name="Camera" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 4.19095e-09, 0, 1, 0, -4.19095e-09, 0, 1, -0.0922749, 8.29697e-05, 0.000340462)
 current = true
 fov = 87.756
 far = 86.41
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Player/Camera"]
 
 [node name="Room" type="Node3D" parent="."]
 transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 13.5573, -5)
@@ -115,19 +130,19 @@ material_override = SubResource("StandardMaterial3D_oen64")
 size = Vector3(0.127686, 0.0460968, 1.02271)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Room"]
-transform = Transform3D(-4.38136e-08, -4.62526, 2.01166e-07, 1.00235, -2.02179e-07, 0, -2.91434e-16, -1.86265e-08, 4.25976, -0.0926881, -2.29175, 0.968549)
+transform = Transform3D(-4.38136e-08, -4.62526, 7.45058e-07, 1.00235, -2.02179e-07, 0, 3.76088e-15, 5.25266e-07, 4.25976, -0.0926881, -2.29175, 0.955989)
 material_override = SubResource("StandardMaterial3D_3i8da")
-size = Vector3(1, 0.935059, 1.27722)
+size = Vector3(1, 0.935059, 1.27132)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Room"]
-transform = Transform3D(-4.38138e-08, -4.62528, 1.19209e-07, 1.00235, -2.02179e-07, 0, -1.66533e-16, -1.11759e-08, 4.25976, -0.0926881, 1.73827, 0.962309)
+transform = Transform3D(-4.38138e-08, -4.62528, 6.98492e-07, 1.00235, -2.02179e-07, 0, 4.14946e-15, 1.14739e-06, 4.25976, 1.09453, 1.73827, 0.962305)
 material_override = SubResource("StandardMaterial3D_dnwhw")
-size = Vector3(1, 0.935059, 1.27429)
+size = Vector3(1, 9.35915, 1.27429)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Room"]
-transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -8.84756e-08, 0, 4.22269, 2.55111, -0.409671, -1.49905)
+transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -2.22586e-07, 0, 4.22269, 11.5768, -4.47269, -1.49905)
 material_override = SubResource("StandardMaterial3D_oen64")
-size = Vector3(1, 0.744141, 0.329361)
+size = Vector3(19.0515, 2.50513, 0.329361)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-4.37114e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.79409e-07, -0.13662, 0.850031, -1.92733)
@@ -135,9 +150,9 @@ material_override = SubResource("StandardMaterial3D_oen64")
 size = Vector3(0.127686, 0.0460968, 1.02271)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Room"]
-transform = Transform3D(1, 0, 1.08033e-07, 0, 4.61448, 0, -7.59028e-08, 0, 4.22274, -2.74656, -0.409671, -1.53949)
+transform = Transform3D(1, 0, 1.08033e-07, 0, 4.61448, 0, -2.3935e-07, 0, 4.22274, -11.3882, -4.93571, -1.53949)
 material_override = SubResource("StandardMaterial3D_oen64")
-size = Vector3(1, 0.744141, 0.30925)
+size = Vector3(18.2832, 2.70581, 0.30925)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-3.07336e-07, 0, 4.22287, 0, 21.6973, 0, -4.22287, 0, -1.04308e-06, -0.131906, -0.245346, -1.76728)
@@ -195,14 +210,14 @@ transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, -0.00313
 [node name="Sketchfab_Scene" parent="Room/Table/Radio" instance=ExtResource("13_rxp5n")]
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Room"]
-transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -9.03383e-08, 0, 4.22269, 2.56578, -0.409671, 2.53522)
+transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -3.01283e-07, 0, 4.22269, 11.8576, -6.62502, 3.70382)
 material_override = SubResource("StandardMaterial3D_oen64")
-size = Vector3(1, 0.744141, 0.546036)
+size = Vector3(19.5836, 3.43799, 1.09952)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="Room"]
-transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -9.12696e-08, 0, 4.22269, -2.74841, -0.409671, 2.55702)
+transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -3.45521e-07, 0, 4.22269, -11.0908, -7.00609, 3.08954)
 material_override = SubResource("StandardMaterial3D_oen64")
-size = Vector3(1, 0.744141, 0.546036)
+size = Vector3(17.6848, 3.60315, 0.798252)
 
 [node name="Sketchfab_Scene" parent="Room" instance=ExtResource("16_6ax1c")]
 transform = Transform3D(-0.00399996, 0, -1.64057e-05, 0, 0.004, 0, 1.64057e-05, 0, -0.00399996, -0.350516, -0.0528946, -0.752337)
@@ -215,7 +230,7 @@ light_volumetric_fog_energy = 0.0
 light_size = 0.035
 light_bake_mode = 1
 shadow_enabled = true
-omni_range = 18.997
+omni_range = 1.624
 omni_attenuation = 4.03
 
 [node name="Chair" type="Node3D" parent="Room"]
@@ -231,6 +246,26 @@ transform = Transform3D(0.274876, 0, -0.417664, 0, 0.5, 0, 0.417664, 0, 0.274876
 
 [node name="speakers_low_poly2" parent="Room/Speakers" instance=ExtResource("16_rfkj3")]
 transform = Transform3D(-0.279596, 0, -0.414519, 0, 0.5, 0, 0.414519, 0, -0.279596, 2.01493, 0.403, -1.26475)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Room"]
+transform = Transform3D(0.906315, 0.422622, 5.30854e-08, -0.422618, 0.906308, 0, -3.28291e-08, -7.68341e-09, 1, 10.8039, -6.44348, 0.266999)
+material_override = SubResource("StandardMaterial3D_3i8da")
+calculate_tangents = false
+size = Vector3(19.8506, 1, 2.23)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Room"]
+transform = Transform3D(0.906319, -0.422624, 8.9407e-08, 0.422618, 0.906308, 0, -5.51809e-08, 1.24564e-08, 1, -10.9107, -6.42665, 0.307772)
+material_override = SubResource("StandardMaterial3D_3i8da")
+calculate_tangents = false
+size = Vector3(19.7709, 1, 2.23)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 1.92784e-07, 0, 1, 0, -1.92784e-07, 0, 1, 19.6774, -4.58929, 0.308663)
+size = Vector3(1, 12.0897, 2.3631)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 1.93715e-07, 0, 1, 0, -1.93715e-07, 0, 1, -18.5941, -4.58929, 0.465631)
+size = Vector3(1, 12.0897, 2.3631)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-3.20465, -0.00183212, 0, 0.00229339, -2.56009, 0, 0, 0, 0.964976, 0.174544, 14.8095, 14.6208)

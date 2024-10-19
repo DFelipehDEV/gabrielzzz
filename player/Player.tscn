@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://dmhe5g6euql60"]
+[gd_scene load_steps=2 format=3 uid="uid://dmhe5g6euql60"]
+
+[ext_resource type="Script" path="res://player/Player.cs" id="1_tfayh"]
 
 [node name="Player" type="Node3D"]
+script = ExtResource("1_tfayh")
+
+[node name="LOS" type="RayCast3D" parent="."]
+transform = Transform3D(11.8631, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0381517, 0)
+debug_shape_custom_color = Color(1, 1, 1, 1)
+debug_shape_thickness = 4
