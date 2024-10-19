@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=28 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="Texture2D" uid="uid://boud3vvd16k0x" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Albedo.jpg" id="1_8jbbx"]
+[ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_61mhc"]
 [ext_resource type="Texture2D" uid="uid://bawtanmcdcn8d" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_AO.jpg" id="2_dqnrq"]
 [ext_resource type="Texture2D" uid="uid://dmj2okbsxd3ir" path="res://Concrete_Castinsitu_xevlegbs_2K_surface_ms/xevlegbs_2K_Albedo.jpg" id="2_duhd7"]
 [ext_resource type="Texture2D" uid="uid://fg2ap02o2gml" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Displacement.jpg" id="3_5v2yw"]
-[ext_resource type="Texture2D" uid="uid://d0f25fnfbbdg" path="res://RicardoTex1.jpg" id="3_fa08j"]
+[ext_resource type="Texture2D" uid="uid://d0f25fnfbbdg" path="res://office/RicardoTex1.jpg" id="3_fa08j"]
 [ext_resource type="Texture2D" uid="uid://ba3wu1t8banmh" path="res://Concrete_Castinsitu_xevlegbs_2K_surface_ms/xevlegbs_2K_Normal.jpg" id="4_naqwc"]
 [ext_resource type="Texture2D" uid="uid://dycdc5jc5upqp" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Normal.jpg" id="4_sed0r"]
 [ext_resource type="Texture2D" uid="uid://dehyq0gg80hb2" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Roughness.jpg" id="5_1bse8"]
@@ -14,12 +15,12 @@
 [ext_resource type="PackedScene" uid="uid://8jk288s6fb2r" path="res://microphone/vintage_microphone.glb" id="11_0tew8"]
 [ext_resource type="PackedScene" uid="uid://xhxwfd43olgf" path="res://vl_0_jbem_lod_0.tscn" id="11_d8ypn"]
 [ext_resource type="PackedScene" uid="uid://d4kieeoug8qds" path="res://pop_cat/textures/tactical_flashlight.glb" id="12_07lxc"]
-[ext_resource type="PackedScene" uid="uid://do7t5y2fmpuik" path="res://gabriel.tscn" id="12_ms1mj"]
+[ext_resource type="PackedScene" uid="uid://do7t5y2fmpuik" path="res://pop_cat/gabriel.tscn" id="12_ms1mj"]
 [ext_resource type="PackedScene" uid="uid://b6dgq7thgy31w" path="res://radio/grundig_radio_fr-250_free_am_fm_sw.glb" id="13_rxp5n"]
 [ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://chair/chair.glb" id="15_2xmme"]
 [ext_resource type="PackedScene" uid="uid://bx5j4g21atnqb" path="res://lighbulb.tscn" id="16_6ax1c"]
-[ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://Speakers/speakers_low_poly1.glb" id="16_rfkj3"]
-[ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://estadioHD.png" id="17_kek8h"]
+[ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://speakers/speakers_low_poly1.glb" id="16_rfkj3"]
+[ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://office/estadioHD.png" id="17_kek8h"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
@@ -94,16 +95,19 @@ shadow_enabled = true
 shadow_blur = 0.495
 directional_shadow_mode = 0
 
-[node name="Room" type="Node3D" parent="."]
-transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 13.5573, -5)
+[node name="Player" parent="." instance=ExtResource("1_61mhc")]
+transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 12.896, -5.842)
 
-[node name="Camera" type="Camera3D" parent="Room"]
-transform = Transform3D(1, 0, 3.25963e-09, 0, 1, 0, -3.25963e-09, 0, 1, -0.0888215, -0.661217, 0.842333)
+[node name="Camera" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 4.19095e-09, 0, 1, 0, -4.19095e-09, 0, 1, -0.0922749, 8.29697e-05, 0.000340462)
 current = true
 fov = 87.756
 far = 86.41
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Room/Camera"]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Player/Camera"]
+
+[node name="Room" type="Node3D" parent="."]
+transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 13.5573, -5)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-4.37114e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.79409e-07, -0.114916, -1.34496, -1.92733)

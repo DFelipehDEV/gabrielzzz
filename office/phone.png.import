@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6yitb6xv2nmu"
-valid=false
+uid="uid://cvp1gk63e61oy"
+path="res://.godot/imported/phone.png-e64105b48285328f9ef2bb6dce070396.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://IMG_3340.png"
+source_file="res://office/phone.png"
+dest_files=["res://.godot/imported/phone.png-e64105b48285328f9ef2bb6dce070396.ctex"]
 
 [params]
 

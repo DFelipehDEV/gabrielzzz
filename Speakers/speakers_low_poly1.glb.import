@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dmq070whpjm4a"
-path="res://.godot/imported/speakers_low_poly1.glb-e2a0514a4302a8db7e27c89f313a5d82.scn"
+path="res://.godot/imported/speakers_low_poly1.glb-025366c14b83d19aca56b3ee5abafcd4.scn"
 
 [deps]
 
-source_file="res://Speakers/speakers_low_poly1.glb"
-dest_files=["res://.godot/imported/speakers_low_poly1.glb-e2a0514a4302a8db7e27c89f313a5d82.scn"]
+source_file="res://speakers/speakers_low_poly1.glb"
+dest_files=["res://.godot/imported/speakers_low_poly1.glb-025366c14b83d19aca56b3ee5abafcd4.scn"]
 
 [params]
 

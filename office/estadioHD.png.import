@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfde5fkn0m8vn"
-path.s3tc="res://.godot/imported/estadioHD.png-43218c35efebc88e883450ab32995a96.s3tc.ctex"
+path.s3tc="res://.godot/imported/estadioHD.png-a32641aab78b613009c518ae1717df65.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://estadioHD.png"
-dest_files=["res://.godot/imported/estadioHD.png-43218c35efebc88e883450ab32995a96.s3tc.ctex"]
+source_file="res://office/estadioHD.png"
+dest_files=["res://.godot/imported/estadioHD.png-a32641aab78b613009c518ae1717df65.s3tc.ctex"]
 
 [params]
 
