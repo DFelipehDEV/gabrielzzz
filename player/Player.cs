@@ -1,12 +1,11 @@
 using Godot;
-using System;
 
 public partial class Player : Node3D
 {
 	private Camera3D cam;
-	private float rotationSpeed = 0.05f; // Adjust for desired rotation speed
+	private float rotationSpeed = 0.05f;
 	private float targetRotation = 0f;
-	private float maxRotation = Mathf.Pi / 8; // Maximum rotation angle (45 degrees)
+	private float direction;
 
 	public override void _Ready()
 	{
@@ -15,12 +14,16 @@ public partial class Player : Node3D
 
 	public override void _Process(double delta)
 	{
-		Vector2 mousePos = GetViewport().GetMousePosition();
-		Vector2 screenCenter = GetViewport().GetVisibleRect().Size / 2;
-		float direction = (mousePos.X - screenCenter.X) / screenCenter.X;
-		
-		targetRotation = Mathf.Lerp(targetRotation, -direction + Mathf.DegToRad(180), (float)delta * 2);
-
+		targetRotation = Mathf.Lerp(targetRotation, (-direction*1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
 		Rotation = new Vector3(Rotation.X, targetRotation, Rotation.Z);
 	}
+	public override void _Input(InputEvent @event)
+	{
+		if (@event is InputEventMouseMotion eventMouseMotion) {
+			Vector2 mousePos = eventMouseMotion.Position;
+		
+			Vector2 screenCenter = GetViewport().GetVisibleRect().Size  / 2;
+			direction = (mousePos.X - screenCenter.X) / screenCenter.X;
+		}
+	}	
 }

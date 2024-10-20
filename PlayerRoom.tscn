@@ -93,7 +93,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
 environment = SubResource("Environment_bjlio")
 
 [node name="Player" parent="." instance=ExtResource("1_61mhc")]
-transform = Transform3D(-0.940223, 0, -0.34056, 0, 1, 0, 0.34056, 0, -0.940223, 0, 12.896, -5.842)
+transform = Transform3D(-0.940223, 0, -0.34056, 0, 1, 0, 0.34056, 0, -0.940223, 0, 12.7964, -5.842)
 
 [node name="Sketchfab_Scene2" parent="Player" instance=ExtResource("2_4cxxr")]
 transform = Transform3D(0.151645, -0.0779809, -0.104512, -0.115972, -0.0073669, -0.162777, 0.0596178, 0.184024, -0.0508037, 0.0696207, -0.0629864, -0.154881)
