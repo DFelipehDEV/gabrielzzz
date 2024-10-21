@@ -1,21 +1,17 @@
-[gd_scene load_steps=31 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=25 format=3 uid="uid://d1o4lkpnxtmdh"]
 
-[ext_resource type="Texture2D" uid="uid://boud3vvd16k0x" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Albedo.jpg" id="1_8jbbx"]
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_61mhc"]
 [ext_resource type="PackedScene" uid="uid://dvjxtf6l4ftx1" path="res://player/arm/anatomy_-_male_arm.glb" id="2_4cxxr"]
-[ext_resource type="Texture2D" uid="uid://bawtanmcdcn8d" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_AO.jpg" id="2_dqnrq"]
-[ext_resource type="Texture2D" uid="uid://dmj2okbsxd3ir" path="res://Concrete_Castinsitu_xevlegbs_2K_surface_ms/xevlegbs_2K_Albedo.jpg" id="2_duhd7"]
-[ext_resource type="Texture2D" uid="uid://fg2ap02o2gml" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Displacement.jpg" id="3_5v2yw"]
+[ext_resource type="Script" path="res://Phone.cs" id="3_d6ik7"]
 [ext_resource type="Texture2D" uid="uid://d0f25fnfbbdg" path="res://office/RicardoTex1.jpg" id="3_fa08j"]
-[ext_resource type="Texture2D" uid="uid://ba3wu1t8banmh" path="res://Concrete_Castinsitu_xevlegbs_2K_surface_ms/xevlegbs_2K_Normal.jpg" id="4_naqwc"]
-[ext_resource type="Texture2D" uid="uid://dycdc5jc5upqp" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Normal.jpg" id="4_sed0r"]
-[ext_resource type="Texture2D" uid="uid://dehyq0gg80hb2" path="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Roughness.jpg" id="5_1bse8"]
+[ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://office/phone/PhoneTex.tres" id="5_mq1qu"]
+[ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://AsphaltTex.tres" id="6_0to7y"]
 [ext_resource type="Texture2D" uid="uid://dfrdy5qikutby" path="res://Brick_Modern_vh1sccu_2K_surface_ms/vh1sccu_2K_Albedo.jpg" id="6_2jyk6"]
 [ext_resource type="Texture2D" uid="uid://2q4bkt3qyel" path="res://Brick_Modern_vh1sccu_2K_surface_ms/vh1sccu_2K_Normal.jpg" id="7_deo7o"]
 [ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass_shader/glass_mat.tres" id="7_hbmor"]
+[ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://office/phone/ui/FlashlightIcon.tres" id="7_nt16b"]
 [ext_resource type="PackedScene" uid="uid://8jk288s6fb2r" path="res://microphone/vintage_microphone.glb" id="11_0tew8"]
 [ext_resource type="PackedScene" uid="uid://xhxwfd43olgf" path="res://vl_0_jbem_lod_0.tscn" id="11_d8ypn"]
-[ext_resource type="PackedScene" uid="uid://d4kieeoug8qds" path="res://pop_cat/textures/tactical_flashlight.glb" id="12_07lxc"]
 [ext_resource type="PackedScene" uid="uid://do7t5y2fmpuik" path="res://pop_cat/gabriel.tscn" id="12_ms1mj"]
 [ext_resource type="PackedScene" uid="uid://b6dgq7thgy31w" path="res://radio/grundig_radio_fr-250_free_am_fm_sw.glb" id="13_rxp5n"]
 [ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://chair/chair.glb" id="15_2xmme"]
@@ -36,26 +32,6 @@ fog_light_color = Color(0.641934, 0.641934, 0.641934, 1)
 fog_density = 0.1451
 volumetric_fog_albedo = Color(0, 0, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oen64"]
-albedo_color = Color(0.808998, 0.808998, 0.808998, 1)
-albedo_texture = ExtResource("1_8jbbx")
-metallic_specular = 0.0
-metallic_texture = ExtResource("3_5v2yw")
-roughness = 0.36
-roughness_texture = ExtResource("5_1bse8")
-normal_enabled = true
-normal_scale = 0.64
-normal_texture = ExtResource("4_sed0r")
-rim_tint = 1.0
-clearcoat_roughness = 1.0
-ao_enabled = true
-ao_light_affect = 1.0
-ao_texture = ExtResource("2_dqnrq")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_triplanar = true
-uv1_triplanar_sharpness = 0.329877
-uv1_world_triplanar = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3i8da"]
 albedo_color = Color(0.475087, 0.492714, 0.207766, 1)
 albedo_texture = ExtResource("6_2jyk6")
@@ -63,14 +39,6 @@ normal_enabled = true
 normal_texture = ExtResource("7_deo7o")
 uv1_triplanar = true
 uv1_triplanar_sharpness = 11.3137
-uv1_world_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnwhw"]
-albedo_texture = ExtResource("2_duhd7")
-normal_enabled = true
-normal_scale = 14.92
-normal_texture = ExtResource("4_naqwc")
-uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxoj7"]
@@ -98,22 +66,35 @@ transform = Transform3D(-0.940223, 0, -0.34056, 0, 1, 0, 0.34056, 0, -0.940223, 
 [node name="Sketchfab_Scene2" parent="Player" instance=ExtResource("2_4cxxr")]
 transform = Transform3D(0.151645, -0.0779809, -0.104512, -0.115972, -0.0073669, -0.162777, 0.0596178, 0.184024, -0.0508037, 0.0696207, -0.0629864, -0.154881)
 
-[node name="Phone" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100166, 0, -0.276538)
+[node name="Phone" type="Node3D" parent="Player/Sketchfab_Scene2"]
+transform = Transform3D(3.79113, -2.89929, 1.49044, -1.94952, -0.184168, 4.60058, -2.6128, -4.06941, -1.27009, -0.248135, -0.630844, -0.18161)
+script = ExtResource("3_d6ik7")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Player/Phone"]
+[node name="Flash" type="SpotLight3D" parent="Player/Sketchfab_Scene2/Phone"]
 transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0271126, 0.0495281, -0.00421333)
+visible = false
 spot_range = 11.91
 spot_angle = 25.0
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Player/Phone"]
-transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0283132, 0.0577784, -0.019412)
-omni_range = 0.113396
-omni_attenuation = 1.318
-
-[node name="PhoneModel" parent="Player/Phone" instance=ExtResource("22_qkgxp")]
+[node name="PhoneModel" parent="Player/Sketchfab_Scene2/Phone" instance=ExtResource("22_qkgxp")]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
 script = ExtResource("19_w31hh")
+
+[node name="Screen" type="CSGBox3D" parent="Player/Sketchfab_Scene2/Phone"]
+transform = Transform3D(-1, 2.56506e-12, 5.36442e-07, 1.56284e-11, -1, 3.82272e-12, -2.68221e-07, 7.10543e-15, -1, -0.000854611, 0, 0.00364208)
+material_override = ExtResource("5_mq1qu")
+cast_shadow = 0
+gi_mode = 0
+calculate_tangents = false
+size = Vector3(0.0640625, 0.133057, 0.001)
+
+[node name="FlashIcon" type="CSGBox3D" parent="Player/Sketchfab_Scene2/Phone"]
+transform = Transform3D(1, -2.56506e-12, 0, -4.68923e-11, 1, 0, 2.68221e-07, -7.10543e-15, 1, -0.024199, -0.0540457, 0.00367165)
+cast_shadow = 0
+gi_mode = 0
+calculate_tangents = false
+size = Vector3(0.00999655, 0.0107786, 0.001)
+material = ExtResource("7_nt16b")
 
 [node name="Camera" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 4.19095e-09, 0, 1, 0, -4.19095e-09, 0, 1, -0.0922749, 8.29697e-05, 0.000340462)
@@ -126,32 +107,32 @@ transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.99
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-4.37114e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.79409e-07, -0.114916, -1.34496, -1.92733)
-material_override = SubResource("StandardMaterial3D_oen64")
+material_override = ExtResource("6_0to7y")
 size = Vector3(0.127686, 0.0460968, 1.02271)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Room"]
-transform = Transform3D(-4.38136e-08, -4.62526, 7.45058e-07, 1.00235, -2.02179e-07, 0, 3.76088e-15, 5.25266e-07, 4.25976, -0.0926881, -2.29175, 0.955989)
+transform = Transform3D(-4.38136e-08, -4.62526, 1.04308e-06, 1.00235, -2.02179e-07, 0, 5.98133e-15, 8.23289e-07, 4.25976, -0.0926882, -1.79841, 0.955989)
 material_override = SubResource("StandardMaterial3D_3i8da")
-size = Vector3(1, 0.935059, 1.27132)
+size = Vector3(0.0156367, 0.935059, 1.27132)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Room"]
-transform = Transform3D(-4.38138e-08, -4.62528, 6.98492e-07, 1.00235, -2.02179e-07, 0, 4.14946e-15, 1.14739e-06, 4.25976, 1.09453, 1.73827, 0.962305)
-material_override = SubResource("StandardMaterial3D_dnwhw")
-size = Vector3(1, 9.35915, 1.27429)
+transform = Transform3D(-4.38138e-08, -4.62528, 8.51229e-07, 1.00235, -2.02179e-07, 0, 5.28744e-15, 1.45286e-06, 4.25976, 1.09453, 1.2376, 0.962305)
+material_override = ExtResource("6_0to7y")
+size = Vector3(0.001, 9.35915, 1.27429)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Room"]
 transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -2.22586e-07, 0, 4.22269, 11.5768, -4.47269, -1.49905)
-material_override = SubResource("StandardMaterial3D_oen64")
+material_override = ExtResource("6_0to7y")
 size = Vector3(19.0515, 2.50513, 0.329361)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-4.37114e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.79409e-07, -0.13662, 0.850031, -1.92733)
-material_override = SubResource("StandardMaterial3D_oen64")
+material_override = ExtResource("6_0to7y")
 size = Vector3(0.127686, 0.0460968, 1.02271)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Room"]
 transform = Transform3D(1, 0, 1.08033e-07, 0, 4.61448, 0, -2.3935e-07, 0, 4.22274, -11.3882, -4.93571, -1.53949)
-material_override = SubResource("StandardMaterial3D_oen64")
+material_override = ExtResource("6_0to7y")
 size = Vector3(18.2832, 2.70581, 0.30925)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Room"]
@@ -162,12 +143,12 @@ material = ExtResource("7_hbmor")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-3.1665e-07, 0, 4.22287, 0, 21.2935, 0, -4.22287, 0, -1.05239e-06, -1.82759, -0.250607, -1.92733)
-material_override = SubResource("StandardMaterial3D_oen64")
+material_override = ExtResource("6_0to7y")
 size = Vector3(0.127686, 0.0598574, 0.221804)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-3.39001e-07, 0, 4.22289, 0, 21.2935, 0, -4.22289, 0, -1.07475e-06, 1.56044, -0.181201, -1.94123)
-material_override = SubResource("StandardMaterial3D_oen64")
+material_override = ExtResource("6_0to7y")
 size = Vector3(0.127686, 0.0691743, 0.221804)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Room"]
@@ -191,33 +172,20 @@ transform = Transform3D(-0.000488699, 0, -0.8, 0, 0.8, 0, 0.8, 0, -0.000488699, 
 [node name="Sketchfab_Scene2" parent="Room/Table/Microphone" instance=ExtResource("11_0tew8")]
 transform = Transform3D(-0.133332, 0, -0.000546856, 0, 0.133333, 0, 0.000546855, 0, -0.133332, 0.0583372, -0.0787535, -0.0401545)
 
-[node name="Flashlight" type="Node3D" parent="Room/Table"]
-transform = Transform3D(-0.963918, -0.0629468, -0.25865, -0.0608631, 0.998017, -0.0160637, 0.259148, 0.000258175, -0.965838, -0.47394, 0.100414, -0.286976)
-
-[node name="Sketchfab_Scene" parent="Room/Table/Flashlight" instance=ExtResource("12_07lxc")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Room/Table/Flashlight"]
-transform = Transform3D(-0.167588, -0.0553613, 0.984301, -0.0870102, 0.995357, 0.0411686, -0.982009, -0.0787449, -0.171626, -0.113666, -0.0053978, -0.00317812)
-light_color = Color(0.999999, 0.999823, 0.845038, 1)
-spot_attenuation = 3.86
-spot_angle = 69.0
-spot_angle_attenuation = 2.73208
-
 [node name="Radio" type="Node3D" parent="Room/Table"]
 transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, -0.00313088, 0.175793, -0.763361)
 
 [node name="Sketchfab_Scene" parent="Room/Table/Radio" instance=ExtResource("13_rxp5n")]
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Room"]
-transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -3.01283e-07, 0, 4.22269, 11.8576, -6.62502, 3.70382)
-material_override = SubResource("StandardMaterial3D_oen64")
-size = Vector3(19.5836, 3.43799, 1.09952)
+transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -5.37839e-07, 0, 4.22269, 11.1581, -4.30172, 2.70757)
+material_override = ExtResource("6_0to7y")
+size = Vector3(18.1845, 2.43103, 0.627663)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="Room"]
-transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -3.45521e-07, 0, 4.22269, -11.0908, -7.00609, 3.08954)
-material_override = SubResource("StandardMaterial3D_oen64")
-size = Vector3(17.6848, 3.60315, 0.798252)
+transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -4.67524e-07, 0, 4.22269, -11.0908, -3.99209, 2.5355)
+material_override = ExtResource("6_0to7y")
+size = Vector3(17.6848, 2.29683, 0.535845)
 
 [node name="Sketchfab_Scene" parent="Room" instance=ExtResource("16_6ax1c")]
 transform = Transform3D(-0.00399996, 0, -1.64057e-05, 0, 0.004, 0, 1.64057e-05, 0, -0.00399996, -0.350516, -0.0528946, -0.752337)
@@ -248,24 +216,24 @@ transform = Transform3D(0.274876, 0, -0.417664, 0, 0.5, 0, 0.417664, 0, 0.274876
 transform = Transform3D(-0.279596, 0, -0.414519, 0, 0.5, 0, 0.414519, 0, -0.279596, 2.01493, 0.403, -1.26475)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Room"]
-transform = Transform3D(0.906315, 0.422622, 5.30854e-08, -0.422618, 0.906308, 0, -3.28291e-08, -7.68341e-09, 1, 10.8039, -6.44348, 0.266999)
+transform = Transform3D(0.906318, 0.422624, 7.68341e-08, -0.422618, 0.906308, 0, -4.72646e-08, -1.12923e-08, 1, 11.0093, -6.00294, 0.266999)
 material_override = SubResource("StandardMaterial3D_3i8da")
 calculate_tangents = false
-size = Vector3(19.8506, 1, 2.23)
+size = Vector3(19.8506, 0.027832, 2.23)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Room"]
-transform = Transform3D(0.906319, -0.422624, 8.9407e-08, 0.422618, 0.906308, 0, -5.51809e-08, 1.24564e-08, 1, -10.9107, -6.42665, 0.307772)
+transform = Transform3D(0.906323, -0.422626, 1.19209e-07, 0.422618, 0.906308, 0, -7.38073e-08, 1.6531e-08, 1, -11.1122, -5.99452, 0.307771)
 material_override = SubResource("StandardMaterial3D_3i8da")
 calculate_tangents = false
-size = Vector3(19.7709, 1, 2.23)
+size = Vector3(19.7709, 0.0463984, 2.23)
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="Room"]
 transform = Transform3D(1, 0, 1.92784e-07, 0, 1, 0, -1.92784e-07, 0, 1, 19.6774, -4.58929, 0.308663)
 size = Vector3(1, 12.0897, 2.3631)
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="Room"]
-transform = Transform3D(1, 0, 1.93715e-07, 0, 1, 0, -1.93715e-07, 0, 1, -18.5941, -4.58929, 0.465631)
-size = Vector3(1, 12.0897, 2.3631)
+transform = Transform3D(1, 0, 2.45869e-07, 0, 1, 0, -2.45869e-07, 0, 1, -18.5941, -3.94408, 0.465629)
+size = Vector3(1, 10.7993, 2.3631)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-3.20465, -0.00183212, 0, 0.00229339, -2.56009, 0, 0, 0, 0.964976, 0.174544, 14.8095, 14.6208)

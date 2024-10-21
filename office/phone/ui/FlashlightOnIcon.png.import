@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oc5ab6wya03u"
-path.s3tc="res://.godot/imported/Concrete_Cast in situ_xevlegbs_surface_Preview.png-dd675f812ddc8941f4cbc5c021ef5ccd.s3tc.ctex"
+uid="uid://dwvvj3rr8vwbk"
+path.s3tc="res://.godot/imported/FlashlightOnIcon.png-f43be987a56a20cfd9945b4cd57c0da4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Concrete_Castinsitu_xevlegbs_2K_surface_ms/Concrete_Cast in situ_xevlegbs_surface_Preview.png"
-dest_files=["res://.godot/imported/Concrete_Cast in situ_xevlegbs_surface_Preview.png-dd675f812ddc8941f4cbc5c021ef5ccd.s3tc.ctex"]
+source_file="res://office/phone/ui/FlashlightOnIcon.png"
+dest_files=["res://.godot/imported/FlashlightOnIcon.png-f43be987a56a20cfd9945b4cd57c0da4.s3tc.ctex"]
 
 [params]
 
