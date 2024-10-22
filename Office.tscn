@@ -1,26 +1,26 @@
 [gd_scene load_steps=26 format=3 uid="uid://d1o4lkpnxtmdh"]
 
-[ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_61mhc"]
-[ext_resource type="PackedScene" uid="uid://dvjxtf6l4ftx1" path="res://player/arm/anatomy_-_male_arm.glb" id="2_4cxxr"]
-[ext_resource type="Script" path="res://player/Phone.cs" id="3_d6ik7"]
-[ext_resource type="Texture2D" uid="uid://d0f25fnfbbdg" path="res://office/RicardoTex1.jpg" id="3_fa08j"]
-[ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://office/phone/PhoneTex.tres" id="5_mq1qu"]
-[ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="6_0to7y"]
-[ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass_shader/glass_mat.tres" id="7_hbmor"]
-[ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://office/phone/ui/FlashlightIcon.tres" id="7_nt16b"]
-[ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="8_m01qb"]
-[ext_resource type="PackedScene" uid="uid://8jk288s6fb2r" path="res://microphone/vintage_microphone.glb" id="11_0tew8"]
-[ext_resource type="PackedScene" uid="uid://xhxwfd43olgf" path="res://office/table/OffTable.tscn" id="11_d8ypn"]
-[ext_resource type="PackedScene" uid="uid://do7t5y2fmpuik" path="res://pop_cat/gabriel.tscn" id="12_ms1mj"]
-[ext_resource type="PackedScene" uid="uid://b6dgq7thgy31w" path="res://radio/grundig_radio_fr-250_free_am_fm_sw.glb" id="13_rxp5n"]
-[ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://chair/chair.glb" id="15_2xmme"]
-[ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://speakers/speakers_low_poly1.glb" id="16_rfkj3"]
-[ext_resource type="Script" path="res://radio/Radio.cs" id="16_t7jqy"]
-[ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://retro_light/retro_light.glb" id="17_aakax"]
-[ext_resource type="AudioStream" uid="uid://dhuu4n026cvpu" path="res://radio/arabian.ogg" id="17_i1owq"]
-[ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://office/estadioHD.png" id="17_kek8h"]
-[ext_resource type="PackedScene" uid="uid://bqweb6hhnjn8a" path="res://ricbedroom/phone/nokia_6230.glb" id="21_bd1ju"]
-[ext_resource type="PackedScene" uid="uid://clt1sfs0wbkeo" path="res://office/phone/iphone_x_lowpoly.glb" id="22_qkgxp"]
+[ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_ql2up"]
+[ext_resource type="PackedScene" uid="uid://dvjxtf6l4ftx1" path="res://player/arm/anatomy_-_male_arm.glb" id="2_yqo18"]
+[ext_resource type="Script" path="res://player/Phone.cs" id="3_orjrp"]
+[ext_resource type="PackedScene" uid="uid://clt1sfs0wbkeo" path="res://office/phone/iphone_x_lowpoly.glb" id="4_q5b7p"]
+[ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://office/phone/PhoneTex.tres" id="5_vqqyo"]
+[ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://office/phone/ui/FlashlightIcon.tres" id="6_6y5dq"]
+[ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="7_tlfhq"]
+[ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="8_klpys"]
+[ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass_shader/glass_mat.tres" id="9_4qo3k"]
+[ext_resource type="Texture2D" uid="uid://d0f25fnfbbdg" path="res://office/RicardoTex1.jpg" id="10_v8ou4"]
+[ext_resource type="PackedScene" uid="uid://xhxwfd43olgf" path="res://office/table/OffTable.tscn" id="11_vg8bj"]
+[ext_resource type="PackedScene" uid="uid://do7t5y2fmpuik" path="res://pop_cat/gabriel.tscn" id="12_pkntf"]
+[ext_resource type="PackedScene" uid="uid://8jk288s6fb2r" path="res://microphone/vintage_microphone.glb" id="13_x0eyg"]
+[ext_resource type="Script" path="res://radio/Radio.cs" id="14_hjsw5"]
+[ext_resource type="PackedScene" uid="uid://b6dgq7thgy31w" path="res://radio/grundig_radio_fr-250_free_am_fm_sw.glb" id="15_8uuc1"]
+[ext_resource type="AudioStream" uid="uid://dhuu4n026cvpu" path="res://radio/arabian.ogg" id="16_oebsy"]
+[ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://retro_light/retro_light.glb" id="17_xbhay"]
+[ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://chair/chair.glb" id="18_gjll4"]
+[ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://speakers/speakers_low_poly1.glb" id="19_sw1nb"]
+[ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://office/estadioHD.png" id="20_j7rmk"]
+[ext_resource type="PackedScene" uid="uid://bqweb6hhnjn8a" path="res://ricbedroom/phone/nokia_6230.glb" id="21_t0ml1"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
@@ -35,7 +35,7 @@ volumetric_fog_albedo = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxoj7"]
 disable_ambient_light = true
-albedo_texture = ExtResource("3_fa08j")
+albedo_texture = ExtResource("10_v8ou4")
 roughness = 0.0
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -47,7 +47,7 @@ size = Vector3(0.2183, 0.156227, 0.0887451)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3j4l3"]
 shading_mode = 0
-albedo_texture = ExtResource("17_kek8h")
+albedo_texture = ExtResource("20_j7rmk")
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
@@ -55,15 +55,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bjlio")
 
-[node name="Player" parent="." instance=ExtResource("1_61mhc")]
+[node name="Player" parent="." instance=ExtResource("1_ql2up")]
 transform = Transform3D(-0.940223, 0, -0.34056, 0, 1, 0, 0.34056, 0, -0.940223, 0, 12.7964, -5.842)
 
-[node name="Sketchfab_Scene2" parent="Player" instance=ExtResource("2_4cxxr")]
+[node name="Sketchfab_Scene2" parent="Player" instance=ExtResource("2_yqo18")]
 transform = Transform3D(0.151645, -0.0779809, -0.104512, -0.115972, -0.0073669, -0.162777, 0.0596178, 0.184024, -0.0508037, 0.0696207, -0.0629864, -0.154881)
 
 [node name="Phone" type="Node3D" parent="Player/Sketchfab_Scene2"]
 transform = Transform3D(3.79113, -2.89929, 1.49044, -1.94952, -0.184168, 4.60058, -2.6128, -4.06941, -1.27009, -0.248135, -0.630844, -0.18161)
-script = ExtResource("3_d6ik7")
+script = ExtResource("3_orjrp")
 
 [node name="Flash" type="SpotLight3D" parent="Player/Sketchfab_Scene2/Phone"]
 transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0271126, 0.0495281, -0.00421333)
@@ -71,12 +71,12 @@ visible = false
 spot_range = 11.91
 spot_angle = 25.0
 
-[node name="PhoneModel" parent="Player/Sketchfab_Scene2/Phone" instance=ExtResource("22_qkgxp")]
+[node name="PhoneModel" parent="Player/Sketchfab_Scene2/Phone" instance=ExtResource("4_q5b7p")]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
 
 [node name="Screen" type="CSGBox3D" parent="Player/Sketchfab_Scene2/Phone"]
 transform = Transform3D(-1, 2.56506e-12, 5.36442e-07, 1.56284e-11, -1, 3.82272e-12, -2.68221e-07, 7.10543e-15, -1, -0.000854611, 0, 0.00364208)
-material_override = ExtResource("5_mq1qu")
+material_override = ExtResource("5_vqqyo")
 cast_shadow = 0
 gi_mode = 0
 calculate_tangents = false
@@ -88,7 +88,7 @@ cast_shadow = 0
 gi_mode = 0
 calculate_tangents = false
 size = Vector3(0.00999655, 0.0107786, 0.001)
-material = ExtResource("7_nt16b")
+material = ExtResource("6_6y5dq")
 
 [node name="Camera" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 4.19095e-09, 0, 1, 0, -4.19095e-09, 0, 1, -0.0922749, 8.29697e-05, 0.000340462)
@@ -104,48 +104,48 @@ transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.99
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-4.37114e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.79409e-07, -0.114916, -1.34496, -1.92733)
-material_override = ExtResource("6_0to7y")
+material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0460968, 1.02271)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-4.38136e-08, -4.62526, 1.04308e-06, 1.00235, -2.02179e-07, 0, 5.98133e-15, 8.23289e-07, 4.25976, -0.0926882, -1.79841, 0.955989)
 size = Vector3(0.0156367, 0.935059, 1.27132)
-material = ExtResource("8_m01qb")
+material = ExtResource("8_klpys")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-4.38138e-08, -4.62528, 8.51229e-07, 1.00235, -2.02179e-07, 0, 5.28744e-15, 1.45286e-06, 4.25976, 1.09453, 1.2376, 0.962305)
-material_override = ExtResource("6_0to7y")
+material_override = ExtResource("7_tlfhq")
 size = Vector3(0.001, 9.35915, 1.27429)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Room"]
 transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -2.22586e-07, 0, 4.22269, 11.5768, -4.47269, -1.49905)
-material_override = ExtResource("6_0to7y")
+material_override = ExtResource("7_tlfhq")
 size = Vector3(19.0515, 2.50513, 0.329361)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-4.37114e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.79409e-07, -0.13662, 0.850031, -1.92733)
-material_override = ExtResource("6_0to7y")
+material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0460968, 1.02271)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Room"]
 transform = Transform3D(1, 0, 1.08033e-07, 0, 4.61448, 0, -2.3935e-07, 0, 4.22274, -11.3882, -4.93571, -1.53949)
-material_override = ExtResource("6_0to7y")
+material_override = ExtResource("7_tlfhq")
 size = Vector3(18.2832, 2.70581, 0.30925)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-3.07336e-07, 0, 4.22287, 0, 21.6973, 0, -4.22287, 0, -1.04308e-06, -0.131906, -0.245346, -1.76728)
 calculate_tangents = false
 size = Vector3(0.001, 0.0564942, 0.622529)
-material = ExtResource("7_hbmor")
+material = ExtResource("9_4qo3k")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-3.1665e-07, 0, 4.22287, 0, 21.2935, 0, -4.22287, 0, -1.05239e-06, -1.82759, -0.250607, -1.92733)
-material_override = ExtResource("6_0to7y")
+material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0598574, 0.221804)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-3.39001e-07, 0, 4.22289, 0, 21.2935, 0, -4.22289, 0, -1.07475e-06, 1.56044, -0.181201, -1.94123)
-material_override = ExtResource("6_0to7y")
+material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0691743, 0.221804)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Room"]
@@ -157,23 +157,23 @@ material = SubResource("StandardMaterial3D_pxoj7")
 [node name="Table" type="Node3D" parent="Room"]
 transform = Transform3D(1, 0, 4.65661e-09, 0, 1, 0, -4.65661e-09, 0, 1, -0.433648, -1.13712, -0.406054)
 
-[node name="vl0jbem_LOD1" parent="Room/Table" instance=ExtResource("11_d8ypn")]
+[node name="vl0jbem_LOD1" parent="Room/Table" instance=ExtResource("11_vg8bj")]
 transform = Transform3D(-1.78998, 0, -0.00410142, 0, 1, 0, 0.00734152, 0, -0.999992, 0.372588, -0.669497, -0.534783)
 
-[node name="Sketchfab_Scene2" parent="Room/Table" instance=ExtResource("12_ms1mj")]
+[node name="Sketchfab_Scene2" parent="Room/Table" instance=ExtResource("12_pkntf")]
 transform = Transform3D(0.0315673, 0, -0.000266078, 0, 0.03, 0, -8.85073e-05, 0, 0.030027, 0.979239, 0.147174, -0.657752)
 
 [node name="Microphone" type="Node3D" parent="Room/Table"]
 transform = Transform3D(-0.000488699, 0, -0.8, 0, 0.8, 0, 0.8, 0, -0.000488699, 0.310718, 0.147724, -0.331007)
 
-[node name="Sketchfab_Scene2" parent="Room/Table/Microphone" instance=ExtResource("11_0tew8")]
+[node name="Sketchfab_Scene2" parent="Room/Table/Microphone" instance=ExtResource("13_x0eyg")]
 transform = Transform3D(-0.133332, 0, -0.000546856, 0, 0.133333, 0, 0.000546855, 0, -0.133332, 0.0583372, -0.0787535, -0.0401545)
 
 [node name="Radio" type="StaticBody3D" parent="Room/Table"]
 transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, -0.00341433, 0.154747, -0.832469)
-script = ExtResource("16_t7jqy")
+script = ExtResource("14_hjsw5")
 
-[node name="Sketchfab_Scene" parent="Room/Table/Radio" instance=ExtResource("13_rxp5n")]
+[node name="Sketchfab_Scene" parent="Room/Table/Radio" instance=ExtResource("15_8uuc1")]
 transform = Transform3D(1, 0, 1.39698e-08, 0, 1, 0, -1.39698e-08, 0, 1, 0, 0, 0)
 
 [node name="Radio" type="CollisionShape3D" parent="Room/Table/Radio"]
@@ -181,20 +181,20 @@ transform = Transform3D(1, 0, 5.45755e-07, 0, 1, 0, -5.45755e-07, 0, 1, 0.005424
 shape = SubResource("BoxShape3D_ypn88")
 
 [node name="MusicPlayer" type="AudioStreamPlayer3D" parent="Room/Table/Radio"]
-stream = ExtResource("17_i1owq")
+stream = ExtResource("16_oebsy")
 volume_db = -27.769
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Room"]
 transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -5.37839e-07, 0, 4.22269, 11.1581, -4.30172, 2.70757)
-material_override = ExtResource("6_0to7y")
+material_override = ExtResource("7_tlfhq")
 size = Vector3(18.1845, 2.43103, 0.627663)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="Room"]
 transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -4.67524e-07, 0, 4.22269, -11.0908, -3.99209, 2.5355)
-material_override = ExtResource("6_0to7y")
+material_override = ExtResource("7_tlfhq")
 size = Vector3(17.6848, 2.29683, 0.535845)
 
-[node name="retro_light_-_oldclean_model" parent="Room" instance=ExtResource("17_aakax")]
+[node name="retro_light_-_oldclean_model" parent="Room" instance=ExtResource("17_xbhay")]
 transform = Transform3D(0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, 0.108636, -0.10132, -0.982644)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Room/retro_light_-_oldclean_model"]
@@ -210,29 +210,29 @@ omni_attenuation = 4.03
 
 [node name="Chair" type="Node3D" parent="Room"]
 
-[node name="Sketchfab_Scene2" parent="Room/Chair" instance=ExtResource("15_2xmme")]
+[node name="Sketchfab_Scene2" parent="Room/Chair" instance=ExtResource("18_gjll4")]
 transform = Transform3D(-0.000999991, 0, -4.10142e-06, 0, 0.001, 0, 4.10142e-06, 0, -0.000999991, -0.505046, -1.36022, -0.253417)
 
 [node name="Speakers" type="Node3D" parent="Room"]
 transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, -4.65661e-10, 0, 1, 0, -0.168727, 0)
 
-[node name="speakers_low_poly1" parent="Room/Speakers" instance=ExtResource("16_rfkj3")]
+[node name="speakers_low_poly1" parent="Room/Speakers" instance=ExtResource("19_sw1nb")]
 transform = Transform3D(0.274876, 0, -0.417664, 0, 0.5, 0, 0.417664, 0, 0.274876, -1.7435, 0.402699, -1.61656)
 
-[node name="speakers_low_poly2" parent="Room/Speakers" instance=ExtResource("16_rfkj3")]
+[node name="speakers_low_poly2" parent="Room/Speakers" instance=ExtResource("19_sw1nb")]
 transform = Transform3D(-0.279596, 0, -0.414519, 0, 0.5, 0, 0.414519, 0, -0.279596, 2.01493, 0.403, -1.26475)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Room"]
 transform = Transform3D(0.906318, 0.422624, 7.68341e-08, -0.422618, 0.906308, 0, -4.72646e-08, -1.12923e-08, 1, 11.0093, -6.00294, 0.266999)
 calculate_tangents = false
 size = Vector3(19.8506, 0.027832, 2.23)
-material = ExtResource("8_m01qb")
+material = ExtResource("8_klpys")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Room"]
 transform = Transform3D(0.906323, -0.422626, 1.19209e-07, 0.422618, 0.906308, 0, -7.38073e-08, 1.6531e-08, 1, -11.1122, -5.99452, 0.307771)
 calculate_tangents = false
 size = Vector3(19.7709, 0.0463984, 2.23)
-material = ExtResource("8_m01qb")
+material = ExtResource("8_klpys")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-3.20465, -0.00183212, 0, 0.00229339, -2.56009, 0, 0, 0, 0.964976, 0.174544, 14.8095, 14.6208)
@@ -240,5 +240,5 @@ material_override = SubResource("StandardMaterial3D_3j4l3")
 calculate_tangents = false
 size = Vector3(6.9545, 4.93359, 1)
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("21_bd1ju")]
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("21_t0ml1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29972, 12.1916, 3.93042)
