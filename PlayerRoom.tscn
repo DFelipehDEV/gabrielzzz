@@ -35,12 +35,11 @@ fog_density = 0.1451
 volumetric_fog_albedo = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3i8da"]
-albedo_color = Color(0.475087, 0.492714, 0.207766, 1)
 albedo_texture = ExtResource("6_2jyk6")
 normal_enabled = true
 normal_texture = ExtResource("7_deo7o")
 uv1_triplanar = true
-uv1_triplanar_sharpness = 11.3137
+uv1_triplanar_sharpness = 1.56917
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxoj7"]
