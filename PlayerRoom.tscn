@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b6dgq7thgy31w" path="res://radio/grundig_radio_fr-250_free_am_fm_sw.glb" id="13_rxp5n"]
 [ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://chair/chair.glb" id="15_2xmme"]
 [ext_resource type="PackedScene" uid="uid://bx5j4g21atnqb" path="res://lighbulb.tscn" id="16_6ax1c"]
-[ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://Speakers/speakers_low_poly1.glb" id="16_rfkj3"]
+[ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://speakers/speakers_low_poly1.glb" id="16_rfkj3"]
 [ext_resource type="Script" path="res://radio/Radio.cs" id="16_t7jqy"]
 [ext_resource type="AudioStream" uid="uid://dhuu4n026cvpu" path="res://radio/arabian.ogg" id="17_i1owq"]
 [ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://office/estadioHD.png" id="17_kek8h"]
