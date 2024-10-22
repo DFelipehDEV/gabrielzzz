@@ -234,14 +234,6 @@ calculate_tangents = false
 size = Vector3(19.7709, 0.0463984, 2.23)
 material = ExtResource("8_m01qb")
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Room"]
-transform = Transform3D(1, 0, 1.92784e-07, 0, 1, 0, -1.92784e-07, 0, 1, 19.6774, -4.58929, 0.308663)
-size = Vector3(1, 12.0897, 2.3631)
-
-[node name="CSGBox3D16" type="CSGBox3D" parent="Room"]
-transform = Transform3D(1, 0, 2.45869e-07, 0, 1, 0, -2.45869e-07, 0, 1, -18.5941, -3.94408, 0.465629)
-size = Vector3(1, 10.7993, 2.3631)
-
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-3.20465, -0.00183212, 0, 0.00229339, -2.56009, 0, 0, 0, 0.964976, 0.174544, 14.8095, 14.6208)
 material_override = SubResource("StandardMaterial3D_3j4l3")
