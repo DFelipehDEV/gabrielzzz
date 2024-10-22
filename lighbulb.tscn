@@ -1,14 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://bx5j4g21atnqb"]
 
-[ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://retro_light/retro_light_-_oldclean_model.glb" id="1_rv8rc"]
+[ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://retro_light/retro_light.glb" id="1_rv8rc"]
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_rv8rc")]
-
-[node name="Clean_light_bulb" parent="Sketchfab_model/234409516f23456cb54bf188eb645a8e_fbx/RootNode" index="1"]
-visible = false
-
-[node name="Clean_retro_light" parent="Sketchfab_model/234409516f23456cb54bf188eb645a8e_fbx/RootNode" index="2"]
-visible = false
-
-[node name="wire_filament" parent="Sketchfab_model/234409516f23456cb54bf188eb645a8e_fbx/RootNode" index="4"]
-visible = false
