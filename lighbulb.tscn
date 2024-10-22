@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bx5j4g21atnqb"]
 
-[ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://Concrete_Castinsitu_xevlegbs_2K_surface_ms/retro_light_-_oldclean_model.glb" id="1_rv8rc"]
+[ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://retro_light/retro_light_-_oldclean_model.glb" id="1_rv8rc"]
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_rv8rc")]
 
