@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bawtanmcdcn8d"
-path.s3tc="res://.godot/imported/vgdmbbt_2K_AO.jpg-2abb1ea2cabe4b7dafbaa2a762da94f4.s3tc.ctex"
+uid="uid://dehyq0gg80hb2"
+path.s3tc="res://.godot/imported/vgdmbbt_2K_Roughness.jpg-1a9e1df0522adff9843d55fe0aa5c79a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_AO.jpg"
-dest_files=["res://.godot/imported/vgdmbbt_2K_AO.jpg-2abb1ea2cabe4b7dafbaa2a762da94f4.s3tc.ctex"]
+source_file="res://asphalt/vgdmbbt_2K_Roughness.jpg"
+dest_files=["res://.godot/imported/vgdmbbt_2K_Roughness.jpg-1a9e1df0522adff9843d55fe0aa5c79a.s3tc.ctex"]
 
 [params]
 

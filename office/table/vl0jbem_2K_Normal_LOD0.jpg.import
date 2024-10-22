@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csvfu6g5u6hti"
-path.s3tc="res://.godot/imported/vl0jbem_2K_Normal_LOD0.jpg-9ff4593d451ac216059ed7ea115cc94a.s3tc.ctex"
+path.s3tc="res://.godot/imported/vl0jbem_2K_Normal_LOD0.jpg-bf3e3e30f6fef84fd33c700affb4e20c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://vl0jbem_2K_Normal_LOD0.jpg"
-dest_files=["res://.godot/imported/vl0jbem_2K_Normal_LOD0.jpg-9ff4593d451ac216059ed7ea115cc94a.s3tc.ctex"]
+source_file="res://office/table/vl0jbem_2K_Normal_LOD0.jpg"
+dest_files=["res://.godot/imported/vl0jbem_2K_Normal_LOD0.jpg-bf3e3e30f6fef84fd33c700affb4e20c.s3tc.ctex"]
 
 [params]
 

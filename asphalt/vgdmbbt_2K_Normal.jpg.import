@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2jkmvlnon313"
-path.s3tc="res://.godot/imported/speakers_low_poly_Image_0.png-8ad50f7adc5059daf594aa2891f38c93.s3tc.ctex"
+uid="uid://dycdc5jc5upqp"
+path.s3tc="res://.godot/imported/vgdmbbt_2K_Normal.jpg-d9aa0db81c259ac6a83a4eb85477cb2d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "bd2453d920b035b9a86748b94974c81e"
-}
 
 [deps]
 
-source_file="res://speakers/speakers_low_poly_Image_0.png"
-dest_files=["res://.godot/imported/speakers_low_poly_Image_0.png-8ad50f7adc5059daf594aa2891f38c93.s3tc.ctex"]
+source_file="res://asphalt/vgdmbbt_2K_Normal.jpg"
+dest_files=["res://.godot/imported/vgdmbbt_2K_Normal.jpg-d9aa0db81c259ac6a83a4eb85477cb2d.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Asphalt_Rough_vgdmbbt_2K_surface_ms/vgdmbbt_2K_Normal.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

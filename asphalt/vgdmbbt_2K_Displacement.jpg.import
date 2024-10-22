@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oae87musrcg4"
-path.s3tc="res://.godot/imported/speakers_low_poly_Image_1.png-dbc808ca1a09dcb3aeafc59bddcdcd55.s3tc.ctex"
+uid="uid://fg2ap02o2gml"
+path.s3tc="res://.godot/imported/vgdmbbt_2K_Displacement.jpg-acdcdd6f512d30db4ab16ba7d72ed7f6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "ab5282b2a07ea828477d372031cfdb03"
-}
 
 [deps]
 
-source_file="res://speakers/speakers_low_poly_Image_1.png"
-dest_files=["res://.godot/imported/speakers_low_poly_Image_1.png-dbc808ca1a09dcb3aeafc59bddcdcd55.s3tc.ctex"]
+source_file="res://asphalt/vgdmbbt_2K_Displacement.jpg"
+dest_files=["res://.godot/imported/vgdmbbt_2K_Displacement.jpg-acdcdd6f512d30db4ab16ba7d72ed7f6.s3tc.ctex"]
 
 [params]
 

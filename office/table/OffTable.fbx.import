@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://l5rp3tc1l1qm"
-path="res://.godot/imported/vl0jbem_LOD0.fbx-e3a895259ae70ce79cf082ca151cc30e.scn"
+path="res://.godot/imported/OffTable.fbx-2b48d70d3c5951bd7a3f650a6c380e9e.scn"
 
 [deps]
 
-source_file="res://vl0jbem_LOD0.fbx"
-dest_files=["res://.godot/imported/vl0jbem_LOD0.fbx-e3a895259ae70ce79cf082ca151cc30e.scn"]
+source_file="res://office/table/OffTable.fbx"
+dest_files=["res://.godot/imported/OffTable.fbx-2b48d70d3c5951bd7a3f650a6c380e9e.scn"]
 
 [params]
 
