@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ct8qm8uo550"
-path.s3tc="res://.godot/imported/vh1sccu_2K_Roughness.jpg-12f2923c73aa81e61a8c6209781be0d3.s3tc.ctex"
+uid="uid://djyupsfdas5ox"
+path.s3tc="res://.godot/imported/bedside_table_1.png-2bfbdf130bd452e0e44ae8679fd84752.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "714183ca554fdc743b5e93c866237dcc"
+}
 
 [deps]
 
-source_file="res://brick/vh1sccu_2K_Roughness.jpg"
-dest_files=["res://.godot/imported/vh1sccu_2K_Roughness.jpg-12f2923c73aa81e61a8c6209781be0d3.s3tc.ctex"]
+source_file="res://ricbedroom/bedside table/bedside_table_1.png"
+dest_files=["res://.godot/imported/bedside_table_1.png-2bfbdf130bd452e0e44ae8679fd84752.s3tc.ctex"]
 
 [params]
 
@@ -24,8 +27,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=8
+roughness/src_normal="res://ricbedroom/bedside table/bedside_table_2.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

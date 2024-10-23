@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ct8qm8uo550"
-path.s3tc="res://.godot/imported/vh1sccu_2K_Roughness.jpg-12f2923c73aa81e61a8c6209781be0d3.s3tc.ctex"
+uid="uid://r1g6efwaw7ua"
+path.s3tc="res://.godot/imported/bandeira_fcp.webp-d25eed7a912b80b69bf4a4638b2adc0f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://brick/vh1sccu_2K_Roughness.jpg"
-dest_files=["res://.godot/imported/vh1sccu_2K_Roughness.jpg-12f2923c73aa81e61a8c6209781be0d3.s3tc.ctex"]
+source_file="res://bandeira_fcp.webp"
+dest_files=["res://.godot/imported/bandeira_fcp.webp-d25eed7a912b80b69bf4a4638b2adc0f.s3tc.ctex"]
 
 [params]
 

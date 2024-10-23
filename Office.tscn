@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=31 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_ql2up"]
 [ext_resource type="PackedScene" uid="uid://dvjxtf6l4ftx1" path="res://player/arm/anatomy_-_male_arm.glb" id="2_yqo18"]
@@ -18,9 +18,12 @@
 [ext_resource type="AudioStream" uid="uid://dhuu4n026cvpu" path="res://radio/arabian.ogg" id="16_oebsy"]
 [ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://retro_light/retro_light.glb" id="17_xbhay"]
 [ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://chair/chair.glb" id="18_gjll4"]
-[ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://speakers/speakers_low_poly1.glb" id="19_sw1nb"]
+[ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://Speakers/speakers_low_poly1.glb" id="19_sw1nb"]
 [ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://office/estadioHD.png" id="20_j7rmk"]
 [ext_resource type="PackedScene" uid="uid://bqweb6hhnjn8a" path="res://ricbedroom/phone/nokia_6230.glb" id="21_t0ml1"]
+[ext_resource type="Texture2D" uid="uid://e8k054gwup0q" path="res://250076675.jpg" id="22_sfgyv"]
+[ext_resource type="Texture2D" uid="uid://r1g6efwaw7ua" path="res://bandeira_fcp.webp" id="23_1k236"]
+[ext_resource type="PackedScene" uid="uid://cnqia0b2m1uf8" path="res://ricbedroom/bedside table/bedside_table.glb" id="24_swnny"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
@@ -48,6 +51,12 @@ size = Vector3(0.2183, 0.156227, 0.0887451)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3j4l3"]
 shading_mode = 0
 albedo_texture = ExtResource("20_j7rmk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gk5iv"]
+albedo_texture = ExtResource("22_sfgyv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slvaq"]
+albedo_texture = ExtResource("23_1k236")
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
@@ -241,4 +250,46 @@ calculate_tangents = false
 size = Vector3(6.9545, 4.93359, 1)
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("21_t0ml1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29972, 12.1916, 3.93042)
+transform = Transform3D(2.29834, -1.92592, 0.0921716, 0, -0.143411, -2.99657, 1.92812, 2.29571, -0.109869, -71.697, 3.18405, 69.4342)
+
+[node name="richards bedroom" type="Node3D" parent="."]
+transform = Transform3D(0.763888, 0, 0, 0, 1, 0, 0, 0, 0.640618, -67.5965, 1.96689, 57.0875)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="richards bedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35423, 4.21288, 10.2114)
+material_override = ExtResource("8_klpys")
+size = Vector3(1, 12.6501, 20.1759)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="richards bedroom"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.94246, 4.37433, 20.5636)
+material_override = ExtResource("8_klpys")
+size = Vector3(1, 12.1887, 25.4788)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="richards bedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.883, 4.46361, 9.15601)
+material_override = ExtResource("8_klpys")
+size = Vector3(1, 12.1486, 22.2868)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="richards bedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5611, -0.157724, 8.58056)
+material_override = ExtResource("7_tlfhq")
+size = Vector3(25.1738, 0.001, 24.3449)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="richards bedroom"]
+transform = Transform3D(1.20968, 0, 0, 0, -1.18611, 0, 0, 0, 1.20968, -2.80333, 4.22233, 20.4914)
+material_override = SubResource("StandardMaterial3D_gk5iv")
+
+[node name="Bed" type="Node3D" parent="richards bedroom"]
+transform = Transform3D(0.36215, 0, 0, 0, 1, 0, 0, 0, 0.276422, -7.78543, -0.00508499, 17.041)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="richards bedroom/Bed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.159645, 0.051738, 5.22322)
+size = Vector3(9.18555, 0.683972, 10.2835)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="richards bedroom/Bed"]
+transform = Transform3D(-4.37114e-08, 0, 0.948463, 0, 1, 0, 1, 0, 4.14586e-08, -0.0462723, 0.18222, 0.73027)
+material_override = SubResource("StandardMaterial3D_slvaq")
+size = Vector3(9.57422, 0.712505, 10.3606)
+
+[node name="Sketchfab_Scene" parent="richards bedroom" instance=ExtResource("24_swnny")]
+transform = Transform3D(-0.588618, 0, -5.14586e-08, 0, 0.588618, 0, 5.14586e-08, 0, -0.588618, -5.46444, -0.127028, 19.4984)

@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ct8qm8uo550"
-path.s3tc="res://.godot/imported/vh1sccu_2K_Roughness.jpg-12f2923c73aa81e61a8c6209781be0d3.s3tc.ctex"
+uid="uid://fx5krrt0uql7"
+path.s3tc="res://.godot/imported/bedside_table_3.png-6ebe9fe83b99cbf96e832f1d56dfd795.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "693411d5337929281bb13143080a4ad2"
+}
 
 [deps]
 
-source_file="res://brick/vh1sccu_2K_Roughness.jpg"
-dest_files=["res://.godot/imported/vh1sccu_2K_Roughness.jpg-12f2923c73aa81e61a8c6209781be0d3.s3tc.ctex"]
+source_file="res://ricbedroom/bedside table/bedside_table_3.png"
+dest_files=["res://.godot/imported/bedside_table_3.png-6ebe9fe83b99cbf96e832f1d56dfd795.s3tc.ctex"]
 
 [params]
 
