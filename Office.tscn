@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=37 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_ql2up"]
 [ext_resource type="PackedScene" uid="uid://dvjxtf6l4ftx1" path="res://player/arm/anatomy_-_male_arm.glb" id="2_yqo18"]
@@ -28,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://ui5y56mgsn0f" path="res://ricbedroom/lamp/old_ussr_lamp.glb" id="25_ctrwk"]
 [ext_resource type="PackedScene" uid="uid://dprqhntw5wkt7" path="res://ricbedroom/pillow/pillow.glb" id="25_vl4j8"]
 [ext_resource type="PackedScene" uid="uid://mgoyd6s3xou6" path="res://ricbedroom/rack/clothes_rack.glb" id="28_y4wc8"]
+[ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://fcporto.glb" id="29_8am4e"]
+[ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://wood_clothes_hanger.glb" id="30_6ivr0"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
@@ -339,3 +341,9 @@ transform = Transform3D(-9.89263e-10, 0, 0.034942, 0, 0.00903342, 0, -0.0226317,
 transform = Transform3D(1, 0, 0, 0, 0.99998, 0, 0, 0, 0.999968, -6.89544, 4.1127, 14.8535)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(10.0927, 0.001, 10.4385)
+
+[node name="fcporto" parent="." instance=ExtResource("29_8am4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.8978, 2.09723, 69.2111)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("30_6ivr0")]
+transform = Transform3D(-0.00448555, 0, 0, 0, 0.005585, 0, 0, 0, 0.00915721, -76.1447, 2.68953, 68.8781)
