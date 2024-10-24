@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=45 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_ql2up"]
 [ext_resource type="PackedScene" uid="uid://dvjxtf6l4ftx1" path="res://player/arm/anatomy_-_male_arm.glb" id="2_yqo18"]
@@ -21,16 +21,23 @@
 [ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://Speakers/speakers_low_poly1.glb" id="19_sw1nb"]
 [ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://office/estadioHD.png" id="20_j7rmk"]
 [ext_resource type="PackedScene" uid="uid://bqweb6hhnjn8a" path="res://ricbedroom/phone/nokia_6230.glb" id="21_t0ml1"]
-[ext_resource type="Texture2D" uid="uid://e8k054gwup0q" path="res://250076675.jpg" id="22_sfgyv"]
-[ext_resource type="Texture2D" uid="uid://r1g6efwaw7ua" path="res://bandeira_fcp.webp" id="23_1k236"]
+[ext_resource type="Texture2D" uid="uid://e8k054gwup0q" path="res://ricbedroom/250076675.jpg" id="22_sfgyv"]
+[ext_resource type="Texture2D" uid="uid://r1g6efwaw7ua" path="res://ricbedroom/bandeira_fcp.webp" id="23_1k236"]
 [ext_resource type="Material" uid="uid://cmyh1ifrbnn01" path="res://office/table/TableTex2.tres" id="24_3wr48"]
 [ext_resource type="PackedScene" uid="uid://cnqia0b2m1uf8" path="res://ricbedroom/bedside table/bedside_table.glb" id="24_swnny"]
 [ext_resource type="PackedScene" uid="uid://ui5y56mgsn0f" path="res://ricbedroom/lamp/old_ussr_lamp.glb" id="25_ctrwk"]
 [ext_resource type="PackedScene" uid="uid://dprqhntw5wkt7" path="res://ricbedroom/pillow/pillow.glb" id="25_vl4j8"]
 [ext_resource type="PackedScene" uid="uid://mgoyd6s3xou6" path="res://ricbedroom/rack/clothes_rack.glb" id="28_y4wc8"]
-[ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://fcporto.glb" id="29_8am4e"]
-[ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://wood_clothes_hanger.glb" id="30_6ivr0"]
-[ext_resource type="ArrayMesh" uid="uid://rmmkw3bw7vso" path="res://12222_Cat_v1_l3.obj" id="31_l4nix"]
+[ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://ricbedroom/shirts/fcporto.glb" id="29_8am4e"]
+[ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://ricbedroom/wood_clothes_hanger.glb" id="30_6ivr0"]
+[ext_resource type="ArrayMesh" uid="uid://rmmkw3bw7vso" path="res://ricbedroom/12222_Cat_v1_l3.obj" id="31_l4nix"]
+[ext_resource type="PackedScene" uid="uid://pdqmwrorx1u" path="res://setup simao/gaming_room.glb" id="32_nq5tk"]
+[ext_resource type="PackedScene" uid="uid://b7lxvh4wds88l" path="res://setup simao/mechanical_keyboard.glb" id="33_dgesg"]
+[ext_resource type="PackedScene" uid="uid://cgg6ivjn1m0k2" path="res://setup simao/free_gaming_pc.glb" id="33_paq01"]
+[ext_resource type="PackedScene" uid="uid://bj1aa6wncnlxh" path="res://setup simao/mouse.glb" id="34_4uylr"]
+[ext_resource type="PackedScene" uid="uid://d1yq5xqn4s050" path="res://setup simao/ultrawide_monitor.glb" id="35_fbvgy"]
+[ext_resource type="PackedScene" uid="uid://e5ru1cmfwlbn" path="res://setup simao/computer_desk.glb" id="37_n4yqu"]
+[ext_resource type="PackedScene" uid="uid://pul44eescq5b" path="res://setup simao/msi-_mousepad.glb" id="38_j7cng"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
@@ -353,3 +360,36 @@ skeleton = NodePath("../Sketchfab_Scene4")
 transform = Transform3D(1, 0, 0, 0, 0.99998, 0, 0, 0, 0.999968, -6.89544, 4.1127, 14.8535)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(10.0927, 0.001, 10.4385)
+
+[node name="quarto simon" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.617, 6.9659, 49.0634)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="quarto simon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5693, 0, 9.47998)
+material_override = ExtResource("8_klpys")
+size = Vector3(24.1385, 1, 19.96)
+
+[node name="preset" type="Node3D" parent="quarto simon"]
+
+[node name="Sketchfab_Scene" parent="quarto simon/preset" instance=ExtResource("32_nq5tk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.671, -7.93523, 18.8591)
+
+[node name="alone ones" type="Node3D" parent="quarto simon"]
+
+[node name="pc" parent="quarto simon/alone ones" instance=ExtResource("33_paq01")]
+transform = Transform3D(0.243695, 0, 0.104953, 0, 0.246376, 0, -0.0944056, 0, 0.270922, -3.96425, 1.65284, 14.226)
+
+[node name="teclado" parent="quarto simon/alone ones" instance=ExtResource("33_dgesg")]
+transform = Transform3D(0.0084918, 0, -0.00231208, 0, 0.010084, 0, 0.00261339, 0, 0.00751272, -4.73367, 1.48101, 14.3986)
+
+[node name="mouse" parent="quarto simon/alone ones" instance=ExtResource("34_4uylr")]
+transform = Transform3D(0.0588311, 0, 0, 0, 0.0547855, 0, 0, 0, 0.0456719, -4.30576, 1.48443, 14.3855)
+
+[node name="monitor" parent="quarto simon/alone ones" instance=ExtResource("35_fbvgy")]
+transform = Transform3D(0.0715994, 0, 0, 0, 0.0671132, 0, 0, 0, 0.0489008, -4.58479, 1.72867, 14.0067)
+
+[node name="desk" parent="quarto simon/alone ones" instance=ExtResource("37_n4yqu")]
+transform = Transform3D(1.03912, 0, 0, 0, 1.3085, 0, 0, 0, 1.03402, -4.60368, 0.509441, 14.1928)
+
+[node name="mousepad" parent="quarto simon/alone ones" instance=ExtResource("38_j7cng")]
+transform = Transform3D(0.178899, 0, 0, 0, 0.000911148, 0, 0, 0, 0.167375, -4.59991, 1.47485, 14.3545)
