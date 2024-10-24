@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=47 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_ql2up"]
 [ext_resource type="PackedScene" uid="uid://dvjxtf6l4ftx1" path="res://player/arm/anatomy_-_male_arm.glb" id="2_yqo18"]
@@ -11,14 +11,14 @@
 [ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass_shader/glass_mat.tres" id="9_4qo3k"]
 [ext_resource type="Texture2D" uid="uid://d0f25fnfbbdg" path="res://office/RicardoTex1.jpg" id="10_v8ou4"]
 [ext_resource type="PackedScene" uid="uid://xhxwfd43olgf" path="res://office/table/OffTable.tscn" id="11_vg8bj"]
-[ext_resource type="PackedScene" uid="uid://do7t5y2fmpuik" path="res://pop_cat/gabriel.tscn" id="12_pkntf"]
-[ext_resource type="PackedScene" uid="uid://8jk288s6fb2r" path="res://microphone/vintage_microphone.glb" id="13_x0eyg"]
-[ext_resource type="Script" path="res://radio/Radio.cs" id="14_hjsw5"]
-[ext_resource type="PackedScene" uid="uid://b6dgq7thgy31w" path="res://radio/grundig_radio_fr-250_free_am_fm_sw.glb" id="15_8uuc1"]
-[ext_resource type="AudioStream" uid="uid://dhuu4n026cvpu" path="res://radio/arabian.ogg" id="16_oebsy"]
-[ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://retro_light/retro_light.glb" id="17_xbhay"]
+[ext_resource type="PackedScene" uid="uid://do7t5y2fmpuik" path="res://office/pop_cat/gabriel.tscn" id="12_pkntf"]
+[ext_resource type="PackedScene" uid="uid://8jk288s6fb2r" path="res://office/microphone/vintage_microphone.glb" id="13_x0eyg"]
+[ext_resource type="Script" path="res://office/radio/Radio.cs" id="14_hjsw5"]
+[ext_resource type="PackedScene" uid="uid://b6dgq7thgy31w" path="res://office/radio/grundig_radio_fr-250_free_am_fm_sw.glb" id="15_8uuc1"]
+[ext_resource type="AudioStream" uid="uid://dhuu4n026cvpu" path="res://office/radio/arabian.ogg" id="16_oebsy"]
+[ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://office/retro_light/retro_light.glb" id="17_xbhay"]
 [ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://chair/chair.glb" id="18_gjll4"]
-[ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://Speakers/speakers_low_poly1.glb" id="19_sw1nb"]
+[ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://office/speakers/speakers_low_poly1.glb" id="19_sw1nb"]
 [ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://office/estadioHD.png" id="20_j7rmk"]
 [ext_resource type="PackedScene" uid="uid://bqweb6hhnjn8a" path="res://ricbedroom/phone/nokia_6230.glb" id="21_t0ml1"]
 [ext_resource type="Texture2D" uid="uid://e8k054gwup0q" path="res://ricbedroom/250076675.jpg" id="22_sfgyv"]
@@ -31,13 +31,14 @@
 [ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://ricbedroom/shirts/fcporto.glb" id="29_8am4e"]
 [ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://ricbedroom/wood_clothes_hanger.glb" id="30_6ivr0"]
 [ext_resource type="ArrayMesh" uid="uid://rmmkw3bw7vso" path="res://ricbedroom/12222_Cat_v1_l3.obj" id="31_l4nix"]
-[ext_resource type="PackedScene" uid="uid://pdqmwrorx1u" path="res://setup simao/gaming_room.glb" id="32_nq5tk"]
-[ext_resource type="PackedScene" uid="uid://b7lxvh4wds88l" path="res://setup simao/mechanical_keyboard.glb" id="33_dgesg"]
-[ext_resource type="PackedScene" uid="uid://cgg6ivjn1m0k2" path="res://setup simao/free_gaming_pc.glb" id="33_paq01"]
-[ext_resource type="PackedScene" uid="uid://bj1aa6wncnlxh" path="res://setup simao/mouse.glb" id="34_4uylr"]
-[ext_resource type="PackedScene" uid="uid://d1yq5xqn4s050" path="res://setup simao/ultrawide_monitor.glb" id="35_fbvgy"]
-[ext_resource type="PackedScene" uid="uid://e5ru1cmfwlbn" path="res://setup simao/computer_desk.glb" id="37_n4yqu"]
-[ext_resource type="PackedScene" uid="uid://pul44eescq5b" path="res://setup simao/msi-_mousepad.glb" id="38_j7cng"]
+[ext_resource type="PackedScene" uid="uid://b7lxvh4wds88l" path="res://simbedroom/mechanical_keyboard.glb" id="33_dgesg"]
+[ext_resource type="Texture2D" uid="uid://deklb3n6s8r4i" path="res://simbedroom/brawlstarscringe.jpg" id="36_mhkvt"]
+[ext_resource type="PackedScene" uid="uid://dteexo2fu8iva" path="res://simbedroom/psx_monitor.glb" id="37_l26fo"]
+[ext_resource type="PackedScene" uid="uid://e5ru1cmfwlbn" path="res://simbedroom/computer_desk.glb" id="37_n4yqu"]
+[ext_resource type="Texture2D" uid="uid://bh2k2om35qx5q" path="res://simbedroom/brawlstarscringe_normal.png" id="37_ypndd"]
+[ext_resource type="PackedScene" uid="uid://df3dyq8a84wol" path="res://simbedroom/office_pc.glb" id="38_cq0iu"]
+[ext_resource type="PackedScene" uid="uid://h34v8eadoso7" path="res://simbedroom/razer_mouse.glb" id="38_gr78d"]
+[ext_resource type="PackedScene" uid="uid://cc2kuwkfna1qn" path="res://simbedroom/bed.glb" id="39_0a57a"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
@@ -71,6 +72,17 @@ albedo_texture = ExtResource("22_sfgyv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slvaq"]
 albedo_texture = ExtResource("23_1k236")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifq2e"]
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = ExtResource("36_mhkvt")
+normal_texture = ExtResource("37_ypndd")
+uv1_scale = Vector3(0.745, 0.745, 0.745)
+texture_filter = 1
+texture_repeat = false
+disable_receive_shadows = true
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
@@ -263,66 +275,71 @@ material_override = SubResource("StandardMaterial3D_3j4l3")
 calculate_tangents = false
 size = Vector3(6.9545, 4.93359, 1)
 
-[node name="richards bedroom" type="Node3D" parent="."]
+[node name="RicBedroom" type="Node3D" parent="."]
 transform = Transform3D(0.763888, 0, 0, 0, 1, 0, 0, 0, 0.640618, -67.5965, 1.96689, 57.0875)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="richards bedroom"]
-transform = Transform3D(1, 0, 0, 0, 0.999995, 0, 0, 0, 0.999992, -1.85373, 4.21288, 14.9138)
+[node name="CSGBox3D" type="CSGBox3D" parent="RicBedroom"]
+transform = Transform3D(1, 0, 0, 0, 0.999979, 0, 0, 0, 0.999967, -1.85373, 1.96583, 14.9138)
 material_override = ExtResource("8_klpys")
-size = Vector3(0.001, 12.6501, 10.7711)
+size = Vector3(0.001, 4.36046, 10.7711)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="richards bedroom"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999992, 0, -0.999988, 0, -4.37109e-08, -7.13696, 4.37433, 20.0641)
+[node name="CSGBox3D2" type="CSGBox3D" parent="RicBedroom"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999968, 0, -0.999951, 0, -4.37095e-08, -6.86639, 1.97024, 20.0641)
 material_override = ExtResource("8_klpys")
-size = Vector3(0.001, 12.1887, 10.72)
+size = Vector3(0.001, 4.37159, 10.1788)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="richards bedroom"]
-transform = Transform3D(1, 0, 0, 0, 0.999998, 0, 0, 0, 0.999997, -11.946, 4.46361, 9.15601)
+[node name="CSGBox3D3" type="CSGBox3D" parent="RicBedroom"]
+transform = Transform3D(1, 0, 0, 0, 0.999978, 0, 0, 0, 0.999965, -11.946, 1.96692, 14.9468)
 material_override = ExtResource("8_klpys")
-size = Vector3(0.001, 12.1486, 22.2868)
+size = Vector3(0.001, 4.44544, 10.705)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="richards bedroom"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="RicBedroom"]
 transform = Transform3D(1, 0, 0, 0, 0.99998, 0, 0, 0, 0.999968, -6.89544, -0.157724, 14.8535)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(10.0927, 0.001, 10.4385)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="richards bedroom"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="RicBedroom"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999972, 0, -0.999958, 0, -4.37098e-08, -6.8517, 1.93517, 9.65553)
+material_override = ExtResource("8_klpys")
+size = Vector3(0.001, 4.49605, 10.2648)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="RicBedroom"]
+transform = Transform3D(1, 0, 0, 0, 0.99998, 0, 0, 0, 0.999968, -6.89544, 4.1127, 14.8535)
+material_override = ExtResource("7_tlfhq")
+size = Vector3(10.0927, 0.001, 10.4385)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="RicBedroom"]
 transform = Transform3D(1.20968, 0, 0, 0, -1.1861, 0, 0, 0, 1.20968, -7.27361, 1.6512, 20.0619)
 material_override = SubResource("StandardMaterial3D_gk5iv")
 size = Vector3(1, 1, 0.001)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="richards bedroom"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999991, 0, -0.999987, 0, -4.37109e-08, -6.8517, 4.46361, 9.65552)
-material_override = ExtResource("8_klpys")
-size = Vector3(0.001, 12.1486, 10.2648)
-
-[node name="Bed" type="Node3D" parent="richards bedroom"]
+[node name="Bed" type="Node3D" parent="RicBedroom"]
 transform = Transform3D(0.255654, 0, 0, 0, 1, 0, 0, 0, 0.276422, -7.29829, -0.00508499, 16.835)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="richards bedroom/Bed"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="RicBedroom/Bed"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0941467, 0.0652421, 5.55969)
 size = Vector3(9.18555, 0.683972, 11.2663)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="richards bedroom/Bed"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="RicBedroom/Bed"]
 transform = Transform3D(-4.37114e-08, 0, 0.948463, 0, 1.0702, 0, 1, 0, 4.14586e-08, 0.0214539, 0.0551755, 3.82846)
 material_override = SubResource("StandardMaterial3D_slvaq")
 size = Vector3(9.57422, 0.712505, 10.3606)
 
-[node name="Sketchfab_Scene4" parent="richards bedroom/Bed" instance=ExtResource("25_vl4j8")]
+[node name="Sketchfab_Scene4" parent="RicBedroom/Bed" instance=ExtResource("25_vl4j8")]
 transform = Transform3D(0.00518582, 0, 0, 0, 0.000846007, 3.26516e-05, 0, -0.000128918, 0.00280427, 3.11789, 0.409708, 9.51263)
 
-[node name="Sketchfab_Scene5" parent="richards bedroom/Bed" instance=ExtResource("25_vl4j8")]
+[node name="Sketchfab_Scene5" parent="RicBedroom/Bed" instance=ExtResource("25_vl4j8")]
 transform = Transform3D(0.00368543, -7.31046e-08, 1.57419e-06, 3.66024e-13, 0.000845919, 3.23138e-05, -0.000206861, -0.00013051, 0.00280982, -1.59851, 0.423008, 9.20209)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="richards bedroom/Bed"]
+[node name="CSGBox3D" type="CSGBox3D" parent="RicBedroom/Bed"]
 transform = Transform3D(1.00004, 0, 0, 0, 1.00004, 0, 0, 0, 1.00004, -0.125275, 0.359459, 11.3564)
 material_override = ExtResource("24_3wr48")
 size = Vector3(9.20021, 1.02161, 0.503754)
 
-[node name="Sketchfab_Scene" parent="richards bedroom/Bed" instance=ExtResource("25_ctrwk")]
+[node name="Sketchfab_Scene" parent="RicBedroom/Bed" instance=ExtResource("25_ctrwk")]
 transform = Transform3D(-0.0105874, 0, 0.0396799, 0, 0.01, 0, -0.0365707, 0, -0.0114875, -6.45578, 0.77553, 9.21222)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="richards bedroom/Bed/Sketchfab_Scene"]
+[node name="OmniLight3D" type="OmniLight3D" parent="RicBedroom/Bed/Sketchfab_Scene"]
 transform = Transform3D(147.101, 0, 7.70456, 0, 99.9999, 0, 4.19617e-05, 0, 124.989, -6.07373, 10.2709, 46.4355)
 light_color = Color(0.959505, 0.757356, 0.684217, 1)
 light_energy = 3.909
@@ -330,66 +347,100 @@ light_volumetric_fog_energy = 0.0
 light_size = 0.035
 light_bake_mode = 1
 shadow_enabled = true
-omni_range = 3.373
-omni_attenuation = 0.697
+omni_range = 6.016
+omni_attenuation = 0.349
 
-[node name="Sketchfab_Scene2" parent="richards bedroom" instance=ExtResource("21_t0ml1")]
+[node name="Sketchfab_Scene2" parent="RicBedroom" instance=ExtResource("21_t0ml1")]
 transform = Transform3D(3.00873, -2.5212, 0.120661, 0, -0.143411, -2.99657, 3.00979, 3.58359, -0.171505, -5.36787, 0.583342, 19.2731)
 
-[node name="Sketchfab_Scene" parent="richards bedroom" instance=ExtResource("24_swnny")]
+[node name="Sketchfab_Scene" parent="RicBedroom" instance=ExtResource("24_swnny")]
 transform = Transform3D(-0.452165, 0, -6.82751e-08, 0, 0.303615, 0, 6.82751e-08, 0, -0.452165, -5.64702, -0.127028, 19.4984)
 
-[node name="Sketchfab_Scene3" parent="richards bedroom" instance=ExtResource("24_swnny")]
+[node name="Sketchfab_Scene3" parent="RicBedroom" instance=ExtResource("24_swnny")]
 transform = Transform3D(-0.452165, 0, -6.82751e-08, 0, 0.303615, 0, 6.8275e-08, 0, -0.452165, -9.09873, -0.127028, 19.4984)
 
-[node name="Sketchfab_Scene4" parent="richards bedroom" instance=ExtResource("28_y4wc8")]
+[node name="Sketchfab_Scene4" parent="RicBedroom" instance=ExtResource("28_y4wc8")]
 transform = Transform3D(-9.89263e-10, 0, 0.034942, 0, 0.00903342, 0, -0.0226317, 0, -1.52736e-09, -11.1795, -0.031867, 18.8221)
 
-[node name="fcporto" parent="richards bedroom/Sketchfab_Scene4" instance=ExtResource("29_8am4e")]
+[node name="fcporto" parent="RicBedroom/Sketchfab_Scene4" instance=ExtResource("29_8am4e")]
 transform = Transform3D(-2.52841e-06, 0, -68.9737, 0, 110.7, 0, 37.4647, 0, -1.95275e-06, -4.53955, 20.0609, 8.93823)
 
-[node name="cruzeta" parent="richards bedroom/Sketchfab_Scene4" instance=ExtResource("30_6ivr0")]
+[node name="cruzeta" parent="RicBedroom/Sketchfab_Scene4" instance=ExtResource("30_6ivr0")]
 transform = Transform3D(1.13413e-08, 0, -0.631607, 0, 0.61826, 0, -0.16805, 0, -1.78818e-08, 18.4287, 85.6285, -0.311523)
 
-[node name="GATO" type="MeshInstance3D" parent="richards bedroom"]
+[node name="GATO" type="MeshInstance3D" parent="RicBedroom"]
 transform = Transform3D(-0.0168685, -0.000985566, -0.00011321, 4.45541e-05, 0.000800741, 0.00960515, -0.00172647, 0.00846682, 0.0010632, -9.62573, -0.114001, 17.5635)
 mesh = ExtResource("31_l4nix")
 skeleton = NodePath("../Sketchfab_Scene4")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="richards bedroom"]
-transform = Transform3D(1, 0, 0, 0, 0.99998, 0, 0, 0, 0.999968, -6.89544, 4.1127, 14.8535)
+[node name="SimonBedroom" type="Node3D" parent="."]
+transform = Transform3D(0.764, 0, 0, 0, 0.764, 0, 0, 0, 0.764, -83.5648, 1.967, 57.088)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="SimonBedroom"]
+transform = Transform3D(1, 0, 0, 0, 0.999979, 0, 0, 0, 0.999967, -0.0375519, 1.05058, 3.97311)
+material_override = ExtResource("8_klpys")
+size = Vector3(0.001, 4.36046, 10.7711)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="SimonBedroom"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999968, 0, -0.999951, 0, -4.37095e-08, -5.05022, 1.05498, 9.12342)
+material_override = ExtResource("8_klpys")
+size = Vector3(0.001, 4.37159, 10.1788)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="SimonBedroom"]
+transform = Transform3D(1, 0, 0, 0, 0.999978, 0, 0, 0, 0.999965, -10.1298, 1.05166, 4.00616)
+material_override = ExtResource("8_klpys")
+size = Vector3(0.001, 4.44544, 10.705)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="SimonBedroom"]
+transform = Transform3D(1, 0, 0, 0, 0.99998, 0, 0, 0, 0.999968, -5.07928, -1.07298, 3.91283)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(10.0927, 0.001, 10.4385)
 
-[node name="quarto simon" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.617, 6.9659, 49.0634)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="quarto simon"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5693, 0, 9.47998)
+[node name="CSGBox3D6" type="CSGBox3D" parent="SimonBedroom"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999972, 0, -0.999958, 0, -4.37098e-08, -5.03552, 1.01991, -1.28515)
 material_override = ExtResource("8_klpys")
-size = Vector3(24.1385, 1, 19.96)
+size = Vector3(0.001, 4.49605, 10.2648)
 
-[node name="preset" type="Node3D" parent="quarto simon"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="SimonBedroom"]
+transform = Transform3D(1.20968, 0, 0, 0, -1.1861, 0, 0, 0, 1.20968, -5.45743, 0.735942, 9.12122)
+material_override = SubResource("StandardMaterial3D_gk5iv")
+size = Vector3(1, 1, 0.001)
 
-[node name="Sketchfab_Scene" parent="quarto simon/preset" instance=ExtResource("32_nq5tk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.671, -7.93523, 18.8591)
+[node name="CSGBox3D8" type="CSGBox3D" parent="SimonBedroom"]
+transform = Transform3D(1, 0, 0, 0, 0.99998, 0, 0, 0, 0.999968, -5.18379, 3.11606, 4.03948)
+material_override = ExtResource("7_tlfhq")
+size = Vector3(10.4227, 0.001, 10.7412)
 
-[node name="alone ones" type="Node3D" parent="quarto simon"]
+[node name="bed" parent="SimonBedroom" instance=ExtResource("39_0a57a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.56744, -1.06403, 3.00519)
 
-[node name="pc" parent="quarto simon/alone ones" instance=ExtResource("33_paq01")]
-transform = Transform3D(0.243695, 0, 0.104953, 0, 0.246376, 0, -0.0944056, 0, 0.270922, -3.96425, 1.65284, 14.226)
+[node name="teclado" parent="SimonBedroom" instance=ExtResource("33_dgesg")]
+transform = Transform3D(0.0084918, 0, -0.00231208, 0, 0.010084, 0, 0.00261339, 0, 0.00751272, -8.41881, -0.12745, 2.3544)
 
-[node name="teclado" parent="quarto simon/alone ones" instance=ExtResource("33_dgesg")]
-transform = Transform3D(0.0084918, 0, -0.00231208, 0, 0.010084, 0, 0.00261339, 0, 0.00751272, -4.73367, 1.48101, 14.3986)
+[node name="desk" parent="SimonBedroom" instance=ExtResource("37_n4yqu")]
+transform = Transform3D(0.825592, 0, 0, 0, 1.3085, 0, 0, 0, 1.03402, -8.28882, -1.09902, 2.14861)
 
-[node name="mouse" parent="quarto simon/alone ones" instance=ExtResource("34_4uylr")]
-transform = Transform3D(0.0588311, 0, 0, 0, 0.0547855, 0, 0, 0, 0.0456719, -4.30576, 1.48443, 14.3855)
+[node name="monitor" parent="SimonBedroom" instance=ExtResource("37_l26fo")]
+transform = Transform3D(1.29167, 0, 0, 0, 1, 0, 0, 0, 1, -8.24253, -0.163705, 1.99158)
 
-[node name="monitor" parent="quarto simon/alone ones" instance=ExtResource("35_fbvgy")]
-transform = Transform3D(0.0715994, 0, 0, 0, 0.0671132, 0, 0, 0, 0.0489008, -4.58479, 1.72867, 14.0067)
+[node name="mousepad" type="CSGBox3D" parent="SimonBedroom"]
+transform = Transform3D(4.37114e-08, 0, -1, 0, -1, 0, 1, 0, 4.37114e-08, -8.28038, -0.139511, 2.27412)
+calculate_tangents = false
+size = Vector3(0.373869, 0.00695801, 0.675728)
+material = SubResource("StandardMaterial3D_ifq2e")
 
-[node name="desk" parent="quarto simon/alone ones" instance=ExtResource("37_n4yqu")]
-transform = Transform3D(1.03912, 0, 0, 0, 1.3085, 0, 0, 0, 1.03402, -4.60368, 0.509441, 14.1928)
+[node name="pc" parent="SimonBedroom" instance=ExtResource("38_cq0iu")]
+transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, -8.01189, -1.91817, 2.10433)
 
-[node name="mousepad" parent="quarto simon/alone ones" instance=ExtResource("38_j7cng")]
-transform = Transform3D(0.178899, 0, 0, 0, 0.000911148, 0, 0, 0, 0.167375, -4.59991, 1.47485, 14.3545)
+[node name="Sketchfab_Scene" parent="SimonBedroom" instance=ExtResource("38_gr78d")]
+transform = Transform3D(-4.37114e-11, 0, 0.001, 0, 0.001, 0, -0.001, 0, -4.37114e-11, -8.03514, -0.136305, 2.34007)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SimonBedroom"]
+transform = Transform3D(1.3089, 0, 4.49375e-08, 0, 1.3089, 0, -4.49375e-08, 0, 1.3089, -6.20786, 0.454396, 2.77521)
+light_color = Color(0.959505, 0.757356, 0.684217, 1)
+light_energy = 3.909
+light_volumetric_fog_energy = 0.0
+light_size = 0.035
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
