@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=49 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_ql2up"]
 [ext_resource type="PackedScene" uid="uid://dvjxtf6l4ftx1" path="res://player/arm/anatomy_-_male_arm.glb" id="2_yqo18"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://ricbedroom/wood_clothes_hanger.glb" id="30_6ivr0"]
 [ext_resource type="ArrayMesh" uid="uid://rmmkw3bw7vso" path="res://ricbedroom/12222_Cat_v1_l3.obj" id="31_l4nix"]
 [ext_resource type="PackedScene" uid="uid://b7lxvh4wds88l" path="res://simbedroom/mechanical_keyboard.glb" id="33_dgesg"]
+[ext_resource type="Texture2D" uid="uid://cwq3hhssknmvm" path="res://RobloxLight_2023.webp" id="36_ee1mp"]
 [ext_resource type="Texture2D" uid="uid://deklb3n6s8r4i" path="res://simbedroom/brawlstarscringe.jpg" id="36_mhkvt"]
 [ext_resource type="PackedScene" uid="uid://dteexo2fu8iva" path="res://simbedroom/psx_monitor.glb" id="37_l26fo"]
 [ext_resource type="PackedScene" uid="uid://e5ru1cmfwlbn" path="res://simbedroom/computer_desk.glb" id="37_n4yqu"]
@@ -72,6 +73,12 @@ albedo_texture = ExtResource("22_sfgyv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slvaq"]
 albedo_texture = ExtResource("23_1k236")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ook6y"]
+shading_mode = 0
+specular_mode = 2
+albedo_texture = ExtResource("36_ee1mp")
+uv1_scale = Vector3(-1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifq2e"]
 specular_mode = 2
@@ -412,25 +419,31 @@ material_override = ExtResource("7_tlfhq")
 size = Vector3(10.4227, 0.001, 10.7412)
 
 [node name="bed" parent="SimonBedroom" instance=ExtResource("39_0a57a")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.56744, -1.06403, 3.00519)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.28995, -1.06403, 0.80323)
 
 [node name="teclado" parent="SimonBedroom" instance=ExtResource("33_dgesg")]
-transform = Transform3D(0.0084918, 0, -0.00231208, 0, 0.010084, 0, 0.00261339, 0, 0.00751272, -8.41881, -0.12745, 2.3544)
+transform = Transform3D(0.0084918, 0, -0.00231208, 0, 0.010084, 0, 0.00261339, 0, 0.00751272, -9.14132, -0.12745, 0.152443)
 
 [node name="desk" parent="SimonBedroom" instance=ExtResource("37_n4yqu")]
-transform = Transform3D(0.825592, 0, 0, 0, 1.3085, 0, 0, 0, 1.03402, -8.28882, -1.09902, 2.14861)
+transform = Transform3D(0.825592, 0, 0, 0, 1.3085, 0, 0, 0, 1.03402, -9.01133, -1.09902, -0.0533524)
 
 [node name="monitor" parent="SimonBedroom" instance=ExtResource("37_l26fo")]
-transform = Transform3D(1.29167, 0, 0, 0, 1, 0, 0, 0, 1, -8.24253, -0.163705, 1.99158)
+transform = Transform3D(1.0597, 0, 0, 0, 1, 0, 0, 0, 1, -8.96505, -0.163705, -0.210373)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SimonBedroom/monitor"]
+transform = Transform3D(0.774191, 0, 0, 0, 1, 0, 0, 0, 1, -0.00550079, 0.325033, 0.00106812)
+material_override = SubResource("StandardMaterial3D_ook6y")
+size = Vector3(0.867615, 0.324524, 0.0185547)
 
 [node name="mousepad" type="CSGBox3D" parent="SimonBedroom"]
-transform = Transform3D(4.37114e-08, 0, -1, 0, -1, 0, 1, 0, 4.37114e-08, -8.28038, -0.139511, 2.27412)
+transform = Transform3D(4.37114e-08, 0, -1, 0, -1, 0, 1, 0, 4.37114e-08, -9.00289, -0.139511, 0.0721588)
+transparency = 0.81
 calculate_tangents = false
 size = Vector3(0.373869, 0.00695801, 0.675728)
 material = SubResource("StandardMaterial3D_ifq2e")
 
 [node name="pc" parent="SimonBedroom" instance=ExtResource("38_cq0iu")]
-transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, -8.01189, -1.91817, 2.10433)
+transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, -8.7344, -1.91817, -0.0976257)
 
 [node name="Sketchfab_Scene" parent="SimonBedroom" instance=ExtResource("38_gr78d")]
 transform = Transform3D(-4.37114e-11, 0, 0.001, 0, 0.001, 0, -0.001, 0, -4.37114e-11, -8.03514, -0.136305, 2.34007)
@@ -444,3 +457,7 @@ light_size = 0.035
 light_bake_mode = 1
 shadow_enabled = true
 omni_range = 12.0
+
+[node name="Camera3D" type="Camera3D" parent="SimonBedroom"]
+transform = Transform3D(1.30359, 0.016453, -0.116642, 0.00764884, 1.28151, 0.266249, 0.117548, -0.26585, 1.27622, -8.49742, 1.32862, 3.93977)
+fov = 87.8
