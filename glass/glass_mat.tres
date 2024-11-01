@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://pte74tu1bb1a"]
 
-[ext_resource type="Shader" uid="uid://rt0ei6ibntkt" path="res://glass_shader/glass_shader_vs.tres" id="1_ax7of"]
+[ext_resource type="Shader" uid="uid://rt0ei6ibntkt" path="res://glass/glass_shader_vs.tres" id="1_ax7of"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nnlt7"]
 frequency = 0.0015

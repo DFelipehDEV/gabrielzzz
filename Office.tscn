@@ -8,7 +8,7 @@
 [ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://office/phone/ui/FlashlightIcon.tres" id="6_6y5dq"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="7_tlfhq"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="8_klpys"]
-[ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass_shader/glass_mat.tres" id="9_4qo3k"]
+[ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass/glass_mat.tres" id="9_4qo3k"]
 [ext_resource type="Texture2D" uid="uid://d0f25fnfbbdg" path="res://office/RicardoTex1.jpg" id="10_v8ou4"]
 [ext_resource type="PackedScene" uid="uid://xhxwfd43olgf" path="res://office/table/OffTable.tscn" id="11_vg8bj"]
 [ext_resource type="PackedScene" uid="uid://do7t5y2fmpuik" path="res://office/pop_cat/gabriel.tscn" id="12_pkntf"]
