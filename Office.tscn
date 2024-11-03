@@ -112,7 +112,7 @@ transform = Transform3D(-0.940223, 0, -0.34056, 0, 1, 0, 0.34056, 0, -0.940223, 
 cameras = [NodePath("Camera"), NodePath("../RicBedroom/RicCam"), NodePath("../SimonBedroom/SimCam")]
 
 [node name="Phone" type="Node3D" parent="Player"]
-transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 2.98023e-07, 4.29861e-07, 0.999999, 0.100166, 0, -0.276538)
+transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 3.27826e-07, 4.29861e-07, 0.999999, 0.067517, 0, -0.186399)
 script = ExtResource("3_orjrp")
 
 [node name="Flash" type="SpotLight3D" parent="Player/Phone"]
