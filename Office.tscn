@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=52 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_ql2up"]
 [ext_resource type="Script" path="res://player/Phone.cs" id="3_orjrp"]
@@ -7,7 +7,10 @@
 [ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://office/phone/ui/FlashlightIcon.tres" id="6_6y5dq"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="7_tlfhq"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="8_klpys"]
+[ext_resource type="Texture2D" uid="uid://ck3kglw2fxq71" path="res://office/web/spiderweb.png" id="8_pfyif"]
 [ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass/glass_mat.tres" id="9_4qo3k"]
+[ext_resource type="PackedScene" uid="uid://bynsbt2jagfue" path="res://office/key/key_with_tag.glb" id="10_0d7mi"]
+[ext_resource type="PackedScene" uid="uid://d7dsrbal2sia" path="res://office/bottle/water_bottles.glb" id="10_arnd3"]
 [ext_resource type="Texture2D" uid="uid://d0f25fnfbbdg" path="res://office/RicardoTex1.jpg" id="10_v8ou4"]
 [ext_resource type="PackedScene" uid="uid://xhxwfd43olgf" path="res://office/table/OffTable.tscn" id="11_vg8bj"]
 [ext_resource type="PackedScene" uid="uid://do7t5y2fmpuik" path="res://office/pop_cat/gabriel.tscn" id="12_pkntf"]
@@ -112,14 +115,14 @@ transform = Transform3D(-0.940223, 0, -0.34056, 0, 1, 0, 0.34056, 0, -0.940223, 
 cameras = [NodePath("Camera"), NodePath("../RicBedroom/RicCam"), NodePath("../SimonBedroom/SimCam")]
 
 [node name="Phone" type="Node3D" parent="Player"]
-transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 3.27826e-07, 4.29861e-07, 0.999999, 0.067517, 0, -0.186399)
+transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 3.27826e-07, 4.29861e-07, 0.999999, 0.0793167, -0.0236454, -0.156882)
 script = ExtResource("3_orjrp")
 
 [node name="Flash" type="SpotLight3D" parent="Player/Phone"]
 transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0271126, 0.0495281, -0.00421333)
 visible = false
 spot_range = 11.91
-spot_angle = 25.0
+spot_angle = 27.0
 
 [node name="PhoneModel" parent="Player/Phone" instance=ExtResource("4_q5b7p")]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
@@ -133,15 +136,15 @@ calculate_tangents = false
 size = Vector3(0.0640625, 0.133057, 0.001)
 
 [node name="FlashIcon" type="CSGBox3D" parent="Player/Phone"]
-transform = Transform3D(1, -2.56506e-12, 0, -4.68923e-11, 1, 0, 2.68221e-07, -7.10543e-15, 1, -0.024199, -0.0540457, 0.00367165)
+transform = Transform3D(0.999998, -5.52447e-12, -2.98023e-07, -4.81393e-11, 1, -1.62004e-12, 2.6226e-06, 1.45661e-12, 1, -0.0244471, -0.0540457, 0.0038209)
 cast_shadow = 0
 gi_mode = 0
 calculate_tangents = false
-size = Vector3(0.00999655, 0.0107786, 0.001)
+size = Vector3(0.01, 0.01, 0.001)
 material = ExtResource("6_6y5dq")
 
 [node name="Camera" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 4.19095e-09, 0, 1, 0, -4.19095e-09, 0, 1, -0.0922749, 8.29697e-05, 0.000340462)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.092275, 8.29697e-05, 0.000340462)
 current = true
 fov = 87.756
 far = 86.41
@@ -149,106 +152,112 @@ far = 86.41
 [node name="AudioListener3D" type="AudioListener3D" parent="Player"]
 current = true
 
-[node name="Room" type="Node3D" parent="."]
+[node name="Office" type="Node3D" parent="."]
 transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 13.5573, -5)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Room"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Office"]
 transform = Transform3D(-4.37114e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.79409e-07, -0.114916, -1.34496, -1.92733)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0460968, 1.02271)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Room"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Office"]
 transform = Transform3D(-4.38136e-08, -4.62526, 1.04308e-06, 1.00235, -2.02179e-07, 0, 5.98133e-15, 8.23289e-07, 4.25976, -0.0926882, -1.79841, 0.955989)
 size = Vector3(0.0156367, 0.935059, 1.27132)
 material = ExtResource("8_klpys")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Room"]
-transform = Transform3D(-4.38138e-08, -4.62528, 8.51229e-07, 1.00235, -2.02179e-07, 0, 5.28744e-15, 1.45286e-06, 4.25976, 1.09453, 1.2376, 0.962305)
+[node name="CSGBox3D4" type="CSGBox3D" parent="Office"]
+transform = Transform3D(-4.38138e-08, -4.62528, 8.54954e-07, 1.00235, -2.02179e-07, 0, 5.31519e-15, 1.46031e-06, 4.25976, 1.09453, 0.860112, 0.962305)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(0.001, 9.35915, 1.27429)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Room"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Office"]
 transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -2.22586e-07, 0, 4.22269, 11.5768, -4.47269, -1.49905)
-material_override = ExtResource("7_tlfhq")
 size = Vector3(19.0515, 2.50513, 0.329361)
+material = ExtResource("7_tlfhq")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="Room"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="Office"]
 transform = Transform3D(-4.37114e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.79409e-07, -0.13662, 0.850031, -1.92733)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0460968, 1.02271)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="Room"]
+[node name="CSGBox3D8" type="CSGBox3D" parent="Office"]
 transform = Transform3D(1, 0, 1.08033e-07, 0, 4.61448, 0, -2.3935e-07, 0, 4.22274, -11.3882, -4.93571, -1.53949)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(18.2832, 2.70581, 0.30925)
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="Room"]
+[node name="CSGBox3D9" type="CSGBox3D" parent="Office"]
 transform = Transform3D(-3.07336e-07, 0, 4.22287, 0, 21.6973, 0, -4.22287, 0, -1.04308e-06, -0.131906, -0.245346, -1.76728)
 calculate_tangents = false
 size = Vector3(0.001, 0.0564942, 0.622529)
 material = ExtResource("9_4qo3k")
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="Room"]
+[node name="CSGBox3D10" type="CSGBox3D" parent="Office"]
 transform = Transform3D(-3.1665e-07, 0, 4.22287, 0, 21.2935, 0, -4.22287, 0, -1.05239e-06, -1.82759, -0.250607, -1.92733)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0598574, 0.221804)
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="Room"]
+[node name="CSGBox3D11" type="CSGBox3D" parent="Office"]
 transform = Transform3D(-3.39001e-07, 0, 4.22289, 0, 21.2935, 0, -4.22289, 0, -1.07475e-06, 1.56044, -0.181201, -1.94123)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0691743, 0.221804)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Room"]
-transform = Transform3D(0.0858433, 0, 5.61122e-08, 0, 0.0955173, 0, 2.91038e-09, 0, 0.360404, -1.79952, 0.0691023, -1.65943)
+[node name="CSGBox3D" type="CSGBox3D" parent="Office"]
+transform = Transform3D(0.0858433, 0, 5.61122e-08, 0, 0.0955173, 0, 2.82307e-09, 0, 0.360404, -1.68142, -0.143135, -1.65992)
 calculate_tangents = false
 size = Vector3(5.53862, 5.37366, 0.0169678)
 material = SubResource("StandardMaterial3D_pxoj7")
 
-[node name="Table" type="Node3D" parent="Room"]
-transform = Transform3D(1, 0, 4.65661e-09, 0, 1, 0, -4.65661e-09, 0, 1, -0.433648, -1.13712, -0.406054)
+[node name="Table" type="Node3D" parent="Office"]
+transform = Transform3D(1, 0, 5.58794e-09, 0, 1, 0, -5.58794e-09, 0, 1, -0.433052, -1.13712, -0.260842)
 
-[node name="vl0jbem_LOD1" parent="Room/Table" instance=ExtResource("11_vg8bj")]
+[node name="Bottle" parent="Office/Table" instance=ExtResource("10_arnd3")]
+transform = Transform3D(0.000765094, 0.00828961, 0.00864275, -0.0119474, -6.53674e-05, 0.00112033, 0.000821006, -0.0086763, 0.00824912, 0.533303, 0.144329, -0.419958)
+
+[node name="Key" parent="Office/Table" instance=ExtResource("10_0d7mi")]
+transform = Transform3D(-1.30745, -0.0216944, 1.67864, -0.097451, 1.38254, -0.0270854, -1.77671, -0.0598668, -1.2338, 0.307641, 0.114538, -0.327524)
+
+[node name="vl0jbem_LOD1" parent="Office/Table" instance=ExtResource("11_vg8bj")]
 transform = Transform3D(-1.78998, 0, -0.00410142, 0, 1, 0, 0.00734152, 0, -0.999992, 0.372588, -0.669497, -0.534783)
 
-[node name="Sketchfab_Scene2" parent="Room/Table" instance=ExtResource("12_pkntf")]
-transform = Transform3D(0.0315673, 0, -0.000266078, 0, 0.03, 0, -8.85073e-05, 0, 0.030027, 0.979239, 0.147174, -0.657752)
+[node name="Sketchfab_Scene2" parent="Office/Table" instance=ExtResource("12_pkntf")]
+transform = Transform3D(0.0249999, 0, 7.00939e-05, 0, 0.025, 0, -7.00939e-05, 0, 0.0249999, 1.16468, 0.125896, -0.658513)
 
-[node name="Microphone" type="Node3D" parent="Room/Table"]
-transform = Transform3D(-0.000488699, 0, -0.8, 0, 0.8, 0, 0.8, 0, -0.000488699, 0.310718, 0.147724, -0.331007)
+[node name="Microphone" type="Node3D" parent="Office/Table"]
+transform = Transform3D(-0.00042761, 0, -0.7, 0, 0.7, 0, 0.7, 0, -0.00042761, 0.310718, 0.147724, -0.331007)
 
-[node name="Sketchfab_Scene2" parent="Room/Table/Microphone" instance=ExtResource("13_x0eyg")]
-transform = Transform3D(-0.133332, 0, -0.000546856, 0, 0.133333, 0, 0.000546855, 0, -0.133332, 0.0583372, -0.0787535, -0.0401545)
+[node name="Sketchfab_Scene2" parent="Office/Table/Microphone" instance=ExtResource("13_x0eyg")]
+transform = Transform3D(-0.133332, 0, -0.000546856, 0, 0.133333, 0, 0.000546855, 0, -0.133332, 0.0583372, -0.0787544, -0.0401545)
 
-[node name="Radio" type="StaticBody3D" parent="Room/Table"]
-transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, -0.00341433, 0.154747, -0.832469)
+[node name="Radio" type="StaticBody3D" parent="Office/Table"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 0.0305323, 0.154747, -0.736014)
 script = ExtResource("14_hjsw5")
 
-[node name="Sketchfab_Scene" parent="Room/Table/Radio" instance=ExtResource("15_8uuc1")]
+[node name="Sketchfab_Scene" parent="Office/Table/Radio" instance=ExtResource("15_8uuc1")]
 transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0.0220671, 0)
 
-[node name="Radio" type="CollisionShape3D" parent="Room/Table/Radio"]
+[node name="Radio" type="CollisionShape3D" parent="Office/Table/Radio"]
 transform = Transform3D(1, 0, 5.45755e-07, 0, 1, 0, -5.45755e-07, 0, 1, 0.0054245, 0.0329809, 0.0659909)
 shape = SubResource("BoxShape3D_ypn88")
 
-[node name="MusicPlayer" type="AudioStreamPlayer3D" parent="Room/Table/Radio"]
+[node name="MusicPlayer" type="AudioStreamPlayer3D" parent="Office/Table/Radio"]
 stream = ExtResource("16_oebsy")
 volume_db = -27.769
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Room"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Office"]
 transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -5.37839e-07, 0, 4.22269, 11.1581, -4.30172, 2.70757)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(18.1845, 2.43103, 0.627663)
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="Room"]
+[node name="CSGBox3D12" type="CSGBox3D" parent="Office"]
 transform = Transform3D(1, 0, 5.21541e-08, 0, 4.61448, 0, -4.67524e-07, 0, 4.22269, -11.0908, -3.99209, 2.5355)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(17.6848, 2.29683, 0.535845)
 
-[node name="retro_light_-_oldclean_model" parent="Room" instance=ExtResource("17_xbhay")]
-transform = Transform3D(0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, 0.108636, -0.10132, -0.982644)
+[node name="retro_light_-_oldclean_model" parent="Office" instance=ExtResource("17_xbhay")]
+transform = Transform3D(0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, 0.108636, 0.0880795, -0.982644)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Room/retro_light_-_oldclean_model"]
-transform = Transform3D(250, 0, 8.58307e-06, 0, 250, 0, -8.58307e-06, 0, 250, -96.6776, -80.5161, 20.0294)
+[node name="OmniLight3D" type="OmniLight3D" parent="Office/retro_light_-_oldclean_model"]
+transform = Transform3D(250, 0, 8.82149e-06, 0, 250, 0, -8.82149e-06, 0, 250, -96.6775, -123.625, 20.0294)
 light_color = Color(0.959505, 0.757356, 0.684217, 1)
 light_energy = 3.909
 light_volumetric_fog_energy = 0.0
@@ -258,31 +267,50 @@ shadow_enabled = true
 omni_range = 1.87254
 omni_attenuation = 4.03
 
-[node name="Chair" type="Node3D" parent="Room"]
+[node name="Chair" type="Node3D" parent="Office"]
 
-[node name="Sketchfab_Scene2" parent="Room/Chair" instance=ExtResource("18_gjll4")]
-transform = Transform3D(-0.000999991, 0, -4.10142e-06, 0, 0.001, 0, 4.10142e-06, 0, -0.000999991, -0.505046, -1.36022, -0.253417)
+[node name="Sketchfab_Scene2" parent="Office/Chair" instance=ExtResource("18_gjll4")]
+transform = Transform3D(-0.000999991, 0, -4.10142e-06, 0, 0.001, 0, 4.10142e-06, 0, -0.000999991, -0.736256, -1.36022, 0.382617)
 
-[node name="Speakers" type="Node3D" parent="Room"]
-transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, -4.65661e-10, 0, 1, 0, -0.168727, 0)
+[node name="Speakers" type="Node3D" parent="Office"]
+transform = Transform3D(1, 0, 1.39698e-09, 0, 1, 0, -1.39698e-09, 0, 1, 0, -0.38029, 0)
 
-[node name="speakers_low_poly1" parent="Room/Speakers" instance=ExtResource("19_sw1nb")]
+[node name="speakers_low_poly1" parent="Office/Speakers" instance=ExtResource("19_sw1nb")]
 transform = Transform3D(0.274876, 0, -0.417664, 0, 0.5, 0, 0.417664, 0, 0.274876, -1.7435, 0.402699, -1.61656)
 
-[node name="speakers_low_poly2" parent="Room/Speakers" instance=ExtResource("19_sw1nb")]
+[node name="speakers_low_poly2" parent="Office/Speakers" instance=ExtResource("19_sw1nb")]
 transform = Transform3D(-0.279596, 0, -0.414519, 0, 0.5, 0, 0.414519, 0, -0.279596, 2.01493, 0.403, -1.26475)
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Room"]
-transform = Transform3D(0.906318, 0.422624, 7.68341e-08, -0.422618, 0.906308, 0, -4.72646e-08, -1.12923e-08, 1, 11.0093, -6.00294, 0.266999)
+[node name="CSGBox3D14" type="CSGBox3D" parent="Office"]
+transform = Transform3D(0.939701, 0.342021, 1.39698e-09, -0.342023, 0.939695, 0, 0, 0, 1, 11.3899, -5.19586, 0.265438)
 calculate_tangents = false
 size = Vector3(19.8506, 0.027832, 2.23)
 material = ExtResource("8_klpys")
 
-[node name="CSGBox3D15" type="CSGBox3D" parent="Room"]
-transform = Transform3D(0.906323, -0.422626, 1.19209e-07, 0.422618, 0.906308, 0, -7.38073e-08, 1.6531e-08, 1, -11.1122, -5.99452, 0.307771)
+[node name="CSGBox3D15" type="CSGBox3D" parent="Office"]
+transform = Transform3D(0.939701, -0.342021, 2.32831e-09, 0.342023, 0.939695, 0, 0, 0, 1, -11.585, -5.196, 0.265)
 calculate_tangents = false
-size = Vector3(19.7709, 0.0463984, 2.23)
+size = Vector3(19.8506, 0.027832, 2.23)
 material = ExtResource("8_klpys")
+
+[node name="Webs" type="Node3D" parent="Office"]
+transform = Transform3D(1, 0, 1.39698e-09, 0, 1, 0, -1.39698e-09, 0, 1, -0.0064282, 0.276292, -1.5673)
+
+[node name="Web" type="Sprite3D" parent="Office/Webs"]
+transform = Transform3D(-0.0119625, -0.0806175, 0.5907, 0.12231, -0.0123367, -0.00409053, 0.00930657, 0.0585097, 0.813033, -2.00766, -1.44181, 0.0774527)
+cast_shadow = 0
+gi_mode = 0
+shaded = true
+double_sided = false
+texture = ExtResource("8_pfyif")
+
+[node name="Web2" type="Sprite3D" parent="Office/Webs"]
+transform = Transform3D(0.096587, 0.0155608, -0.0514716, -0.0219523, 0.0895397, -0.149812, 0.00740043, 0.0625145, 0.227388, -0.462478, 0.339094, 1.2918)
+cast_shadow = 0
+gi_mode = 0
+shaded = true
+double_sided = false
+texture = ExtResource("8_pfyif")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-3.20465, -0.00183212, 0, 0.00229339, -2.56009, 0, 0, 0, 0.964976, 0.174544, 14.8095, 14.6208)
