@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://coc1glsj1410t"]
+[gd_scene load_steps=25 format=3 uid="uid://coc1glsj1410t"]
 
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="7_tlfhq"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="8_klpys"]
@@ -21,6 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://nlmmy7qvwf5o" path="res://chipped_paint_patch/Textures/T_ujzjdgmo_1K_N.jpg" id="24_2hpiy"]
 [ext_resource type="Texture2D" uid="uid://bjgeh4wnpshah" path="res://chipped_paint_patch/Textures/T_ujzjdgmo_1K_ORM.jpg" id="25_flugt"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_xp0vg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gp5kg"]
+material = ExtResource("7_tlfhq")
+size = Vector3(19, 10, 1.5)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8luy"]
 disable_ambient_light = true
 albedo_texture = ExtResource("10_v8ou4")
@@ -35,35 +41,57 @@ size = Vector3(0.2183, 0.156227, 0.0887451)
 
 [node name="Office" type="Node3D"]
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.28043, 0, 0, 0, 1, 0, 0, 0, 1.80874, 0, 8, 0)
+material_override = ExtResource("8_klpys")
+mesh = SubResource("PlaneMesh_xp0vg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.8854, 0.81619, 0, -3.96196, 2.24246, 0, 0, 0, 1.16741, 13.1204, 4.0336, 0)
+material_override = ExtResource("8_klpys")
+mesh = SubResource("PlaneMesh_xp0vg")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.8854, -0.81619, 0, 3.96196, 2.24246, 0, 0, 0, 1.16741, -13.1076, 4.03127, 0)
+material_override = ExtResource("8_klpys")
+mesh = SubResource("PlaneMesh_xp0vg")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.769, 5.61161, -1.90727)
+mesh = SubResource("BoxMesh_gp5kg")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.769, 5.61161, 1.90931)
+mesh = SubResource("BoxMesh_gp5kg")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7915, 5.61161, -1.90727)
+mesh = SubResource("BoxMesh_gp5kg")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7915, 5.61161, 1.90931)
+mesh = SubResource("BoxMesh_gp5kg")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(21.4224, 0, 0, 0, -1, 1.58125e-07, 0, -8.74228e-08, -1.80874, 0, 10.5857, 0)
+material_override = ExtResource("7_tlfhq")
+mesh = SubResource("PlaneMesh_xp0vg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.0858426, 0, 0.0014781, 0, 0.0955173, 0, -0.000352081, 0, -0.360399, 1.63976, 9.5338, 1.67485)
+calculate_tangents = false
+size = Vector3(6.35036, 6.55109, 0.0169678)
+material = SubResource("StandardMaterial3D_h8luy")
+
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.0173188, 0, -4.22262, 0, 21.2935, 0, 4.22262, 0, -0.0173181, 0.107011, 8.38821, 1.94262)
+transform = Transform3D(-0.0173188, 0, -4.22262, 0, 21.2935, 0, 4.22262, 0, -0.0173181, -0.0378273, 8.38821, 1.94202)
 material_override = ExtResource("7_tlfhq")
-size = Vector3(0.127686, 0.0460968, 1.02271)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(4.38133e-08, 4.62522, 0.01747, 1.00235, -2.02179e-07, 0, 1.79692e-10, 0.0189693, -4.25973, 0.0966084, 7.93476, -0.673478)
-size = Vector3(0.0156367, 0.935059, 1.27132)
-material = ExtResource("8_klpys")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(4.38135e-08, 4.62524, 0.0174702, 1.00235, -2.02179e-07, 0, 1.79693e-10, 0.0189688, -4.25973, -1.09057, 10.5933, -0.684663)
-material_override = ExtResource("7_tlfhq")
-size = Vector3(0.001, 9.35915, 1.27429)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.999992, 0, 0.017319, 0, 4.61448, 0, -0.0041012, 0, -4.22266, -11.5829, 5.50861, 1.73368)
-size = Vector3(19.0515, 2.39758, 0.329361)
-material = ExtResource("7_tlfhq")
+size = Vector3(0.127686, 0.0460968, 1.09131)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.0173188, 0, -4.22262, 0, 21.2935, 0, 4.22262, 0, -0.0173181, 0.128714, 10.5832, 1.94271)
+transform = Transform3D(-0.0173188, 0, -4.22262, 0, 21.2935, 0, 4.22262, 0, -0.0173181, -0.0235976, 10.5832, 1.94208)
 material_override = ExtResource("7_tlfhq")
-size = Vector3(0.127686, 0.0460968, 1.02271)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.999992, 0, 0.0173191, 0, 4.61448, 0, -0.00410118, 0, -4.22271, 11.3818, 5.51481, 1.86831)
-material_override = ExtResource("7_tlfhq")
-size = Vector3(18.2832, 2.3949, 0.30925)
+size = Vector3(0.127686, 0.0460968, 1.09485)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.0173195, 0, -4.22284, 0, 21.6973, 0, 4.22284, 0, -0.0173187, 0.124657, 9.48782, 1.78264)
@@ -79,15 +107,9 @@ material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0598574, 0.221804)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.0173195, 0, -4.22286, 0, 21.2935, 0, 4.22286, 0, -0.0173188, -1.56839, 9.55197, 1.94964)
+transform = Transform3D(-0.0173195, 0, -4.22286, 0, 21.2935, 0, 4.22286, 0, -0.0173188, -1.6992, 9.55197, 1.9491)
 material_override = ExtResource("7_tlfhq")
-size = Vector3(0.127686, 0.0691743, 0.221804)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.0858426, 0, 0.0014781, 0, 0.0955173, 0, -0.000352081, 0, -0.360399, 1.63976, 9.5338, 1.67485)
-calculate_tangents = false
-size = Vector3(6.35036, 6.55109, 0.0169678)
-material = SubResource("StandardMaterial3D_h8luy")
+size = Vector3(0.127686, 0.0691743, 0.283754)
 
 [node name="Table" type="Node3D" parent="."]
 transform = Transform3D(-0.999992, 0, 0.00410141, 0, 1, 0, -0.00410141, 0, -0.999992, 0.431979, 8.59605, 0.428052)
@@ -126,16 +148,6 @@ shape = SubResource("BoxShape3D_gpr8a")
 stream = ExtResource("16_oebsy")
 volume_db = -27.769
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.999992, 0, 0.017319, 0, 4.61448, 0, -0.00410088, 0, -4.22266, -11.1469, 5.55805, -2.47119)
-material_override = ExtResource("7_tlfhq")
-size = Vector3(18.1845, 2.37616, 0.627663)
-
-[node name="CSGBox3D12" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.999992, 0, 0.017319, 0, 4.61448, 0, -0.00410095, 0, -4.22266, 11.1011, 5.74108, -2.20787)
-material_override = ExtResource("7_tlfhq")
-size = Vector3(17.6848, 2.29683, 0.535845)
-
 [node name="retro_light_-_oldclean_model" parent="." instance=ExtResource("17_xbhay")]
 transform = Transform3D(-0.00399997, 0, 1.64057e-05, 0, 0.004, 0, -1.64057e-05, 0, -0.00399997, -0.112665, 9.82125, 0.822681)
 
@@ -164,18 +176,6 @@ transform = Transform3D(0.274876, 0, -0.417664, 0, 0.5, 0, 0.417664, 0, 0.274876
 
 [node name="speakers_low_poly2" parent="Speakers" instance=ExtResource("19_sw1nb")]
 transform = Transform3D(-0.279596, 0, -0.414519, 0, 0.5, 0, 0.414519, 0, -0.279596, 2.01603, 0.403, -0.997455)
-
-[node name="CSGBox3D14" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.939694, -0.342018, 0.00410142, -0.342023, 0.939695, 0, -0.00385411, -0.00140277, -0.999992, -11.3887, 4.53731, -0.0300274)
-calculate_tangents = false
-size = Vector3(19.8506, 0.027832, 2.23)
-material = ExtResource("8_klpys")
-
-[node name="CSGBox3D15" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.939694, 0.342018, 0.00410142, 0.342023, 0.939695, 0, -0.00385411, 0.00140277, -0.999992, 11.586, 4.53717, 0.06464)
-calculate_tangents = false
-size = Vector3(19.8506, 0.027832, 2.23)
-material = ExtResource("8_klpys")
 
 [node name="Webs" type="Node3D" parent="."]
 transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, -6.51926e-09, 10.0095, 1.84944)
