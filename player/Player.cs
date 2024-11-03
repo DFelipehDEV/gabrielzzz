@@ -21,7 +21,7 @@ public partial class Player : Node3D
 	public override void _Ready()
 	{
 		cam = GetNode<Camera3D>("Camera");
-		phone = GetNode<Phone>("Arm/Phone");
+		phone = GetNode<Phone>("Phone");
 	}
 
 	public override void _Process(double delta)

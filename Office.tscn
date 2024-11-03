@@ -1,7 +1,6 @@
-[gd_scene load_steps=51 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=49 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_ql2up"]
-[ext_resource type="PackedScene" uid="uid://dvjxtf6l4ftx1" path="res://player/arm/anatomy_-_male_arm.glb" id="2_yqo18"]
 [ext_resource type="Script" path="res://player/Phone.cs" id="3_orjrp"]
 [ext_resource type="PackedScene" uid="uid://clt1sfs0wbkeo" path="res://office/phone/iphone_x_lowpoly.glb" id="4_q5b7p"]
 [ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://office/phone/PhoneTex.tres" id="5_vqqyo"]
@@ -30,7 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://mgoyd6s3xou6" path="res://ricbedroom/rack/clothes_rack.glb" id="28_y4wc8"]
 [ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://ricbedroom/shirts/fcporto.glb" id="29_8am4e"]
 [ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://ricbedroom/wood_clothes_hanger.glb" id="30_6ivr0"]
-[ext_resource type="ArrayMesh" uid="uid://rmmkw3bw7vso" path="res://ricbedroom/12222_Cat_v1_l3.obj" id="31_l4nix"]
 [ext_resource type="PackedScene" uid="uid://b7lxvh4wds88l" path="res://simbedroom/mechanical_keyboard.glb" id="33_dgesg"]
 [ext_resource type="Texture2D" uid="uid://cwq3hhssknmvm" path="res://RobloxLight_2023.webp" id="36_ee1mp"]
 [ext_resource type="Texture2D" uid="uid://deklb3n6s8r4i" path="res://simbedroom/brawlstarscringe.jpg" id="36_mhkvt"]
@@ -113,23 +111,20 @@ environment = SubResource("Environment_bjlio")
 transform = Transform3D(-0.940223, 0, -0.34056, 0, 1, 0, 0.34056, 0, -0.940223, 0, 12.7964, -5.842)
 cameras = [NodePath("Camera"), NodePath("../RicBedroom/RicCam"), NodePath("../SimonBedroom/SimCam")]
 
-[node name="Arm" parent="Player" instance=ExtResource("2_yqo18")]
-transform = Transform3D(0.151645, -0.0779809, -0.104512, -0.115972, -0.0073669, -0.162777, 0.0596178, 0.184024, -0.0508037, 0.0696207, -0.0629864, -0.154881)
-
-[node name="Phone" type="Node3D" parent="Player/Arm"]
-transform = Transform3D(3.79113, -2.89929, 1.49044, -1.94952, -0.184168, 4.60058, -2.6128, -4.06941, -1.27009, -0.248135, -0.630844, -0.18161)
+[node name="Phone" type="Node3D" parent="Player"]
+transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 2.98023e-07, 4.29861e-07, 0.999999, 0.100166, 0, -0.276538)
 script = ExtResource("3_orjrp")
 
-[node name="Flash" type="SpotLight3D" parent="Player/Arm/Phone"]
+[node name="Flash" type="SpotLight3D" parent="Player/Phone"]
 transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0271126, 0.0495281, -0.00421333)
 visible = false
 spot_range = 11.91
 spot_angle = 25.0
 
-[node name="PhoneModel" parent="Player/Arm/Phone" instance=ExtResource("4_q5b7p")]
+[node name="PhoneModel" parent="Player/Phone" instance=ExtResource("4_q5b7p")]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
 
-[node name="Screen" type="CSGBox3D" parent="Player/Arm/Phone"]
+[node name="Screen" type="CSGBox3D" parent="Player/Phone"]
 transform = Transform3D(-1, 2.56506e-12, 5.36442e-07, 1.56284e-11, -1, 3.82272e-12, -2.68221e-07, 7.10543e-15, -1, -0.000854611, 0, 0.00364208)
 material_override = ExtResource("5_vqqyo")
 cast_shadow = 0
@@ -137,7 +132,7 @@ gi_mode = 0
 calculate_tangents = false
 size = Vector3(0.0640625, 0.133057, 0.001)
 
-[node name="FlashIcon" type="CSGBox3D" parent="Player/Arm/Phone"]
+[node name="FlashIcon" type="CSGBox3D" parent="Player/Phone"]
 transform = Transform3D(1, -2.56506e-12, 0, -4.68923e-11, 1, 0, 2.68221e-07, -7.10543e-15, 1, -0.024199, -0.0540457, 0.00367165)
 cast_shadow = 0
 gi_mode = 0
@@ -229,7 +224,7 @@ transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, -0.00341
 script = ExtResource("14_hjsw5")
 
 [node name="Sketchfab_Scene" parent="Room/Table/Radio" instance=ExtResource("15_8uuc1")]
-transform = Transform3D(1, 0, 1.39698e-08, 0, 1, 0, -1.39698e-08, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0.0220671, 0)
 
 [node name="Radio" type="CollisionShape3D" parent="Room/Table/Radio"]
 transform = Transform3D(1, 0, 5.45755e-07, 0, 1, 0, -5.45755e-07, 0, 1, 0.0054245, 0.0329809, 0.0659909)
@@ -383,15 +378,10 @@ transform = Transform3D(-0.452165, 0, -6.82751e-08, 0, 0.303615, 0, 6.8275e-08, 
 transform = Transform3D(-9.89263e-10, 0, 0.034942, 0, 0.00903342, 0, -0.0226317, 0, -1.52736e-09, -11.1795, -0.031867, 18.8221)
 
 [node name="fcporto" parent="RicBedroom/Sketchfab_Scene4" instance=ExtResource("29_8am4e")]
-transform = Transform3D(-2.52841e-06, 0, -68.9737, 0, 110.7, 0, 37.4647, 0, -1.95275e-06, -4.53955, 20.0609, 8.93823)
+transform = Transform3D(0.673666, 0, 3.55271e-15, 0, 0.916987, 0, -3.19744e-14, 0, 0.337192, 14.7017, 46.9303, -0.775635)
 
 [node name="cruzeta" parent="RicBedroom/Sketchfab_Scene4" instance=ExtResource("30_6ivr0")]
 transform = Transform3D(1.13413e-08, 0, -0.631607, 0, 0.61826, 0, -0.16805, 0, -1.78818e-08, 18.4287, 85.6285, -0.311523)
-
-[node name="GATO" type="MeshInstance3D" parent="RicBedroom"]
-transform = Transform3D(-0.0168685, -0.000985566, -0.00011321, 4.45541e-05, 0.000800741, 0.00960515, -0.00172647, 0.00846682, 0.0010632, -9.62573, -0.114001, 17.5635)
-mesh = ExtResource("31_l4nix")
-skeleton = NodePath("../Sketchfab_Scene4")
 
 [node name="RicCam" type="Camera3D" parent="RicBedroom"]
 transform = Transform3D(-1.26935, -0.178173, 0.265953, -0.0284443, 0.887929, 0.4591, -0.379128, 0.685874, -1.35001, -6.54491, 2.13894, 14.6399)
