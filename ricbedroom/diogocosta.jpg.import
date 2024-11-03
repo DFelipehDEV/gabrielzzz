@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwq3hhssknmvm"
-path.s3tc="res://.godot/imported/RobloxLight_2023.webp-47c20ffea76b494b2bdf3d309cbe0c16.s3tc.ctex"
+uid="uid://e8k054gwup0q"
+path.s3tc="res://.godot/imported/diogocosta.jpg-7bd0c8b4720f38b2fca077a35a5d577e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://RobloxLight_2023.webp"
-dest_files=["res://.godot/imported/RobloxLight_2023.webp-47c20ffea76b494b2bdf3d309cbe0c16.s3tc.ctex"]
+source_file="res://ricbedroom/diogocosta.jpg"
+dest_files=["res://.godot/imported/diogocosta.jpg-7bd0c8b4720f38b2fca077a35a5d577e.s3tc.ctex"]
 
 [params]
 

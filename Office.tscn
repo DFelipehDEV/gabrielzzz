@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=56 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_ql2up"]
 [ext_resource type="Script" path="res://player/Phone.cs" id="3_orjrp"]
@@ -23,20 +23,24 @@
 [ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://office/speakers/speakers_low_poly1.glb" id="19_sw1nb"]
 [ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://office/estadioHD.png" id="20_j7rmk"]
 [ext_resource type="PackedScene" uid="uid://bqweb6hhnjn8a" path="res://ricbedroom/phone/nokia_6230.glb" id="21_t0ml1"]
-[ext_resource type="Texture2D" uid="uid://e8k054gwup0q" path="res://ricbedroom/250076675.jpg" id="22_sfgyv"]
+[ext_resource type="Texture2D" uid="uid://0cerglkkwt72" path="res://office/onair/onair.jpg" id="22_cbs6e"]
+[ext_resource type="Texture2D" uid="uid://e8k054gwup0q" path="res://ricbedroom/diogocosta.jpg" id="22_sfgyv"]
 [ext_resource type="Texture2D" uid="uid://r1g6efwaw7ua" path="res://ricbedroom/bandeira_fcp.webp" id="23_1k236"]
+[ext_resource type="Texture2D" uid="uid://dql3yehg0w7ey" path="res://chipped_paint_patch/Textures/T_ujzjdgmo_1K_B-O.png" id="23_gyhp0"]
+[ext_resource type="Texture2D" uid="uid://nlmmy7qvwf5o" path="res://chipped_paint_patch/Textures/T_ujzjdgmo_1K_N.jpg" id="24_2hpiy"]
 [ext_resource type="Material" uid="uid://cmyh1ifrbnn01" path="res://office/table/TableTex2.tres" id="24_3wr48"]
 [ext_resource type="PackedScene" uid="uid://cnqia0b2m1uf8" path="res://ricbedroom/bedside table/bedside_table.glb" id="24_swnny"]
 [ext_resource type="PackedScene" uid="uid://ui5y56mgsn0f" path="res://ricbedroom/lamp/old_ussr_lamp.glb" id="25_ctrwk"]
+[ext_resource type="Texture2D" uid="uid://bjgeh4wnpshah" path="res://chipped_paint_patch/Textures/T_ujzjdgmo_1K_ORM.jpg" id="25_flugt"]
 [ext_resource type="PackedScene" uid="uid://dprqhntw5wkt7" path="res://ricbedroom/pillow/pillow.glb" id="25_vl4j8"]
 [ext_resource type="PackedScene" uid="uid://mgoyd6s3xou6" path="res://ricbedroom/rack/clothes_rack.glb" id="28_y4wc8"]
 [ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://ricbedroom/shirts/fcporto.glb" id="29_8am4e"]
 [ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://ricbedroom/wood_clothes_hanger.glb" id="30_6ivr0"]
 [ext_resource type="PackedScene" uid="uid://b7lxvh4wds88l" path="res://simbedroom/mechanical_keyboard.glb" id="33_dgesg"]
-[ext_resource type="Texture2D" uid="uid://cwq3hhssknmvm" path="res://RobloxLight_2023.webp" id="36_ee1mp"]
 [ext_resource type="Texture2D" uid="uid://deklb3n6s8r4i" path="res://simbedroom/brawlstarscringe.jpg" id="36_mhkvt"]
 [ext_resource type="PackedScene" uid="uid://dteexo2fu8iva" path="res://simbedroom/psx_monitor.glb" id="37_l26fo"]
 [ext_resource type="PackedScene" uid="uid://e5ru1cmfwlbn" path="res://simbedroom/computer_desk.glb" id="37_n4yqu"]
+[ext_resource type="Texture2D" uid="uid://bwelkxl5g7tti" path="res://simbedroom/roblox.png" id="37_oug3m"]
 [ext_resource type="Texture2D" uid="uid://bh2k2om35qx5q" path="res://simbedroom/brawlstarscringe_normal.png" id="37_ypndd"]
 [ext_resource type="PackedScene" uid="uid://df3dyq8a84wol" path="res://simbedroom/office_pc.glb" id="38_cq0iu"]
 [ext_resource type="PackedScene" uid="uid://h34v8eadoso7" path="res://simbedroom/razer_mouse.glb" id="38_gr78d"]
@@ -48,7 +52,6 @@ tonemap_mode = 2
 tonemap_exposure = 0.37
 ssao_enabled = true
 ssil_sharpness = 1.0
-sdfgi_use_occlusion = true
 fog_light_color = Color(0.641934, 0.641934, 0.641934, 1)
 fog_density = 0.1451
 volumetric_fog_albedo = Color(0, 0, 0, 1)
@@ -84,7 +87,7 @@ adjustment_saturation = 0.01
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ook6y"]
 shading_mode = 0
 specular_mode = 2
-albedo_texture = ExtResource("36_ee1mp")
+albedo_texture = ExtResource("37_oug3m")
 uv1_scale = Vector3(-1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifq2e"]
@@ -156,7 +159,7 @@ current = true
 transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 13.5573, -5)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Office"]
-transform = Transform3D(-4.37114e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.79409e-07, -0.114916, -1.34496, -1.92733)
+transform = Transform3D(-5.02914e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.86036e-07, -0.11382, -1.34496, -1.66004)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0460968, 1.02271)
 
@@ -176,7 +179,7 @@ size = Vector3(19.0515, 2.50513, 0.329361)
 material = ExtResource("7_tlfhq")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Office"]
-transform = Transform3D(-4.37114e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.79409e-07, -0.13662, 0.850031, -1.92733)
+transform = Transform3D(-5.02914e-08, 0, 4.22265, 0, 21.2935, 0, -4.22265, 0, -7.86036e-07, -0.135524, 0.850031, -1.66004)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0460968, 1.02271)
 
@@ -186,44 +189,47 @@ material_override = ExtResource("7_tlfhq")
 size = Vector3(18.2832, 2.70581, 0.30925)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Office"]
-transform = Transform3D(-3.07336e-07, 0, 4.22287, 0, 21.6973, 0, -4.22287, 0, -1.04308e-06, -0.131906, -0.245346, -1.76728)
+transform = Transform3D(-3.07336e-07, 0, 4.22287, 0, 21.6973, 0, -4.22287, 0, -1.04308e-06, -0.13081, -0.245346, -1.49999)
+cast_shadow = 0
+gi_mode = 0
 calculate_tangents = false
 size = Vector3(0.001, 0.0564942, 0.622529)
 material = ExtResource("9_4qo3k")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Office"]
-transform = Transform3D(-3.1665e-07, 0, 4.22287, 0, 21.2935, 0, -4.22287, 0, -1.05239e-06, -1.82759, -0.250607, -1.92733)
+transform = Transform3D(-3.1665e-07, 0, 4.22287, 0, 21.2935, 0, -4.22287, 0, -1.05239e-06, -1.82649, -0.250607, -1.66004)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0598574, 0.221804)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Office"]
-transform = Transform3D(-3.39001e-07, 0, 4.22289, 0, 21.2935, 0, -4.22289, 0, -1.07475e-06, 1.56044, -0.181201, -1.94123)
+transform = Transform3D(-3.39001e-07, 0, 4.22289, 0, 21.2935, 0, -4.22289, 0, -1.07475e-06, 1.56154, -0.181201, -1.67393)
 material_override = ExtResource("7_tlfhq")
 size = Vector3(0.127686, 0.0691743, 0.221804)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Office"]
-transform = Transform3D(0.0858433, 0, 5.61122e-08, 0, 0.0955173, 0, 2.82307e-09, 0, 0.360404, -1.68142, -0.143135, -1.65992)
+transform = Transform3D(0.0858433, 0, 5.68107e-08, 0, 0.0955173, 0, 1.13505e-09, 0, 0.360402, -1.64546, -0.199368, -1.38599)
 calculate_tangents = false
-size = Vector3(5.53862, 5.37366, 0.0169678)
+size = Vector3(6.35036, 6.55109, 0.0169678)
 material = SubResource("StandardMaterial3D_pxoj7")
 
 [node name="Table" type="Node3D" parent="Office"]
-transform = Transform3D(1, 0, 5.58794e-09, 0, 1, 0, -5.58794e-09, 0, 1, -0.433052, -1.13712, -0.260842)
+transform = Transform3D(1, 0, 6.51926e-09, 0, 1, 0, -6.51926e-09, 0, 1, -0.432574, -1.13712, -0.144156)
 
 [node name="Bottle" parent="Office/Table" instance=ExtResource("10_arnd3")]
-transform = Transform3D(0.000765094, 0.00828961, 0.00864275, -0.0119474, -6.53674e-05, 0.00112033, 0.000821006, -0.0086763, 0.00824912, 0.533303, 0.144329, -0.419958)
+transform = Transform3D(0.000765094, 0.00828961, 0.00864275, -0.0119474, -6.53674e-05, 0.00112033, 0.000821006, -0.0086763, 0.00824912, 0.616876, 0.144329, -0.420301)
 
 [node name="Key" parent="Office/Table" instance=ExtResource("10_0d7mi")]
 transform = Transform3D(-1.30745, -0.0216944, 1.67864, -0.097451, 1.38254, -0.0270854, -1.77671, -0.0598668, -1.2338, 0.307641, 0.114538, -0.327524)
 
 [node name="vl0jbem_LOD1" parent="Office/Table" instance=ExtResource("11_vg8bj")]
-transform = Transform3D(-1.78998, 0, -0.00410142, 0, 1, 0, 0.00734152, 0, -0.999992, 0.372588, -0.669497, -0.534783)
+transform = Transform3D(-1.61098, 0, -0.00410142, 0, 1, 0, 0.00660737, 0, -0.999992, 0.372588, -0.669497, -0.534783)
 
 [node name="Sketchfab_Scene2" parent="Office/Table" instance=ExtResource("12_pkntf")]
-transform = Transform3D(0.0249999, 0, 7.00939e-05, 0, 0.025, 0, -7.00939e-05, 0, 0.0249999, 1.16468, 0.125896, -0.658513)
+transform = Transform3D(0.0249999, 0, 7.00939e-05, 0, 0.025, 0, -7.00939e-05, 0, 0.0249999, 1.06746, 0.125896, -0.658114)
+visible = false
 
 [node name="Microphone" type="Node3D" parent="Office/Table"]
-transform = Transform3D(-0.00042761, 0, -0.7, 0, 0.7, 0, 0.7, 0, -0.00042761, 0.310718, 0.147724, -0.331007)
+transform = Transform3D(-0.00042761, 0, -0.7, 0, 0.7, 0, 0.7, 0, -0.00042761, 0.310934, 0.147724, -0.278329)
 
 [node name="Sketchfab_Scene2" parent="Office/Table/Microphone" instance=ExtResource("13_x0eyg")]
 transform = Transform3D(-0.133332, 0, -0.000546856, 0, 0.133333, 0, 0.000546855, 0, -0.133332, 0.0583372, -0.0787544, -0.0401545)
@@ -254,7 +260,7 @@ material_override = ExtResource("7_tlfhq")
 size = Vector3(17.6848, 2.29683, 0.535845)
 
 [node name="retro_light_-_oldclean_model" parent="Office" instance=ExtResource("17_xbhay")]
-transform = Transform3D(0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, 0.108636, 0.0880795, -0.982644)
+transform = Transform3D(0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, 0.110447, 0.0880795, -0.541015)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Office/retro_light_-_oldclean_model"]
 transform = Transform3D(250, 0, 8.82149e-06, 0, 250, 0, -8.82149e-06, 0, 250, -96.6775, -123.625, 20.0294)
@@ -276,10 +282,10 @@ transform = Transform3D(-0.000999991, 0, -4.10142e-06, 0, 0.001, 0, 4.10142e-06,
 transform = Transform3D(1, 0, 1.39698e-09, 0, 1, 0, -1.39698e-09, 0, 1, 0, -0.38029, 0)
 
 [node name="speakers_low_poly1" parent="Office/Speakers" instance=ExtResource("19_sw1nb")]
-transform = Transform3D(0.274876, 0, -0.417664, 0, 0.5, 0, 0.417664, 0, 0.274876, -1.7435, 0.402699, -1.61656)
+transform = Transform3D(0.274876, 0, -0.417664, 0, 0.5, 0, 0.417664, 0, 0.274876, -1.7424, 0.402699, -1.34927)
 
 [node name="speakers_low_poly2" parent="Office/Speakers" instance=ExtResource("19_sw1nb")]
-transform = Transform3D(-0.279596, 0, -0.414519, 0, 0.5, 0, 0.414519, 0, -0.279596, 2.01493, 0.403, -1.26475)
+transform = Transform3D(-0.279596, 0, -0.414519, 0, 0.5, 0, 0.414519, 0, -0.279596, 2.01603, 0.403, -0.997455)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Office"]
 transform = Transform3D(0.939701, 0.342021, 1.39698e-09, -0.342023, 0.939695, 0, 0, 0, 1, 11.3899, -5.19586, 0.265438)
@@ -297,7 +303,7 @@ material = ExtResource("8_klpys")
 transform = Transform3D(1, 0, 1.39698e-09, 0, 1, 0, -1.39698e-09, 0, 1, -0.0064282, 0.276292, -1.5673)
 
 [node name="Web" type="Sprite3D" parent="Office/Webs"]
-transform = Transform3D(-0.0119625, -0.0806175, 0.5907, 0.12231, -0.0123367, -0.00409053, 0.00930657, 0.0585097, 0.813033, -2.00766, -1.44181, 0.0774527)
+transform = Transform3D(-0.0119625, -0.0806175, 0.5907, 0.12231, -0.0123367, -0.00409053, 0.00930657, 0.0585097, 0.813033, -2.00656, -1.44181, 0.344748)
 cast_shadow = 0
 gi_mode = 0
 shaded = true
@@ -305,12 +311,36 @@ double_sided = false
 texture = ExtResource("8_pfyif")
 
 [node name="Web2" type="Sprite3D" parent="Office/Webs"]
-transform = Transform3D(0.096587, 0.0155608, -0.0514716, -0.0219523, 0.0895397, -0.149812, 0.00740043, 0.0625145, 0.227388, -0.462478, 0.339094, 1.2918)
+transform = Transform3D(0.0966093, 0.0154562, -0.0513436, -0.0191599, 0.10276, -0.0853912, 0.0128549, 0.0370017, 0.258593, -0.464091, 0.19114, 0.898554)
 cast_shadow = 0
 gi_mode = 0
 shaded = true
 double_sided = false
 texture = ExtResource("8_pfyif")
+
+[node name="OnAir" type="Sprite3D" parent="Office"]
+transform = Transform3D(0.200286, 0, 2.79397e-09, 0, 0.168389, 0, -2.32831e-10, 0, 1.00454, -0.150858, 0.591352, -1.38623)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("22_cbs6e")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Office/OnAir"]
+transform = Transform3D(4.99286, 0, -5.02914e-08, 0, 5.93863, 0, 8.3819e-09, 0, 0.995483, -0.134109, -0.0361099, 0.0672877)
+light_color = Color(1, 0, 0, 1)
+light_energy = 1.557
+light_bake_mode = 1
+omni_range = 1.47567
+omni_attenuation = 0.478
+
+[node name="Patchs" type="Node3D" parent="Office"]
+
+[node name="Decal" type="Decal" parent="Office/Patchs"]
+transform = Transform3D(0.97354, 0.228487, -0.00389322, 0.00410141, -0.00043635, 0.999991, 0.228483, -0.973547, -0.00136192, 3.7731, -0.919911, -0.82301)
+size = Vector3(4.17698, 0.794189, 2.40536)
+texture_albedo = ExtResource("23_gyhp0")
+texture_normal = ExtResource("24_2hpiy")
+texture_orm = ExtResource("25_flugt")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-3.20465, -0.00183212, 0, 0.00229339, -2.56009, 0, 0, 0, 0.964976, 0.174544, 14.8095, 14.6208)

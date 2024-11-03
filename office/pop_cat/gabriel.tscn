@@ -4,11 +4,5 @@
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_8m3dd")]
 
-[node name="mesh_1" parent="Sketchfab_model/root/GLTF_SceneRootNode/cat_6" index="0"]
-blend_shapes/morph_0 = 0.34286
-
 [node name="cat_001_7" parent="Sketchfab_model/root/GLTF_SceneRootNode" index="2"]
 visible = false
-
-[node name="mesh_2" parent="Sketchfab_model/root/GLTF_SceneRootNode/cat_001_7" index="0"]
-blend_shapes/morph_0 = 0.499999
