@@ -33,9 +33,6 @@ adjustment_saturation = 0.01
 
 [sub_resource type="Environment" id="Environment_56hgt"]
 adjustment_enabled = true
-adjustment_brightness = 0.5
-adjustment_contrast = 1.22
-adjustment_saturation = 0.01
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
@@ -106,7 +103,7 @@ fov = 87.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.7022, 0, 57.671)
 
 [node name="SimCam" type="Camera3D" parent="SimaoBedroom"]
-transform = Transform3D(0.995942, 0.0125702, -0.0891143, 0.00584371, 0.979075, 0.203414, 0.0898066, -0.20311, 0.975029, -2.35464, 2.98207, 2.42698)
+transform = Transform3D(0.995942, 0.0125702, -0.0891143, 0.0168729, 0.946559, 0.32209, 0.0884007, -0.322287, 0.942505, -3.38922, 2.48272, 0.919685)
 environment = SubResource("Environment_56hgt")
 fov = 87.8
 

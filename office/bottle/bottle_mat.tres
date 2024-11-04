@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://pte74tu1bb1a"]
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://d0m8n7kxgcl07"]
 
-[ext_resource type="Shader" uid="uid://rt0ei6ibntkt" path="res://glass/glass_shader_vs.tres" id="1_ax7of"]
+[ext_resource type="Shader" uid="uid://rt0ei6ibntkt" path="res://glass/glass_shader_vs.tres" id="1_f1lth"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nnlt7"]
 frequency = 0.0015
@@ -21,10 +21,10 @@ noise = SubResource("FastNoiseLite_onxod")
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_ax7of")
+shader = ExtResource("1_f1lth")
 shader_parameter/noise_strenght = 0.005
-shader_parameter/tint_color = Color(1, 1, 1, 1)
-shader_parameter/roughness = 0.0
+shader_parameter/tint_color = Color(0.0184859, 0.602012, 1, 1)
+shader_parameter/roughness = 0.2
 shader_parameter/normal_strenght = 0.0
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_b1mqy")
 shader_parameter/Normal = SubResource("NoiseTexture2D_8reij")
