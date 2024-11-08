@@ -1,0 +1,113 @@
+[gd_scene load_steps=15 format=3 uid="uid://d1o4lkpnxtmdh"]
+
+[ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
+[ext_resource type="Script" path="res://player/Phone.cs" id="2_s44sq"]
+[ext_resource type="PackedScene" uid="uid://clt1sfs0wbkeo" path="res://office/phone/iphone_x_lowpoly.glb" id="3_i2n8j"]
+[ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://office/phone/PhoneTex.tres" id="4_mxk25"]
+[ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://office/phone/ui/FlashlightIcon.tres" id="5_awy5n"]
+[ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://office/Office.tscn" id="6_0w350"]
+[ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://office/estadioHD.png" id="7_4nhm1"]
+[ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://ricbedroom/RicardoBedroom.tscn" id="8_o0llk"]
+[ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://simaobedroom/SimaoBedroom.tscn" id="9_wg86v"]
+[ext_resource type="LightmapGIData" uid="uid://qof0fl061ard" path="res://Night1.lmbake" id="10_gy337"]
+
+[sub_resource type="Environment" id="Environment_bjlio"]
+background_mode = 1
+tonemap_mode = 2
+tonemap_exposure = 0.37
+ssao_enabled = true
+ssil_sharpness = 1.0
+fog_light_color = Color(0.641934, 0.641934, 0.641934, 1)
+fog_density = 0.1451
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3j4l3"]
+shading_mode = 0
+albedo_texture = ExtResource("7_4nhm1")
+
+[sub_resource type="Environment" id="Environment_xjf4g"]
+adjustment_enabled = true
+adjustment_brightness = 0.5
+adjustment_contrast = 1.07
+adjustment_saturation = 0.01
+
+[sub_resource type="Environment" id="Environment_56hgt"]
+adjustment_enabled = true
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bjlio")
+
+[node name="Player" parent="." node_paths=PackedStringArray("cameras") instance=ExtResource("1_jnati")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 12.7964, 2.71448)
+cameras = [NodePath("Camera"), NodePath("../RicardoBedroom/RicCam"), NodePath("../SimaoBedroom/SimCam")]
+
+[node name="Phone" type="Node3D" parent="Player"]
+transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 3.27826e-07, 4.29861e-07, 0.999999, 0.0793167, -0.0236454, -0.156882)
+script = ExtResource("2_s44sq")
+
+[node name="Flash" type="SpotLight3D" parent="Player/Phone"]
+transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0271126, 0.0495281, -0.00421333)
+visible = false
+spot_range = 11.91
+spot_angle = 27.0
+
+[node name="PhoneModel" parent="Player/Phone" instance=ExtResource("3_i2n8j")]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+
+[node name="Screen" type="CSGBox3D" parent="Player/Phone"]
+transform = Transform3D(-1, 2.56506e-12, 5.36442e-07, 1.56284e-11, -1, 3.82272e-12, -2.68221e-07, 7.10543e-15, -1, -0.000854611, 0, 0.00364208)
+material_override = ExtResource("4_mxk25")
+cast_shadow = 0
+gi_mode = 0
+calculate_tangents = false
+size = Vector3(0.0640625, 0.133057, 0.001)
+
+[node name="FlashIcon" type="CSGBox3D" parent="Player/Phone"]
+transform = Transform3D(0.999998, -5.52447e-12, -2.98023e-07, -4.81393e-11, 1, -1.62004e-12, 2.6226e-06, 1.45661e-12, 1, -0.0244471, -0.0540457, 0.0038209)
+cast_shadow = 0
+gi_mode = 0
+calculate_tangents = false
+size = Vector3(0.01, 0.01, 0.001)
+material = ExtResource("5_awy5n")
+
+[node name="Camera" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.092275, 8.29697e-05, 0.000340462)
+current = true
+fov = 87.756
+far = 86.41
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Player"]
+current = true
+
+[node name="Office" parent="." instance=ExtResource("6_0w350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121859, 3.82077, 3.50747)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-3.20465, -0.00183212, 0, 0.00229339, -2.56009, 0, 0, 0, 0.964976, 0.174544, 14.8095, 23.1773)
+material_override = SubResource("StandardMaterial3D_3j4l3")
+calculate_tangents = false
+size = Vector3(6.9545, 4.93359, 1)
+
+[node name="RicardoBedroom" parent="." instance=ExtResource("8_o0llk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.0444, 0, 66.0917)
+
+[node name="RicCam" type="Camera3D" parent="RicardoBedroom"]
+transform = Transform3D(-0.96964, -0.136104, 0.203159, -0.0284443, 0.887929, 0.4591, -0.242876, 0.439383, -0.864843, -2.55166, 3.70172, 0.374367)
+environment = SubResource("Environment_xjf4g")
+fov = 87.8
+
+[node name="SimaoBedroom" parent="." instance=ExtResource("9_wg86v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.7022, 0, 57.671)
+
+[node name="SimCam" type="Camera3D" parent="SimaoBedroom"]
+transform = Transform3D(0.995942, 0.0125702, -0.0891143, 0.0168729, 0.946559, 0.32209, 0.0884007, -0.322287, 0.942505, -3.38922, 2.48272, 0.919685)
+environment = SubResource("Environment_56hgt")
+fov = 87.8
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.5659)
+quality = 0
+light_data = ExtResource("10_gy337")

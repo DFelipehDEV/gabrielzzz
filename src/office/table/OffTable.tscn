@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://xhxwfd43olgf"]
+
+[ext_resource type="PackedScene" uid="uid://j5gqrjpijd1s" path="res://office/table/OffTable.glb" id="1_iq7ii"]
+[ext_resource type="Material" uid="uid://dkc0h7suf58pe" path="res://office/table/TableTex1.tres" id="2_j20mg"]
+
+[node name="OffTable" instance=ExtResource("1_iq7ii")]
+
+[node name="Aset_interior_furniture_M_vl0jbem_00_LOD0" parent="world_root" index="0"]
+material_override = ExtResource("2_j20mg")

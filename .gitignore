@@ -4,3 +4,6 @@
 
 .vscode/
 .mono/
+
+*.exe
+*.pck
