@@ -76,14 +76,14 @@ material = ExtResource("5_awy5n")
 
 [node name="Camera" type="Camera3D" parent="Player"]
 current = true
-fov = 87.756
+fov = 90.0
 far = 86.41
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Player"]
 current = true
 
 [node name="Eye" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.51794e-09, 0, -0.0516791)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30572e-09, 0, -0.0492518)
 
 [node name="Office" parent="." instance=ExtResource("6_0w350")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121859, 3.82077, 3.50747)

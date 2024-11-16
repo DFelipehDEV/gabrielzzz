@@ -51,9 +51,9 @@ public partial class Player : Node3D
 			switch (State) {
 				case States.NORMAL:
 					State = States.TOCAMERA;
-					Tween toEyePosition = CreateTween().SetTrans(Tween.TransitionType.Cubic);
+					Tween toEyePosition = CreateTween().SetTrans(Tween.TransitionType.Quad);
 					toEyePosition.TweenProperty(phone, "position", eye.Position, 0.5);
-					Tween toEyeRotation = CreateTween().SetTrans(Tween.TransitionType.Cubic);
+					Tween toEyeRotation = CreateTween().SetTrans(Tween.TransitionType.Quad);
 					toEyeRotation.TweenProperty(phone, "rotation_degrees", new Vector3(0.0f, 0.0f, 90.0f), 0.4);
 					break;
 				
@@ -62,14 +62,16 @@ public partial class Player : Node3D
 						cameras[currentCamera].Current = false;
 						currentCamera++;
 						cameras[currentCamera].Current = true;
+						cameras[currentCamera].Environment.TonemapExposure = 0.0f;
 					} else {
+						// Reset
 						cameras[currentCamera].Current = false;
 						currentCamera = 0;
 						cameras[currentCamera].Current = true;
 						State = States.NORMAL;
-						Tween toNormalPosition = CreateTween().SetTrans(Tween.TransitionType.Cubic);
+						Tween toNormalPosition = CreateTween().SetTrans(Tween.TransitionType.Quad);
 						toNormalPosition.TweenProperty(phone, "rotation_degrees", new Vector3(0.0f, 0.0f, 0.0f), 0.5);	
-						Tween toNormalRotation = CreateTween().SetTrans(Tween.TransitionType.Cubic);	
+						Tween toNormalRotation = CreateTween().SetTrans(Tween.TransitionType.Quad);	
 						toNormalRotation.TweenProperty(phone, "position", normalPhonePosition, 0.3);			
 					}
 					break;
@@ -81,9 +83,16 @@ public partial class Player : Node3D
 					if (stateTimer > 70) {
 						cameras[0].Current = false;
 						cameras[1].Current = true;
+						cameras[1].Environment.TonemapExposure = 0.0f;
 						currentCamera = 1;
 						State = States.CAMERA;
 					} 
+					break;
+
+				case States.CAMERA:
+					if (cameras[currentCamera].Environment.TonemapExposure < 1.2f) {
+						cameras[currentCamera].Environment.TonemapExposure += 0.6f * (float)delta;
+					}
 					break;
 			
 		}
