@@ -5,5 +5,7 @@
 .vscode/
 .mono/
 
+build/
+
 *.exe
 *.pck
