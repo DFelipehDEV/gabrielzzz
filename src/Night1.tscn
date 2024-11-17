@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://player/phone/PhoneTex.tres" id="4_mxk25"]
 [ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://player/phone/ui/FlashlightIcon.tres" id="5_awy5n"]
 [ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://office/Office.tscn" id="6_0w350"]
-[ext_resource type="Texture2D" uid="uid://bfde5fkn0m8vn" path="res://office/estadioHD.png" id="7_4nhm1"]
+[ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://office/estadioHD.tres" id="7_xuket"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://ricbedroom/RicardoBedroom.tscn" id="8_o0llk"]
 [ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://simaobedroom/SimaoBedroom.tscn" id="9_wg86v"]
 [ext_resource type="LightmapGIData" uid="uid://qof0fl061ard" path="res://Night1.lmbake" id="10_gy337"]
@@ -26,9 +26,9 @@ font_names = PackedStringArray("Calibri")
 hinting = 0
 oversampling = 2.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3j4l3"]
-shading_mode = 0
-albedo_texture = ExtResource("7_4nhm1")
+[sub_resource type="PlaneMesh" id="PlaneMesh_la8v7"]
+material = ExtResource("7_xuket")
+size = Vector2(19, 10)
 
 [sub_resource type="Environment" id="Environment_xjf4g"]
 adjustment_enabled = true
@@ -115,11 +115,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30572e-09, 0, -0.0492518)
 [node name="Office" parent="." instance=ExtResource("6_0w350")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121859, 3.82077, 3.50747)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(-3.20465, -0.00183212, 0, 0.00229339, -2.56009, 0, 0, 0, 0.964976, 0.174544, 14.8095, 23.1773)
-material_override = SubResource("StandardMaterial3D_3j4l3")
-calculate_tangents = false
-size = Vector3(6.9545, 4.93359, 1)
+[node name="Stadium" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 5.34246e-12, -0.000122221, 0.000122221, 4.37114e-08, -1, 0, -1, -4.37114e-08, 0.175, 14.809, 23.177)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_la8v7")
 
 [node name="RicardoBedroom" parent="." instance=ExtResource("8_o0llk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.0444, 0, 66.0917)
