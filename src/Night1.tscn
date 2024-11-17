@@ -1,14 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=18 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
-[ext_resource type="Script" path="res://player/Phone.cs" id="2_s44sq"]
+[ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
 [ext_resource type="PackedScene" uid="uid://clt1sfs0wbkeo" path="res://player/phone/iphone_x_lowpoly.glb" id="3_i2n8j"]
 [ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://player/phone/PhoneTex.tres" id="4_mxk25"]
 [ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://player/phone/ui/FlashlightIcon.tres" id="5_awy5n"]
 [ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://office/Office.tscn" id="6_0w350"]
 [ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://office/estadioHD.tres" id="7_xuket"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://ricbedroom/RicardoBedroom.tscn" id="8_o0llk"]
+[ext_resource type="Texture2D" uid="uid://bfbrtjtc0usvw" path="res://player/phone/PhoneCamera.png" id="9_la8v7"]
 [ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://simaobedroom/SimaoBedroom.tscn" id="9_wg86v"]
+[ext_resource type="Texture2D" uid="uid://bj3eakylas5lg" path="res://player/phone/PhoneCameraBottom.png" id="10_d8mo8"]
 [ext_resource type="LightmapGIData" uid="uid://qof0fl061ard" path="res://Night1.lmbake" id="10_gy337"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
@@ -101,6 +103,57 @@ font = SubResource("SystemFont_xuket")
 font_size = 16
 outline_size = 0
 
+[node name="CameraUI" type="CanvasLayer" parent="Player/Phone"]
+visible = false
+
+[node name="Top" type="TextureRect" parent="Player/Phone/CameraUI"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -414.0
+offset_right = 166.0
+offset_bottom = 414.0
+grow_vertical = 2
+texture = ExtResource("9_la8v7")
+expand_mode = 1
+
+[node name="Border" type="ColorRect" parent="Player/Phone/CameraUI/Top"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -2560.0
+offset_top = -900.0
+offset_right = 2394.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Bottom" type="TextureRect" parent="Player/Phone/CameraUI"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -404.0
+offset_top = -414.0
+offset_bottom = 414.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+texture = ExtResource("10_d8mo8")
+
+[node name="Border" type="ColorRect" parent="Player/Phone/CameraUI/Bottom"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2560.0
+offset_right = 2156.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
 [node name="Camera" type="Camera3D" parent="Player"]
 current = true
 fov = 90.0
@@ -126,7 +179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.0444, 0, 66.0917)
 [node name="RicCam" type="Camera3D" parent="RicardoBedroom"]
 transform = Transform3D(-0.96964, -0.136104, 0.203159, -0.0284443, 0.887929, 0.4591, -0.242876, 0.439383, -0.864843, -2.55166, 3.70172, 0.374367)
 environment = SubResource("Environment_xjf4g")
-fov = 87.8
+fov = 70.0
 
 [node name="SimaoBedroom" parent="." instance=ExtResource("9_wg86v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.7022, 0, 57.671)

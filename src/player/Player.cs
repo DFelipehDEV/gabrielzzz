@@ -73,6 +73,7 @@ public partial class Player : Node3D
 						toNormalPosition.TweenProperty(phone, "rotation_degrees", new Vector3(0.0f, 0.0f, 0.0f), 0.5);	
 						Tween toNormalRotation = CreateTween().SetTrans(Tween.TransitionType.Quad);	
 						toNormalRotation.TweenProperty(phone, "position", normalPhonePosition, 0.3);			
+						phone.cameraUI.Visible = false;
 					}
 					break;
 			}
@@ -86,6 +87,7 @@ public partial class Player : Node3D
 						cameras[1].Environment.TonemapExposure = 0.0f;
 						currentCamera = 1;
 						State = States.CAMERA;
+						phone.cameraUI.Visible = true;
 					} 
 					break;
 
