@@ -95,7 +95,8 @@ pixel_size = 0.0006
 double_sided = false
 texture_filter = 0
 outline_modulate = Color(0, 0, 0, 0)
-text = "seg., 21"
+text = "seg., 01
+"
 font = SubResource("SystemFont_xuket")
 font_size = 16
 outline_size = 0
