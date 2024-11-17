@@ -40,7 +40,9 @@ adjustment_saturation = 0.01
 
 [sub_resource type="Environment" id="Environment_56hgt"]
 adjustment_enabled = true
-adjustment_saturation = 0.35
+adjustment_brightness = 0.5
+adjustment_contrast = 1.07
+adjustment_saturation = 0.01
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
