@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bus5n0fxsjb8e"
-path.s3tc="res://.godot/imported/FlashlightIcon.png-5af5c221092fb8284fe2e400fed57efc.s3tc.ctex"
+uid="uid://cvp1gk63e61oy"
+path="res://.godot/imported/phone.png-0116b2c73039c53ab8e70e93b038f44b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://office/phone/ui/FlashlightIcon.png"
-dest_files=["res://.godot/imported/FlashlightIcon.png-5af5c221092fb8284fe2e400fed57efc.s3tc.ctex"]
+source_file="res://player/phone/phone.png"
+dest_files=["res://.godot/imported/phone.png-0116b2c73039c53ab8e70e93b038f44b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

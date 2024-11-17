@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bwn12igadl8cf"]
 
-[ext_resource type="Texture2D" uid="uid://d4kfc04n4w5gl" path="res://office/phone/PhoneLocked.png" id="1_ke6f2"]
+[ext_resource type="Texture2D" uid="uid://d4kfc04n4w5gl" path="res://player/phone/PhoneLocked.png" id="1_ke6f2"]
 
 [resource]
 shading_mode = 0

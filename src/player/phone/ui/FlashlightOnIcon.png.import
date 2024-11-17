@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4kfc04n4w5gl"
-path.s3tc="res://.godot/imported/PhoneLocked.png-62c637d6badb3409cc34d746c78ce27f.s3tc.ctex"
+uid="uid://dwvvj3rr8vwbk"
+path.s3tc="res://.godot/imported/FlashlightOnIcon.png-1aa56c199d696ad811b9bc19cb79adf6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://office/phone/PhoneLocked.png"
-dest_files=["res://.godot/imported/PhoneLocked.png-62c637d6badb3409cc34d746c78ce27f.s3tc.ctex"]
+source_file="res://player/phone/ui/FlashlightOnIcon.png"
+dest_files=["res://.godot/imported/FlashlightOnIcon.png-1aa56c199d696ad811b9bc19cb79adf6.s3tc.ctex"]
 
 [params]
 

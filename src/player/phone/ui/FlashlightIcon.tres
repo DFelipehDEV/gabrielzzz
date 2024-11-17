@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dqug2ykuis3fh"]
 
-[ext_resource type="Texture2D" uid="uid://bus5n0fxsjb8e" path="res://office/phone/ui/FlashlightIcon.png" id="1_h2e3l"]
+[ext_resource type="Texture2D" uid="uid://bus5n0fxsjb8e" path="res://player/phone/ui/FlashlightIcon.png" id="1_h2e3l"]
 
 [resource]
 shading_mode = 0
