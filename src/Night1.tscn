@@ -51,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
 environment = SubResource("Environment_bjlio")
 
 [node name="Player" parent="." node_paths=PackedStringArray("cameras") instance=ExtResource("1_jnati")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 12.7964, 2.71448)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 12.7964, 2.71448)
 cameras = [NodePath("Camera"), NodePath("../RicardoBedroom/RicCam"), NodePath("../SimaoBedroom/SimCam")]
 
 [node name="Phone" type="Node3D" parent="Player"]

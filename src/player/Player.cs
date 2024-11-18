@@ -7,8 +7,8 @@ public partial class Player : Node3D
 	private Phone phone;
 	private Vector3 normalPhonePosition;
 	private float rotationSpeed = 0.05f;
-	private float targetRotation = 0f;
-	private float direction;
+	private Vector2 targetRotation;
+	private Vector2 direction;
 	// TODO: Add flashlight state
 	public enum States {
 		NORMAL,
@@ -40,8 +40,9 @@ public partial class Player : Node3D
 
 	public override void _Process(double delta)
 	{
-		targetRotation = Mathf.Lerp(targetRotation, (-direction*1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
-		Rotation = new Vector3(Rotation.X, targetRotation, Rotation.Z);
+		targetRotation.X = Mathf.Lerp(targetRotation.X, (-direction.X * 1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
+		targetRotation.Y = Mathf.Lerp(targetRotation.Y, (-direction.Y * 1.5f), (float)GetProcessDeltaTime() * 2.5f);
+		Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
 
 		if (Input.IsActionJustPressed("toggle_flash")) {
 			phone.Flash = !phone.Flash;
@@ -106,7 +107,8 @@ public partial class Player : Node3D
 			Vector2 mousePos = eventMouseMotion.Position;
 		
 			Vector2 screenCenter = GetViewport().GetVisibleRect().Size  / 2;
-			direction = (mousePos.X - screenCenter.X) / screenCenter.X;
+			direction.X = (mousePos.X - screenCenter.X) / screenCenter.X;
+			direction.Y = (mousePos.Y - screenCenter.Y) / screenCenter.Y;
 		}
 	}	
 }
