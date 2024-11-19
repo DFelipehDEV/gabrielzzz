@@ -176,7 +176,7 @@ cast_shadow = 0
 mesh = SubResource("PlaneMesh_la8v7")
 
 [node name="RicardoBedroom" parent="." instance=ExtResource("8_o0llk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.0444, 0, 66.0917)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.0444, 0, 92.2301)
 
 [node name="RicCam" type="Camera3D" parent="RicardoBedroom"]
 transform = Transform3D(-0.96964, -0.136104, 0.203159, -0.0284443, 0.887929, 0.4591, -0.242876, 0.439383, -0.864843, -2.55166, 3.70172, 0.374367)
@@ -184,7 +184,7 @@ environment = SubResource("Environment_xjf4g")
 fov = 70.0
 
 [node name="SimaoBedroom" parent="." instance=ExtResource("9_wg86v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.7022, 0, 57.671)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.7022, 0, 83.8094)
 
 [node name="SimCam" type="Camera3D" parent="SimaoBedroom"]
 transform = Transform3D(0.995942, 0.0125702, -0.0891143, 0.0168729, 0.946559, 0.32209, 0.0884007, -0.322287, 0.942505, -3.38922, 2.48272, 0.919685)

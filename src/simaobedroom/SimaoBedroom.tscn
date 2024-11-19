@@ -37,9 +37,9 @@ disable_receive_shadows = true
 [node name="SimaoBedroom" type="Node3D"]
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.999979, 0, 0, 0, 0.999967, 1.29671, 2.22088, 0.189094)
+transform = Transform3D(1, 0, 0, 0, 0.999979, 0, 0, 0, 0.999967, 1.29671, 2.22088, -0.991985)
 material_override = ExtResource("1_ls7v3")
-size = Vector3(0.001, 4.36046, 10.7711)
+size = Vector3(0.001, 4.36046, 8.40886)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999968, 0, -0.999951, 0, -4.37095e-08, -1.86607, 2.22528, 2.84049)
@@ -47,9 +47,9 @@ material_override = ExtResource("1_ls7v3")
 size = Vector3(0.001, 4.37159, 6.54497)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.999978, 0, 0, 0, 0.999965, -5.12874, 2.22196, 0.222144)
+transform = Transform3D(1, 0, 0, 0, 0.999978, 0, 0, 0, 0.999965, -5.12874, 2.22196, -0.995506)
 material_override = ExtResource("1_ls7v3")
-size = Vector3(0.001, 4.44544, 10.705)
+size = Vector3(0.001, 4.44544, 8.26961)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.99998, 0, 0, 0, 0.999968, -1.85089, 0.0973209, -1.06403)
@@ -62,9 +62,10 @@ material_override = ExtResource("1_ls7v3")
 size = Vector3(0.001, 4.49605, 6.56062)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.99998, 0, 0, 0, 0.999968, -1.53805, 3.29547, 0.255465)
+transform = Transform3D(1, 0, 0, 0, 0.99998, 0, 0, 0, 0.999968, -1.89917, 3.29547, -0.849234)
 material_override = ExtResource("2_ynlpp")
-size = Vector3(7.71206, 0.001, 10.7412)
+calculate_tangents = false
+size = Vector3(6.98982, 0.001, 8.53173)
 
 [node name="Bed" type="Node3D" parent="."]
 transform = Transform3D(-0.255654, 0, 2.25482e-08, 0, 1, 0, -2.235e-08, 0, -0.257921, -1.99771, 0.18264, -1.76447)
