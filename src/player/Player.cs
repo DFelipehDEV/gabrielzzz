@@ -25,7 +25,7 @@ public partial class Player : Node3D
 			stateTimer = 0;
 		}
 	}
-	private uint stateTimer = 0;
+	private float stateTimer = 0;
 	private int currentCamera = 0;
 	[Export]
 	private Godot.Collections.Array<Camera3D> cameras;
@@ -82,7 +82,7 @@ public partial class Player : Node3D
 
 		switch (State) {
 				case States.TOCAMERA:
-					if (stateTimer > 70) {
+					if (stateTimer > 0.4f) {
 						cameras[0].Current = false;
 						cameras[1].Current = true;
 						cameras[1].Environment.TonemapExposure = 0.0f;
@@ -99,7 +99,8 @@ public partial class Player : Node3D
 					break;
 			
 		}
-		stateTimer++;
+		stateTimer += 1.0f * (float)delta;
+		GD.Print(stateTimer);
 	}
 	public override void _Input(InputEvent @event)
 	{
