@@ -132,7 +132,7 @@ transform = Transform3D(0.0249999, 0, 7.00939e-05, 0, 0.025, 0, -7.00939e-05, 0,
 visible = false
 
 [node name="Microphone" type="Node3D" parent="Table"]
-transform = Transform3D(-0.00042761, 0, -0.7, 0, 0.7, 0, 0.7, 0, -0.00042761, 0.310934, 0.147724, -0.278329)
+transform = Transform3D(-4.2761e-05, 0, -0.07, 0, 0.07, 0, 0.07, 0, -4.2761e-05, 0.310934, 0.0795174, -0.278329)
 
 [node name="Sketchfab_Scene2" parent="Table/Microphone" instance=ExtResource("13_x0eyg")]
 transform = Transform3D(-0.133332, 0, -0.000546856, 0, 0.133333, 0, 0.000546855, 0, -0.133332, 0.0583372, -0.0787544, -0.0401545)
@@ -170,7 +170,7 @@ omni_attenuation = 4.03
 transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 9.73317, 0.282123)
 
 [node name="Sketchfab_Scene2" parent="Chair" instance=ExtResource("18_gjll4")]
-transform = Transform3D(-0.000999991, 0, -4.10142e-06, 0, 0.001, 0, 4.10142e-06, 0, -0.000999991, -0.736256, -1.36022, 0.382617)
+transform = Transform3D(-0.000999992, 0, -4.10142e-06, 0, 0.001, 0, 4.10142e-06, 0, -0.000999992, -0.736256, -1.36022, 0.382617)
 
 [node name="Speakers" type="Node3D" parent="."]
 transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 9.35288, 0.282123)

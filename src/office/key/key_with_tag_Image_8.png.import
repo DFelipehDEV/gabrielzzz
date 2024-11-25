@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxcqd8hes7ntr"
-path.s3tc="res://.godot/imported/vintage_microphone_2.png-236618e31c5b8d6d6266592c76974bdb.s3tc.ctex"
+uid="uid://c46i537tqpbbo"
+path.s3tc="res://.godot/imported/key_with_tag_Image_8.png-080ff38424b61e94c2393dc9c80c8d4f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f5f86a90cbf735c575035a958bfe811c"
+"md5": "4a36a4d575948657283100db5020a4f0"
 }
 
 [deps]
 
-source_file="res://office/microphone/vintage_microphone_2.png"
-dest_files=["res://.godot/imported/vintage_microphone_2.png-236618e31c5b8d6d6266592c76974bdb.s3tc.ctex"]
+source_file="res://office/key/key_with_tag_Image_8.png"
+dest_files=["res://.godot/imported/key_with_tag_Image_8.png-080ff38424b61e94c2393dc9c80c8d4f.s3tc.ctex"]
 
 [params]
 
@@ -28,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://vintage_microphone_2.png"
+roughness/src_normal="res://office/key/key_with_tag_Image_8.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

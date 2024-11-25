@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccqiaigeoo342"
-path.s3tc="res://.godot/imported/chair_0.jpg-b3272f05842cdebc5b4faeb7345f2d8f.s3tc.ctex"
+uid="uid://cwbutt1bvme37"
+path.s3tc="res://.godot/imported/key_with_tag_Image_3.png-1b761151365a27adda0d8e8fd45c58b8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "30be696545fa8e1dd988d369bddb4a29"
+"md5": "af31abe4e4fac52517023e3cd9e6ec36"
 }
 
 [deps]
 
-source_file="res://chair/chair_0.jpg"
-dest_files=["res://.godot/imported/chair_0.jpg-b3272f05842cdebc5b4faeb7345f2d8f.s3tc.ctex"]
+source_file="res://office/key/key_with_tag_Image_3.png"
+dest_files=["res://.godot/imported/key_with_tag_Image_3.png-1b761151365a27adda0d8e8fd45c58b8.s3tc.ctex"]
 
 [params]
 

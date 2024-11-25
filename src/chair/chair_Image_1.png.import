@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwimcl56s6vbs"
-path.s3tc="res://.godot/imported/vintage_microphone_1.png-959689fca3a0daf857bc2faf72a59ff7.s3tc.ctex"
+uid="uid://vihnr7wgo8q1"
+path.s3tc="res://.godot/imported/chair_Image_1.png-a24691e34f8bf8b6c7fae90c84ebd28e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b149f1b3726869842d24931f73b592e0"
+"md5": "af105c3f3a4c3f5d11b3274d4563a8b7"
 }
 
 [deps]
 
-source_file="res://office/microphone/vintage_microphone_1.png"
-dest_files=["res://.godot/imported/vintage_microphone_1.png-959689fca3a0daf857bc2faf72a59ff7.s3tc.ctex"]
+source_file="res://chair/chair_Image_1.png"
+dest_files=["res://.godot/imported/chair_Image_1.png-a24691e34f8bf8b6c7fae90c84ebd28e.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://chair/chair_Image_1.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

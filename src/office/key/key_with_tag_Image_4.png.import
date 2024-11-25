@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1y1yoytg4pxo"
-path.s3tc="res://.godot/imported/key_with_tag_6.png-8a05f4c62339b85333d655d547083d2a.s3tc.ctex"
+uid="uid://pyqciqvdq8l8"
+path.s3tc="res://.godot/imported/key_with_tag_Image_4.png-aa203d526b00462470c18c8a76b19808.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "4b0e4e167d36d5a9c678db8057119f67"
+"md5": "611d76522617428c004b967a940a8903"
 }
 
 [deps]
 
-source_file="res://office/key/key_with_tag_6.png"
-dest_files=["res://.godot/imported/key_with_tag_6.png-8a05f4c62339b85333d655d547083d2a.s3tc.ctex"]
+source_file="res://office/key/key_with_tag_Image_4.png"
+dest_files=["res://.godot/imported/key_with_tag_Image_4.png-aa203d526b00462470c18c8a76b19808.s3tc.ctex"]
 
 [params]
 
@@ -27,8 +27,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=8
+roughness/src_normal="res://office/key/key_with_tag_Image_5.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

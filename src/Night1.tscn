@@ -193,5 +193,5 @@ fov = 87.8
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.5659)
-quality = 0
+quality = 2
 light_data = ExtResource("10_gy337")

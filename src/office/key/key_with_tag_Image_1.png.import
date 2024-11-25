@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d17xpnq1onwia"
-path.s3tc="res://.godot/imported/chair_1.png-294dfb28d9639248745103ab9181898d.s3tc.ctex"
+uid="uid://cvfhpx0o72dh"
+path.s3tc="res://.godot/imported/key_with_tag_Image_1.png-43d4ec2b9e2127ef28964c86ddc8a5f1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "af105c3f3a4c3f5d11b3274d4563a8b7"
+"md5": "0ec564e9e2028982fe238de5348bc796"
 }
 
 [deps]
 
-source_file="res://chair/chair_1.png"
-dest_files=["res://.godot/imported/chair_1.png-294dfb28d9639248745103ab9181898d.s3tc.ctex"]
+source_file="res://office/key/key_with_tag_Image_1.png"
+dest_files=["res://.godot/imported/key_with_tag_Image_1.png-43d4ec2b9e2127ef28964c86ddc8a5f1.s3tc.ctex"]
 
 [params]
 
@@ -27,8 +27,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=8
+roughness/src_normal="res://office/key/key_with_tag_Image_2.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

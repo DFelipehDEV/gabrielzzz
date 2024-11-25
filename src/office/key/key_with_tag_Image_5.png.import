@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqrsvu351pkuc"
-path.s3tc="res://.godot/imported/key_with_tag_4.png-1f390bf3b69932d719d55157fce245b0.s3tc.ctex"
+uid="uid://2b4711ov6ram"
+path.s3tc="res://.godot/imported/key_with_tag_Image_5.png-d0e747e83b60351b237fba68b2a15dfe.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "611d76522617428c004b967a940a8903"
+"md5": "389801e50ea9d41e985ec83bd3b12829"
 }
 
 [deps]
 
-source_file="res://office/key/key_with_tag_4.png"
-dest_files=["res://.godot/imported/key_with_tag_4.png-1f390bf3b69932d719d55157fce245b0.s3tc.ctex"]
+source_file="res://office/key/key_with_tag_Image_5.png"
+dest_files=["res://.godot/imported/key_with_tag_Image_5.png-d0e747e83b60351b237fba68b2a15dfe.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=8
-roughness/src_normal="res://office/key/key_with_tag_5.png"
+roughness/mode=1
+roughness/src_normal="res://office/key/key_with_tag_Image_5.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
