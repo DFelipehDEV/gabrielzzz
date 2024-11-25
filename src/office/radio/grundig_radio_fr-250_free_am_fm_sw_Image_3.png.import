@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4ypgl6wbf5ib"
-path.s3tc="res://.godot/imported/retro_light_Image_8.png-7fe8c1735976e4b738004492826f2337.s3tc.ctex"
+uid="uid://blmbqj4p8isjc"
+path.s3tc="res://.godot/imported/grundig_radio_fr-250_free_am_fm_sw_Image_3.png-5b54b56c70183a86eba13997b725a131.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "6cfeefe05a139024e8d53ecff1a5a084"
+"md5": "7dc502bd75d8eddde8741de443318695"
 }
 
 [deps]
 
-source_file="res://office/retro_light/retro_light_Image_8.png"
-dest_files=["res://.godot/imported/retro_light_Image_8.png-7fe8c1735976e4b738004492826f2337.s3tc.ctex"]
+source_file="res://office/radio/grundig_radio_fr-250_free_am_fm_sw_Image_3.png"
+dest_files=["res://.godot/imported/grundig_radio_fr-250_free_am_fm_sw_Image_3.png-5b54b56c70183a86eba13997b725a131.s3tc.ctex"]
 
 [params]
 
@@ -28,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://retro_light/retro_light_Image_8.png"
+roughness/src_normal="res://office/radio/grundig_radio_fr-250_free_am_fm_sw_Image_3.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

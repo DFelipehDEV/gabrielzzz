@@ -142,7 +142,7 @@ transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 0.030532
 script = ExtResource("14_hjsw5")
 
 [node name="Sketchfab_Scene" parent="Table/Radio" instance=ExtResource("15_8uuc1")]
-transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0.0220671, 0)
+transform = Transform3D(0.01, 0, 1.49012e-10, 0, 0.01, 0, -1.49012e-10, 0, 0.01, 0, 0.0220671, 0)
 
 [node name="Radio" type="CollisionShape3D" parent="Table/Radio"]
 transform = Transform3D(1, 0, 5.45755e-07, 0, 1, 0, -5.45755e-07, 0, 1, 0.0054245, 0.0329809, 0.0659909)

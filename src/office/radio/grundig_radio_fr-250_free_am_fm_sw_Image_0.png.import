@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsu731nx0pvgn"
-path.s3tc="res://.godot/imported/grundig_radio_fr-250_free_am_fm_sw_3.png-40c7ed5337bf4c49312688baf00aa867.s3tc.ctex"
+uid="uid://3nlpmb15uiyv"
+path.s3tc="res://.godot/imported/grundig_radio_fr-250_free_am_fm_sw_Image_0.png-40a6a9f8a6ed51cc905f21be83f206d3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7dc502bd75d8eddde8741de443318695"
+"md5": "83143f1532f3e64c1b0e6644db0eeee6"
 }
 
 [deps]
 
-source_file="res://office/radio/grundig_radio_fr-250_free_am_fm_sw_3.png"
-dest_files=["res://.godot/imported/grundig_radio_fr-250_free_am_fm_sw_3.png-40c7ed5337bf4c49312688baf00aa867.s3tc.ctex"]
+source_file="res://office/radio/grundig_radio_fr-250_free_am_fm_sw_Image_0.png"
+dest_files=["res://.godot/imported/grundig_radio_fr-250_free_am_fm_sw_Image_0.png-40a6a9f8a6ed51cc905f21be83f206d3.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://radio/grundig_radio_fr-250_free_am_fm_sw_3.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
