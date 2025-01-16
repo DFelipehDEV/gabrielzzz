@@ -1,13 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3dfhfd3aoh87"]
+[gd_scene load_steps=13 format=3 uid="uid://b3dfhfd3aoh87"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_aivul"]
 [ext_resource type="Texture2D" uid="uid://o34obope75uq" path="res://richis.png" id="2_nlgk2"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_71ue7"]
-texture = ExtResource("2_nlgk2")
+[ext_resource type="Theme" uid="uid://dxor6bq5rdhns" path="res://texttheme.tres" id="3_cgdgp"]
+[ext_resource type="Texture2D" uid="uid://c5af7f8h0en5u" path="res://static.png" id="3_hvdfb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xti2u"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sg551"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp0oa"]
+atlas = ExtResource("3_hvdfb")
+region = Rect2(0, 0, 640, 361)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rblo3"]
+atlas = ExtResource("3_hvdfb")
+region = Rect2(640, 0, 640, 361)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq3aj"]
+atlas = ExtResource("3_hvdfb")
+region = Rect2(1280, 0, 640, 361)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fheoq"]
+atlas = ExtResource("3_hvdfb")
+region = Rect2(1920, 0, 640, 361)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oubp6"]
+atlas = ExtResource("3_hvdfb")
+region = Rect2(2560, 0, 640, 361)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ehoj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp0oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rblo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq3aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fheoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oubp6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -19,13 +65,58 @@ grow_vertical = 2
 script = ExtResource("1_aivul")
 
 [node name="Panel" type="Panel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_71ue7")
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0911458
+anchor_top = 0.0648148
+anchor_right = 1.09115
+anchor_bottom = 1.06481
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_cgdgp")
+theme_override_font_sizes/font_size = 50
+text = "Cinco
+Noches
+con
+Ricardo
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.518
+anchor_top = 0.183
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.175995
+offset_top = -247.056
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_nlgk2")
+
+[node name="Cp" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -292.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "@2025 Diogo Monteiro, César Oliveira"
+horizontal_alignment = 2
 
 [node name="New Game" type="Button" parent="."]
 layout_mode = 1
@@ -34,17 +125,20 @@ anchor_left = 0.297
 anchor_top = 0.603
 anchor_right = 0.297
 anchor_bottom = 0.603
-offset_left = -220.096
-offset_top = -19.496
-offset_right = 88.904
-offset_bottom = 39.504
+offset_left = -224.096
+offset_top = 20.504
+offset_right = 122.904
+offset_bottom = 79.504
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("3_cgdgp")
 theme_override_font_sizes/font_size = 43
 theme_override_styles/normal = SubResource("StyleBoxFlat_xti2u")
-text = "> >  New Game"
+text = "New Game"
+alignment = 0
+text_direction = 2
 
 [node name="Continue" type="Button" parent="."]
 layout_mode = 1
@@ -53,17 +147,29 @@ anchor_left = 0.297
 anchor_top = 0.603
 anchor_right = 0.297
 anchor_bottom = 0.603
-offset_left = -220.096
-offset_top = 53.504
-offset_right = 51.904
-offset_bottom = 112.504
+offset_left = -224.096
+offset_top = 73.504
+offset_right = 84.904
+offset_bottom = 132.504
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("3_cgdgp")
 theme_override_font_sizes/font_size = 43
 theme_override_styles/normal = SubResource("StyleBoxFlat_xti2u")
-text = "> >  Continue"
+text = "Continue"
+alignment = 0
+
+[node name="Noise" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.708346, 0.661871, 0.0588235)
+material = SubResource("CanvasItemMaterial_sg551")
+position = Vector2(374.25, 261.875)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ehoj4")
+autoplay = "default"
+frame_progress = 0.483096
+speed_scale = 1.2
 
 [connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Continue" to="." method="_on_new_game_pressed"]
