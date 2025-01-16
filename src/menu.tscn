@@ -1,9 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3dfhfd3aoh87"]
+[gd_scene load_steps=15 format=3 uid="uid://b3dfhfd3aoh87"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_aivul"]
 [ext_resource type="Texture2D" uid="uid://o34obope75uq" path="res://richis.png" id="2_nlgk2"]
+[ext_resource type="Texture2D" uid="uid://bel3gaw5qin4s" path="res://office/estadioTitle.png" id="2_s26bw"]
 [ext_resource type="Theme" uid="uid://dxor6bq5rdhns" path="res://texttheme.tres" id="3_cgdgp"]
 [ext_resource type="Texture2D" uid="uid://c5af7f8h0en5u" path="res://static.png" id="3_hvdfb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6kpf5"]
+texture = ExtResource("2_s26bw")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xti2u"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -65,13 +69,14 @@ grow_vertical = 2
 script = ExtResource("1_aivul")
 
 [node name="Panel" type="Panel" parent="."]
-self_modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0.141176, 0.101961, 0.0941176, 0.623529)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6kpf5")
 
 [node name="Title" type="Label" parent="Panel"]
 layout_mode = 1
@@ -87,11 +92,12 @@ theme_override_font_sizes/font_size = 50
 text = "Cinco
 Noches
 con
-Ricardo
+Richards
 "
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
+self_modulate = Color(0.999999, 0.801304, 0.767459, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.518
@@ -127,7 +133,7 @@ anchor_right = 0.297
 anchor_bottom = 0.603
 offset_left = -224.096
 offset_top = 20.504
-offset_right = 122.904
+offset_right = 52.904
 offset_bottom = 79.504
 grow_horizontal = 2
 grow_vertical = 2
@@ -149,7 +155,7 @@ anchor_right = 0.297
 anchor_bottom = 0.603
 offset_left = -224.096
 offset_top = 73.504
-offset_right = 84.904
+offset_right = 4.90401
 offset_bottom = 132.504
 grow_horizontal = 2
 grow_vertical = 2
@@ -162,10 +168,10 @@ text = "Continue"
 alignment = 0
 
 [node name="Noise" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 0.708346, 0.661871, 0.0588235)
+modulate = Color(1, 0.709804, 0.662745, 0.0705882)
 material = SubResource("CanvasItemMaterial_sg551")
-position = Vector2(374.25, 261.875)
-scale = Vector2(3, 3)
+position = Vector2(802, 444)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ehoj4")
 autoplay = "default"
 frame_progress = 0.483096
