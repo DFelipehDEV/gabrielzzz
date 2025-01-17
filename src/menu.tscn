@@ -170,8 +170,8 @@ alignment = 0
 [node name="Noise" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 0.709804, 0.662745, 0.0705882)
 material = SubResource("CanvasItemMaterial_sg551")
-position = Vector2(802, 444)
-scale = Vector2(2.5, 2.5)
+position = Vector2(1458, 767.875)
+scale = Vector2(4.55, 4.29432)
 sprite_frames = SubResource("SpriteFrames_ehoj4")
 autoplay = "default"
 frame_progress = 0.483096

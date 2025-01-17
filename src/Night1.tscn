@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=28 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
@@ -16,9 +16,11 @@
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="13_1w0fo"]
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://bathroom/bathroomtile.tres" id="13_ni2ub"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="14_8vip2"]
+[ext_resource type="Texture2D" uid="uid://dfuisnh1rks84" path="res://simon_chair-removebg-preview.png" id="14_crxg2"]
 [ext_resource type="PackedScene" uid="uid://2s6vckmj86pd" path="res://bathroom/toilet.tscn" id="15_2isdd"]
 [ext_resource type="Texture2D" uid="uid://wiq8vgqfhsxy" path="res://bathroom/shadowcock.webp" id="17_eajis"]
 [ext_resource type="Texture2D" uid="uid://cr1btv0ytp04g" path="res://npc/richard/standing.png" id="18_g0bxu"]
+[ext_resource type="Texture2D" uid="uid://dr2ypxedfwgcx" path="res://npc/vitinha/vitinha.png" id="21_dh6xr"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
@@ -187,19 +189,33 @@ mesh = SubResource("PlaneMesh_la8v7")
 [node name="RicardoBedroom" parent="." instance=ExtResource("8_o0llk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9321, 0, -152.404)
 
+[node name="Richard" type="Sprite3D" parent="RicardoBedroom"]
+transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, -5.96651, 1.0167, 3.104)
+cast_shadow = 0
+pixel_size = 0.005
+shaded = true
+texture_filter = 0
+texture = ExtResource("18_g0bxu")
+
 [node name="RicCam" type="Camera3D" parent="RicardoBedroom"]
 transform = Transform3D(-0.938143, -0.182268, 0.294393, -0.0284443, 0.887929, 0.4591, -0.345079, 0.422327, -0.838189, -2.55166, 3.70172, 0.374374)
 environment = SubResource("Environment_xjf4g")
 fov = 70.0
 
-[node name="Simon" type="Sprite3D" parent="RicardoBedroom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6794, 1.10052, -11.8462)
+[node name="SimaoBedroom" parent="." instance=ExtResource("9_wg86v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72574, 0, -160.825)
+
+[node name="Simon" type="Sprite3D" parent="SimaoBedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02156, 1.10052, -3.42522)
 modulate = Color(0.37918, 0.37918, 0.37918, 1)
 pixel_size = 0.0025
 texture = ExtResource("11_ajmye")
 
-[node name="SimaoBedroom" parent="." instance=ExtResource("9_wg86v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72574, 0, -160.825)
+[node name="SimonChair" type="Sprite3D" parent="SimaoBedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02156, 0.666999, -3.08672)
+modulate = Color(0.37918, 0.37918, 0.37918, 1)
+pixel_size = 0.0025
+texture = ExtResource("14_crxg2")
 
 [node name="SimCam" type="Camera3D" parent="SimaoBedroom"]
 transform = Transform3D(0.995942, 0.0125702, -0.0891144, 0.0168729, 0.946559, 0.32209, 0.0884007, -0.322287, 0.942505, -3.64225, 1.89338, -0.499649)
@@ -392,6 +408,10 @@ size = Vector3(0.0350342, 1.18739, 0.86784)
 transform = Transform3D(-0.00185007, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00185007, 0.0191574, 0.00974679, -0.267212)
 size = Vector3(0.122742, 0.0540314, 0.016819)
 
+[node name="vitinha" type="Sprite3D" parent="Bathrooms2/box"]
+transform = Transform3D(0.258403, 0, -0.919925, 0, 0.295385, 0, 0.304699, 0, 0.780153, -0.00205612, 1.18938, -0.294678)
+texture = ExtResource("21_dh6xr")
+
 [node name="box2" type="Node3D" parent="Bathrooms2"]
 transform = Transform3D(-0.999976, 0, 0.00698123, 0, 1, 0, -0.00698123, 0, -0.999976, -4.91378, 0, 0.827454)
 
@@ -427,11 +447,3 @@ size = Vector3(0.122742, 0.0540314, 0.016819)
 [node name="CSGBox3D" type="CSGBox3D" parent="Bathrooms2/box3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.416718, 0.557063, -0.501572)
 size = Vector3(0.0491943, 1.27435, 1.14314)
-
-[node name="Richard" type="Sprite3D" parent="."]
-transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 8.96559, 1.12977, -149.3)
-cast_shadow = 0
-pixel_size = 0.005
-shaded = true
-texture_filter = 0
-texture = ExtResource("18_g0bxu")
