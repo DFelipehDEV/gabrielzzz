@@ -43,13 +43,13 @@ size = Vector2(19, 10)
 adjustment_enabled = true
 adjustment_brightness = 0.5
 adjustment_contrast = 1.07
-adjustment_saturation = 0.01
+adjustment_saturation = 0.07
 
 [sub_resource type="Environment" id="Environment_56hgt"]
 adjustment_enabled = true
 adjustment_brightness = 0.5
 adjustment_contrast = 1.07
-adjustment_saturation = 0.01
+adjustment_saturation = 0.07
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8l7dj"]
 albedo_texture = ExtResource("17_eajis")
@@ -192,9 +192,9 @@ transform = Transform3D(-0.938143, -0.182268, 0.294393, -0.0284443, 0.887929, 0.
 environment = SubResource("Environment_xjf4g")
 fov = 70.0
 
-[node name="Sprite3D" type="Sprite3D" parent="RicardoBedroom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6794, 1.1848, -11.8462)
-modulate = Color(0.589303, 0.385657, 0.347889, 1)
+[node name="Simon" type="Sprite3D" parent="RicardoBedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6794, 1.10052, -11.8462)
+modulate = Color(0.37918, 0.37918, 0.37918, 1)
 pixel_size = 0.0025
 texture = ExtResource("11_ajmye")
 
@@ -202,7 +202,7 @@ texture = ExtResource("11_ajmye")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72574, 0, -160.825)
 
 [node name="SimCam" type="Camera3D" parent="SimaoBedroom"]
-transform = Transform3D(0.995942, 0.0125702, -0.0891144, 0.0168729, 0.946559, 0.32209, 0.0884007, -0.322287, 0.942505, -3.64225, 2.25855, -0.329224)
+transform = Transform3D(0.995942, 0.0125702, -0.0891144, 0.0168729, 0.946559, 0.32209, 0.0884007, -0.322287, 0.942505, -3.64225, 1.89338, -0.499649)
 environment = SubResource("Environment_56hgt")
 fov = 87.8
 
