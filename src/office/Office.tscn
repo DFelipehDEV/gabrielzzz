@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://coc1glsj1410t"]
+[gd_scene load_steps=24 format=3 uid="uid://coc1glsj1410t"]
 
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="7_tlfhq"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="8_klpys"]
@@ -17,9 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://chair/chair.glb" id="18_gjll4"]
 [ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://office/speakers/speakers_low_poly1.glb" id="19_sw1nb"]
 [ext_resource type="Texture2D" uid="uid://0cerglkkwt72" path="res://office/onair/onair.jpg" id="22_cbs6e"]
-[ext_resource type="Texture2D" uid="uid://dql3yehg0w7ey" path="res://chipped_paint_patch/Textures/T_ujzjdgmo_1K_B-O.png" id="23_gyhp0"]
-[ext_resource type="Texture2D" uid="uid://nlmmy7qvwf5o" path="res://chipped_paint_patch/Textures/T_ujzjdgmo_1K_N.jpg" id="24_2hpiy"]
-[ext_resource type="Texture2D" uid="uid://bjgeh4wnpshah" path="res://chipped_paint_patch/Textures/T_ujzjdgmo_1K_ORM.jpg" id="25_flugt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xp0vg"]
 
@@ -215,13 +212,3 @@ light_energy = 1.557
 light_bake_mode = 1
 omni_range = 1.47567
 omni_attenuation = 0.478
-
-[node name="Patchs" type="Node3D" parent="."]
-transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 9.73317, 0.282123)
-
-[node name="Decal" type="Decal" parent="Patchs"]
-transform = Transform3D(0.97354, 0.228487, -0.00389322, 0.00410141, -0.00043635, 0.999991, 0.228483, -0.973547, -0.00136192, 3.7731, -0.919911, -0.82301)
-size = Vector3(4.17698, 0.794189, 2.40536)
-texture_albedo = ExtResource("23_gyhp0")
-texture_normal = ExtResource("24_2hpiy")
-texture_orm = ExtResource("25_flugt")
