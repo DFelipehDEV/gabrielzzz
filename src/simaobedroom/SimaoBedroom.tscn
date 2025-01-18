@@ -18,7 +18,7 @@ size = Vector2(7, 4.5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_t1mvr"]
 material = ExtResource("2_ynlpp")
-size = Vector2(7, 9)
+size = Vector2(7, 8.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etwhk"]
 albedo_texture = ExtResource("3_hmakx")
