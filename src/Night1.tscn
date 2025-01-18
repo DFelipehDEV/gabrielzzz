@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=27 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
@@ -16,7 +16,6 @@
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="13_1w0fo"]
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://bathroom/bathroomtile.tres" id="13_ni2ub"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="14_8vip2"]
-[ext_resource type="Texture2D" uid="uid://dfuisnh1rks84" path="res://simon_chair-removebg-preview.png" id="14_crxg2"]
 [ext_resource type="PackedScene" uid="uid://2s6vckmj86pd" path="res://bathroom/toilet.tscn" id="15_2isdd"]
 [ext_resource type="Texture2D" uid="uid://wiq8vgqfhsxy" path="res://bathroom/shadowcock.webp" id="17_eajis"]
 [ext_resource type="Texture2D" uid="uid://cr1btv0ytp04g" path="res://npc/richard/standing.png" id="18_g0bxu"]
@@ -24,13 +23,18 @@
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
-tonemap_mode = 2
-tonemap_exposure = 0.37
+background_color = Color(0.0210681, 0.0365151, 0.0495568, 1)
+ambient_light_color = Color(0.0210681, 0.0365151, 0.0495568, 1)
+tonemap_mode = 3
+tonemap_exposure = 0.3
+tonemap_white = 3.0
 ssao_enabled = true
 ssil_sharpness = 1.0
-fog_light_color = Color(0.641934, 0.641934, 0.641934, 1)
-fog_density = 0.1451
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.1407
 volumetric_fog_albedo = Color(0, 0, 0, 1)
+adjustment_enabled = true
+adjustment_saturation = 1.2
 
 [sub_resource type="SystemFont" id="SystemFont_xuket"]
 font_names = PackedStringArray("Calibri")
@@ -190,7 +194,7 @@ mesh = SubResource("PlaneMesh_la8v7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9321, 0, -152.404)
 
 [node name="Richard" type="Sprite3D" parent="RicardoBedroom"]
-transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, -5.96651, 1.0167, 3.104)
+transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, -3.05355, 0.986578, 0.308289)
 cast_shadow = 0
 pixel_size = 0.005
 shaded = true
@@ -198,7 +202,7 @@ texture_filter = 0
 texture = ExtResource("18_g0bxu")
 
 [node name="RicCam" type="Camera3D" parent="RicardoBedroom"]
-transform = Transform3D(-0.938143, -0.182268, 0.294393, -0.0284443, 0.887929, 0.4591, -0.345079, 0.422327, -0.838189, -2.55166, 3.70172, 0.374374)
+transform = Transform3D(-0.938143, -0.182267, 0.294393, -0.0284443, 0.887929, 0.4591, -0.345079, 0.422327, -0.838189, -0.00872707, 2.74855, -2.96603)
 environment = SubResource("Environment_xjf4g")
 fov = 70.0
 
@@ -210,12 +214,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02156, 1.10052, -3.42522)
 modulate = Color(0.37918, 0.37918, 0.37918, 1)
 pixel_size = 0.0025
 texture = ExtResource("11_ajmye")
-
-[node name="SimonChair" type="Sprite3D" parent="SimaoBedroom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02156, 0.666999, -3.08672)
-modulate = Color(0.37918, 0.37918, 0.37918, 1)
-pixel_size = 0.0025
-texture = ExtResource("14_crxg2")
 
 [node name="SimCam" type="Camera3D" parent="SimaoBedroom"]
 transform = Transform3D(0.995942, 0.0125702, -0.0891144, 0.0168729, 0.946559, 0.32209, 0.0884007, -0.322287, 0.942505, -3.64225, 1.89338, -0.499649)
