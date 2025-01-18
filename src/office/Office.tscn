@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://coc1glsj1410t"]
+[gd_scene load_steps=26 format=3 uid="uid://coc1glsj1410t"]
 
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="7_tlfhq"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="8_klpys"]
@@ -32,6 +32,10 @@ size = Vector3(4.7, 1, 1)
 material = ExtResource("7_tlfhq")
 size = Vector3(0.9, 1.5, 1)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_cpnjw"]
+material = ExtResource("9_4qo3k")
+size = Vector2(3, 1.5)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8luy"]
 disable_ambient_light = true
 albedo_texture = ExtResource("10_v8ou4")
@@ -40,6 +44,10 @@ emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
 ao_light_affect = 1.0
 heightmap_scale = 16.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dxvot"]
+material = SubResource("StandardMaterial3D_h8luy")
+size = Vector2(0.6, 0.6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gpr8a"]
 size = Vector3(0.2183, 0.156227, 0.0887451)
@@ -98,19 +106,13 @@ mesh = SubResource("BoxMesh_7pha6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63527, 9.60643, 2.17)
 mesh = SubResource("BoxMesh_7pha6")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.0858426, 0, 0.0014781, 0, 0.0955173, 0, -0.000352081, 0, -0.360399, 1.74151, 9.48588, 1.6522)
-calculate_tangents = false
-size = Vector3(6.35036, 6.55109, 0.0169678)
-material = SubResource("StandardMaterial3D_h8luy")
+[node name="Window" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.124657, 9.48782, 1.78264)
+mesh = SubResource("PlaneMesh_cpnjw")
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.0173195, 0, -4.22284, 0, 21.6973, 0, 4.22284, 0, -0.0173187, 0.124657, 9.48782, 1.78264)
-cast_shadow = 0
-gi_mode = 0
-calculate_tangents = false
-size = Vector3(0.001, 0.0564942, 0.622529)
-material = ExtResource("9_4qo3k")
+[node name="Poster" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, -4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 8.74228e-08, -1, 1.91069e-15, 1.76035, 9.48588, 1.6522)
+mesh = SubResource("PlaneMesh_dxvot")
 
 [node name="Table" type="Node3D" parent="."]
 transform = Transform3D(-0.999992, 0, 0.00410141, 0, 1, 0, -0.00410141, 0, -0.999992, 0.431979, 8.59605, 0.428052)
@@ -183,14 +185,6 @@ transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.99
 
 [node name="Web" type="Sprite3D" parent="Webs"]
 transform = Transform3D(-0.0119625, -0.0806175, 0.5907, 0.12231, -0.0123367, -0.00409053, 0.00930657, 0.0585097, 0.813033, -2.00656, -1.44181, 0.344748)
-cast_shadow = 0
-gi_mode = 0
-shaded = true
-double_sided = false
-texture = ExtResource("8_pfyif")
-
-[node name="Web2" type="Sprite3D" parent="Webs"]
-transform = Transform3D(0.0966093, 0.0154562, -0.0513436, -0.0191599, 0.10276, -0.0853912, 0.0128549, 0.0370017, 0.258593, -0.464091, 0.19114, 0.898554)
 cast_shadow = 0
 gi_mode = 0
 shaded = true
