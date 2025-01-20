@@ -5,6 +5,7 @@ public partial class Player : Node3D
 	private Camera3D cam;
 	private Node3D eye;
 	private Phone phone;
+	private AnimationPlayer animationPlayer;
 	private Vector3 normalPhonePosition;
 	private float rotationSpeed = 0.05f;
 	private Vector2 targetRotation;
@@ -14,6 +15,8 @@ public partial class Player : Node3D
 		NORMAL,
 		TOCAMERA,
 		CAMERA,
+		TOHIDDEN,
+		HIDDEN
 	}
 	private States state = States.NORMAL;
 	public States State {
@@ -32,22 +35,35 @@ public partial class Player : Node3D
 
 	public override void _Ready()
 	{
-		cam = GetNode<Camera3D>("Camera");
-		phone = GetNode<Phone>("Phone");
-		eye = GetNode<Node3D>("Eye");
+		cam = GetNode<Camera3D>("Root/Camera");
+		phone = GetNode<Phone>("Root/Phone");
+		eye = GetNode<Node3D>("Root/Eye");
+		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		normalPhonePosition = phone.Position;
 	}
 
 	public override void _Process(double delta)
 	{
-		targetRotation.X = Mathf.Lerp(targetRotation.X, (-direction.X * 1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
-		targetRotation.Y = Mathf.Lerp(targetRotation.Y, (-direction.Y * 1.5f), (float)GetProcessDeltaTime() * 2.5f);
-		Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
+		if (state == States.NORMAL) {
+			targetRotation.X = Mathf.Lerp(targetRotation.X, (-direction.X * 1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
+			targetRotation.Y = Mathf.Lerp(targetRotation.Y, (-direction.Y * 1.5f), (float)GetProcessDeltaTime() * 2.5f);
+			Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
+		}
 
 		if (Input.IsActionJustPressed("toggle_flash")) {
 			phone.Flash = !phone.Flash;
 		}
 		
+		if (Input.IsActionJustPressed("hide")) {
+			if (state == States.NORMAL) {
+				animationPlayer.Play("HideUnderTable");
+				state = States.TOHIDDEN;
+			} else {
+				animationPlayer.Play("RESET");
+				state = States.NORMAL;
+			}
+		}
+
 		if (Input.IsActionJustPressed("toggle_camera")) {
 			switch (State) {
 				case States.NORMAL:
