@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=32 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
@@ -81,10 +81,38 @@ tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
+[sub_resource type="Animation" id="Animation_2wknt"]
+resource_name = "UnhideTable"
+
+[sub_resource type="Animation" id="Animation_verti"]
+resource_name = "UnhideUnderTable"
+length = 1.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.5, -1.5, 1.46667, 1, 0, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 1.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cks78"]
 _data = {
 "HideUnderTable": SubResource("Animation_c1eah"),
-"RESET": SubResource("Animation_7xgl7")
+"RESET": SubResource("Animation_7xgl7"),
+"UnhideTable": SubResource("Animation_2wknt"),
+"UnhideUnderTable": SubResource("Animation_verti")
 }
 
 [sub_resource type="SystemFont" id="SystemFont_xuket"]

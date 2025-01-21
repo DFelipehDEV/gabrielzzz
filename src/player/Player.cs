@@ -59,7 +59,7 @@ public partial class Player : Node3D
 				animationPlayer.Play("HideUnderTable");
 				state = States.TOHIDDEN;
 			} else {
-				animationPlayer.Play("RESET");
+				animationPlayer.Play("UnhideUnderTable");
 				state = States.NORMAL;
 			}
 		}
