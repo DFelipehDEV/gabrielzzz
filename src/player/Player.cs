@@ -56,6 +56,7 @@ public partial class Player : Node3D
 		
 		if (Input.IsActionJustPressed("hide")) {
 			if (state == States.NORMAL) {
+				
 				animationPlayer.Play("HideUnderTable");
 				state = States.TOHIDDEN;
 			} else {
@@ -63,6 +64,8 @@ public partial class Player : Node3D
 				state = States.NORMAL;
 			}
 		}
+		
+		
 
 		if (Input.IsActionJustPressed("toggle_camera")) {
 			switch (State) {
@@ -113,7 +116,12 @@ public partial class Player : Node3D
 						cameras[currentCamera].Environment.TonemapExposure += 0.6f * (float)delta;
 					}
 					break;
-			
+					
+				case States.TOHIDDEN:
+					targetRotation.X = Mathf.Lerp(targetRotation.X, Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
+					targetRotation.Y = Mathf.Lerp(targetRotation.Y, Mathf.DegToRad(0), (float)GetProcessDeltaTime() * 2.5f);
+					Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
+					break;
 		}
 		stateTimer += 1.0f * (float)delta;
 		GD.Print(stateTimer);
