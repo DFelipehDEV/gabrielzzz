@@ -52,6 +52,26 @@ public partial class Player : Node3D
 
 		if (Input.IsActionJustPressed("toggle_flash")) {
 			phone.Flash = !phone.Flash;
+			
+			if(state == States.CAMERA){
+				if (currentCamera > 1)  {
+						cameras[currentCamera].Current = false;
+						currentCamera--;
+						cameras[currentCamera].Current = true;
+						cameras[currentCamera].Environment.TonemapExposure = 0.0f;
+					} else {
+						// Reset
+						cameras[currentCamera].Current = false;
+						currentCamera = 0;
+						cameras[currentCamera].Current = true;
+						State = States.NORMAL;
+						Tween toNormalPosition = CreateTween().SetTrans(Tween.TransitionType.Quad);
+						toNormalPosition.TweenProperty(phone, "rotation_degrees", new Vector3(0.0f, 0.0f, 0.0f), 0.5);	
+						Tween toNormalRotation = CreateTween().SetTrans(Tween.TransitionType.Quad);	
+						toNormalRotation.TweenProperty(phone, "position", normalPhonePosition, 0.3);			
+						phone.cameraUI.Visible = false;
+					}
+			}
 		}
 		
 		if (Input.IsActionJustPressed("hide")) {
@@ -119,7 +139,7 @@ public partial class Player : Node3D
 					
 				case States.TOHIDDEN:
 					targetRotation.X = Mathf.Lerp(targetRotation.X, Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
-					targetRotation.Y = Mathf.Lerp(targetRotation.Y, Mathf.DegToRad(0), (float)GetProcessDeltaTime() * 2.5f);
+					targetRotation.Y = Mathf.Lerp(targetRotation.Y, Mathf.DegToRad(0 ), (float)GetProcessDeltaTime() * 2.5f);
 					Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
 					break;
 		}
