@@ -16,7 +16,7 @@ public partial class Player : Node3D
 		TOCAMERA,
 		CAMERA,
 		TOHIDDEN,
-		HIDDEN
+		HIDDEN,
 	}
 	private States state = States.NORMAL;
 	public States State {
@@ -44,7 +44,7 @@ public partial class Player : Node3D
 
 	public override void _Process(double delta)
 	{
-		if (state == States.NORMAL) {
+		if (state == States.NORMAL && animationPlayer.CurrentAnimation == "" ) {
 			targetRotation.X = Mathf.Lerp(targetRotation.X, (-direction.X * 1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
 			targetRotation.Y = Mathf.Lerp(targetRotation.Y, (-direction.Y * 1.5f), (float)GetProcessDeltaTime() * 2.5f);
 			Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
@@ -75,6 +75,7 @@ public partial class Player : Node3D
 				state = States.TOHIDDEN;
 			} else {
 				animationPlayer.Play("UnhideUnderTable");
+				Rotation = new Vector3(Mathf.DegToRad(0), Mathf.DegToRad(180), Rotation.Z);
 				state = States.NORMAL;
 			}
 		}
@@ -138,7 +139,6 @@ public partial class Player : Node3D
 					break;
 		}
 		stateTimer += 1.0f * (float)delta;
-		GD.Print(stateTimer);
 	}
 	public override void _Input(InputEvent @event)
 	{
