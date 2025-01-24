@@ -62,14 +62,8 @@ public partial class Player : Node3D
 					} else {
 						// Reset
 						cameras[currentCamera].Current = false;
-						currentCamera = 0;
+						currentCamera = cameras.Count - 1;
 						cameras[currentCamera].Current = true;
-						State = States.NORMAL;
-						Tween toNormalPosition = CreateTween().SetTrans(Tween.TransitionType.Quad);
-						toNormalPosition.TweenProperty(phone, "rotation_degrees", new Vector3(0.0f, 0.0f, 0.0f), 0.5);	
-						Tween toNormalRotation = CreateTween().SetTrans(Tween.TransitionType.Quad);	
-						toNormalRotation.TweenProperty(phone, "position", normalPhonePosition, 0.3);			
-						phone.cameraUI.Visible = false;
 					}
 			}
 		}
