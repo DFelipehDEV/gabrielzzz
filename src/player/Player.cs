@@ -2,7 +2,7 @@ using Godot;
 
 public partial class Player : Node3D
 {
-	private Camera3D cam;
+	private Camera cam;
 	private Node3D eye;
 	private Phone phone;
 	private AnimationPlayer animationPlayer;
@@ -35,7 +35,7 @@ public partial class Player : Node3D
 
 	public override void _Ready()
 	{
-		cam = GetNode<Camera3D>("Root/Camera");
+		cam = GetNode<Camera>("Root/Camera");
 		phone = GetNode<Phone>("Root/Phone");
 		eye = GetNode<Node3D>("Root/Eye");
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
@@ -109,6 +109,8 @@ public partial class Player : Node3D
 						Tween toNormalRotation = CreateTween().SetTrans(Tween.TransitionType.Quad);	
 						toNormalRotation.TweenProperty(phone, "position", normalPhonePosition, 0.3);			
 						phone.cameraUI.Visible = false;
+						cam.posterize.Visible = false;
+						cam.grain.Visible = false;
 					}
 					break;
 			}
@@ -123,6 +125,8 @@ public partial class Player : Node3D
 						currentCamera = 1;
 						State = States.CAMERA;
 						phone.cameraUI.Visible = true;
+						cam.posterize.Visible = true;
+						cam.grain.Visible = true;
 					} 
 					break;
 
@@ -140,6 +144,7 @@ public partial class Player : Node3D
 		}
 		stateTimer += 1.0f * (float)delta;
 	}
+	
 	public override void _Input(InputEvent @event)
 	{
 		if (@event is InputEventMouseMotion eventMouseMotion) {

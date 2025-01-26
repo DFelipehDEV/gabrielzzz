@@ -30,7 +30,6 @@ albedo_texture = ExtResource("8_sh0y1")
 uv1_scale = Vector3(-1, 1, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v052v"]
-load_path = "res://.godot/imported/brawlstarscringe_normal.png-a61b30826504c76bc304f3c8e7256a23.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rini5"]
 specular_mode = 2

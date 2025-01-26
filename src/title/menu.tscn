@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3dfhfd3aoh87"]
+[gd_scene load_steps=13 format=3 uid="uid://b3dfhfd3aoh87"]
 
 [ext_resource type="Script" path="res://title/menu.gd" id="1_aivul"]
 [ext_resource type="Texture2D" uid="uid://o34obope75uq" path="res://title/richis.png" id="2_nlgk2"]
 [ext_resource type="Texture2D" uid="uid://bel3gaw5qin4s" path="res://office/estadioTitle.png" id="2_s26bw"]
+[ext_resource type="Shader" path="res://title/static.gdshader" id="3_2gj5v"]
 [ext_resource type="Theme" uid="uid://dxor6bq5rdhns" path="res://texttheme.tres" id="3_cgdgp"]
 [ext_resource type="Texture2D" uid="uid://c5af7f8h0en5u" path="res://title/static.png" id="3_hvdfb"]
+[ext_resource type="Script" path="res://title/Static.cs" id="6_urrem"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6kpf5"]
 texture = ExtResource("2_s26bw")
@@ -16,48 +18,22 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 blend_mode = 1
 light_mode = 1
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wp0oa"]
-atlas = ExtResource("3_hvdfb")
-region = Rect2(0, 0, 640, 361)
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_b1ykf"]
+frame_0/texture = ExtResource("3_hvdfb")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rblo3"]
-atlas = ExtResource("3_hvdfb")
-region = Rect2(640, 0, 640, 361)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yq3aj"]
-atlas = ExtResource("3_hvdfb")
-region = Rect2(1280, 0, 640, 361)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fheoq"]
-atlas = ExtResource("3_hvdfb")
-region = Rect2(1920, 0, 640, 361)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oubp6"]
-atlas = ExtResource("3_hvdfb")
-region = Rect2(2560, 0, 640, 361)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ehoj4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wp0oa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rblo3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yq3aj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fheoq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oubp6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ugjn"]
+shader = ExtResource("3_2gj5v")
+shader_parameter/overlay = true
+shader_parameter/resolution = Vector2(512, 288)
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 6.0
+shader_parameter/roll_variation = 2.0
+shader_parameter/distort_intensity = 0.002
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.032
+shader_parameter/discolor = true
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -78,6 +54,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_6kpf5")
 
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+self_modulate = Color(0.999999, 0.801304, 0.767459, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.607
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -220.0
+grow_horizontal = 2
+texture = ExtResource("2_nlgk2")
+
 [node name="Title" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
@@ -85,6 +73,7 @@ anchor_left = 0.0911458
 anchor_top = 0.0648148
 anchor_right = 1.09115
 anchor_bottom = 1.06481
+offset_right = 6.10352e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_cgdgp")
@@ -95,20 +84,6 @@ con
 Richards
 "
 metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-self_modulate = Color(0.999999, 0.801304, 0.767459, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.518
-anchor_top = 0.183
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.175995
-offset_top = -247.056
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("2_nlgk2")
 
 [node name="Cp" type="Label" parent="Panel"]
 layout_mode = 1
@@ -124,7 +99,7 @@ grow_vertical = 0
 text = "@2025 Diogo Monteiro, César Oliveira"
 horizontal_alignment = 2
 
-[node name="New Game" type="Button" parent="."]
+[node name="New Game" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.297
@@ -146,7 +121,7 @@ text = "New Game"
 alignment = 0
 text_direction = 2
 
-[node name="Continue" type="Button" parent="."]
+[node name="Continue" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.297
@@ -167,15 +142,28 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_xti2u")
 text = "Continue"
 alignment = 0
 
-[node name="Noise" type="AnimatedSprite2D" parent="."]
+[node name="Static" type="Sprite2D" parent="."]
 modulate = Color(1, 0.709804, 0.662745, 0.0705882)
+texture_repeat = 2
 material = SubResource("CanvasItemMaterial_sg551")
-position = Vector2(1458, 767.875)
-scale = Vector2(4.55, 4.29432)
-sprite_frames = SubResource("SpriteFrames_ehoj4")
-autoplay = "default"
-frame_progress = 0.483096
-speed_scale = 1.2
+position = Vector2(1536, 4320)
+scale = Vector2(2, 2)
+texture = SubResource("AnimatedTexture_b1ykf")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(0, 0, 15360, 8640)
+script = ExtResource("6_urrem")
 
-[connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="Continue" to="." method="_on_new_game_pressed"]
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5ugjn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Panel/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Panel/Continue" to="." method="_on_new_game_pressed"]
