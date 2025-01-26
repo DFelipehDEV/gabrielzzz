@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=34 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bj3eakylas5lg" path="res://player/phone/PhoneCameraBottom.png" id="10_d8mo8"]
 [ext_resource type="LightmapGIData" uid="uid://qof0fl061ard" path="res://Night1.lmbake" id="10_gy337"]
 [ext_resource type="Texture2D" uid="uid://n00rv7pb6lu3" path="res://npc/simon/sit.png" id="11_ajmye"]
+[ext_resource type="Shader" path="res://Posterize.gdshader" id="12_bou25"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="13_1w0fo"]
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://bathroom/bathroomtile.tres" id="13_ni2ub"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="14_8vip2"]
@@ -129,6 +130,9 @@ adjustment_enabled = true
 adjustment_brightness = 0.5
 adjustment_contrast = 1.07
 adjustment_saturation = 0.07
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fjlr"]
+shader = ExtResource("12_bou25")
 
 [sub_resource type="Environment" id="Environment_56hgt"]
 adjustment_enabled = true
@@ -292,6 +296,13 @@ texture = ExtResource("18_g0bxu")
 transform = Transform3D(-0.938143, -0.182267, 0.294393, -0.0284443, 0.887929, 0.4591, -0.345079, 0.422327, -0.838189, -0.00872707, 2.74855, -2.96603)
 environment = SubResource("Environment_xjf4g")
 fov = 70.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="RicardoBedroom/RicCam"]
+
+[node name="ColorRect" type="ColorRect" parent="RicardoBedroom/RicCam/CanvasLayer"]
+material = SubResource("ShaderMaterial_4fjlr")
+offset_right = 1171.0
+offset_bottom = 747.0
 
 [node name="SimaoBedroom" parent="." instance=ExtResource("9_wg86v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72574, 0, -160.825)
