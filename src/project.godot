@@ -27,6 +27,18 @@ window/size/mode=3
 
 project/assembly_name="gabrielzzzgodot"
 
+[file_customization]
+
+folder_colors={
+"res://asphalt/": "gray",
+"res://bathroom/": "teal",
+"res://brick/": "gray",
+"res://glass/": "gray",
+"res://office/": "teal",
+"res://ricbedroom/": "teal",
+"res://simaobedroom/": "teal"
+}
+
 [filesystem]
 
 import/blender/enabled=false

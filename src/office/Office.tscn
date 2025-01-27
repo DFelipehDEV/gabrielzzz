@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b6dgq7thgy31w" path="res://office/radio/grundig_radio_fr-250_free_am_fm_sw.glb" id="15_8uuc1"]
 [ext_resource type="AudioStream" uid="uid://dhuu4n026cvpu" path="res://office/radio/arabian.ogg" id="16_oebsy"]
 [ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://office/retro_light/retro_light.glb" id="17_xbhay"]
-[ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://chair/chair.glb" id="18_gjll4"]
+[ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://office/chair/chair.glb" id="18_gjll4"]
 [ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://office/speakers/speakers_low_poly1.glb" id="19_sw1nb"]
 [ext_resource type="Texture2D" uid="uid://0cerglkkwt72" path="res://office/onair/onair.jpg" id="22_cbs6e"]
 
