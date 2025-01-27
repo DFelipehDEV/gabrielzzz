@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=39 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bj3eakylas5lg" path="res://player/phone/PhoneCameraBottom.png" id="10_d8mo8"]
 [ext_resource type="LightmapGIData" uid="uid://qof0fl061ard" path="res://Night1.lmbake" id="10_gy337"]
 [ext_resource type="Texture2D" uid="uid://n00rv7pb6lu3" path="res://npc/simon/sit.png" id="11_ajmye"]
+[ext_resource type="Script" path="res://FpsCounter.cs" id="11_mm5m4"]
 [ext_resource type="Shader" path="res://post_processing/Posterize.gdshader" id="12_bou25"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="13_1w0fo"]
 [ext_resource type="Shader" path="res://post_processing/SimpleGrain.gdshader" id="13_bvw3k"]
@@ -300,6 +301,13 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="FPSCounter" type="Label" parent="Player/Root/Camera"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "60
+"
+script = ExtResource("11_mm5m4")
+
 [node name="AudioListener3D" type="AudioListener3D" parent="Player/Root"]
 current = true
 
@@ -576,7 +584,6 @@ positions = [NodePath("../RicardoBedroom/RichardPos"), NodePath("../SimaoBedroom
 timeUntilNextPosition = 9.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Richard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 cast_shadow = 0
 pixel_size = 0.005
 shaded = true
