@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="1_s2lc5"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="2_ymff6"]
 [ext_resource type="Texture2D" uid="uid://e8k054gwup0q" path="res://ricbedroom/diogocosta.jpg" id="3_pj1rq"]
-[ext_resource type="Texture2D" uid="uid://r1g6efwaw7ua" path="res://ricbedroom/bandeira_fcp.webp" id="4_cubxe"]
+[ext_resource type="Texture2D" uid="uid://chotu7n3fgt4f" path="res://ricbedroom/bandeira_fcp.png" id="4_ornu8"]
 [ext_resource type="PackedScene" uid="uid://dprqhntw5wkt7" path="res://ricbedroom/pillow/pillow.glb" id="5_vfk3l"]
 [ext_resource type="Material" uid="uid://cmyh1ifrbnn01" path="res://office/table/TableTex2.tres" id="6_ivn6v"]
 [ext_resource type="PackedScene" uid="uid://ui5y56mgsn0f" path="res://ricbedroom/lamp/old_ussr_lamp.glb" id="7_ofvxb"]
@@ -25,7 +25,7 @@ size = Vector2(7, 9)
 albedo_texture = ExtResource("3_pj1rq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_811bv"]
-albedo_texture = ExtResource("4_cubxe")
+albedo_texture = ExtResource("4_ornu8")
 
 [node name="RicardoBedroom" type="Node3D"]
 
@@ -62,11 +62,11 @@ size = Vector3(1, 1, 0.001)
 transform = Transform3D(0.189167, 0, 0, 0, 0.860854, 0, 0, 0, 0.229372, -1.03797, 0.218824, -0.763889)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Bed"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0941467, 0.0652421, 5.55969)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.83435, -0.0941463, 0.0652421, 6.40484)
 size = Vector3(9.18555, 0.683972, 11.2663)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Bed"]
-transform = Transform3D(-4.37114e-08, 0, 0.948463, 0, 1.0702, 0, 1, 0, 4.14586e-08, 0.0214539, 0.0551755, 3.82846)
+transform = Transform3D(-3.18356e-08, 0, 0.948462, 0, 1.0702, 0, 0.728314, 0, 4.14586e-08, 0.0214539, 0.0551755, 4.96039)
 material_override = SubResource("StandardMaterial3D_811bv")
 size = Vector3(9.57422, 0.712505, 10.3606)
 

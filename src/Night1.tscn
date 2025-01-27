@@ -20,9 +20,9 @@
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://bathroom/bathroomtile.tres" id="13_ni2ub"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="14_8vip2"]
 [ext_resource type="PackedScene" uid="uid://2s6vckmj86pd" path="res://bathroom/toilet.tscn" id="15_2isdd"]
-[ext_resource type="Texture2D" uid="uid://wiq8vgqfhsxy" path="res://bathroom/shadowcock.webp" id="17_eajis"]
 [ext_resource type="Texture2D" uid="uid://cr1btv0ytp04g" path="res://npc/richard/standing.png" id="18_g0bxu"]
 [ext_resource type="Texture2D" uid="uid://dr2ypxedfwgcx" path="res://npc/vitinha/vitinha.png" id="21_dh6xr"]
+[ext_resource type="Texture2D" uid="uid://dn8fq0ok8ruq5" path="res://bathroom/shadowcock.jpg" id="22_sdsmn"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
@@ -148,7 +148,7 @@ adjustment_contrast = 1.07
 adjustment_saturation = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8l7dj"]
-albedo_texture = ExtResource("17_eajis")
+albedo_texture = ExtResource("22_sdsmn")
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
@@ -461,6 +461,12 @@ size = Vector3(0.122742, 0.0540314, 0.016819)
 [node name="Bathrooms2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5289, -0.0159672, -147.868)
 
+[node name="vitinha" type="Sprite3D" parent="Bathrooms2"]
+transform = Transform3D(-0.25627, 0, 0.925349, 0, 0.295385, 0, -0.306496, 0, -0.773712, -4.95382, 1.0373, 1.42732)
+pixel_size = 0.008
+shaded = true
+texture = ExtResource("21_dh6xr")
+
 [node name="paredes" type="Node3D" parent="Bathrooms2"]
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Bathrooms2/paredes"]
@@ -494,19 +500,19 @@ material_override = ExtResource("13_ni2ub")
 size = Vector3(7.20776, 3.65009, 0.109009)
 
 [node name="Bathroom Cam" type="Camera3D" parent="Bathrooms2"]
-transform = Transform3D(-0.465038, -0.418311, 0.780228, -0.0284443, 0.887929, 0.4591, -0.884834, 0.191306, -0.42482, -1.12752, 1.84255, -0.611206)
+transform = Transform3D(-0.465038, -0.418311, 0.780228, -0.0284443, 0.887929, 0.4591, -0.884834, 0.191306, -0.424819, -1.32774, 1.84255, -0.611206)
 environment = SubResource("Environment_xjf4g")
 fov = 70.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Bathrooms2"]
 transform = Transform3D(1, 0, -2.85258e-07, 0, 1, 0, 2.85258e-07, 0, 1, -3.8613, 1.4722, -0.668365)
 light_color = Color(0.959505, 0.757356, 0.684217, 1)
-light_energy = 3.0
+light_energy = 2.5
 light_volumetric_fog_energy = 0.0
 light_size = 0.035
 light_bake_mode = 1
 shadow_enabled = true
-omni_range = 3.3
+omni_range = 3.2
 omni_attenuation = 1.6
 
 [node name="box" type="Node3D" parent="Bathrooms2"]
@@ -530,12 +536,6 @@ size = Vector3(0.0350342, 1.18739, 0.86784)
 [node name="CSGBox3D3" type="CSGBox3D" parent="Bathrooms2/box/CSGBox3D2"]
 transform = Transform3D(-0.00185007, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00185007, 0.0191574, 0.00974679, -0.267212)
 size = Vector3(0.122742, 0.0540314, 0.016819)
-
-[node name="vitinha" type="Sprite3D" parent="Bathrooms2/box"]
-transform = Transform3D(0.258403, 0, -0.919925, 0, 0.295385, 0, 0.304699, 0, 0.780153, -0.00205612, 1.00356, -0.294678)
-pixel_size = 0.008
-shaded = true
-texture = ExtResource("21_dh6xr")
 
 [node name="box2" type="Node3D" parent="Bathrooms2"]
 transform = Transform3D(-0.999976, 0, 0.00698123, 0, 1, 0, -0.00698123, 0, -0.999976, -4.91378, 0, 0.827454)
