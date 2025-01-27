@@ -532,7 +532,8 @@ transform = Transform3D(-0.00185007, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.0018
 size = Vector3(0.122742, 0.0540314, 0.016819)
 
 [node name="vitinha" type="Sprite3D" parent="Bathrooms2/box"]
-transform = Transform3D(0.258403, 0, -0.919925, 0, 0.295385, 0, 0.304699, 0, 0.780153, -0.00205612, 1.18938, -0.294678)
+transform = Transform3D(0.258403, 0, -0.919925, 0, 0.295385, 0, 0.304699, 0, 0.780153, -0.00205612, 1.00356, -0.294678)
+pixel_size = 0.008
 shaded = true
 texture = ExtResource("21_dh6xr")
 
