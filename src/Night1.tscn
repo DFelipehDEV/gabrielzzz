@@ -607,6 +607,6 @@ texture = ExtResource("21_dh6xr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -98.3233)
 
 [node name="Garage Cam" type="Camera3D" parent="Garage"]
-transform = Transform3D(-0.999047, -0.0100343, -0.0424905, -0.0284443, 0.887929, 0.4591, 0.0331218, 0.459871, -0.887368, -1.29985, 2.38704, -0.611206)
+transform = Transform3D(-0.724169, 0.298288, -0.621774, -0.0284443, 0.887929, 0.4591, 0.689035, 0.350152, -0.634526, -2.95379, 2.38704, -2.13844)
 environment = SubResource("Environment_xjf4g")
-fov = 70.0
+fov = 78.75
