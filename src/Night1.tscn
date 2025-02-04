@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=40 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dr2ypxedfwgcx" path="res://npc/vitinha/vitinha.png" id="21_dh6xr"]
 [ext_resource type="Texture2D" uid="uid://dn8fq0ok8ruq5" path="res://bathroom/shadowcock.jpg" id="22_sdsmn"]
 [ext_resource type="Script" path="res://npc/EnemyNPC.cs" id="23_2rrwi"]
+[ext_resource type="PackedScene" uid="uid://cplcqpabsaj8i" path="res://garage/garage.tscn" id="26_syuee"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
@@ -160,7 +161,7 @@ environment = SubResource("Environment_bjlio")
 
 [node name="Player" parent="." node_paths=PackedStringArray("cameras") instance=ExtResource("1_jnati")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 12.823, 2.7)
-cameras = [NodePath("Root/Camera"), NodePath("../RicardoBedroom/RicCam"), NodePath("../SimaoBedroom/SimCam"), NodePath("../Bathrooms/Bathroom Cam"), NodePath("../Bathrooms2/Bathroom Cam")]
+cameras = [NodePath("Root/Camera"), NodePath("../RicardoBedroom/RicCam"), NodePath("../SimaoBedroom/SimCam"), NodePath("../Bathrooms/Bathroom Cam"), NodePath("../Bathrooms2/Bathroom Cam"), NodePath("../Garage/Garage Cam")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
@@ -317,6 +318,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30572e-09, 0, -0.0492518)
 [node name="Office" parent="." instance=ExtResource("6_0w350")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121859, 3.82077, 3.50747)
 
+[node name="RichardPos" type="Node3D" parent="Office"]
+transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558, 2.41398, 7.58116, 0.0257728)
+
 [node name="Stadium" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 5.34246e-12, -0.000122221, 0.000122221, 4.37114e-08, -1, 0, -1, -4.37114e-08, 0.175, 14.809, 23.177)
 cast_shadow = 0
@@ -402,7 +406,6 @@ light_energy = 3.9
 light_volumetric_fog_energy = 0.0
 light_size = 0.035
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 3.5
 omni_attenuation = 1.341
 
@@ -515,7 +518,6 @@ light_energy = 2.5
 light_volumetric_fog_energy = 0.0
 light_size = 0.035
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 3.2
 omni_attenuation = 1.6
 
@@ -580,7 +582,7 @@ size = Vector3(0.0491943, 1.27435, 1.14314)
 [node name="Richard" type="Node3D" parent="." node_paths=PackedStringArray("positions")]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 11.8786, 0.986578, -152.096)
 script = ExtResource("23_2rrwi")
-positions = [NodePath("../RicardoBedroom/RichardPos"), NodePath("../SimaoBedroom/RichardPos"), NodePath("../Bathrooms/RichardPos")]
+positions = [NodePath("../Office/RichardPos")]
 timeUntilNextPosition = 9.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Richard"]
@@ -600,3 +602,11 @@ transform = Transform3D(-0.25627, 0, 0.925349, 0, 0.295385, 0, -0.306496, 0, -0.
 pixel_size = 0.008
 shaded = true
 texture = ExtResource("21_dh6xr")
+
+[node name="Garage" parent="." instance=ExtResource("26_syuee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -98.3233)
+
+[node name="Garage Cam" type="Camera3D" parent="Garage"]
+transform = Transform3D(-0.999047, -0.0100343, -0.0424905, -0.0284443, 0.887929, 0.4591, 0.0331218, 0.459871, -0.887368, -1.29985, 2.38704, -0.611206)
+environment = SubResource("Environment_xjf4g")
+fov = 70.0

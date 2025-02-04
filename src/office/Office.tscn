@@ -165,7 +165,6 @@ light_energy = 3.909
 light_volumetric_fog_energy = 0.0
 light_size = 0.035
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 1.87254
 omni_attenuation = 4.03
 

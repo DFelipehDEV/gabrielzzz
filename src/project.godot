@@ -33,6 +33,7 @@ folder_colors={
 "res://asphalt/": "gray",
 "res://bathroom/": "teal",
 "res://brick/": "gray",
+"res://garage/": "green",
 "res://glass/": "gray",
 "res://office/": "teal",
 "res://ricbedroom/": "teal",
