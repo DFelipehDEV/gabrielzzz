@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=3 uid="uid://31378kkvbbck"]
+
+[ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="1_ah2v2"]
+[ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="2_if5ic"]
+[ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass/glass_mat.tres" id="3_pxkch"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h6byn"]
+material = ExtResource("1_ah2v2")
+size = Vector2(7, 4.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qy6p2"]
+material = ExtResource("2_if5ic")
+size = Vector2(7, 9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5ou5"]
+albedo_color = Color(0.454524, 0.454524, 0.454524, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dw28h"]
+albedo_color = Color(0.106782, 0.15128, 0.232176, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4qlq"]
+albedo_color = Color(0.544974, 0.544974, 0.544974, 1)
+metallic = 0.43
+metallic_specular = 0.46
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpoaj"]
+albedo_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pljsq"]
+albedo_color = Color(0.288518, 0.288518, 0.288518, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ret3"]
+albedo_color = Color(0.0605303, 0.0605303, 0.0605303, 1)
+
+[node name="Kitchen" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.86607, 2.22528, 1.92127)
+mesh = SubResource("PlaneMesh_h6byn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 1.29671, 2.22088, -1.56969)
+mesh = SubResource("PlaneMesh_h6byn")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -5.12874, 2.22196, -1.58319)
+mesh = SubResource("PlaneMesh_h6byn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -1.88655, 2.19021, -5.06917)
+mesh = SubResource("PlaneMesh_h6byn")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85089, 0.0973209, -1.06403)
+mesh = SubResource("PlaneMesh_qy6p2")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -1.85089, 3.65689, -1.06403)
+mesh = SubResource("PlaneMesh_qy6p2")
+
+[node name="Móveis" type="Node3D" parent="."]
+
+[node name="fridge" type="CSGBox3D" parent="Móveis"]
+transform = Transform3D(0.999998, 0, -0.00193731, 0, 1, 0, 0.00193731, 0, 0.999998, -1.22228, 0.642352, 1.77223)
+size = Vector3(0.644531, 1.35437, 0.313477)
+material = SubResource("StandardMaterial3D_k5ou5")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/fridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.299174, 0.418942, -0.167469)
+size = Vector3(0.0273743, 0.243652, 0.028595)
+material = SubResource("StandardMaterial3D_dw28h")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Móveis/fridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.284334, -0.0993907, -0.171254)
+size = Vector3(0.0187683, 0.21814, 0.0220642)
+material = SubResource("StandardMaterial3D_dw28h")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Móveis/fridge"]
+transform = Transform3D(1, 0, -0.00193731, 0, 1, 0, 0.00193731, 0, 1, 0.00032711, -0.207752, -0.0721704)
+size = Vector3(0.645, 0.735, 0.187)
+material = SubResource("StandardMaterial3D_o4qlq")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/fridge"]
+transform = Transform3D(1, 0, -0.00193731, 0, 1, 0, 0.00193731, 0, 1, 0.00032711, 0.430248, -0.0721703)
+size = Vector3(0.671206, 0.42984, 0.187012)
+material = SubResource("StandardMaterial3D_o4qlq")
+
+[node name="stove" type="CSGBox3D" parent="Móveis"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187613, 0.408929, 1.73394)
+size = Vector3(0.608643, 0.777954, 0.50705)
+material = SubResource("StandardMaterial3D_mpoaj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/stove"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000963718, 0.331359, -0.257298)
+size = Vector3(0.522858, 0.0330811, 0.0590134)
+material = SubResource("StandardMaterial3D_pljsq")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/stove/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000899047, 0.000846863, 0.00782108)
+operation = 2
+size = Vector3(0.474835, 0.0604858, 0.0424173)
+material = SubResource("StandardMaterial3D_pljsq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/stove/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000963718, -0.371585, -0.00258863)
+size = Vector3(0.522858, 0.0330811, 0.0590134)
+material = SubResource("StandardMaterial3D_pljsq")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/stove/CSGBox3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00062871, 0.000557482, -0.00281346)
+operation = 2
+size = Vector3(0.474835, 0.0604858, 0.0236645)
+material = SubResource("StandardMaterial3D_pljsq")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Móveis/stove"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000956684, -0.0495225, 0.132866)
+size = Vector3(0.622711, 0.882645, 0.7677)
+material = SubResource("StandardMaterial3D_5ret3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/stove/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00306317, 0.164348, -0.177599)
+operation = 2
+size = Vector3(0.424127, 0.220434, 0.203613)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Móveis/stove"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000174776, 0.0146897, -0.237693)
+operation = 2
+size = Vector3(0.608722, 0.0206847, 0.0384216)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/stove"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00306317, 0.164348, -0.177599)
+operation = 2
+size = Vector3(0.424127, 0.220434, 0.203613)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Móveis/stove"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38197, 0.964226, -0.815472)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Móveis/stove"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00242417, 0.165745, -0.252816)
+size = Vector3(0.421912, 0.217639, 0.00415025)
+material = ExtResource("3_pxkch")
+
+[node name="Shelf" type="CSGBox3D" parent="Móveis"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06054, 1.71666)
+size = Vector3(1, 0.0259399, 0.0841064)
