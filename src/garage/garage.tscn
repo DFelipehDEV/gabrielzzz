@@ -57,7 +57,7 @@ light_bake_mode = 1
 omni_range = 2.317
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, -2.85258e-07, 0, 1, 0, 2.85258e-07, 0, 1, -2.42306, 2.17464, 0.0354973)
+transform = Transform3D(1, 0, -2.85258e-07, 0, 1, 0, 2.85258e-07, 0, 1, -1.7249, 2.17464, -0.287369)
 light_color = Color(0.959505, 0.757356, 0.684217, 1)
 light_energy = 3.9
 light_volumetric_fog_energy = 0.0

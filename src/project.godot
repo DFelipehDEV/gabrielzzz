@@ -36,6 +36,7 @@ folder_colors={
 "res://brick/": "gray",
 "res://garage/": "teal",
 "res://glass/": "gray",
+"res://metal_fridge/": "gray",
 "res://office/": "teal",
 "res://ricbedroom/": "teal",
 "res://simaobedroom/": "teal"
