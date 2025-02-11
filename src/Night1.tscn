@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=41 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dn8fq0ok8ruq5" path="res://bathroom/shadowcock.jpg" id="22_sdsmn"]
 [ext_resource type="Script" path="res://npc/EnemyNPC.cs" id="23_2rrwi"]
 [ext_resource type="PackedScene" uid="uid://cplcqpabsaj8i" path="res://garage/garage.tscn" id="26_syuee"]
+[ext_resource type="PackedScene" uid="uid://31378kkvbbck" path="res://Kitchen/Kitchen.tscn" id="27_1krh8"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
@@ -161,7 +162,7 @@ environment = SubResource("Environment_bjlio")
 
 [node name="Player" parent="." node_paths=PackedStringArray("cameras") instance=ExtResource("1_jnati")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 12.823, 2.7)
-cameras = [NodePath("Root/Camera"), NodePath("../RicardoBedroom/RicCam"), NodePath("../SimaoBedroom/SimCam"), NodePath("../Bathrooms/Bathroom Cam"), NodePath("../Bathrooms2/Bathroom Cam"), NodePath("../Garage/Garage Cam")]
+cameras = [NodePath("Root/Camera"), NodePath("../RicardoBedroom/RicCam"), NodePath("../SimaoBedroom/SimCam"), NodePath("../Bathrooms/Bathroom Cam"), NodePath("../Bathrooms2/Bathroom Cam"), NodePath("../Garage/Garage Cam"), NodePath("../Kitchen/Kitchen Cam")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
@@ -607,6 +608,14 @@ texture = ExtResource("21_dh6xr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -98.3233)
 
 [node name="Garage Cam" type="Camera3D" parent="Garage"]
+transform = Transform3D(-0.724169, 0.298288, -0.621774, -0.0284443, 0.887929, 0.4591, 0.689035, 0.350152, -0.634526, -2.95379, 2.38704, -2.13844)
+environment = SubResource("Environment_xjf4g")
+fov = 78.75
+
+[node name="Kitchen" parent="." instance=ExtResource("27_1krh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -85.5328)
+
+[node name="Kitchen Cam" type="Camera3D" parent="Kitchen"]
 transform = Transform3D(-0.724169, 0.298288, -0.621774, -0.0284443, 0.887929, 0.4591, 0.689035, 0.350152, -0.634526, -2.95379, 2.38704, -2.13844)
 environment = SubResource("Environment_xjf4g")
 fov = 78.75

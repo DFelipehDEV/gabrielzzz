@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://31378kkvbbck"]
+[gd_scene load_steps=13 format=3 uid="uid://31378kkvbbck"]
 
+[ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://bathroom/bathroomtile.tres" id="1_5igyw"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="1_ah2v2"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="2_if5ic"]
 [ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass/glass_mat.tres" id="3_pxkch"]
@@ -37,6 +38,7 @@ albedo_color = Color(0.0605303, 0.0605303, 0.0605303, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.86607, 2.22528, 1.92127)
+material_override = ExtResource("1_5igyw")
 mesh = SubResource("PlaneMesh_h6byn")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
@@ -62,7 +64,7 @@ mesh = SubResource("PlaneMesh_qy6p2")
 [node name="Móveis" type="Node3D" parent="."]
 
 [node name="fridge" type="CSGBox3D" parent="Móveis"]
-transform = Transform3D(0.999998, 0, -0.00193731, 0, 1, 0, 0.00193731, 0, 0.999998, -1.22228, 0.642352, 1.77223)
+transform = Transform3D(0.0470541, 0, -0.998892, 0, 1, 0, 0.998892, 0, 0.0470541, -1.22228, 0.642352, 0.354173)
 size = Vector3(0.644531, 1.35437, 0.313477)
 material = SubResource("StandardMaterial3D_k5ou5")
 
@@ -87,7 +89,7 @@ size = Vector3(0.671206, 0.42984, 0.187012)
 material = SubResource("StandardMaterial3D_o4qlq")
 
 [node name="stove" type="CSGBox3D" parent="Móveis"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187613, 0.408929, 1.73394)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.429037, 0.408929, 1.73394)
 size = Vector3(0.608643, 0.777954, 0.50705)
 material = SubResource("StandardMaterial3D_mpoaj")
 
@@ -142,5 +144,57 @@ size = Vector3(0.421912, 0.217639, 0.00415025)
 material = ExtResource("3_pxkch")
 
 [node name="Shelf" type="CSGBox3D" parent="Móveis"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06054, 1.71666)
-size = Vector3(1, 0.0259399, 0.0841064)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.502645, 1.1237, 1.86177)
+size = Vector3(1.99316, 0.0259399, 0.129944)
+
+[node name="Knife Holder" type="CSGBox3D" parent="Móveis"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.407298, 1.47134, 1.91384)
+size = Vector3(0.460449, 0.0753174, 0.0228882)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Knife Holder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139403, 0.00133002, -0.0325363)
+size = Vector3(0.0343323, 0.0405273, 0.0090332)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/Knife Holder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00863753, 0.00133002, -0.0325363)
+size = Vector3(0.0343323, 0.0405273, 0.0090332)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Móveis/Knife Holder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154529, 0.00133002, -0.0325363)
+size = Vector3(0.0343323, 0.0405273, 0.0090332)
+
+[node name="Cabinets" type="CSGBox3D" parent="Móveis"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0325091, 1.77917, 1.85341)
+size = Vector3(0.323364, 0.749378, 0.141659)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Cabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.307151, 0.149156, -0.00955319)
+size = Vector3(0.290958, 0.451399, 0.132841)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/Cabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596144, 0.149156, -0.00955319)
+size = Vector3(0.290958, 0.451399, 0.132841)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Móveis/Cabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.885082, 0.149156, -0.00955319)
+size = Vector3(0.290958, 0.451399, 0.132841)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Móveis/Cabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17943, 0.149156, -0.00955319)
+size = Vector3(0.305147, 0.451399, 0.132841)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Móveis/Cabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25575, 0.149156, -0.222889)
+size = Vector3(0.189999, 0.451399, 0.315159)
+
+[node name="Table" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05393, 0.410316, 1.65006)
+size = Vector3(0.622856, 0.805923, 0.385162)
+
+[node name="Table" type="CSGBox3D" parent="Table"]
+transform = Transform3D(-0.0133165, 0, 0.999911, 0, 1, 0, -0.999911, 0, -0.0133165, 0.0680436, -0.0197812, -0.491717)
+size = Vector3(0.622856, 0.840837, 0.385162)
+
+[node name="Table2" type="CSGBox3D" parent="Table"]
+transform = Transform3D(-0.0133165, 0, 0.999911, 0, 1, 0, -0.999911, 0, -0.0133165, 0.0680436, 0.00719026, -1.09207)
+size = Vector3(0.622856, 0.894779, 0.385162)
