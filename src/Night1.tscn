@@ -616,6 +616,6 @@ fov = 78.75
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -85.5328)
 
 [node name="Kitchen Cam" type="Camera3D" parent="Kitchen"]
-transform = Transform3D(-0.724169, 0.298288, -0.621774, -0.0284443, 0.887929, 0.4591, 0.689035, 0.350152, -0.634526, -2.95379, 2.38704, -2.13844)
+transform = Transform3D(-0.96301, -0.128984, 0.23659, -0.0212375, 0.911596, 0.410539, -0.268627, 0.390329, -0.880615, -0.339457, 1.97547, -1.54034)
 environment = SubResource("Environment_xjf4g")
 fov = 78.75
