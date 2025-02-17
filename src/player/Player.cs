@@ -33,11 +33,14 @@ public partial class Player : Node3D
 	[Export]
 	private Godot.Collections.Array<Camera3D> cameras;
 
+	private Node3D focused;
+
 	public override void _Ready()
 	{
 		cam = GetNode<Camera>("Root/Camera");
 		phone = GetNode<Phone>("Root/Phone");
 		eye = GetNode<Node3D>("Root/Eye");
+		focused = null;
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		normalPhonePosition = phone.Position;
 	}
@@ -54,17 +57,25 @@ public partial class Player : Node3D
 			phone.Flash = !phone.Flash;
 			
 			if(state == States.CAMERA){
-				if (currentCamera > 1)  {
-						cameras[currentCamera].Current = false;
-						currentCamera--;
-						cameras[currentCamera].Current = true;
-						cameras[currentCamera].Environment.TonemapExposure = 0.0f;
+				if (focused == null) {
+					if (currentCamera > 1)  {
+							cameras[currentCamera].Current = false;
+							currentCamera--;
+							cameras[currentCamera].Current = true;
+							cameras[currentCamera].Environment.TonemapExposure = 0.0f;
 					} else {
-						// Reset
-						cameras[currentCamera].Current = false;
-						currentCamera = cameras.Count - 1;
-						cameras[currentCamera].Current = true;
+							// Reset
+							cameras[currentCamera].Current = false;
+							currentCamera = cameras.Count - 1;
+							cameras[currentCamera].Current = true;
 					}
+				} else {
+					if (focused.Name == "Nokia") {
+						Sprite2D progressBar = focused.GetNode<Sprite2D>("Model/Progress");
+
+						progressBar.Visible = true;
+					}
+				}
 			}
 		}
 		
