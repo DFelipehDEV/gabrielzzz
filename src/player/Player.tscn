@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://player/Player.cs" id="1_tfayh"]
 
-[node name="Player" type="Node3D"]
+[node name="Player" type="Node3D" node_paths=PackedStringArray("cameras")]
 script = ExtResource("1_tfayh")
+cameras = []
 
 [node name="LOS" type="RayCast3D" parent="."]
 transform = Transform3D(8.45148, -0.259744, -0.651916, -8.29047, -0.178064, -0.692755, 0.75753, 0.949119, -0.308376, 0, 0.0381517, 0)

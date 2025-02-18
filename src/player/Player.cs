@@ -80,7 +80,7 @@ public partial class Player : Node3D
 		}
 		
 		if (Input.IsActionJustPressed("hide")) {
-			if (state == States.NORMAL) {
+			if (state == States.NORMAL && animationPlayer.CurrentAnimation != "UnhideUnderTable") {
 				
 				animationPlayer.Play("HideUnderTable");
 				state = States.TOHIDDEN;

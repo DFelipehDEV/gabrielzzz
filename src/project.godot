@@ -46,6 +46,10 @@ folder_colors={
 
 import/blender/enabled=false
 
+[global_group]
+
+cameras=""
+
 [input]
 
 toggle_flash={
