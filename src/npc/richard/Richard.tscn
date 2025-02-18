@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmjkd7r4hovsr"]
+
+[ext_resource type="Script" path="res://npc/EnemyNPC.cs" id="1_ab6sn"]
+[ext_resource type="Texture2D" uid="uid://cr1btv0ytp04g" path="res://npc/richard/standing.png" id="2_mwfsl"]
+
+[node name="Richard" type="Node3D" node_paths=PackedStringArray("positions")]
+transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 11.8786, 0.986578, -152.096)
+script = ExtResource("1_ab6sn")
+positions = [NodePath("")]
+timeUntilNextPosition = 9.0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+cast_shadow = 0
+pixel_size = 0.005
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_mwfsl")
