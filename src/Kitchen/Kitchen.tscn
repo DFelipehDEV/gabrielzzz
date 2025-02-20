@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://31378kkvbbck"]
+[gd_scene load_steps=22 format=3 uid="uid://31378kkvbbck"]
 
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://bathroom/bathroomtile.tres" id="1_5igyw"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="1_ah2v2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://bkt54124upwjx" path="res://metal_fridge/Fridge.tres" id="3_6yf06"]
 [ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass/glass_mat.tres" id="3_pxkch"]
 [ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://office/retro_light/retro_light.glb" id="6_mn30a"]
+[ext_resource type="Texture2D" uid="uid://bq2hfkm7fr7et" path="res://Kitchen/mosaic_tile.png" id="7_lkinp"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h6byn"]
 material = ExtResource("1_ah2v2")
@@ -15,12 +16,14 @@ size = Vector2(7, 4.5)
 material = ExtResource("2_if5ic")
 size = Vector2(7, 9)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5ou5"]
-albedo_color = Color(0.454524, 0.454524, 0.454524, 1)
-metallic = 1.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_behop"]
+albedo_color = Color(0.180005, 0.180005, 0.180005, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dw28h"]
-albedo_color = Color(0.106782, 0.15128, 0.232176, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvoqp"]
+albedo_color = Color(0.544974, 0.544974, 0.544974, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tghpi"]
+albedo_color = Color(0.412152, 0.412152, 0.412152, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpoaj"]
 albedo_color = Color(0.509286, 0.509286, 0.509286, 1)
@@ -34,14 +37,23 @@ albedo_color = Color(0.0605303, 0.0605303, 0.0605303, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig12p"]
 albedo_color = Color(0.446777, 0.446777, 0.446777, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_behop"]
-albedo_color = Color(0.321728, 0.321728, 0.321728, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5ou5"]
+albedo_color = Color(0.454524, 0.454524, 0.454524, 1)
+metallic = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvoqp"]
-albedo_color = Color(0.544974, 0.544974, 0.544974, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dw28h"]
+albedo_color = Color(0.106782, 0.15128, 0.232176, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tghpi"]
-albedo_color = Color(0.412152, 0.412152, 0.412152, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6ech"]
+albedo_texture = ExtResource("7_lkinp")
+uv1_scale = Vector3(6, 6, 6)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1kydl"]
+material = SubResource("StandardMaterial3D_t6ech")
+size = Vector2(3, 3)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jguxw"]
+size = Vector2(1, 2.6)
 
 [node name="Kitchen" type="Node3D"]
 
@@ -70,41 +82,129 @@ mesh = SubResource("PlaneMesh_qy6p2")
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -1.85089, 3.65689, -1.06403)
 mesh = SubResource("PlaneMesh_qy6p2")
 
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999991, -0.00101024, 0.00416279, 0.000987541, 0.999985, 0.00544822, -0.00416823, -0.00544406, 0.999976, -3.04707, 1.91245, 0.185484)
+size = Vector3(0.204956, 3.68076, 3.84726)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999991, -0.00101024, 0.00416279, 0.000987541, 0.999985, 0.00544822, -0.00416823, -0.00544406, 0.999976, -2.77489, 1.90971, -1.78002)
+size = Vector3(1.00459, 3.71423, 0.164573)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0279813, 2.29553, 1.8015)
+size = Vector3(0.0981445, 3.43854, 0.185486)
+
 [node name="Móveis" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3749, 0, 0)
 
-[node name="fridge" type="CSGBox3D" parent="Móveis"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.633789, 0.642352, -0.197572)
-size = Vector3(0.644531, 1.35437, 0.313477)
-material = SubResource("StandardMaterial3D_k5ou5")
+[node name="Table3" type="CSGBox3D" parent="Móveis"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.78684, 0.157565, 1.71207)
+size = Vector3(0.787231, 1.2677, 0.451172)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/fridge"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.299174, 0.418942, -0.167469)
-size = Vector3(0.0273743, 0.243652, 0.028595)
-material = SubResource("StandardMaterial3D_dw28h")
+[node name="Table3" type="CSGBox3D" parent="Móveis/Table3"]
+transform = Transform3D(1.00003, 0, 5.58794e-08, 0, 1, 0, -5.58794e-08, 0, 1.00003, -0.00351655, 0.633025, 0.00448024)
+size = Vector3(0.795649, 0.0214961, 0.486491)
+material = SubResource("StandardMaterial3D_behop")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Móveis/fridge"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.284334, -0.0993907, -0.171254)
-size = Vector3(0.0187683, 0.21814, 0.0220642)
-material = SubResource("StandardMaterial3D_dw28h")
+[node name="door" type="CSGBox3D" parent="Móveis/Table3"]
+transform = Transform3D(1.00003, 0, 9.03383e-08, 0, 1, 0, -9.03383e-08, 0, 1.00003, 0.0130878, 0.306589, -0.18885)
+size = Vector3(0.660507, 0.506866, 0.117676)
+material = SubResource("StandardMaterial3D_fvoqp")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Móveis/fridge"]
-transform = Transform3D(1, 0, -0.00193731, 0, 1, 0, 0.00193731, 0, 1, 0.00032711, -0.207752, -0.0721704)
-size = Vector3(0.645, 0.735, 0.187)
-material = ExtResource("3_6yf06")
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Table3/door"]
+transform = Transform3D(0.999967, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, 0.999967, 0.0234528, 0.108422, -0.0613516)
+size = Vector3(0.00896454, 0.0938625, 0.0154724)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/fridge"]
-transform = Transform3D(1, 0, -0.00193731, 0, 1, 0, 0.00193731, 0, 1, 0.00032711, 0.430248, -0.0721703)
-size = Vector3(0.671206, 0.42984, 0.187012)
-material = ExtResource("3_6yf06")
+[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/Table3/door"]
+transform = Transform3D(0.999967, 0, -3.01749e-07, 0, 1, 0, 3.01749e-07, 0, 0.999967, -0.0151162, 0.108553, -0.0618656)
+size = Vector3(0.00896454, 0.0934563, 0.0154724)
+
+[node name="Counter" type="Node3D" parent="Móveis"]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 1.59742, 0, -0.473484)
+
+[node name="Table2" type="CSGBox3D" parent="Móveis/Counter"]
+transform = Transform3D(-0.0172711, 0, 1.00387, 0, 0.7351, 0, -1.29685, 0, -0.0133692, -0.402737, 0.393155, 1.04233)
+size = Vector3(0.622856, 0.840837, 0.375635)
+
+[node name="Table" type="CSGBox3D" parent="Móveis/Counter/Table2"]
+transform = Transform3D(1.00003, 0, 5.02914e-08, 0, 1, 0, -5.02914e-08, 0, 1.00003, -2.02656e-06, 0.424135, -0.00964963)
+size = Vector3(0.622856, 0.0110058, 0.394934)
+material = SubResource("StandardMaterial3D_behop")
+
+[node name="door" type="CSGBox3D" parent="Móveis/Counter/Table2"]
+transform = Transform3D(1.00003, 0, 9.03383e-08, 0, 1, 0, -9.03383e-08, 0, 1.00003, 0.00230718, 0.0331697, -0.153922)
+size = Vector3(0.425659, 0.447327, 0.117676)
+material = SubResource("StandardMaterial3D_fvoqp")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Counter/Table2/door"]
+transform = Transform3D(0.999967, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, 0.999967, 0.0234528, 0.108422, -0.0613516)
+size = Vector3(0.00896454, 0.0938625, 0.0154724)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/Counter/Table2/door"]
+transform = Transform3D(0.999967, 0, -3.01749e-07, 0, 1, 0, 3.01749e-07, 0, 0.999967, -0.0151162, 0.108553, -0.0618656)
+size = Vector3(0.00896454, 0.0934563, 0.0154724)
+
+[node name="Table3" type="CSGBox3D" parent="Móveis/Counter"]
+transform = Transform3D(-0.585648, 0, -0.0162502, 0, 1, 0, 0.0156017, 0, -0.60999, -0.529579, 0.420628, -0.124153)
+size = Vector3(1.00955, 0.894779, 0.385162)
+
+[node name="Table" type="CSGBox3D" parent="Móveis/Counter/Table3"]
+transform = Transform3D(1.00003, 0, -4.09782e-08, 0, 1, 0, 4.09782e-08, 0, 1.00003, 0.00369984, 0.456516, -0.0112389)
+size = Vector3(1.0564, 0.0214961, 0.430664)
+material = SubResource("StandardMaterial3D_behop")
+
+[node name="Table4" type="CSGBox3D" parent="Móveis/Counter"]
+transform = Transform3D(-0.0133165, 0, 0.999911, 0, 1, 0, -0.999911, 0, -0.0133165, -0.4075, 0.415472, 0.319231)
+size = Vector3(0.622856, 0.894779, 0.385162)
+
+[node name="Table" type="CSGBox3D" parent="Móveis/Counter/Table4"]
+transform = Transform3D(1.00003, 0, 5.58794e-08, 0, 1, 0, -5.58794e-08, 0, 1.00003, 0.0037002, 0.456516, -0.0112389)
+size = Vector3(0.649, 0.0214961, 0.398111)
+material = SubResource("StandardMaterial3D_behop")
+
+[node name="drawer" type="CSGBox3D" parent="Móveis/Counter/Table4"]
+transform = Transform3D(1.00005, 0, 1.58325e-07, 0, 1, 0, -1.58325e-07, 0, 1.00005, 0.00214005, 0.368223, -0.163875)
+size = Vector3(0.516846, 0.0928955, 0.0960846)
+material = SubResource("StandardMaterial3D_tghpi")
+
+[node name="handle" type="CSGBox3D" parent="Móveis/Counter/Table4/drawer"]
+transform = Transform3D(0.999979, 0, -1.8999e-07, 0, 1, 0, 1.8999e-07, 0, 0.999979, 0.00742066, 0.00357729, -0.0592424)
+size = Vector3(0.329407, 0.0291138, 0.0270996)
+
+[node name="handle" type="CSGBox3D" parent="Móveis/Counter/Table4/drawer/handle"]
+transform = Transform3D(0.999968, 0, -2.6729e-07, 0, 1, 0, 2.6729e-07, 0, 0.999968, -0.000725806, -0.00574583, 0.000118911)
+operation = 2
+size = Vector3(0.279398, 0.04776, 0.0115967)
+
+[node name="door" type="CSGBox3D" parent="Móveis/Counter/Table4"]
+transform = Transform3D(1.00004, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1.00004, 0.00729746, 0.0475587, -0.153923)
+size = Vector3(0.509003, 0.476105, 0.117676)
+material = SubResource("StandardMaterial3D_fvoqp")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Counter/Table4/door"]
+transform = Transform3D(0.999967, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, 0.999967, 0.0234528, 0.108422, -0.0613516)
+size = Vector3(0.00896454, 0.0938625, 0.0154724)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/Counter/Table4/door"]
+transform = Transform3D(0.999967, 0, -3.01749e-07, 0, 1, 0, 3.01749e-07, 0, 0.999967, -0.0151162, 0.108553, -0.0618656)
+size = Vector3(0.00896454, 0.0934563, 0.0154724)
+
+[node name="Table" type="CSGBox3D" parent="Móveis/Counter"]
+transform = Transform3D(1.13478, 0, 0, 0, 0.7351, 0, 0, 0, 1, -0.472697, 0.407696, 1.65006)
+size = Vector3(0.622856, 0.805923, 0.385162)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Counter/Table"]
+transform = Transform3D(1.00003, 0, 5.58794e-08, 0, 1, 0, -5.58794e-08, 0, 1.00003, -0.0233788, 0.399588, -0.00928617)
+size = Vector3(0.581745, 0.0214961, 0.394205)
+material = SubResource("StandardMaterial3D_behop")
 
 [node name="stove" type="CSGBox3D" parent="Móveis"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.429037, 0.408929, 1.73394)
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0.0979919, 0.364935, 1.75211)
 size = Vector3(0.608643, 0.777954, 0.50705)
 material = SubResource("StandardMaterial3D_mpoaj")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Móveis/stove"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000963718, 0.331359, -0.257298)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000963748, 0.331359, -0.257298)
 size = Vector3(0.522858, 0.0330811, 0.0590134)
 material = SubResource("StandardMaterial3D_pljsq")
 
@@ -145,9 +245,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00306317, 0.164348, -0.1775
 operation = 2
 size = Vector3(0.424127, 0.220434, 0.203613)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Móveis/stove"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38197, 0.964226, -0.815472)
-
 [node name="CSGBox3D5" type="CSGBox3D" parent="Móveis/stove"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00242417, 0.165745, -0.252816)
 size = Vector3(0.421912, 0.217639, 0.00415025)
@@ -181,27 +278,52 @@ sides = 28
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187418, 0.447246, 0.0717782)
 radius = 0.0725296
 height = 0.0900393
-sides = 30
 material = SubResource("StandardMaterial3D_ig12p")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Móveis/stove/Pan"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0226875, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0140159, 0)
 operation = 2
 radius = 0.0667939
-rings = 20
+radial_segments = 8
+rings = 4
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Móveis/stove/Pan"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0960616, 0.0409899, 0.00459158)
 size = Vector3(0.0705774, 0.00720215, 0.00798035)
 material = SubResource("StandardMaterial3D_ig12p")
 
+[node name="fridge" type="CSGBox3D" parent="Móveis"]
+transform = Transform3D(-6.99382e-08, 0, -2.03479, 0, 1.6, 0, 1.6, 0, -8.89433e-08, -0.840493, 1.15379, -1.14101)
+size = Vector3(0.644531, 1.35437, 0.313477)
+material = SubResource("StandardMaterial3D_k5ou5")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Móveis/fridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.284334, -0.0993907, -0.171254)
+size = Vector3(0.0187683, 0.21814, 0.0220642)
+material = SubResource("StandardMaterial3D_dw28h")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Móveis/fridge"]
+transform = Transform3D(1, 0, -0.00193731, 0, 1, 0, 0.00193731, 0, 1, 0.00032711, -0.207752, -0.0721704)
+size = Vector3(0.645, 0.735, 0.187)
+material = ExtResource("3_6yf06")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/fridge"]
+transform = Transform3D(0.670999, 0, -0.00193731, 0, 1, 0, 0.00129993, 0, 0.999998, 0.00032711, 0.430248, -0.0721703)
+size = Vector3(1, 0.43, 0.187)
+material = ExtResource("3_6yf06")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/fridge/CSGBox3D"]
+transform = Transform3D(1.49031, 0, 0.00288719, 0, 1, 0, -0.00193731, 0, 0.999998, -0.446625, -0.011306, -0.0947183)
+size = Vector3(0.0273743, 0.243652, 0.028595)
+material = SubResource("StandardMaterial3D_dw28h")
+
 [node name="Shelf" type="CSGBox3D" parent="Móveis"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.502645, 1.1237, 1.86177)
-size = Vector3(1.99316, 0.0259399, 0.129944)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.141804, 1.35459, 1.86177)
+size = Vector3(2.71484, 0.0666809, 0.129944)
 
 [node name="Knife Holder" type="CSGBox3D" parent="Móveis"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.407298, 1.47134, 1.91384)
-size = Vector3(0.460449, 0.0753174, 0.0228882)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.202754, 1.6875, 1.91384)
+size = Vector3(0.893188, 0.0753174, 0.0228882)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Knife Holder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139403, 0.00133002, -0.0325363)
@@ -215,353 +337,299 @@ size = Vector3(0.0343323, 0.0405273, 0.0090332)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154529, 0.00133002, -0.0325363)
 size = Vector3(0.0343323, 0.0405273, 0.0090332)
 
-[node name="Cabinets" type="CSGBox3D" parent="Móveis"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0325091, 1.77917, 1.85341)
-size = Vector3(0.323364, 0.749378, 0.141659)
+[node name="Table4" type="CSGBox3D" parent="Móveis"]
+transform = Transform3D(-3.91431e-08, 0, -1, 0, 1, 0, 0.895489, 0, -4.37114e-08, -0.732283, 0.213756, -0.254572)
+size = Vector3(0.776367, 1.2677, 0.451172)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.307151, 0.149156, -0.00955319)
+[node name="Table3" type="CSGBox3D" parent="Móveis/Table4"]
+transform = Transform3D(1.00003, 0, 5.58794e-08, 0, 1, 0, -5.58794e-08, 0, 1.00003, -0.00351655, 0.633025, 0.00448024)
+size = Vector3(0.795649, 0.0214961, 0.486491)
+material = SubResource("StandardMaterial3D_behop")
+
+[node name="door" type="CSGBox3D" parent="Móveis/Table4"]
+transform = Transform3D(1.00003, 0, 9.03383e-08, 0, 1, 0, -9.03383e-08, 0, 1.00003, 0.0130878, 0.306589, -0.18885)
+size = Vector3(0.660507, 0.506866, 0.117676)
+material = SubResource("StandardMaterial3D_fvoqp")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Table4/door"]
+transform = Transform3D(0.999967, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, 0.999967, 0.0234528, 0.108422, -0.0613516)
+size = Vector3(0.00896454, 0.0938625, 0.0154724)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/Table4/door"]
+transform = Transform3D(0.999967, 0, -3.01749e-07, 0, 1, 0, 3.01749e-07, 0, 0.999967, -0.0151162, 0.108553, -0.0618656)
+size = Vector3(0.00896454, 0.0934563, 0.0154724)
+
+[node name="Cabinets2" type="Node3D" parent="Móveis"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.964587, 2.60437, 1.81674)
+
+[node name="Cabinet2" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet2"]
 size = Vector3(0.290958, 0.451399, 0.132841)
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D"]
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet2/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101629, 0.107303, -0.034718)
 operation = 2
 calculate_tangents = false
 size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D"]
+[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet2/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101629, -0.086599, -0.034718)
 operation = 2
 calculate_tangents = false
 size = Vector3(0.231628, 0.174225, 0.101654)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596144, 0.149156, -0.00955319)
+[node name="Cabinet3" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet3"]
 size = Vector3(0.290958, 0.451399, 0.132841)
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.105549, -0.034718)
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet3/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101629, 0.107303, -0.034718)
 operation = 2
 calculate_tangents = false
 size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, -0.095708, -0.034718)
+[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet3/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101629, -0.086599, -0.034718)
 operation = 2
 calculate_tangents = false
-size = Vector3(0.231628, 0.18399, 0.101654)
+size = Vector3(0.231628, 0.174225, 0.101654)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.885082, 0.149156, -0.00955319)
+[node name="Cabinet4" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(1.86442, 0, 0, 0, 1, 0, 0, 0, 1, 1.08935, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet4"]
 size = Vector3(0.290958, 0.451399, 0.132841)
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.123355, -0.034718)
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet4/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101629, 0.107303, -0.034718)
 operation = 2
 calculate_tangents = false
 size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, -0.0789191, -0.034718)
+[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet4/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101629, -0.086599, -0.034718)
 operation = 2
 calculate_tangents = false
-size = Vector3(0.231628, 0.199615, 0.101654)
+size = Vector3(0.231628, 0.174225, 0.101654)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17943, 0.149156, -0.00955319)
-size = Vector3(0.305147, 0.451399, 0.132841)
+[node name="Cabinet5" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48296, 0, -0.201467)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1.31688, 0, 0, 0, 1, 0, 0, 0, 1, 1.24292, 0.149156, -0.222889)
+[node name="CSGBox3D5" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet5"]
+transform = Transform3D(1.31688, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 size = Vector3(0.189999, 0.451399, 0.315159)
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D5"]
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet5/CSGBox3D5"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.059549, 0.106184, 0.000332355)
 operation = 2
 calculate_tangents = false
 size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D5"]
+[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet5/CSGBox3D5"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.059549, -0.0732249, 0.000332355)
 operation = 2
 calculate_tangents = false
 size = Vector3(0.231628, 0.165924, 0.101654)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1.31688, 0, 0, 0, 1, 0, 0, 0, 1, 1.24455, 0.149237, -0.918183)
-size = Vector3(0.189999, 0.451399, 0.445177)
+[node name="Cabinet6" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48296, 0, -0.516277)
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D6"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.059549, 0.106184, 0.000332355)
-operation = 2
-calculate_tangents = false
-size = Vector3(0.364258, 0.153137, 0.101654)
-
-[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D6"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.059549, -0.0759944, 0.000332355)
-operation = 2
-calculate_tangents = false
-size = Vector3(0.364258, 0.174759, 0.101654)
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1.31688, 0, 0, 0, 1, 0, 0, 0, 1, 1.24426, 0.14981, -0.537625)
+[node name="CSGBox3D5" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet6"]
+transform = Transform3D(1.31688, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 size = Vector3(0.189999, 0.451399, 0.315159)
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D7"]
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet6/CSGBox3D5"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.059549, 0.106184, 0.000332355)
 operation = 2
 calculate_tangents = false
 size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D7"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.059549, -0.0769185, 0.000332355)
+[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet6/CSGBox3D5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.059549, -0.0732249, 0.000332355)
 operation = 2
 calculate_tangents = false
-size = Vector3(0.231628, 0.17569, 0.101654)
+size = Vector3(0.231628, 0.165924, 0.101654)
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(-4.37114e-08, 1.31688, 0, -1, -5.75628e-08, 0, 0, 0, 1, -0.169153, -0.249999, -0.00301719)
-size = Vector3(0.395537, 0.0126953, 0.13306)
+[node name="Cabinet7" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1468, 1.48296, 0, -1.01207)
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.314032, -0.249515, -0.00290763)
-size = Vector3(0.395501, 0.00683594, 0.132841)
+[node name="CSGBox3D5" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet7"]
+transform = Transform3D(1.31688, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(0.189999, 0.451399, 0.315159)
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244146, -0.276356, -0.000971198)
-size = Vector3(0.144507, 0.00683594, 0.137148)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.239137, -0.447777, -0.0038867)
-size = Vector3(0.157239, 0.00683594, 0.132841)
-
-[node name="CSGBox3D12" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.241985, -0.0550075, -0.000971198)
-size = Vector3(0.151172, 0.00683594, 0.137148)
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101628, 0.255314, -0.034718)
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet7/CSGBox3D5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.059549, 0.106184, 0.000332355)
 operation = 2
 calculate_tangents = false
 size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101628, 0.0848662, -0.034718)
+[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet7/CSGBox3D5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.059549, -0.0732249, 0.000332355)
+operation = 2
+calculate_tangents = false
+size = Vector3(0.231628, 0.165924, 0.101654)
+
+[node name="Cabinet" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.084981, -0.151093, 0.00639057)
+
+[node name="Cabinets" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0729681, 0)
+size = Vector3(0.323, 0.608948, 0.142)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet/Cabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.181306, -0.034718)
 operation = 2
 calculate_tangents = false
 size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D15" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101628, -0.147279, -0.034718)
+[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet/Cabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.0108585, -0.034718)
 operation = 2
 calculate_tangents = false
-size = Vector3(0.231628, 0.281158, 0.101654)
+size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D16" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.241985, -0.159565, -0.000971198)
-size = Vector3(0.151172, 0.00683594, 0.137148)
-
-[node name="CSGBox3D17" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234139, 0.0677903, 0.00386679)
-size = Vector3(0.165527, 0.243774, 0.14624)
-
-[node name="CSGBox3D18" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234139, 0.254641, 0.00144124)
-size = Vector3(0.165527, 0.240051, 0.14624)
-
-[node name="CSGBox3D19" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234139, 0.291743, -0.29558)
-size = Vector3(0.165527, 0.16008, 0.452744)
-
-[node name="CSGBox3D20" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D19"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0670918, 0.00347185, 0.133775)
+[node name="CSGBox3D15" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet/Cabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, -0.156888, -0.034718)
 operation = 2
 calculate_tangents = false
-size = Vector3(0.116211, 0.0996094, 0.0603256)
+size = Vector3(0.232, 0.153, 0.102)
 
-[node name="CSGBox3D21" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D19"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0670918, 0.00347185, -0.000395179)
+[node name="Cabinet8" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.237235, -0.366598, 0.00639057)
+
+[node name="Cabinets" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0729681, 0)
+size = Vector3(0.323, 0.608948, 0.142)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet8/Cabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.181306, -0.034718)
 operation = 2
 calculate_tangents = false
-size = Vector3(0.111328, 0.101807, 0.0603256)
+size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D22" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D19"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0670918, 0.00347185, -0.133267)
+[node name="CSGBox3D14" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet8/Cabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.0108585, -0.034718)
 operation = 2
 calculate_tangents = false
-size = Vector3(0.114258, 0.09375, 0.0603256)
+size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D20" type="CSGBox3D" parent="Móveis/Cabinets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234139, 0.291743, -0.743727)
-size = Vector3(0.165527, 0.16008, 0.452744)
-
-[node name="CSGBox3D20" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D20"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0670918, 0.00347185, 0.133775)
+[node name="CSGBox3D15" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet8/Cabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, -0.156888, -0.034718)
 operation = 2
 calculate_tangents = false
-size = Vector3(0.120117, 0.109131, 0.0603256)
+size = Vector3(0.232, 0.153, 0.102)
 
-[node name="CSGBox3D21" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D20"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0670918, 0.00347185, -0.000395179)
+[node name="Cabinet9" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.253734, 0, -0.229415)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0979571, -0.132185)
+size = Vector3(0.290958, 0.255485, 0.132841)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet9/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.0146742, -0.034718)
 operation = 2
 calculate_tangents = false
-size = Vector3(0.109375, 0.105469, 0.0603256)
+size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D22" type="CSGBox3D" parent="Móveis/Cabinets/CSGBox3D20"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0670918, 0.00347185, -0.133267)
+[node name="Cabinet10" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.253734, 0, -0.519354)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0979571, -0.132185)
+size = Vector3(0.290958, 0.255485, 0.132841)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet10/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.0146742, -0.034718)
 operation = 2
 calculate_tangents = false
-size = Vector3(0.115234, 0.105713, 0.0603256)
+size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="Table" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.320971, 0.410316, 1.65006)
-size = Vector3(0.622856, 0.805923, 0.385162)
+[node name="Cabinet11" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.253734, 0, -0.808101)
 
-[node name="Table" type="CSGBox3D" parent="Table"]
-transform = Transform3D(-0.0133165, 0, 0.999911, 0, 1, 0, -0.999911, 0, -0.0133165, 0.0728066, -0.0197812, -0.49178)
-size = Vector3(0.622856, 0.840837, 0.375635)
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0979571, -0.132185)
+size = Vector3(0.290958, 0.255485, 0.132841)
 
-[node name="Table" type="CSGBox3D" parent="Table/Table"]
-transform = Transform3D(1.00003, 0, 5.02914e-08, 0, 1, 0, -5.02914e-08, 0, 1.00003, -2.02656e-06, 0.424135, -0.00964963)
-size = Vector3(0.622856, 0.0110058, 0.394934)
-material = SubResource("StandardMaterial3D_behop")
-
-[node name="door" type="CSGBox3D" parent="Table/Table"]
-transform = Transform3D(1.00003, 0, 9.03383e-08, 0, 1, 0, -9.03383e-08, 0, 1.00003, 0.00230718, 0.0331697, -0.153922)
-size = Vector3(0.425659, 0.447327, 0.117676)
-material = SubResource("StandardMaterial3D_fvoqp")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Table/Table/door"]
-transform = Transform3D(0.999967, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, 0.999967, 0.0234528, 0.108422, -0.0613516)
-size = Vector3(0.00896454, 0.0938625, 0.0154724)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Table/Table/door"]
-transform = Transform3D(0.999967, 0, -3.01749e-07, 0, 1, 0, 3.01749e-07, 0, 0.999967, -0.0151162, 0.108553, -0.0618656)
-size = Vector3(0.00896454, 0.0934563, 0.0154724)
-
-[node name="Table3" type="CSGBox3D" parent="Table"]
-transform = Transform3D(-0.999645, 0, -0.0266306, 0, 1, 0, 0.0266306, 0, -0.999645, -0.25573, 0.0103115, -1.62101)
-size = Vector3(1.00955, 0.894779, 0.385162)
-
-[node name="Table" type="CSGBox3D" parent="Table/Table3"]
-transform = Transform3D(1.00003, 0, -4.09782e-08, 0, 1, 0, 4.09782e-08, 0, 1.00003, 0.00369984, 0.456516, -0.0112389)
-size = Vector3(1.0564, 0.0214961, 0.430664)
-material = SubResource("StandardMaterial3D_behop")
-
-[node name="Table2" type="CSGBox3D" parent="Table"]
-transform = Transform3D(-0.0133165, 0, 0.999911, 0, 1, 0, -0.999911, 0, -0.0133165, 0.0680436, 0.00515577, -1.09207)
-size = Vector3(0.622856, 0.894779, 0.385162)
-
-[node name="Table" type="CSGBox3D" parent="Table/Table2"]
-transform = Transform3D(1.00003, 0, 5.58794e-08, 0, 1, 0, -5.58794e-08, 0, 1.00003, 0.0037002, 0.456516, -0.0112389)
-size = Vector3(0.649, 0.0214961, 0.398111)
-material = SubResource("StandardMaterial3D_behop")
-
-[node name="drawer" type="CSGBox3D" parent="Table/Table2"]
-transform = Transform3D(1.00005, 0, 1.58325e-07, 0, 1, 0, -1.58325e-07, 0, 1.00005, 0.00214005, 0.368223, -0.163875)
-size = Vector3(0.516846, 0.0928955, 0.0960846)
-material = SubResource("StandardMaterial3D_tghpi")
-
-[node name="handle" type="CSGBox3D" parent="Table/Table2/drawer"]
-transform = Transform3D(0.999979, 0, -1.8999e-07, 0, 1, 0, 1.8999e-07, 0, 0.999979, 0.00742066, 0.00357729, -0.0592424)
-size = Vector3(0.329407, 0.0291138, 0.0270996)
-
-[node name="handle" type="CSGBox3D" parent="Table/Table2/drawer/handle"]
-transform = Transform3D(0.999968, 0, -2.6729e-07, 0, 1, 0, 2.6729e-07, 0, 0.999968, -0.000725806, -0.00574583, 0.000118911)
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet11/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.0146742, -0.034718)
 operation = 2
-size = Vector3(0.279398, 0.04776, 0.0115967)
+calculate_tangents = false
+size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="door" type="CSGBox3D" parent="Table/Table2"]
-transform = Transform3D(1.00004, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1.00004, 0.00729746, 0.0475587, -0.153923)
-size = Vector3(0.509003, 0.476105, 0.117676)
-material = SubResource("StandardMaterial3D_fvoqp")
+[node name="Cabinet12" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.253734, 0, -1.09747)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Table/Table2/door"]
-transform = Transform3D(0.999967, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, 0.999967, 0.0234528, 0.108422, -0.0613516)
-size = Vector3(0.00896454, 0.0938625, 0.0154724)
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0979571, -0.132185)
+size = Vector3(0.290958, 0.255485, 0.132841)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Table/Table2/door"]
-transform = Transform3D(0.999967, 0, -3.01749e-07, 0, 1, 0, 3.01749e-07, 0, 0.999967, -0.0151162, 0.108553, -0.0618656)
-size = Vector3(0.00896454, 0.0934563, 0.0154724)
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet12/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.0146742, -0.034718)
+operation = 2
+calculate_tangents = false
+size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Table"]
-transform = Transform3D(1.00003, 0, 5.58794e-08, 0, 1, 0, -5.58794e-08, 0, 1.00003, -0.0233788, 0.399588, -0.00928617)
-size = Vector3(0.581745, 0.0214961, 0.394205)
-material = SubResource("StandardMaterial3D_behop")
+[node name="Cabinet13" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.253734, 0, -1.38741)
 
-[node name="Table4" type="CSGBox3D" parent="Table"]
-transform = Transform3D(-0.999979, 0, 0.00649266, 0, 1, 0, -0.00649266, 0, -0.999979, -1.78377, -0.19656, -1.23504)
-size = Vector3(0.776367, 1.2677, 0.451172)
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0979571, -0.132185)
+size = Vector3(0.290958, 0.255485, 0.132841)
 
-[node name="Table3" type="CSGBox3D" parent="Table/Table4"]
-transform = Transform3D(1.00003, 0, 5.58794e-08, 0, 1, 0, -5.58794e-08, 0, 1.00003, -0.00351655, 0.633025, 0.00448024)
-size = Vector3(0.795649, 0.0214961, 0.486491)
-material = SubResource("StandardMaterial3D_behop")
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet13/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.0146742, -0.034718)
+operation = 2
+calculate_tangents = false
+size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="door" type="CSGBox3D" parent="Table/Table4"]
-transform = Transform3D(1.00003, 0, 9.03383e-08, 0, 1, 0, -9.03383e-08, 0, 1.00003, 0.0130878, 0.306589, -0.18885)
-size = Vector3(0.660507, 0.506866, 0.117676)
-material = SubResource("StandardMaterial3D_fvoqp")
+[node name="Cabinet14" type="Node3D" parent="Móveis/Cabinets2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.253734, 0, -1.67616)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Table/Table4/door"]
-transform = Transform3D(0.999967, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, 0.999967, 0.0234528, 0.108422, -0.0613516)
-size = Vector3(0.00896454, 0.0938625, 0.0154724)
+[node name="CSGBox3D" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0979571, -0.132185)
+size = Vector3(0.290958, 0.255485, 0.132841)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Table/Table4/door"]
-transform = Transform3D(0.999967, 0, -3.01749e-07, 0, 1, 0, 3.01749e-07, 0, 0.999967, -0.0151162, 0.108553, -0.0618656)
-size = Vector3(0.00896454, 0.0934563, 0.0154724)
+[node name="CSGBox3D13" type="CSGBox3D" parent="Móveis/Cabinets2/Cabinet14/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101626, 0.0146742, -0.034718)
+operation = 2
+calculate_tangents = false
+size = Vector3(0.231628, 0.153137, 0.101654)
 
-[node name="Table3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65763, 0.157565, 1.71207)
-size = Vector3(0.787231, 1.2677, 0.451172)
+[node name="retro_light_-_oldclean_model" parent="." instance=ExtResource("6_mn30a")]
+transform = Transform3D(-0.006, -6.06136e-06, -3.68542e-07, -6.05926e-06, 0.00599991, -3.26647e-05, 4.01535e-07, -3.26643e-05, -0.00599991, -2.03211, 2.4784, 0.748093)
 
-[node name="Table3" type="CSGBox3D" parent="Table3"]
-transform = Transform3D(1.00003, 0, 5.58794e-08, 0, 1, 0, -5.58794e-08, 0, 1.00003, -0.00351655, 0.633025, 0.00448024)
-size = Vector3(0.795649, 0.0214961, 0.486491)
-material = SubResource("StandardMaterial3D_behop")
-
-[node name="door" type="CSGBox3D" parent="Table3"]
-transform = Transform3D(1.00003, 0, 9.03383e-08, 0, 1, 0, -9.03383e-08, 0, 1.00003, 0.0130878, 0.306589, -0.18885)
-size = Vector3(0.660507, 0.506866, 0.117676)
-material = SubResource("StandardMaterial3D_fvoqp")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Table3/door"]
-transform = Transform3D(0.999967, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, 0.999967, 0.0234528, 0.108422, -0.0613516)
-size = Vector3(0.00896454, 0.0938625, 0.0154724)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Table3/door"]
-transform = Transform3D(0.999967, 0, -3.01749e-07, 0, 1, 0, 3.01749e-07, 0, 0.999967, -0.0151162, 0.108553, -0.0618656)
-size = Vector3(0.00896454, 0.0934563, 0.0154724)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999991, -0.00101024, 0.00416279, 0.000987541, 0.999985, 0.00544822, -0.00416823, -0.00544406, 0.999976, -2.52105, 1.26242, 0.702018)
-size = Vector3(0.204956, 2.16034, 2.82244)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999991, -0.00101024, 0.00416279, 0.000987541, 0.999985, 0.00544822, -0.00416823, -0.00544406, 0.999976, -2.40664, 1.2567, -0.644506)
-size = Vector3(1.00459, 2.14258, 0.164573)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999963, -0.00204312, 0.00831993, 0.00195235, 0.999939, 0.0109003, -0.0083417, -0.0108837, 0.999906, -2.27625, 4.29825, 1.39131)
-size = Vector3(0.204956, 0.344803, 2.82244)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999963, -0.00204312, 0.00831993, 0.00195235, 0.999939, 0.0109003, -0.0083417, -0.0108837, 0.999906, -2.28895, 1.44106, 1.97064)
-size = Vector3(0.392517, 1.83551, 2.14321)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999991, -0.00101024, 0.00416279, 0.000987541, 0.999985, 0.00544822, -0.00416823, -0.00544406, 0.999976, -1.04154, 2.24638, 0.686775)
-size = Vector3(2.2549, 0.195444, 2.84244)
-
-[node name="retro_light_-_oldclean_model" parent="CSGBox3D3" instance=ExtResource("6_mn30a")]
-transform = Transform3D(-0.00399997, 2.52243e-12, 1.64057e-05, 2.63911e-12, 0.004, 1.09139e-11, -1.64057e-05, 0, -0.00399997, -0.186616, -0.54988, 0.769043)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="CSGBox3D3/retro_light_-_oldclean_model"]
-transform = Transform3D(250, -3.66062e-06, 8.9258e-06, -1.36934e-08, 250, 0, -8.82335e-06, 1.19209e-07, 250, -96.7274, -74.1858, 19.7602)
+[node name="OmniLight3D" type="OmniLight3D" parent="retro_light_-_oldclean_model"]
+transform = Transform3D(1, 1.0019e-11, 3.52934e-08, -1.0019e-11, 1, -7.15256e-10, -3.52934e-08, 7.15256e-10, 1, -96.7082, -93.2301, 19.8639)
 light_color = Color(0.905615, 0.665795, 0.500737, 1)
-light_energy = 2.748
+light_energy = 5.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.495
 light_bake_mode = 1
-omni_range = 1.87254
-omni_attenuation = 4.03
+omni_range = 3.20391
+omni_attenuation = 3.0
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999991, -0.00101024, 0.00416279, 0.000987541, 0.999985, 0.00544822, -0.00416823, -0.00544406, 0.999976, -2.55958, 3.34134, 0.177867)
+size = Vector3(0.12738, 0.822857, 3.84726)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999991, -0.00101024, 0.00416279, 0.000987541, 0.999985, 0.00544822, -0.00416823, -0.00544406, 0.999976, -1.37571, 3.35183, 1.91248)
+size = Vector3(2.17276, 0.822857, 0.369428)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999991, -0.00101024, 0.00416279, 0.000987541, 0.999985, 0.00544822, -0.00416823, -0.00544406, 0.999976, -0.11215, 3.34748, 0.940565)
+size = Vector3(0.373817, 0.822857, 2.30549)
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.43308, 1.50118, 1.91589)
+mesh = SubResource("PlaneMesh_1kydl")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.729204, 1.34276, 1.88471)
+mesh = SubResource("PlaneMesh_jguxw")
