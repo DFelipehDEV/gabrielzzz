@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://df6n1tuxjo45e"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cam1" type="Button" parent="."]
+layout_mode = 0
+offset_left = -479.0
+offset_top = -456.0
+offset_right = -413.0
+offset_bottom = -425.0
+text = "CAM 01"
+
+[node name="Cam2" type="Button" parent="."]
+offset_left = -743.0
+offset_top = -456.0
+offset_right = -677.0
+offset_bottom = -425.0
+text = "CAM 02"
+
+[node name="Cam3" type="Button" parent="."]
+offset_left = -572.0
+offset_top = -324.0
+offset_right = -506.0
+offset_bottom = -293.0
+text = "CAM 03"
+
+[node name="Cam4" type="Button" parent="."]
+offset_left = -741.0
+offset_top = -320.0
+offset_right = -675.0
+offset_bottom = -289.0
+text = "CAM 04"
+
+[node name="Cam5" type="Button" parent="."]
+offset_left = -740.0
+offset_top = -209.0
+offset_right = -674.0
+offset_bottom = -178.0
+text = "CAM 05"
+
+[node name="Cam6" type="Button" parent="."]
+offset_left = -509.0
+offset_top = -210.0
+offset_right = -443.0
+offset_bottom = -179.0
+text = "CAM 06"
+
+[node name="Cam7" type="Button" parent="."]
+offset_left = -705.0
+offset_top = -131.0
+offset_right = -639.0
+offset_bottom = -100.0
+text = "CAM 07"
+
+[node name="Cam8" type="Button" parent="."]
+offset_left = -535.0
+offset_top = -129.0
+offset_right = -469.0
+offset_bottom = -98.0
+text = "CAM 08"
+
+[node name="You" type="Label" parent="."]
+layout_mode = 0
+offset_left = -605.0
+offset_top = -123.0
+offset_right = -565.0
+offset_bottom = -100.0
+text = "YOU
+"
