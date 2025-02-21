@@ -204,11 +204,11 @@ omni_range = 1.47567
 omni_attenuation = 0.478
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.947174, 0, 0, 0, 0.110389, 0, 0, 0, 0.29281, 17.7123, 10.5613, 0)
+transform = Transform3D(0.947174, 0, 0, 0, 0.110389, 0, 0, 0, 0.29281, 17.3666, 10.5613, 0)
 mesh = SubResource("BoxMesh_7ivtq")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D2"]
-transform = Transform3D(1.05577, 1.23281e-12, 1.15191e-08, -1.05778e-11, 9.05887, -1.71869e-08, -3.72617e-08, 6.47941e-09, 3.41518, 0.018219, -0.920341, -0.29758)
+transform = Transform3D(1.05577, 1.23281e-12, 1.15191e-08, -1.05777e-11, 9.05887, -1.71869e-08, -3.72617e-08, 6.47941e-09, 3.41518, -0.324053, -10.7592, -0.764667)
 light_color = Color(0.905615, 0.665795, 0.500737, 1)
 light_energy = 5.0
 light_volumetric_fog_energy = 0.0
@@ -219,4 +219,22 @@ omni_attenuation = 3.0
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.00354265, 0, 0.480862, 0, 0.779032, 0, -0.309405, 0, -0.00550581, 11.6196, 7.5763, -0.309669)
+mesh = SubResource("BoxMesh_gp5kg")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.947158, 0, 0.00170692, 0, 0.110389, 0, -0.00552152, 0, -0.292806, -14.9179, 10.5613, 0.0460539)
+mesh = SubResource("BoxMesh_7ivtq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D3"]
+transform = Transform3D(1.05577, 1.23281e-12, 1.15191e-08, -1.05777e-11, 9.05887, -1.71869e-08, -3.72617e-08, 6.47941e-09, 3.41518, -0.324053, -10.7592, -0.764667)
+light_color = Color(0.905615, 0.665795, 0.500737, 1)
+light_energy = 5.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.495
+light_bake_mode = 1
+omni_range = 3.20391
+omni_attenuation = 3.0
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00173896, 0, -0.480886, 0, 0.779032, 0, 0.309421, 0, 0.00270261, -9.17279, 7.5763, 0.0167478)
 mesh = SubResource("BoxMesh_gp5kg")

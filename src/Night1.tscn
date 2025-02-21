@@ -167,7 +167,7 @@ environment = SubResource("Environment_bjlio")
 
 [node name="Player" parent="." node_paths=PackedStringArray("cameras") instance=ExtResource("1_jnati")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 12.823, 2.7)
-cameras = [NodePath("Root/Camera"), NodePath("../RicardoBedroom/RicCam"), NodePath("../SimaoBedroom/SimCam"), NodePath("../Bathrooms/Bathroom Cam"), NodePath("../Bathrooms2/Bathroom Cam"), NodePath("../Garage/Garage Cam"), NodePath("../Kitchen/Kitchen Cam"), NodePath("../Office/Hallway Cam")]
+cameras = [NodePath("Root/Camera"), NodePath("../RicardoBedroom/RicCam"), NodePath("../SimaoBedroom/SimCam"), NodePath("../Bathrooms/Bathroom Cam"), NodePath("../Bathrooms2/Bathroom Cam"), NodePath("../Garage/Garage Cam"), NodePath("../Kitchen/Kitchen Cam"), NodePath("../Office/Hallway Cam"), NodePath("../Office/Hallway Cam2")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
@@ -328,7 +328,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121859, 3.82077, 3.50747)
 transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558, 2.41398, 7.58116, 0.0257728)
 
 [node name="Hallway Cam" type="Camera3D" parent="Office" groups=["cameras"]]
-transform = Transform3D(-0.258341, -0.450212, 0.854733, -0.0284443, 0.887929, 0.4591, -0.965635, 0.0942922, -0.242194, -3.73008, 9.38078, -0.684955)
+transform = Transform3D(-0.169032, 0.291467, -0.941528, 0.0390237, 0.956504, 0.289097, 0.984838, 0.0121248, -0.173054, 12.1342, 9.91046, -0.71282)
+environment = SubResource("Environment_xjf4g")
+fov = 78.75
+
+[node name="Hallway Cam2" type="Camera3D" parent="Office" groups=["cameras"]]
+transform = Transform3D(-0.280184, -0.267237, 0.921999, 0.0390237, 0.956504, 0.289097, -0.959153, 0.11698, -0.257569, -9.61795, 9.90401, -0.617784)
 environment = SubResource("Environment_xjf4g")
 fov = 78.75
 
@@ -338,7 +343,7 @@ cast_shadow = 0
 mesh = SubResource("PlaneMesh_la8v7")
 
 [node name="RicardoBedroom" parent="." instance=ExtResource("8_o0llk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9321, 0, -152.404)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3495, 0, -91.6754)
 
 [node name="RicCam" type="Camera3D" parent="RicardoBedroom" groups=["cameras"]]
 transform = Transform3D(-0.938143, -0.182267, 0.294393, -0.0284443, 0.887929, 0.4591, -0.345079, 0.422327, -0.838189, -0.00872707, 2.74855, -2.96603)
@@ -349,7 +354,7 @@ fov = 70.0
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, -3.05355, 0.162975, 0.308289)
 
 [node name="SimaoBedroom" parent="." instance=ExtResource("9_wg86v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72574, 0, -160.825)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1843, 0, -92.6383)
 
 [node name="Simon" type="Sprite3D" parent="SimaoBedroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02156, 1.10052, -3.42522)
@@ -371,6 +376,7 @@ quality = 2
 light_data = ExtResource("10_gy337")
 
 [node name="Bathrooms" parent="." instance=ExtResource("18_xasnv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8691, -0.0159672, -53.2568)
 
 [node name="Bathroom Cam" type="Camera3D" parent="Bathrooms" groups=["cameras"]]
 transform = Transform3D(0.860395, -0.212046, 0.463418, -0.0284443, 0.887929, 0.4591, -0.508833, -0.408189, 0.757939, -1.93881, 1.90971, -0.0274048)
@@ -381,18 +387,22 @@ fov = 70.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86042, -0.900575, -3.27528)
 
 [node name="Bathrooms2" parent="." instance=ExtResource("19_okl6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5289, -0.0159672, -70.2663)
 
 [node name="Bathroom Cam" type="Camera3D" parent="Bathrooms2" groups=["cameras"]]
 transform = Transform3D(-0.465038, -0.418311, 0.780228, -0.0284443, 0.887929, 0.4591, -0.884834, 0.191306, -0.424819, -1.32774, 1.84255, -0.611206)
 environment = SubResource("Environment_uruh5")
 fov = 70.0
 
-[node name="Richard" parent="." instance=ExtResource("23_6cb46")]
+[node name="Richard" parent="." node_paths=PackedStringArray("positions") instance=ExtResource("23_6cb46")]
+transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 15.9192, 0.977882, -90.8911)
+positions = [NodePath("../RicardoBedroom/RichardPos"), NodePath("../SimaoBedroom/RichardPos"), NodePath("../Bathrooms/RichardPos")]
 
 [node name="Vitel" parent="." instance=ExtResource("24_r4bhu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5496, 1.07074, -69.109)
 
 [node name="Garage" parent="." instance=ExtResource("26_syuee")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -98.3233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5992, 0, -68.3832)
 
 [node name="Garage Cam" type="Camera3D" parent="Garage" groups=["cameras"]]
 transform = Transform3D(-0.724169, 0.298288, -0.621774, -0.0284443, 0.887929, 0.4591, 0.689035, 0.350152, -0.634526, -2.95379, 2.38704, -2.13844)
@@ -400,7 +410,7 @@ environment = SubResource("Environment_xjf4g")
 fov = 78.75
 
 [node name="Kitchen" parent="." instance=ExtResource("27_1krh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0369406, 0.0112858, -85.6052)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2424, 0.0112858, -51.9179)
 
 [node name="Kitchen Cam" type="Camera3D" parent="Kitchen" groups=["cameras"]]
 transform = Transform3D(-0.983209, -0.00639081, 0.182373, -0.00702153, 0.999971, -0.00281296, -0.18235, -0.00404626, -0.983225, -0.165899, 1.67495, -3.38047)

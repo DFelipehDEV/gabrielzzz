@@ -7,8 +7,12 @@ public partial class EnemyNPC : Node3D
 	[Export]
 	private Godot.Collections.Array<Node3D> positions;
 	private Node3D nextPosition;
+	private int currentPositionIndex = 0;
 	[Export]
 	private double timeUntilNextPosition = 40.0;
+	
+	[Export]
+	private AudioStreamPlayer3D walkSound;
 
 	private Random random = new Random();
 
@@ -19,6 +23,7 @@ public partial class EnemyNPC : Node3D
 		if (timeUntilNextPosition <= 0)
 		{
 			MoveToNextPosition();
+			walkSound.Play();
 			SelectNextPosition();
 		}
 	}
@@ -26,7 +31,11 @@ public partial class EnemyNPC : Node3D
 	private void SelectNextPosition()
 	{
 		int randomIndex = random.Next(0, positions.Count);
+		while (randomIndex == currentPositionIndex) {
+			randomIndex = random.Next(0, positions.Count);
+		}
 		nextPosition = positions[randomIndex];
+		currentPositionIndex = randomIndex;
 
 		timeUntilNextPosition = random.NextDouble() * 10;
 	}
