@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://coc1glsj1410t"]
+[gd_scene load_steps=28 format=3 uid="uid://coc1glsj1410t"]
 
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="7_tlfhq"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="8_klpys"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b6dgq7thgy31w" path="res://office/radio/grundig_radio_fr-250_free_am_fm_sw.glb" id="15_8uuc1"]
 [ext_resource type="AudioStream" uid="uid://dhuu4n026cvpu" path="res://office/radio/arabian.ogg" id="16_oebsy"]
 [ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://office/retro_light/retro_light.glb" id="17_xbhay"]
+[ext_resource type="Script" path="res://office/FlashingLight.cs" id="18_8uwss"]
 [ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://office/chair/chair.glb" id="18_gjll4"]
 [ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://office/speakers/speakers_low_poly1.glb" id="19_sw1nb"]
 [ext_resource type="Texture2D" uid="uid://0cerglkkwt72" path="res://office/onair/onair.jpg" id="22_cbs6e"]
@@ -216,6 +217,8 @@ light_size = 0.495
 light_bake_mode = 1
 omni_range = 3.20391
 omni_attenuation = 3.0
+script = ExtResource("18_8uwss")
+flashFrequency = 16
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.00354265, 0, 0.480862, 0, 0.779032, 0, -0.309405, 0, -0.00550581, 11.6196, 7.5763, -0.309669)
@@ -234,6 +237,8 @@ light_size = 0.495
 light_bake_mode = 1
 omni_range = 3.20391
 omni_attenuation = 3.0
+script = ExtResource("18_8uwss")
+flashFrequency = 16
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.00173896, 0, -0.480886, 0, 0.779032, 0, 0.309421, 0, 0.00270261, -9.17279, 7.5763, 0.0167478)
