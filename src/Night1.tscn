@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=40 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://player/phone/PhoneTex.tres" id="4_mxk25"]
 [ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://player/phone/ui/FlashlightIcon.tres" id="5_awy5n"]
 [ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://office/Office.tscn" id="6_0w350"]
+[ext_resource type="PackedScene" uid="uid://df6n1tuxjo45e" path="res://map/map.tscn" id="6_jde0i"]
+[ext_resource type="Script" path="res://player/phone/Energy.cs" id="6_xosnq"]
 [ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://office/estadioHD.tres" id="7_xuket"]
 [ext_resource type="Script" path="res://player/Camera.cs" id="8_my4td"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://ricbedroom/RicardoBedroom.tscn" id="8_o0llk"]
@@ -227,8 +229,27 @@ font = SubResource("SystemFont_6ubuy")
 font_size = 16
 outline_size = 0
 
+[node name="Energy" type="Label3D" parent="Player/Root/Phone"]
+transform = Transform3D(1, -5.45276e-13, -5.68434e-14, -5.89514e-13, 1, -7.10543e-14, 0, 0, 1, 0.0250045, 0.0612364, 0.00416303)
+pixel_size = 0.0006
+double_sided = false
+texture_filter = 0
+outline_modulate = Color(0, 0, 0, 0)
+text = "100"
+font = SubResource("SystemFont_6ubuy")
+font_size = 10
+outline_size = 0
+script = ExtResource("6_xosnq")
+
 [node name="CameraUI" type="CanvasLayer" parent="Player/Root/Phone"]
 visible = false
+
+[node name="Map" parent="Player/Root/Phone/CameraUI" instance=ExtResource("6_jde0i")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="Top" type="TextureRect" parent="Player/Root/Phone/CameraUI"]
 anchors_preset = 4
