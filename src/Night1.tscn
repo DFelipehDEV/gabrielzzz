@@ -131,15 +131,15 @@ shader_parameter/amount = 0.02
 shader = ExtResource("12_bou25")
 shader_parameter/posterization_levels = 37
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_la8v7"]
-material = ExtResource("7_xuket")
-size = Vector2(19, 10)
-
 [sub_resource type="Environment" id="Environment_xjf4g"]
 adjustment_enabled = true
 adjustment_brightness = 0.5
 adjustment_contrast = 1.07
 adjustment_saturation = 0.1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_la8v7"]
+material = ExtResource("7_xuket")
+size = Vector2(19, 10)
 
 [sub_resource type="Environment" id="Environment_56hgt"]
 adjustment_enabled = true
@@ -167,7 +167,7 @@ environment = SubResource("Environment_bjlio")
 
 [node name="Player" parent="." node_paths=PackedStringArray("cameras") instance=ExtResource("1_jnati")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 12.823, 2.7)
-cameras = [NodePath("Root/Camera"), NodePath("../RicardoBedroom/RicCam"), NodePath("../SimaoBedroom/SimCam"), NodePath("../Bathrooms/Bathroom Cam"), NodePath("../Bathrooms2/Bathroom Cam"), NodePath("../Garage/Garage Cam"), NodePath("../Kitchen/Kitchen Cam")]
+cameras = [NodePath("Root/Camera"), NodePath("../RicardoBedroom/RicCam"), NodePath("../SimaoBedroom/SimCam"), NodePath("../Bathrooms/Bathroom Cam"), NodePath("../Bathrooms2/Bathroom Cam"), NodePath("../Garage/Garage Cam"), NodePath("../Kitchen/Kitchen Cam"), NodePath("../Office/Hallway Cam")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
@@ -327,6 +327,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121859, 3.82077, 3.50747)
 [node name="RichardPos" type="Node3D" parent="Office"]
 transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558, 2.41398, 7.58116, 0.0257728)
 
+[node name="Hallway Cam" type="Camera3D" parent="Office" groups=["cameras"]]
+transform = Transform3D(-0.258341, -0.450212, 0.854733, -0.0284443, 0.887929, 0.4591, -0.965635, 0.0942922, -0.242194, -3.73008, 9.38078, -0.684955)
+environment = SubResource("Environment_xjf4g")
+fov = 78.75
+
 [node name="Stadium" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 5.34246e-12, -0.000122221, 0.000122221, 4.37114e-08, -1, 0, -1, -4.37114e-08, 0.175, 14.809, 23.177)
 cast_shadow = 0
@@ -395,7 +400,7 @@ environment = SubResource("Environment_xjf4g")
 fov = 78.75
 
 [node name="Kitchen" parent="." instance=ExtResource("27_1krh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -85.5328)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0369406, 0.0112858, -85.6052)
 
 [node name="Kitchen Cam" type="Camera3D" parent="Kitchen" groups=["cameras"]]
 transform = Transform3D(-0.983209, -0.00639081, 0.182373, -0.00702153, 0.999971, -0.00281296, -0.18235, -0.00404626, -0.983225, -0.165899, 1.67495, -3.38047)
