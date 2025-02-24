@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=41 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://bathroom/bathroom2.tscn" id="19_okl6x"]
 [ext_resource type="PackedScene" uid="uid://dmjkd7r4hovsr" path="res://npc/richard/Richard.tscn" id="23_6cb46"]
 [ext_resource type="PackedScene" uid="uid://djoa8doagvvmr" path="res://npc/vitinha/Vitel.tscn" id="24_r4bhu"]
+[ext_resource type="AudioStream" uid="uid://c1bxfoihf7suh" path="res://Kitchen/Faucet.mp3" id="26_powwn"]
 [ext_resource type="PackedScene" uid="uid://cplcqpabsaj8i" path="res://garage/garage.tscn" id="26_syuee"]
 [ext_resource type="PackedScene" uid="uid://31378kkvbbck" path="res://Kitchen/Kitchen.tscn" id="27_1krh8"]
 
@@ -460,3 +461,9 @@ fov = 78.75
 
 [node name="VitelsPos" type="Node3D" parent="Kitchen" groups=["vitel_pos"]]
 transform = Transform3D(-0.998454, 0, -0.055595, 0, 1, 0, 0.055595, 0, -0.998454, -2.21379, 0.296544, 0.366039)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.344162, 0.93794, 0.848534)
+stream = ExtResource("26_powwn")
+unit_size = 3.0
+autoplay = true
