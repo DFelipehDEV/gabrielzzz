@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://coc1glsj1410t"]
 
-[ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="7_tlfhq"]
+[ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://bathroom/bathroomtile.tres" id="3_luo6d"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="8_klpys"]
 [ext_resource type="Texture2D" uid="uid://ck3kglw2fxq71" path="res://office/web/spiderweb.png" id="8_pfyif"]
 [ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass/glass_mat.tres" id="9_4qo3k"]
@@ -23,15 +23,15 @@
 size = Vector2(24, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gp5kg"]
-material = ExtResource("7_tlfhq")
+material = ExtResource("3_luo6d")
 size = Vector3(30, 10, 1.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bd0ue"]
-material = ExtResource("7_tlfhq")
+material = ExtResource("3_luo6d")
 size = Vector3(4.7, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7pha6"]
-material = ExtResource("7_tlfhq")
+material = ExtResource("3_luo6d")
 size = Vector3(0.9, 1.5, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cpnjw"]
@@ -76,16 +76,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5894, 5.61161, -1.90727)
 mesh = SubResource("BoxMesh_gp5kg")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2432, 5.61161, 1.90931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1124, 5.61161, 1.90931)
 mesh = SubResource("BoxMesh_gp5kg")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
 transform = Transform3D(21.4224, 0, 0, 0, -1, 1.58125e-07, 0, -8.74228e-08, -1.80874, 0, 10.5857, 0)
-material_override = ExtResource("7_tlfhq")
+material_override = ExtResource("3_luo6d")
 mesh = SubResource("PlaneMesh_xp0vg")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038, 8.388, 2.16979)
+material_override = ExtResource("3_luo6d")
 mesh = SubResource("BoxMesh_bd0ue")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
