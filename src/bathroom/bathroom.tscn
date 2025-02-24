@@ -1,13 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0iaxr7trojl6"]
+[gd_scene load_steps=9 format=3 uid="uid://c0iaxr7trojl6"]
 
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://bathroom/bathroomtile.tres" id="1_5u0wq"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="2_wh5l2"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="3_xwob1"]
 [ext_resource type="PackedScene" uid="uid://2s6vckmj86pd" path="res://bathroom/toilet.tscn" id="4_s7480"]
 [ext_resource type="Texture2D" uid="uid://dn8fq0ok8ruq5" path="res://bathroom/shadowcock.jpg" id="5_vvix3"]
+[ext_resource type="Script" path="res://RoomCamera.cs" id="6_tnysf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8l7dj"]
 albedo_texture = ExtResource("5_vvix3")
+
+[sub_resource type="Environment" id="Environment_knmlv"]
+adjustment_enabled = true
+adjustment_brightness = 0.5
+adjustment_contrast = 1.07
+adjustment_saturation = 0.1
 
 [node name="Bathrooms" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2347, -0.0159672, -147.868)
@@ -112,3 +119,12 @@ size = Vector3(0.0350342, 1.18739, 1.01866)
 [node name="CSGBox3D3" type="CSGBox3D" parent="box3/CSGBox3D2"]
 transform = Transform3D(-0.00185007, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00185007, 0.0191574, 0.00974679, -0.267212)
 size = Vector3(0.122742, 0.0540314, 0.016819)
+
+[node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
+transform = Transform3D(0.860395, -0.212046, 0.463418, -0.0284443, 0.887929, 0.4591, -0.508833, -0.408189, 0.757939, -1.93881, 1.90971, -0.0274048)
+environment = SubResource("Environment_knmlv")
+fov = 70.0
+script = ExtResource("6_tnysf")
+
+[node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86042, -0.900575, -3.27528)

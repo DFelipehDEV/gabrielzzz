@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://coc1glsj1410t"]
+[gd_scene load_steps=30 format=3 uid="uid://coc1glsj1410t"]
 
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://bathroom/bathroomtile.tres" id="3_luo6d"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="8_klpys"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://office/retro_light/retro_light.glb" id="17_xbhay"]
 [ext_resource type="Script" path="res://office/FlashingLight.cs" id="18_8uwss"]
 [ext_resource type="PackedScene" uid="uid://cv2jghrmnu7ve" path="res://office/chair/chair.glb" id="18_gjll4"]
+[ext_resource type="Script" path="res://RoomCamera.cs" id="19_qkc05"]
 [ext_resource type="PackedScene" uid="uid://dmq070whpjm4a" path="res://office/speakers/speakers_low_poly1.glb" id="19_sw1nb"]
 [ext_resource type="Texture2D" uid="uid://0cerglkkwt72" path="res://office/onair/onair.jpg" id="22_cbs6e"]
 
@@ -55,6 +56,12 @@ size = Vector2(0.6, 0.6)
 size = Vector3(0.2183, 0.156227, 0.0887451)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7ivtq"]
+
+[sub_resource type="Environment" id="Environment_001tt"]
+adjustment_enabled = true
+adjustment_brightness = 0.5
+adjustment_contrast = 1.07
+adjustment_saturation = 0.1
 
 [node name="Office" type="Node3D"]
 
@@ -242,3 +249,31 @@ script = ExtResource("18_8uwss")
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.00173896, 0, -0.480886, 0, 0.779032, 0, 0.309421, 0, 0.00270261, -9.17279, 7.5763, 0.0167478)
 mesh = SubResource("BoxMesh_gp5kg")
+
+[node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
+transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558, 18.2454, 7.87294, 0.0257728)
+
+[node name="RichardPos2" type="Node3D" parent="." groups=["richard_pos"]]
+transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558, 3.59475, 7.87294, 0.0257728)
+
+[node name="VitelPos" type="Node3D" parent="." groups=["vitel_pos"]]
+transform = Transform3D(0.0871558, 0, 0.996195, 0, 1, 0, -0.996195, 0, 0.0871558, -16.2924, 7.87294, 0.0713904)
+
+[node name="VitelPos2" type="Node3D" parent="." groups=["vitel_pos"]]
+transform = Transform3D(-0.892916, 0, 0.450223, 0, 1, 0, -0.450223, 0, -0.892916, -3.87334, 7.87294, 0.0713904)
+
+[node name="Hallway" type="Node3D" parent="."]
+
+[node name="Cam" type="Camera3D" parent="Hallway" groups=["cameras"]]
+transform = Transform3D(-0.169032, 0.291467, -0.941528, 0.0390237, 0.956504, 0.289097, 0.984838, 0.0121248, -0.173054, 12.1342, 9.91046, -0.71282)
+environment = SubResource("Environment_001tt")
+fov = 78.75
+script = ExtResource("19_qkc05")
+
+[node name="Hallway2" type="Node3D" parent="."]
+
+[node name="Cam" type="Camera3D" parent="Hallway2" groups=["cameras"]]
+transform = Transform3D(-0.280184, -0.267237, 0.921999, 0.0390237, 0.956504, 0.289097, -0.959153, 0.11698, -0.257569, -9.61795, 9.90401, -0.617784)
+environment = SubResource("Environment_001tt")
+fov = 78.75
+script = ExtResource("19_qkc05")

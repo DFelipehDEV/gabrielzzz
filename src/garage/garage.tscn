@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cplcqpabsaj8i"]
+[gd_scene load_steps=10 format=3 uid="uid://cplcqpabsaj8i"]
 
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="2_na8tc"]
 [ext_resource type="PackedScene" uid="uid://cyajgsox86emo" path="res://garage/low_poly_lada_2107.glb" id="3_1rd2p"]
 [ext_resource type="PackedScene" uid="uid://cxvm4to2xv0jp" path="res://garage/low_poly_metal_shelf_-_game_ready.glb" id="4_yi6jh"]
 [ext_resource type="PackedScene" uid="uid://dpr1t07xmkg2l" path="res://garage/game_asset_generator.glb" id="5_8xx0x"]
 [ext_resource type="PackedScene" uid="uid://dmi0hlb20wa0f" path="res://garage/3d_cardboard_lowpoly.glb" id="5_b08bt"]
+[ext_resource type="Script" path="res://RoomCamera.cs" id="6_ar06e"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h52jo"]
 material = ExtResource("2_na8tc")
@@ -13,6 +14,12 @@ size = Vector2(7, 4.5)
 [sub_resource type="PlaneMesh" id="PlaneMesh_vmdk6"]
 material = ExtResource("2_na8tc")
 size = Vector2(7, 8.5)
+
+[sub_resource type="Environment" id="Environment_w6ly7"]
+adjustment_enabled = true
+adjustment_brightness = 0.5
+adjustment_contrast = 1.07
+adjustment_saturation = 0.1
 
 [node name="Garage" type="Node3D"]
 
@@ -80,3 +87,15 @@ light_size = 0.001
 light_bake_mode = 1
 omni_range = 3.5
 omni_attenuation = 1.341
+
+[node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
+transform = Transform3D(-0.724169, 0.298288, -0.621774, -0.0284443, 0.887929, 0.4591, 0.689035, 0.350152, -0.634526, -2.95379, 2.38704, -2.13844)
+environment = SubResource("Environment_w6ly7")
+fov = 78.75
+script = ExtResource("6_ar06e")
+
+[node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
+transform = Transform3D(-0.902938, 0, -0.429771, 0, 1, 0, 0.429771, 0, -0.902938, 0.130775, -0.0556896, 1.23447)
+
+[node name="VitelsPos" type="Node3D" parent="." groups=["vitel_pos"]]
+transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561, -2.53635, -0.0556896, 1.3372)

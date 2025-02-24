@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnhtsot846ueo"]
+[gd_scene load_steps=7 format=3 uid="uid://cnhtsot846ueo"]
 
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://bathroom/bathroomtile.tres" id="1_ik5xu"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="2_osmsj"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="3_lkjs8"]
 [ext_resource type="PackedScene" uid="uid://2s6vckmj86pd" path="res://bathroom/toilet.tscn" id="4_dfrx1"]
+[ext_resource type="Script" path="res://RoomCamera.cs" id="5_p4ixl"]
+
+[sub_resource type="Environment" id="Environment_htqlg"]
+adjustment_enabled = true
+adjustment_brightness = 0.5
+adjustment_contrast = 1.07
+adjustment_saturation = 0.1
 
 [node name="Bathrooms2" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5289, -0.0159672, -147.868)
@@ -107,3 +114,12 @@ size = Vector3(0.122742, 0.0540314, 0.016819)
 [node name="CSGBox3D" type="CSGBox3D" parent="box3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.416718, 0.557063, -0.501572)
 size = Vector3(0.0491943, 1.27435, 1.14314)
+
+[node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
+transform = Transform3D(-0.465038, -0.418311, 0.780228, -0.0284443, 0.887929, 0.4591, -0.884834, 0.191306, -0.424819, -1.32774, 1.84255, -0.611206)
+environment = SubResource("Environment_htqlg")
+fov = 70.0
+script = ExtResource("5_p4ixl")
+
+[node name="VitelsPos" type="Node3D" parent="." groups=["vitel_pos"]]
+transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561, -5.59416, -0.0556896, 1.51628)
