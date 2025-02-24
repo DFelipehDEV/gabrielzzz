@@ -1,24 +1,12 @@
-[gd_scene load_steps=43 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=23 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
-[ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
-[ext_resource type="PackedScene" uid="uid://clt1sfs0wbkeo" path="res://player/phone/Phone.glb" id="3_i2n8j"]
-[ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://player/phone/PhoneTex.tres" id="4_mxk25"]
-[ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://player/phone/ui/FlashlightIcon.tres" id="5_awy5n"]
 [ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://office/Office.tscn" id="6_0w350"]
-[ext_resource type="PackedScene" uid="uid://df6n1tuxjo45e" path="res://map/map.tscn" id="6_jde0i"]
-[ext_resource type="Script" path="res://player/phone/Energy.cs" id="6_xosnq"]
 [ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://office/estadioHD.tres" id="7_xuket"]
-[ext_resource type="Script" path="res://player/PlayerCamera.cs" id="8_my4td"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://ricbedroom/RicardoBedroom.tscn" id="8_o0llk"]
-[ext_resource type="Texture2D" uid="uid://bfbrtjtc0usvw" path="res://player/phone/PhoneCamera.png" id="9_la8v7"]
 [ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://simaobedroom/SimaoBedroom.tscn" id="9_wg86v"]
-[ext_resource type="Texture2D" uid="uid://bj3eakylas5lg" path="res://player/phone/PhoneCameraBottom.png" id="10_d8mo8"]
 [ext_resource type="LightmapGIData" uid="uid://qof0fl061ard" path="res://Night1.lmbake" id="10_gy337"]
 [ext_resource type="Texture2D" uid="uid://n00rv7pb6lu3" path="res://npc/simon/sit.png" id="11_ajmye"]
-[ext_resource type="Script" path="res://FpsCounter.cs" id="11_mm5m4"]
-[ext_resource type="Shader" path="res://post_processing/Posterize.gdshader" id="12_bou25"]
-[ext_resource type="Shader" path="res://post_processing/SimpleGrain.gdshader" id="13_bvw3k"]
 [ext_resource type="PackedScene" uid="uid://c0iaxr7trojl6" path="res://bathroom/bathroom.tscn" id="18_xasnv"]
 [ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://bathroom/bathroom2.tscn" id="19_okl6x"]
 [ext_resource type="Script" path="res://RoomCamera.cs" id="19_opx7t"]
@@ -43,98 +31,6 @@ fog_density = 0.1407
 volumetric_fog_albedo = Color(0, 0, 0, 1)
 adjustment_enabled = true
 adjustment_saturation = 1.2
-
-[sub_resource type="Animation" id="Animation_c1eah"]
-resource_name = "HideUnderTable"
-length = 1.95
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Root")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 0, 0.03, -0.2, 0.4, 1, 0, 0, -0.4, 0.6, 1, 0, 0.03, -0.6, 0.966667, 1, 0, -0.02, -0.8, 1.16667, 1, 0, -0.07, -1, 1.53333, 1, 0, -0.45, -1.4)
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Root:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.0666667, 0.266667, 0.5, 0.833333, 1.1, 1.86667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 0.129408),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.349066, 0, 0), Vector3(-0.261799, 0, 0), Vector3(-0.349066, 0, 0), Vector3(-0.0872665, 0, 0), Vector3(0, 3.14159, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_7xgl7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Root:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Root")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
-
-[sub_resource type="Animation" id="Animation_2wknt"]
-resource_name = "UnhideTable"
-
-[sub_resource type="Animation" id="Animation_verti"]
-resource_name = "UnhideUnderTable"
-length = 1.9
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Root")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.5, -1.35, 0.166667, 1, 0, -0.45, -1.4, 0.266667, 1, 0, -0.5, -1.3, 0.4, 1, 0, -0.35, -1.2, 0.5, 1, 0, -0.25, -1.1, 0.633333, 1, 0, -0.35, -0.8, 0.766667, 1, 0, -0.2, -0.6, 0.966667, 1, 0, -0.07, -0.4, 1.16667, 1, 0, -0.02, -0.3, 1.26667, 1, 0, -0.07, -0.2, 1.36667, 1, 0, -0.02, -0.1, 1.5, 1, 0, 0, 0)
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Root:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.1, 1.83334),
-"transitions": PackedFloat32Array(0.4, 0.4),
-"update": 0,
-"values": [Vector3(0, 3.14159, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_cks78"]
-_data = {
-"HideUnderTable": SubResource("Animation_c1eah"),
-"RESET": SubResource("Animation_7xgl7"),
-"UnhideTable": SubResource("Animation_2wknt"),
-"UnhideUnderTable": SubResource("Animation_verti")
-}
-
-[sub_resource type="SystemFont" id="SystemFont_6ubuy"]
-font_names = PackedStringArray("Calibri")
-hinting = 0
-oversampling = 2.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a05b1"]
-shader = ExtResource("13_bvw3k")
-shader_parameter/amount = 0.02
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0h1o"]
-shader = ExtResource("12_bou25")
-shader_parameter/posterization_levels = 37
 
 [sub_resource type="Environment" id="Environment_xjf4g"]
 adjustment_enabled = true
@@ -173,178 +69,6 @@ environment = SubResource("Environment_bjlio")
 [node name="Player" parent="." instance=ExtResource("1_jnati")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 12.823, 2.7)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-libraries = {
-"": SubResource("AnimationLibrary_cks78")
-}
-autoplay = "RESET"
-
-[node name="Root" type="Node3D" parent="Player"]
-
-[node name="Phone" type="Node3D" parent="Player/Root"]
-transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 3.27826e-07, 4.29861e-07, 0.999999, 0.0793167, -0.0236454, -0.156882)
-script = ExtResource("2_s44sq")
-
-[node name="Flash" type="SpotLight3D" parent="Player/Root/Phone"]
-transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0271126, 0.0495281, -0.00421333)
-spot_range = 13.0
-spot_angle = 35.0
-
-[node name="PhoneModel" parent="Player/Root/Phone" instance=ExtResource("3_i2n8j")]
-transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
-
-[node name="Screen" type="CSGBox3D" parent="Player/Root/Phone"]
-transform = Transform3D(-1, 6.82757e-12, 5.36442e-07, 1.56357e-11, -1, 4.35563e-12, -2.68221e-07, 0, -1, -0.000854596, 0.00178337, 0.00364208)
-material_override = ExtResource("4_mxk25")
-cast_shadow = 0
-gi_mode = 0
-calculate_tangents = false
-size = Vector3(0.0640625, 0.13031, 0.001)
-
-[node name="FlashIcon" type="CSGBox3D" parent="Player/Root/Phone"]
-transform = Transform3D(0.999998, -5.74754e-12, -2.98023e-07, -4.8374e-11, 1, -1.64846e-12, 2.6226e-06, 1.44951e-12, 1, -0.0244471, -0.0506868, 0.0038209)
-cast_shadow = 0
-gi_mode = 0
-calculate_tangents = false
-size = Vector3(0.01, 0.01, 0.001)
-material = ExtResource("5_awy5n")
-
-[node name="Time" type="Label3D" parent="Player/Root/Phone"]
-transform = Transform3D(1, -1.58572e-13, 5.32907e-15, -1.63188e-13, 1, -2.13163e-14, 0, 0, 1, -2.98023e-08, 0.0376434, 0.00416303)
-pixel_size = 0.0006
-double_sided = false
-texture_filter = 0
-outline_modulate = Color(0, 0, 0, 0)
-text = "00:00"
-font = SubResource("SystemFont_6ubuy")
-outline_size = 0
-
-[node name="Date" type="Label3D" parent="Player/Root/Phone"]
-transform = Transform3D(1, -2.72259e-13, 8.88178e-15, -2.76875e-13, 1, -3.55271e-14, 0, 0, 1, -2.98023e-08, 0.0502539, 0.00416303)
-pixel_size = 0.0006
-double_sided = false
-texture_filter = 0
-outline_modulate = Color(0, 0, 0, 0)
-text = "seg., 01
-"
-font = SubResource("SystemFont_6ubuy")
-font_size = 16
-outline_size = 0
-
-[node name="Energy" type="Label3D" parent="Player/Root/Phone"]
-transform = Transform3D(1, -5.45276e-13, -5.68434e-14, -5.89514e-13, 1, -7.10543e-14, 0, 0, 1, 0.0250045, 0.0612364, 0.00416303)
-pixel_size = 0.0006
-double_sided = false
-texture_filter = 0
-outline_modulate = Color(0, 0, 0, 0)
-text = "100"
-font = SubResource("SystemFont_6ubuy")
-font_size = 10
-outline_size = 0
-script = ExtResource("6_xosnq")
-
-[node name="CameraUI" type="CanvasLayer" parent="Player/Root/Phone"]
-visible = false
-
-[node name="Map" parent="Player/Root/Phone/CameraUI" instance=ExtResource("6_jde0i")]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="Top" type="TextureRect" parent="Player/Root/Phone/CameraUI"]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -414.0
-offset_right = 166.0
-offset_bottom = 414.0
-grow_vertical = 2
-texture = ExtResource("9_la8v7")
-expand_mode = 1
-
-[node name="Border" type="ColorRect" parent="Player/Root/Phone/CameraUI/Top"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -2560.0
-offset_top = -900.0
-offset_right = 2394.0
-grow_horizontal = 2
-color = Color(0, 0, 0, 1)
-
-[node name="Bottom" type="TextureRect" parent="Player/Root/Phone/CameraUI"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -404.0
-offset_top = -414.0
-offset_bottom = 414.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 8
-texture = ExtResource("10_d8mo8")
-
-[node name="Border" type="ColorRect" parent="Player/Root/Phone/CameraUI/Bottom"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2560.0
-offset_right = 2156.0
-offset_bottom = 900.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0, 0, 0, 1)
-
-[node name="Camera" type="Camera3D" parent="Player/Root" groups=["cameras"]]
-current = true
-fov = 90.0
-far = 86.41
-script = ExtResource("8_my4td")
-
-[node name="Grain" type="CanvasLayer" parent="Player/Root/Camera"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Player/Root/Camera/Grain"]
-material = SubResource("ShaderMaterial_a05b1")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Posterize" type="CanvasLayer" parent="Player/Root/Camera"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Player/Root/Camera/Posterize"]
-material = SubResource("ShaderMaterial_t0h1o")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="FPSCounter" type="Label" parent="Player/Root/Camera"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "60
-"
-script = ExtResource("11_mm5m4")
-
-[node name="Eye" type="Node3D" parent="Player/Root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30572e-09, 0, -0.0492518)
-
 [node name="Office" parent="." instance=ExtResource("6_0w350")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121859, 3.82077, 3.50747)
 
@@ -360,13 +84,17 @@ transform = Transform3D(0.0871558, 0, 0.996195, 0, 1, 0, -0.996195, 0, 0.0871558
 [node name="VitelPos2" type="Node3D" parent="Office" groups=["vitel_pos"]]
 transform = Transform3D(-0.892916, 0, 0.450223, 0, 1, 0, -0.450223, 0, -0.892916, -3.87334, 7.87294, 0.0713904)
 
-[node name="Hallway Cam" type="Camera3D" parent="Office" groups=["cameras"]]
+[node name="Hallway" type="Node3D" parent="Office"]
+
+[node name="Cam" type="Camera3D" parent="Office/Hallway" groups=["cameras"]]
 transform = Transform3D(-0.169032, 0.291467, -0.941528, 0.0390237, 0.956504, 0.289097, 0.984838, 0.0121248, -0.173054, 12.1342, 9.91046, -0.71282)
 environment = SubResource("Environment_xjf4g")
 fov = 78.75
 script = ExtResource("19_opx7t")
 
-[node name="Hallway Cam2" type="Camera3D" parent="Office" groups=["cameras"]]
+[node name="Hallway2" type="Node3D" parent="Office"]
+
+[node name="Cam" type="Camera3D" parent="Office/Hallway2" groups=["cameras"]]
 transform = Transform3D(-0.280184, -0.267237, 0.921999, 0.0390237, 0.956504, 0.289097, -0.959153, 0.11698, -0.257569, -9.61795, 9.90401, -0.617784)
 environment = SubResource("Environment_xjf4g")
 fov = 78.75
@@ -380,7 +108,7 @@ mesh = SubResource("PlaneMesh_la8v7")
 [node name="RicardoBedroom" parent="." instance=ExtResource("8_o0llk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3495, 0, -91.6754)
 
-[node name="RicCam" type="Camera3D" parent="RicardoBedroom" groups=["cameras"]]
+[node name="Cam" type="Camera3D" parent="RicardoBedroom" groups=["cameras"]]
 transform = Transform3D(-0.938143, -0.182267, 0.294393, -0.0284443, 0.887929, 0.4591, -0.345079, 0.422327, -0.838189, -0.00872707, 2.74855, -2.96603)
 environment = SubResource("Environment_xjf4g")
 fov = 70.0
@@ -399,7 +127,7 @@ modulate = Color(0.37918, 0.37918, 0.37918, 1)
 pixel_size = 0.0025
 texture = ExtResource("11_ajmye")
 
-[node name="SimCam" type="Camera3D" parent="SimaoBedroom" groups=["cameras"]]
+[node name="Cam" type="Camera3D" parent="SimaoBedroom" groups=["cameras"]]
 transform = Transform3D(0.995942, 0.0125702, -0.0891144, 0.0168729, 0.946559, 0.32209, 0.0884007, -0.322287, 0.942505, -3.64225, 1.89338, -0.499649)
 environment = SubResource("Environment_56hgt")
 fov = 87.8
@@ -419,7 +147,7 @@ light_data = ExtResource("10_gy337")
 [node name="Bathrooms" parent="." instance=ExtResource("18_xasnv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8691, -0.0159672, -53.2568)
 
-[node name="Bathroom Cam" type="Camera3D" parent="Bathrooms" groups=["cameras"]]
+[node name="Cam" type="Camera3D" parent="Bathrooms" groups=["cameras"]]
 transform = Transform3D(0.860395, -0.212046, 0.463418, -0.0284443, 0.887929, 0.4591, -0.508833, -0.408189, 0.757939, -1.93881, 1.90971, -0.0274048)
 environment = SubResource("Environment_gqopy")
 fov = 70.0
@@ -431,7 +159,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86042, -0.900575, -3.27528
 [node name="Bathrooms2" parent="." instance=ExtResource("19_okl6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5289, -0.0159672, -70.2663)
 
-[node name="Bathroom Cam" type="Camera3D" parent="Bathrooms2" groups=["cameras"]]
+[node name="Cam" type="Camera3D" parent="Bathrooms2" groups=["cameras"]]
 transform = Transform3D(-0.465038, -0.418311, 0.780228, -0.0284443, 0.887929, 0.4591, -0.884834, 0.191306, -0.424819, -1.32774, 1.84255, -0.611206)
 environment = SubResource("Environment_uruh5")
 fov = 70.0
@@ -443,7 +171,7 @@ transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561
 [node name="Garage" parent="." instance=ExtResource("26_syuee")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5992, 0, -68.3832)
 
-[node name="Garage Cam" type="Camera3D" parent="Garage" groups=["cameras"]]
+[node name="Cam" type="Camera3D" parent="Garage" groups=["cameras"]]
 transform = Transform3D(-0.724169, 0.298288, -0.621774, -0.0284443, 0.887929, 0.4591, 0.689035, 0.350152, -0.634526, -2.95379, 2.38704, -2.13844)
 environment = SubResource("Environment_xjf4g")
 fov = 78.75
@@ -458,7 +186,7 @@ transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561
 [node name="Kitchen" parent="." instance=ExtResource("27_1krh8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2424, 0.0112858, -51.9179)
 
-[node name="Kitchen Cam" type="Camera3D" parent="Kitchen" groups=["cameras"]]
+[node name="Cam" type="Camera3D" parent="Kitchen" groups=["cameras"]]
 transform = Transform3D(-0.983209, -0.00639081, 0.182373, -0.00702153, 0.999971, -0.00281296, -0.18235, -0.00404626, -0.983225, -0.165899, 1.67495, -3.38047)
 environment = SubResource("Environment_xjf4g")
 fov = 78.75
