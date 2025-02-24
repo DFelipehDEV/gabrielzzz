@@ -21,8 +21,12 @@ public partial class EnemyNPC : Node3D
     public override void _Ready()
     {
         base._Ready();
-		var positionsGroup = GetTree().GetNodesInGroup(positionGroup).Select(x => (Node3D)x).ToArray();
-		positions = new Godot.Collections.Array<Node3D>(positionsGroup);
+		if (positionGroup != "") {
+			var positionsGroup = GetTree().GetNodesInGroup(positionGroup).Select(x => (Node3D)x).ToArray();
+			positions = new Godot.Collections.Array<Node3D>(positionsGroup);
+		} else {
+			GD.PrintErr("Missing field 'positionGroup'");
+		}
     }
 
     public override void _Process(double delta)
