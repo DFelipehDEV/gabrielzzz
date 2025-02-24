@@ -1,4 +1,5 @@
 using Godot;
+using System.Linq;
 
 public partial class Player : Node3D
 {
@@ -30,7 +31,6 @@ public partial class Player : Node3D
 	}
 	private float stateTimer = 0;
 	private int currentCamera = 0;
-	[Export]
 	private Godot.Collections.Array<Camera3D> cameras;
 
 	private Node3D focused;
@@ -40,6 +40,10 @@ public partial class Player : Node3D
 		cam = GetNode<Camera>("Root/Camera");
 		phone = GetNode<Phone>("Root/Phone");
 		eye = GetNode<Node3D>("Root/Eye");
+		var camerasGroup = GetTree().GetNodesInGroup("cameras").Select(x => (Camera3D)x).ToArray();
+		cameras = new Godot.Collections.Array<Camera3D>(camerasGroup);
+		GD.Print(cameras.ToString());
+
 		focused = null;
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		normalPhonePosition = phone.Position;
