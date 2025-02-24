@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://4i3hsxwvngn7"]
+
+[ext_resource type="Script" path="res://npc/EnemyNPC.cs" id="1_cfsdk"]
+[ext_resource type="Texture2D" uid="uid://n00rv7pb6lu3" path="res://npc/simon/sit.png" id="2_pharj"]
+[ext_resource type="AudioStream" uid="uid://bodldjokvxp8t" path="res://npc/Walk.mp3" id="3_1l0nt"]
+
+[node name="Simon" type="Node3D" node_paths=PackedStringArray("walkSound")]
+transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 0, 0, 0)
+script = ExtResource("1_cfsdk")
+positionGroup = "richard_pos"
+timeUntilNextPosition = 30.0
+walkSound = NodePath("WalkSound")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+modulate = Color(0.37918, 0.37918, 0.37918, 1)
+pixel_size = 0.0025
+texture = ExtResource("2_pharj")
+
+[node name="WalkSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_1l0nt")
+unit_size = 5.0
