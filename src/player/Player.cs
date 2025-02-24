@@ -4,13 +4,12 @@ using System.Linq;
 public partial class Player : Node3D
 {
 	private PlayerCamera cam;
-	private Node3D eye;
 	private Phone phone;
 	private AnimationPlayer animationPlayer;
-	private Vector3 normalPhonePosition;
 	private float rotationSpeed = 0.05f;
 	private Vector2 targetRotation;
 	private Vector2 direction;
+
 	// TODO: Add flashlight state
 	public enum States {
 		NORMAL,
@@ -19,6 +18,7 @@ public partial class Player : Node3D
 		TOHIDDEN,
 		HIDDEN,
 	}
+
 	private States state = States.NORMAL;
 	public States State {
 		get {
@@ -29,6 +29,7 @@ public partial class Player : Node3D
 			stateTimer = 0;
 		}
 	}
+
 	private float stateTimer = 0;
 	private int currentCamera = 0;
 	private Godot.Collections.Array<RoomCamera> cameras;
@@ -39,13 +40,12 @@ public partial class Player : Node3D
 	{
 		cam = GetNode<PlayerCamera>("Root/Camera");
 		phone = GetNode<Phone>("Root/Phone");
-		eye = GetNode<Node3D>("Root/Eye");
+
 		var camerasGroup = GetTree().GetNodesInGroup("cameras").Select(x => (RoomCamera)x).ToArray();
 		cameras = new Godot.Collections.Array<RoomCamera>(camerasGroup);
 
 		focused = null;
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-		normalPhonePosition = phone.Position;
 	}
 
 	public override void _Process(double delta)
@@ -88,7 +88,6 @@ public partial class Player : Node3D
 		
 		if (Input.IsActionJustPressed("hide")) {
 			if (state == States.NORMAL && animationPlayer.CurrentAnimation != "UnhideUnderTable") {
-				
 				animationPlayer.Play("HideUnderTable");
 				state = States.TOHIDDEN;
 			} else {
@@ -97,17 +96,12 @@ public partial class Player : Node3D
 				state = States.NORMAL;
 			}
 		}
-		
-		
 
 		if (Input.IsActionJustPressed("toggle_camera")) {
 			switch (State) {
 				case States.NORMAL:
 					State = States.TOCAMERA;
-					Tween toEyePosition = CreateTween().SetTrans(Tween.TransitionType.Quad);
-					toEyePosition.TweenProperty(phone, "position", eye.Position, 0.5);
-					Tween toEyeRotation = CreateTween().SetTrans(Tween.TransitionType.Quad);
-					toEyeRotation.TweenProperty(phone, "rotation_degrees", new Vector3(0.0f, 0.0f, 90.0f), 0.4);
+					phone.Animation = Phone.Animations.OPEN_CAMERA;
 					break;
 				
 				case States.CAMERA:
@@ -125,11 +119,9 @@ public partial class Player : Node3D
 						currentCamera = 0;
 						cameras[currentCamera].Current = true;
 						cameras[currentCamera].listener.MakeCurrent();
+
 						State = States.NORMAL;
-						Tween toNormalPosition = CreateTween().SetTrans(Tween.TransitionType.Quad);
-						toNormalPosition.TweenProperty(phone, "rotation_degrees", new Vector3(0.0f, 0.0f, 0.0f), 0.5);	
-						Tween toNormalRotation = CreateTween().SetTrans(Tween.TransitionType.Quad);	
-						toNormalRotation.TweenProperty(phone, "position", normalPhonePosition, 0.3);			
+						phone.Animation = Phone.Animations.CLOSE_CAMERA;		
 						phone.cameraUI.Visible = false;
 						cam.posterize.Visible = false;
 						cam.grain.Visible = false;

@@ -96,6 +96,7 @@ _data = {
 [sub_resource type="SystemFont" id="SystemFont_bakc2"]
 font_names = PackedStringArray("Calibri")
 hinting = 0
+subpixel_positioning = 0
 oversampling = 2.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hw0io"]
@@ -122,9 +123,10 @@ autoplay = "RESET"
 
 [node name="Root" type="Node3D" parent="."]
 
-[node name="Phone" type="Node3D" parent="Root"]
+[node name="Phone" type="Node3D" parent="Root" node_paths=PackedStringArray("eye")]
 transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 3.27826e-07, 4.29861e-07, 0.999999, 0.0793167, -0.0236454, -0.156882)
 script = ExtResource("2_aepcq")
+eye = NodePath("../Eye")
 
 [node name="Flash" type="SpotLight3D" parent="Root/Phone"]
 transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0271126, 0.0495281, -0.00421333)
