@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://bathroom/bathroom2.tscn" id="19_okl6x"]
 [ext_resource type="PackedScene" uid="uid://dmjkd7r4hovsr" path="res://npc/richard/Richard.tscn" id="23_6cb46"]
 [ext_resource type="PackedScene" uid="uid://djoa8doagvvmr" path="res://npc/vitinha/Vitel.tscn" id="24_r4bhu"]
-[ext_resource type="AudioStream" uid="uid://c1bxfoihf7suh" path="res://Kitchen/Faucet.mp3" id="26_powwn"]
+[ext_resource type="AudioStream" uid="uid://dgr8k8c2mj86h" path="res://Kitchen/Faucet.wav" id="26_s5nhg"]
 [ext_resource type="PackedScene" uid="uid://cplcqpabsaj8i" path="res://garage/garage.tscn" id="26_syuee"]
 [ext_resource type="PackedScene" uid="uid://31378kkvbbck" path="res://Kitchen/Kitchen.tscn" id="27_1krh8"]
 
@@ -248,6 +248,10 @@ visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
 
@@ -463,7 +467,6 @@ fov = 78.75
 transform = Transform3D(-0.998454, 0, -0.055595, 0, 1, 0, 0.055595, 0, -0.998454, -2.21379, 0.296544, 0.366039)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.344162, 0.93794, 0.848534)
-stream = ExtResource("26_powwn")
+stream = ExtResource("26_s5nhg")
 unit_size = 3.0
 autoplay = true
