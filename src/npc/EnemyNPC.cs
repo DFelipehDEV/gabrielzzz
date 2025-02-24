@@ -1,10 +1,12 @@
 using Godot;
 using System;
+using System.Linq;
 
 [GlobalClass]
 public partial class EnemyNPC : Node3D
 {
 	[Export]
+	private string positionGroup;
 	private Godot.Collections.Array<Node3D> positions;
 	private Node3D nextPosition;
 	private int currentPositionIndex = 0;
@@ -16,7 +18,14 @@ public partial class EnemyNPC : Node3D
 
 	private Random random = new Random();
 
-	public override void _Process(double delta)
+    public override void _Ready()
+    {
+        base._Ready();
+		var positionsGroup = GetTree().GetNodesInGroup(positionGroup).Select(x => (Node3D)x).ToArray();
+		positions = new Godot.Collections.Array<Node3D>(positionsGroup);
+    }
+
+    public override void _Process(double delta)
 	{
 		timeUntilNextPosition -= delta;
 

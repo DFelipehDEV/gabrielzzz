@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cr1btv0ytp04g" path="res://npc/richard/standing.png" id="2_mwfsl"]
 [ext_resource type="AudioStream" uid="uid://bodldjokvxp8t" path="res://npc/Walk.mp3" id="3_ivc52"]
 
-[node name="Richard" type="Node3D" node_paths=PackedStringArray("positions", "walkSound")]
+[node name="Richard" type="Node3D" node_paths=PackedStringArray("walkSound")]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 11.8786, 0.986578, -152.096)
 script = ExtResource("1_ab6sn")
-positions = [null]
+positionGroup = "richard_pos"
 timeUntilNextPosition = 9.0
 walkSound = NodePath("WalkSound")
 

@@ -42,8 +42,7 @@ public partial class Player : Node3D
 		eye = GetNode<Node3D>("Root/Eye");
 		var camerasGroup = GetTree().GetNodesInGroup("cameras").Select(x => (Camera3D)x).ToArray();
 		cameras = new Godot.Collections.Array<Camera3D>(camerasGroup);
-		GD.Print(cameras.ToString());
-
+		
 		focused = null;
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		normalPhonePosition = phone.Position;
