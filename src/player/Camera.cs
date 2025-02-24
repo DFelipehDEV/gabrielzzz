@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Camera : Camera3D
+public partial class Camera : RoomCamera
 {
 	public CanvasLayer posterize, grain;
 	// Called when the node enters the scene tree for the first time.

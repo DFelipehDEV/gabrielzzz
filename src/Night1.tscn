@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=42 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_s44sq"]
@@ -21,6 +21,7 @@
 [ext_resource type="Shader" path="res://post_processing/SimpleGrain.gdshader" id="13_bvw3k"]
 [ext_resource type="PackedScene" uid="uid://c0iaxr7trojl6" path="res://bathroom/bathroom.tscn" id="18_xasnv"]
 [ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://bathroom/bathroom2.tscn" id="19_okl6x"]
+[ext_resource type="Script" path="res://RoomCamera.cs" id="19_opx7t"]
 [ext_resource type="PackedScene" uid="uid://dmjkd7r4hovsr" path="res://npc/richard/Richard.tscn" id="23_6cb46"]
 [ext_resource type="PackedScene" uid="uid://djoa8doagvvmr" path="res://npc/vitinha/Vitel.tscn" id="24_r4bhu"]
 [ext_resource type="AudioStream" uid="uid://dgr8k8c2mj86h" path="res://Kitchen/Faucet.wav" id="26_s5nhg"]
@@ -340,9 +341,6 @@ text = "60
 "
 script = ExtResource("11_mm5m4")
 
-[node name="AudioListener3D" type="AudioListener3D" parent="Player/Root"]
-current = true
-
 [node name="Eye" type="Node3D" parent="Player/Root"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30572e-09, 0, -0.0492518)
 
@@ -365,11 +363,13 @@ transform = Transform3D(-0.892916, 0, 0.450223, 0, 1, 0, -0.450223, 0, -0.892916
 transform = Transform3D(-0.169032, 0.291467, -0.941528, 0.0390237, 0.956504, 0.289097, 0.984838, 0.0121248, -0.173054, 12.1342, 9.91046, -0.71282)
 environment = SubResource("Environment_xjf4g")
 fov = 78.75
+script = ExtResource("19_opx7t")
 
 [node name="Hallway Cam2" type="Camera3D" parent="Office" groups=["cameras"]]
 transform = Transform3D(-0.280184, -0.267237, 0.921999, 0.0390237, 0.956504, 0.289097, -0.959153, 0.11698, -0.257569, -9.61795, 9.90401, -0.617784)
 environment = SubResource("Environment_xjf4g")
 fov = 78.75
+script = ExtResource("19_opx7t")
 
 [node name="Stadium" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 5.34246e-12, -0.000122221, 0.000122221, 4.37114e-08, -1, 0, -1, -4.37114e-08, 0.175, 14.809, 23.177)
@@ -383,6 +383,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3495, 0, -91.6754)
 transform = Transform3D(-0.938143, -0.182267, 0.294393, -0.0284443, 0.887929, 0.4591, -0.345079, 0.422327, -0.838189, -0.00872707, 2.74855, -2.96603)
 environment = SubResource("Environment_xjf4g")
 fov = 70.0
+script = ExtResource("19_opx7t")
 
 [node name="RichardPos" type="Node3D" parent="RicardoBedroom" groups=["richard_pos"]]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, -3.05355, 0.162975, 0.308289)
@@ -400,6 +401,7 @@ texture = ExtResource("11_ajmye")
 transform = Transform3D(0.995942, 0.0125702, -0.0891144, 0.0168729, 0.946559, 0.32209, 0.0884007, -0.322287, 0.942505, -3.64225, 1.89338, -0.499649)
 environment = SubResource("Environment_56hgt")
 fov = 87.8
+script = ExtResource("19_opx7t")
 
 [node name="RichardPos" type="Node3D" parent="SimaoBedroom" groups=["richard_pos"]]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -4.8074, 0.0266309, -3.08299)
@@ -419,6 +421,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8691, -0.0159672, -53.256
 transform = Transform3D(0.860395, -0.212046, 0.463418, -0.0284443, 0.887929, 0.4591, -0.508833, -0.408189, 0.757939, -1.93881, 1.90971, -0.0274048)
 environment = SubResource("Environment_gqopy")
 fov = 70.0
+script = ExtResource("19_opx7t")
 
 [node name="RichardPos" type="Node3D" parent="Bathrooms" groups=["richard_pos"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86042, -0.900575, -3.27528)
@@ -430,6 +433,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5289, -0.0159672, -70.266
 transform = Transform3D(-0.465038, -0.418311, 0.780228, -0.0284443, 0.887929, 0.4591, -0.884834, 0.191306, -0.424819, -1.32774, 1.84255, -0.611206)
 environment = SubResource("Environment_uruh5")
 fov = 70.0
+script = ExtResource("19_opx7t")
 
 [node name="VitelsPos" type="Node3D" parent="Bathrooms2" groups=["vitel_pos"]]
 transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561, -5.59416, -0.0556896, 1.51628)
@@ -448,6 +452,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5992, 0, -68.3832)
 transform = Transform3D(-0.724169, 0.298288, -0.621774, -0.0284443, 0.887929, 0.4591, 0.689035, 0.350152, -0.634526, -2.95379, 2.38704, -2.13844)
 environment = SubResource("Environment_xjf4g")
 fov = 78.75
+script = ExtResource("19_opx7t")
 
 [node name="RichardPos" type="Node3D" parent="Garage" groups=["richard_pos"]]
 transform = Transform3D(-0.902938, 0, -0.429771, 0, 1, 0, 0.429771, 0, -0.902938, 0.130775, -0.0556896, 1.23447)
@@ -462,6 +467,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2424, 0.0112858, -51.9179)
 transform = Transform3D(-0.983209, -0.00639081, 0.182373, -0.00702153, 0.999971, -0.00281296, -0.18235, -0.00404626, -0.983225, -0.165899, 1.67495, -3.38047)
 environment = SubResource("Environment_xjf4g")
 fov = 78.75
+script = ExtResource("19_opx7t")
 
 [node name="VitelsPos" type="Node3D" parent="Kitchen" groups=["vitel_pos"]]
 transform = Transform3D(-0.998454, 0, -0.055595, 0, 1, 0, 0.055595, 0, -0.998454, -2.21379, 0.296544, 0.366039)

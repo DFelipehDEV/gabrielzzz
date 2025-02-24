@@ -31,7 +31,7 @@ public partial class Player : Node3D
 	}
 	private float stateTimer = 0;
 	private int currentCamera = 0;
-	private Godot.Collections.Array<Camera3D> cameras;
+	private Godot.Collections.Array<RoomCamera> cameras;
 
 	private Node3D focused;
 
@@ -40,9 +40,9 @@ public partial class Player : Node3D
 		cam = GetNode<Camera>("Root/Camera");
 		phone = GetNode<Phone>("Root/Phone");
 		eye = GetNode<Node3D>("Root/Eye");
-		var camerasGroup = GetTree().GetNodesInGroup("cameras").Select(x => (Camera3D)x).ToArray();
-		cameras = new Godot.Collections.Array<Camera3D>(camerasGroup);
-		
+		var camerasGroup = GetTree().GetNodesInGroup("cameras").Select(x => (RoomCamera)x).ToArray();
+		cameras = new Godot.Collections.Array<RoomCamera>(camerasGroup);
+
 		focused = null;
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		normalPhonePosition = phone.Position;
@@ -63,14 +63,18 @@ public partial class Player : Node3D
 				if (focused == null) {
 					if (currentCamera > 1)  {
 							cameras[currentCamera].Current = false;
+							cameras[currentCamera].listener.ClearCurrent();
 							currentCamera--;
 							cameras[currentCamera].Current = true;
+							cameras[currentCamera].listener.MakeCurrent();
 							cameras[currentCamera].Environment.TonemapExposure = 0.0f;
 					} else {
 							// Reset
 							cameras[currentCamera].Current = false;
+							cameras[currentCamera].listener.ClearCurrent();
 							currentCamera = cameras.Count - 1;
 							cameras[currentCamera].Current = true;
+							cameras[currentCamera].listener.MakeCurrent();
 					}
 				} else {
 					if (focused.Name == "Nokia") {
@@ -109,14 +113,18 @@ public partial class Player : Node3D
 				case States.CAMERA:
 					if (currentCamera < cameras.Count - 1)  {
 						cameras[currentCamera].Current = false;
+						cameras[currentCamera].listener.ClearCurrent();
 						currentCamera++;
 						cameras[currentCamera].Current = true;
+						cameras[currentCamera].listener.MakeCurrent();
 						cameras[currentCamera].Environment.TonemapExposure = 0.0f;
 					} else {
 						// Reset
 						cameras[currentCamera].Current = false;
+						cameras[currentCamera].listener.ClearCurrent();
 						currentCamera = 0;
 						cameras[currentCamera].Current = true;
+						cameras[currentCamera].listener.MakeCurrent();
 						State = States.NORMAL;
 						Tween toNormalPosition = CreateTween().SetTrans(Tween.TransitionType.Quad);
 						toNormalPosition.TweenProperty(phone, "rotation_degrees", new Vector3(0.0f, 0.0f, 0.0f), 0.5);	
