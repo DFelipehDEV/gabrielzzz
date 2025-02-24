@@ -3,7 +3,7 @@ using System.Linq;
 
 public partial class Player : Node3D
 {
-	private Camera cam;
+	private PlayerCamera cam;
 	private Node3D eye;
 	private Phone phone;
 	private AnimationPlayer animationPlayer;
@@ -37,7 +37,7 @@ public partial class Player : Node3D
 
 	public override void _Ready()
 	{
-		cam = GetNode<Camera>("Root/Camera");
+		cam = GetNode<PlayerCamera>("Root/Camera");
 		phone = GetNode<Phone>("Root/Phone");
 		eye = GetNode<Node3D>("Root/Eye");
 		var camerasGroup = GetTree().GetNodesInGroup("cameras").Select(x => (RoomCamera)x).ToArray();

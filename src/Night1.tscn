@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://df6n1tuxjo45e" path="res://map/map.tscn" id="6_jde0i"]
 [ext_resource type="Script" path="res://player/phone/Energy.cs" id="6_xosnq"]
 [ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://office/estadioHD.tres" id="7_xuket"]
-[ext_resource type="Script" path="res://player/Camera.cs" id="8_my4td"]
+[ext_resource type="Script" path="res://player/PlayerCamera.cs" id="8_my4td"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://ricbedroom/RicardoBedroom.tscn" id="8_o0llk"]
 [ext_resource type="Texture2D" uid="uid://bfbrtjtc0usvw" path="res://player/phone/PhoneCamera.png" id="9_la8v7"]
 [ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://simaobedroom/SimaoBedroom.tscn" id="9_wg86v"]
