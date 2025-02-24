@@ -111,7 +111,7 @@ material_override = SubResource("StandardMaterial3D_w02fi")
 size = Vector3(0.867615, 0.324524, 0.0185547)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="desk/monitor"]
-transform = Transform3D(-0.943663, 0, -1.08423e-07, 0, 1, 0, 1.14896e-07, 0, -1, 0.0628037, 0.408174, 0.103691)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.0628037, 0.408174, 0.103691)
 light_color = Color(0.537575, 0.458551, 0.415734, 1)
 light_energy = 1.5
 light_size = 0.2
