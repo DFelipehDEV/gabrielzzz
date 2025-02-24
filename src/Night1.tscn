@@ -105,38 +105,38 @@ transform = Transform3D(-1, 5.34246e-12, -0.000122221, 0.000122221, 4.37114e-08,
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_la8v7")
 
-[node name="RicardoBedroom" parent="." instance=ExtResource("8_o0llk")]
+[node name="RichardBedroom" parent="." instance=ExtResource("8_o0llk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3495, 0, -91.6754)
 
-[node name="Cam" type="Camera3D" parent="RicardoBedroom" groups=["cameras"]]
+[node name="Cam" type="Camera3D" parent="RichardBedroom" groups=["cameras"]]
 transform = Transform3D(-0.938143, -0.182267, 0.294393, -0.0284443, 0.887929, 0.4591, -0.345079, 0.422327, -0.838189, -0.00872707, 2.74855, -2.96603)
 environment = SubResource("Environment_xjf4g")
 fov = 70.0
 script = ExtResource("19_opx7t")
 
-[node name="RichardPos" type="Node3D" parent="RicardoBedroom" groups=["richard_pos"]]
+[node name="RichardPos" type="Node3D" parent="RichardBedroom" groups=["richard_pos"]]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, -3.05355, 0.162975, 0.308289)
 
-[node name="SimaoBedroom" parent="." instance=ExtResource("9_wg86v")]
+[node name="SimonBedroom" parent="." instance=ExtResource("9_wg86v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1843, 0, -92.6383)
 
-[node name="Simon" type="Sprite3D" parent="SimaoBedroom"]
+[node name="Simon" type="Sprite3D" parent="SimonBedroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02156, 1.10052, -3.42522)
 visible = false
 modulate = Color(0.37918, 0.37918, 0.37918, 1)
 pixel_size = 0.0025
 texture = ExtResource("11_ajmye")
 
-[node name="Cam" type="Camera3D" parent="SimaoBedroom" groups=["cameras"]]
+[node name="Cam" type="Camera3D" parent="SimonBedroom" groups=["cameras"]]
 transform = Transform3D(0.995942, 0.0125702, -0.0891144, 0.0168729, 0.946559, 0.32209, 0.0884007, -0.322287, 0.942505, -3.64225, 1.89338, -0.499649)
 environment = SubResource("Environment_56hgt")
 fov = 87.8
 script = ExtResource("19_opx7t")
 
-[node name="RichardPos" type="Node3D" parent="SimaoBedroom" groups=["richard_pos"]]
+[node name="RichardPos" type="Node3D" parent="SimonBedroom" groups=["richard_pos"]]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -4.8074, 0.0266309, -3.08299)
 
-[node name="VitelsPos" type="Node3D" parent="SimaoBedroom" groups=["vitel_pos"]]
+[node name="VitelsPos" type="Node3D" parent="SimonBedroom" groups=["vitel_pos"]]
 transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561, -4.00827, 0.723127, -4.63149)
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
