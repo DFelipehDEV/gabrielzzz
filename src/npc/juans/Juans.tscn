@@ -9,7 +9,6 @@
 [node name="Juans" type="Node3D"]
 script = ExtResource("1_6pjq6")
 positionGroup = "juans_pos"
-timeToMove = 20.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00313497, 0, -0.000351518)

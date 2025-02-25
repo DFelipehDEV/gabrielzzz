@@ -8,7 +8,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9037, 1.0373, -146.253)
 script = ExtResource("1_4ixfv")
 positionGroup = "vitel_pos"
-timeToMove = 30.0
 walkSound = NodePath("WalkSound")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

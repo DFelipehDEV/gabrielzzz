@@ -84,8 +84,11 @@ public partial class Phone : Node3D
 	public override void _Process(double delta)
 	{	
 		time += (delta / HOUR_LENGTH);
-		time %= 6;
 		int hour = ((int)time);
 		timeLabel.Text = $"{hour:D2}:00";
+		if (hour == 6){
+			var nightendScene = ResourceLoader.Load<PackedScene>("res://NightEnd/NightEnd.tscn").Instantiate();
+			GetTree().Root.AddChild(nightendScene);
+		}
 	}
 }
