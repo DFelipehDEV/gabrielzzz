@@ -261,7 +261,7 @@ transform = Transform3D(-0.839573, 0, 0.543248, 0, 1, 0, -0.543248, 0, -0.839573
 [node name="VitelPos2" type="Node3D" parent="." groups=["vitel_pos"]]
 transform = Transform3D(-0.892916, 0, 0.450223, 0, 1, 0, -0.450223, 0, -0.892916, -3.87334, 7.87294, 0.0713904)
 
-[node name="JuansPos" type="Node3D" parent="." groups=["juans_pos"]]
+[node name="JuansPos" type="Node3D" parent="." groups=["juans_pos", "office"]]
 transform = Transform3D(0.908851, 0, -0.417122, 0, 1, 0, 0.417122, 0, 0.908851, -2.8401, 7.87294, 0.927851)
 
 [node name="Hallway" type="Node3D" parent="."]

@@ -4,7 +4,7 @@ using System.Linq;
 public partial class Player : Node3D
 {
 	private PlayerCamera cam;
-	private Phone phone;
+	public Phone phone;
 	private AnimationPlayer animationPlayer;
 	private float rotationSpeed = 0.05f;
 	private Vector2 targetRotation;

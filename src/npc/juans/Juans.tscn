@@ -6,11 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://o8d2ht5gmucs" path="res://npc/juans/DevesQuererAlgumsCoisinha.mp3" id="4_2fo7g"]
 [ext_resource type="AudioStream" uid="uid://dilmut5273oxp" path="res://npc/juans/YahMano.mp3" id="6_wa5rg"]
 
-[node name="Juans" type="Node3D" node_paths=PackedStringArray("walkSound")]
+[node name="Juans" type="Node3D"]
 script = ExtResource("1_6pjq6")
 positionGroup = "juans_pos"
-timeUntilNextPosition = 15.0
-walkSound = NodePath("OfficeSound")
+timeToMove = 20.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00313497, 0, -0.000351518)

@@ -8,9 +8,13 @@ public partial class EnemyNPC : Node3D
 	[Export]
 	private string positionGroup;
 	private Godot.Collections.Array<Node3D> positions;
+	private Node3D currentPosition;
 	private Node3D nextPosition;
 	private int currentPositionIndex = 0;
+	
 	[Export]
+	private double timeToMove = 40.0;
+
 	private double timeUntilNextPosition = 40.0;
 	
 	[Export]
@@ -21,6 +25,7 @@ public partial class EnemyNPC : Node3D
 	public override void _Ready()
 	{
 		base._Ready();
+		timeUntilNextPosition = timeToMove;
 		if (positionGroup != "") {
 			var positionsGroup = GetTree().GetNodesInGroup(positionGroup).Select(x => (Node3D)x).ToArray();
 			positions = new Godot.Collections.Array<Node3D>(positionsGroup);
@@ -31,12 +36,13 @@ public partial class EnemyNPC : Node3D
 
 	public override void _Process(double delta)
 	{
-		timeUntilNextPosition -= delta;
+		timeUntilNextPosition -= 1.0 * delta;
 
 		if (timeUntilNextPosition <= 0)
 		{
 			MoveToNextPosition();
-			walkSound.Play();
+			if (walkSound != null)
+				walkSound.Play();
 			SelectNextPosition();
 		}
 	}
@@ -50,14 +56,18 @@ public partial class EnemyNPC : Node3D
 		nextPosition = positions[randomIndex];
 		currentPositionIndex = randomIndex;
 
-		timeUntilNextPosition = random.NextDouble() * 10;
+		timeUntilNextPosition = timeToMove * (0.8 + 0.4 * random.NextDouble());
 	}
 
 	private void MoveToNextPosition()
 	{
 		if (nextPosition != null)
 		{
-			Transform = nextPosition.GlobalTransform;
+			currentPosition = nextPosition;
+			Transform = currentPosition.GlobalTransform;
+			MovedToNewPosition(currentPosition);
 		}
 	}
+
+	public virtual void MovedToNewPosition(Node3D position) {}
 }

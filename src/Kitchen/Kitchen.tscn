@@ -651,10 +651,11 @@ script = ExtResource("8_yjim1")
 [node name="VitelsPos" type="Node3D" parent="." groups=["vitel_pos"]]
 transform = Transform3D(-0.998454, 0, -0.055595, 0, 1, 0, 0.055595, 0, -0.998454, -2.21379, 0.296544, 0.366039)
 
-[node name="JuansPos" type="Node3D" parent="." groups=["juans_pos"]]
+[node name="JuansPos" type="Node3D" parent="." groups=["juans_pos", "kitchen"]]
 transform = Transform3D(0.999911, 0, 0.013421, 0, 1, 0, -0.013421, 0, 0.999911, -1.02261, 0.296544, 1.08071)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="Faucet" type="AudioStreamPlayer3D" parent="JuansPos"]
+transform = Transform3D(0.999909, 0, -0.013421, 0, 1, 0, 0.013421, 0, 0.999909, 1.03702, -0.296544, -1.06689)
 stream = ExtResource("9_4skeo")
 unit_size = 3.0
 autoplay = true
