@@ -116,7 +116,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.67231, 5.61161, -2.5811)
 mesh = SubResource("BoxMesh_gp5kg")
 
 [node name="Poster" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, -8.74228e-08, -4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 8.74228e-08, -1, 1.91069e-15, 1.76035, 9.48588, 1.6522)
+transform = Transform3D(-1, -8.74228e-08, -4.37114e-08, 3.442e-08, 0.103591, -0.99462, 9.14806e-08, -0.99462, -0.103591, 1.76035, 9.48588, 1.63704)
 mesh = SubResource("PlaneMesh_dxvot")
 
 [node name="Table" type="Node3D" parent="."]
