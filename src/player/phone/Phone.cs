@@ -14,6 +14,8 @@ public partial class Phone : Node3D
 	[Export]
 	private Node3D eye;
 
+	private Energy energy;
+
 	private Vector3 normalPhonePosition;
 
 	public enum Animations {
@@ -60,6 +62,12 @@ public partial class Phone : Node3D
 			flash = value;
 			light.Visible = value;
 
+			if (value) {
+				energy.wasteMultiplier = 2.0; 
+			} else {
+				energy.wasteMultiplier = 1.0;
+			}
+
 			flashIcon.Material = value ? onMaterial : offMaterial;
 		}
 	}
@@ -73,6 +81,7 @@ public partial class Phone : Node3D
 		flashIcon = GetNode<CsgBox3D>("FlashIcon");
 		timeLabel = GetNode<Label3D>("Time");
 		cameraUI = GetNode<CanvasLayer>("CameraUI");
+		energy = GetNode<Energy>("Energy");
 
 		normalPhonePosition = Position;
 
