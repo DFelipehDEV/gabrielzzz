@@ -22,6 +22,7 @@ config/icon="res://Icon.png"
 window/size/viewport_width=768
 window/size/viewport_height=432
 window/size/mode=3
+window/vsync/vsync_mode=0
 
 [dotnet]
 
@@ -66,10 +67,15 @@ hide={
 ]
 }
 
+[physics]
+
+common/physics_ticks_per_second=1
+
 [rendering]
 
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
+global_illumination/gi/use_half_resolution=true
 environment/ssao/quality=1
 environment/defaults/default_clear_color=Color(0.0353462, 0.0353462, 0.0353462, 1)
 anti_aliasing/quality/screen_space_aa=1
