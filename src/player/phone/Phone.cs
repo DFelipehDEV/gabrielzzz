@@ -28,7 +28,7 @@ public partial class Phone : Node3D
 
 	private Animations animation;
 	
-	public static readonly float HOUR_LENGTH = 0.2f * 60.0f; // Takes 72 seconds to go from 00:00 to 01:00
+	public static readonly float HOUR_LENGTH = 1.2f * 60.0f; // Takes 72 seconds to go from 00:00 to 01:00
 	public static readonly uint NIGHT_LENGTH = 6;
 
 	public Animations Animation {
