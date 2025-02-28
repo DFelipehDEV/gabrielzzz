@@ -27,7 +27,7 @@ position = Vector2(1169, 320)
 stream = ExtResource("1_vdygn")
 autoplay = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Time" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
