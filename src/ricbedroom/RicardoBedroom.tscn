@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://csx5s23kc2wel"]
+[gd_scene load_steps=22 format=3 uid="uid://csx5s23kc2wel"]
 
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="1_s2lc5"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="2_ymff6"]
@@ -8,8 +8,10 @@
 [ext_resource type="Material" uid="uid://cmyh1ifrbnn01" path="res://office/table/TableTex2.tres" id="6_ivn6v"]
 [ext_resource type="PackedScene" uid="uid://ui5y56mgsn0f" path="res://ricbedroom/lamp/old_ussr_lamp.glb" id="7_ofvxb"]
 [ext_resource type="PackedScene" uid="uid://bqweb6hhnjn8a" path="res://ricbedroom/phone/nokia_6230.glb" id="8_58w6p"]
+[ext_resource type="Script" path="res://ricbedroom/phone/Nokia.cs" id="9_l1mfj"]
 [ext_resource type="PackedScene" uid="uid://cnqia0b2m1uf8" path="res://ricbedroom/bedside table/bedside_table.glb" id="9_vxoet"]
 [ext_resource type="PackedScene" uid="uid://mgoyd6s3xou6" path="res://ricbedroom/rack/clothes_rack.glb" id="10_t822i"]
+[ext_resource type="Texture2D" uid="uid://bqa6koxf6hkc4" path="res://circular_meter/progress-bar-circle.png" id="10_te6qq"]
 [ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://ricbedroom/shirts/fcporto.glb" id="11_th8je"]
 [ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://ricbedroom/wood_clothes_hanger.glb" id="12_bpull"]
 [ext_resource type="Script" path="res://RoomCamera.cs" id="13_nwlov"]
@@ -27,6 +29,9 @@ albedo_texture = ExtResource("3_pj1rq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_811bv"]
 albedo_texture = ExtResource("4_ornu8")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jp6gc"]
+viewport_path = NodePath("Sketchfab_Scene2/Progress/SubViewport")
 
 [sub_resource type="Environment" id="Environment_sxvdd"]
 adjustment_enabled = true
@@ -102,6 +107,24 @@ omni_attenuation = 0.34
 
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("8_58w6p")]
 transform = Transform3D(1.75137, -1.15668, 0.106276, 0, -0.0657945, -2.63932, 1.75199, 1.64409, -0.151059, 0.390406, 0.725374, 1.25922)
+script = ExtResource("9_l1mfj")
+
+[node name="Progress" type="Sprite3D" parent="Sketchfab_Scene2"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -0.121741, 0.116365, -0.145467)
+billboard = 1
+texture = SubResource("ViewportTexture_jp6gc")
+
+[node name="SubViewport" type="SubViewport" parent="Sketchfab_Scene2/Progress"]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Sketchfab_Scene2/Progress/SubViewport"]
+offset_right = 128.0
+offset_bottom = 128.0
+value = 70.0
+fill_mode = 4
+texture_progress = ExtResource("10_te6qq")
+tint_progress = Color(0, 0.605618, 0.262045, 1)
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("9_vxoet")]
 transform = Transform3D(-0.334571, 0, -5.66539e-08, 0, 0.261368, 0, 5.05189e-08, 0, -0.375202, 0.183854, 0.113849, 1.44617)
