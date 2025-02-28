@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmhe5g6euql60"]
+[gd_scene load_steps=21 format=3 uid="uid://dmhe5g6euql60"]
 
 [ext_resource type="Script" path="res://player/Player.cs" id="1_tfayh"]
 [ext_resource type="Script" path="res://player/phone/Phone.cs" id="2_aepcq"]
@@ -6,7 +6,6 @@
 [ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://player/phone/PhoneTex.tres" id="4_ffrq7"]
 [ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://player/phone/ui/FlashlightIcon.tres" id="5_u8pa4"]
 [ext_resource type="Script" path="res://player/phone/Energy.cs" id="6_s61wf"]
-[ext_resource type="PackedScene" uid="uid://df6n1tuxjo45e" path="res://map/map.tscn" id="7_2kvrc"]
 [ext_resource type="Texture2D" uid="uid://bfbrtjtc0usvw" path="res://player/phone/PhoneCamera.png" id="8_3mkx0"]
 [ext_resource type="Texture2D" uid="uid://bj3eakylas5lg" path="res://player/phone/PhoneCameraBottom.png" id="9_pftie"]
 [ext_resource type="Script" path="res://player/PlayerCamera.cs" id="10_agyb6"]
@@ -189,17 +188,6 @@ script = ExtResource("6_s61wf")
 [node name="CameraUI" type="CanvasLayer" parent="Root/Phone"]
 visible = false
 
-[node name="Map" parent="Root/Phone/CameraUI" instance=ExtResource("7_2kvrc")]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 0
-
 [node name="Top" type="TextureRect" parent="Root/Phone/CameraUI"]
 anchors_preset = 4
 anchor_top = 0.5
@@ -208,6 +196,7 @@ offset_top = -414.0
 offset_right = 166.0
 offset_bottom = 414.0
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("8_3mkx0")
 expand_mode = 1
 
@@ -233,6 +222,7 @@ offset_bottom = 414.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
+mouse_filter = 2
 texture = ExtResource("9_pftie")
 
 [node name="Border" type="ColorRect" parent="Root/Phone/CameraUI/Bottom"]
@@ -264,6 +254,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Posterize" type="CanvasLayer" parent="Root/Camera"]
@@ -276,6 +267,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="FPSCounter" type="Label" parent="Root/Camera"]

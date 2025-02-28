@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://csx5s23kc2wel"]
+[gd_scene load_steps=24 format=3 uid="uid://csx5s23kc2wel"]
 
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="1_s2lc5"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="2_ymff6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://mgoyd6s3xou6" path="res://ricbedroom/rack/clothes_rack.glb" id="10_t822i"]
 [ext_resource type="Texture2D" uid="uid://bqa6koxf6hkc4" path="res://circular_meter/progress-bar-circle.png" id="10_te6qq"]
 [ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://ricbedroom/shirts/fcporto.glb" id="11_th8je"]
+[ext_resource type="Script" path="res://ricbedroom/ProgressBar.cs" id="11_uwckw"]
 [ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://ricbedroom/wood_clothes_hanger.glb" id="12_bpull"]
 [ext_resource type="Script" path="res://RoomCamera.cs" id="13_nwlov"]
 
@@ -30,8 +31,10 @@ albedo_texture = ExtResource("3_pj1rq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_811bv"]
 albedo_texture = ExtResource("4_ornu8")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xdsv"]
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_jp6gc"]
-viewport_path = NodePath("Sketchfab_Scene2/Progress/SubViewport")
+viewport_path = NodePath("Sketchfab_Scene2/Area/Progress/SubViewport")
 
 [sub_resource type="Environment" id="Environment_sxvdd"]
 adjustment_enabled = true
@@ -109,22 +112,31 @@ omni_attenuation = 0.34
 transform = Transform3D(1.75137, -1.15668, 0.106276, 0, -0.0657945, -2.63932, 1.75199, 1.64409, -0.151059, 0.390406, 0.725374, 1.25922)
 script = ExtResource("9_l1mfj")
 
-[node name="Progress" type="Sprite3D" parent="Sketchfab_Scene2"]
-transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -0.121741, 0.116365, -0.145467)
+[node name="Area" type="Area3D" parent="Sketchfab_Scene2"]
+transform = Transform3D(1, 2.98023e-08, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene2/Area"]
+transform = Transform3D(0.580329, 5.21541e-08, -5.58794e-09, -2.98023e-08, 0.310909, -3.72529e-09, -9.31323e-10, 9.31323e-10, 0.385354, 0, 0, 0)
+shape = SubResource("BoxShape3D_0xdsv")
+
+[node name="Progress" type="Sprite3D" parent="Sketchfab_Scene2/Area"]
+transform = Transform3D(-8.84756e-09, 3.72529e-08, -0.2, 0, 0.2, 0, 0.2, 0, -8.61473e-09, -0.0463484, 0.0401338, -0.100746)
+cast_shadow = 0
 billboard = 1
 texture = SubResource("ViewportTexture_jp6gc")
 
-[node name="SubViewport" type="SubViewport" parent="Sketchfab_Scene2/Progress"]
+[node name="SubViewport" type="SubViewport" parent="Sketchfab_Scene2/Area/Progress"]
 transparent_bg = true
 size = Vector2i(128, 128)
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Sketchfab_Scene2/Progress/SubViewport"]
+[node name="ProgressBar" type="TextureProgressBar" parent="Sketchfab_Scene2/Area/Progress/SubViewport"]
 offset_right = 128.0
 offset_bottom = 128.0
-value = 70.0
+value = 100.0
 fill_mode = 4
 texture_progress = ExtResource("10_te6qq")
 tint_progress = Color(0, 0.605618, 0.262045, 1)
+script = ExtResource("11_uwckw")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("9_vxoet")]
 transform = Transform3D(-0.334571, 0, -5.66539e-08, 0, 0.261368, 0, 5.05189e-08, 0, -0.375202, 0.183854, 0.113849, 1.44617)
@@ -149,3 +161,6 @@ script = ExtResource("13_nwlov")
 
 [node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, -3.05355, 0.162975, 0.308289)
+
+[connection signal="mouse_entered" from="Sketchfab_Scene2/Area/Progress/SubViewport/ProgressBar" to="Sketchfab_Scene2/Area/Progress/SubViewport/ProgressBar" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Sketchfab_Scene2/Area/Progress/SubViewport/ProgressBar" to="Sketchfab_Scene2/Area/Progress/SubViewport/ProgressBar" method="_on_mouse_exited"]
