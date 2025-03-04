@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://b3dfhfd3aoh87"]
 
-[ext_resource type="Script" path="res://title/menu.gd" id="1_aivul"]
+[ext_resource type="Script" uid="uid://bnlicn66dah8v" path="res://title/menu.gd" id="1_aivul"]
 [ext_resource type="Texture2D" uid="uid://o34obope75uq" path="res://title/richis.png" id="2_nlgk2"]
 [ext_resource type="Texture2D" uid="uid://bel3gaw5qin4s" path="res://office/estadioTitle.png" id="2_s26bw"]
-[ext_resource type="Shader" path="res://title/static.gdshader" id="3_2gj5v"]
+[ext_resource type="Shader" uid="uid://blqh78bh552oj" path="res://title/static.gdshader" id="3_2gj5v"]
 [ext_resource type="Theme" uid="uid://dxor6bq5rdhns" path="res://texttheme.tres" id="3_cgdgp"]
 [ext_resource type="Texture2D" uid="uid://c5af7f8h0en5u" path="res://title/static.png" id="3_hvdfb"]
-[ext_resource type="Script" path="res://title/Static.cs" id="6_urrem"]
+[ext_resource type="Script" uid="uid://3qriac6rpst2" path="res://title/Static.cs" id="6_urrem"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6kpf5"]
 texture = ExtResource("2_s26bw")

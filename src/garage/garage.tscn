@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cxvm4to2xv0jp" path="res://garage/low_poly_metal_shelf_-_game_ready.glb" id="4_yi6jh"]
 [ext_resource type="PackedScene" uid="uid://dpr1t07xmkg2l" path="res://garage/game_asset_generator.glb" id="5_8xx0x"]
 [ext_resource type="PackedScene" uid="uid://dmi0hlb20wa0f" path="res://garage/3d_cardboard_lowpoly.glb" id="5_b08bt"]
-[ext_resource type="Script" path="res://RoomCamera.cs" id="6_ar06e"]
+[ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://RoomCamera.cs" id="6_ar06e"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h52jo"]
 material = ExtResource("2_na8tc")

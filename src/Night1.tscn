@@ -1,13 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=17 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://office/Office.tscn" id="6_0w350"]
 [ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://office/estadioHD.tres" id="7_xuket"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://ricbedroom/RicardoBedroom.tscn" id="8_o0llk"]
 [ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://simaobedroom/SimaoBedroom.tscn" id="9_wg86v"]
-[ext_resource type="LightmapGIData" uid="uid://qof0fl061ard" path="res://Night1.lmbake" id="10_gy337"]
 [ext_resource type="PackedScene" uid="uid://ctne8xcpx4ycl" path="res://npc/juans/Juans.tscn" id="14_2s5vb"]
-[ext_resource type="Script" path="res://npc/juans/Juans.cs" id="15_kvn2q"]
+[ext_resource type="Script" uid="uid://c1svefh7w5e" path="res://npc/juans/Juans.cs" id="15_kvn2q"]
 [ext_resource type="PackedScene" uid="uid://c0iaxr7trojl6" path="res://bathroom/bathroom.tscn" id="18_xasnv"]
 [ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://bathroom/bathroom2.tscn" id="19_okl6x"]
 [ext_resource type="PackedScene" uid="uid://dmjkd7r4hovsr" path="res://npc/richard/Richard.tscn" id="23_6cb46"]
@@ -36,15 +35,9 @@ material = ExtResource("7_xuket")
 size = Vector2(19, 10)
 
 [node name="Node3D" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969328, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bjlio")
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.5659)
-quality = 2
-light_data = ExtResource("10_gy337")
 
 [node name="Stadium" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 5.34246e-12, -0.000122221, 0.000122221, 4.37114e-08, -1, 0, -1, -4.37114e-08, 0.175, 14.809, 23.177)
