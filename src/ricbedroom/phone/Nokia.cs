@@ -16,8 +16,6 @@ public partial class Nokia : Node3D
 
 	public override void _Process(double delta)
 	{
-		
-
 		if (delayingAlarm) {
 			progress.Value += 30.0 * delta;
 		} else {

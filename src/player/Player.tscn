@@ -208,6 +208,7 @@ offset_left = -2560.0
 offset_top = -900.0
 offset_right = 2394.0
 grow_horizontal = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Bottom" type="TextureRect" parent="Root/Phone/CameraUI"]
@@ -236,6 +237,7 @@ offset_right = 2156.0
 offset_bottom = 900.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Camera" type="Camera3D" parent="Root" groups=["cameras"]]
