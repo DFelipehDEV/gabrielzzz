@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctne8xcpx4ycl"]
+[gd_scene load_steps=7 format=3 uid="uid://ctne8xcpx4ycl"]
 
 [ext_resource type="Script" path="res://npc/EnemyNPC.cs" id="1_6pjq6"]
 [ext_resource type="Texture2D" uid="uid://canjtaco5c3x5" path="res://npc/juans/Juans.png" id="2_2lvgu"]
 [ext_resource type="AudioStream" uid="uid://dct0wqgngfv8" path="res://npc/juans/DesligaIsso.mp3" id="3_8b7vj"]
 [ext_resource type="AudioStream" uid="uid://o8d2ht5gmucs" path="res://npc/juans/DevesQuererAlgumsCoisinha.mp3" id="4_2fo7g"]
+[ext_resource type="AudioStream" uid="uid://dgr8k8c2mj86h" path="res://Kitchen/Faucet.wav" id="6_4bgyi"]
 [ext_resource type="AudioStream" uid="uid://dilmut5273oxp" path="res://npc/juans/YahMano.mp3" id="6_wa5rg"]
 
 [node name="Juans" type="Node3D"]
@@ -27,3 +28,8 @@ unit_size = 5.0
 [node name="PlayerHide" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_wa5rg")
 unit_size = 5.0
+
+[node name="KitchenFaucet" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.999909, 0, -0.013421, 0, 1, 0, 0.013421, 0, 0.999909, 0, 0, 0)
+stream = ExtResource("6_4bgyi")
+unit_size = 3.0

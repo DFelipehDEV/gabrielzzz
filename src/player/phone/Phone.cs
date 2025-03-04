@@ -17,6 +17,8 @@ public partial class Phone : Node3D
 	private Energy energy;
 
 	private Vector3 normalPhonePosition;
+	
+	private bool nightEnded = false;
 
 	public enum Animations {
 		DEFAULT,
@@ -95,7 +97,8 @@ public partial class Phone : Node3D
 		time += (delta / HOUR_LENGTH);
 		int hour = ((int)time);
 		timeLabel.Text = $"{hour:D2}:00";
-		if (hour == 6){
+		if (hour == 6 && !nightEnded){
+			nightEnded = true;
 			var nightendScene = ResourceLoader.Load<PackedScene>("res://NightEnd/NightEnd.tscn").Instantiate();
 			GetTree().Root.AddChild(nightendScene);
 		}

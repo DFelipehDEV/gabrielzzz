@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ya5n4wjl52ap"]
+[gd_scene load_steps=4 format=3 uid="uid://ya5n4wjl52ap"]
 
+[ext_resource type="Script" path="res://NightEnd/NightEnd.cs" id="1_7oe8v"]
 [ext_resource type="AudioStream" uid="uid://bg6bf4fs3u4ei" path="res://NightEnd/NightEnd.ogg" id="1_vdygn"]
 [ext_resource type="FontFile" uid="uid://brb1emj0k07un" path="res://Chakra_Petch/ChakraPetch-BoldItalic.ttf" id="2_qgcki"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7oe8v")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -25,7 +27,7 @@ position = Vector2(1169, 320)
 stream = ExtResource("1_vdygn")
 autoplay = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Time" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
