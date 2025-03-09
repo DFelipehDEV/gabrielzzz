@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://j5gqrjpijd1s"
-path="res://.godot/imported/OffTable.glb-d8d99860c09ee1cc2aa84f6fcf76e862.scn"
+uid="uid://2qwayfumykvg"
+path="res://.godot/imported/Table.glb-7eeacd4ba24a021f8c8fa6c8fed42503.scn"
 
 [deps]
 
-source_file="res://office/table/OffTable.glb"
-dest_files=["res://.godot/imported/OffTable.glb-d8d99860c09ee1cc2aa84f6fcf76e862.scn"]
+source_file="res://office/table/Table.glb"
+dest_files=["res://.godot/imported/Table.glb-7eeacd4ba24a021f8c8fa6c8fed42503.scn"]
 
 [params]
 
