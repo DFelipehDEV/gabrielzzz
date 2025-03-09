@@ -65,6 +65,11 @@ hide={
 ]
 }
 
+[physics]
+
+2d/physics_engine="Dummy"
+3d/physics_engine="Dummy"
+
 [rendering]
 
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
