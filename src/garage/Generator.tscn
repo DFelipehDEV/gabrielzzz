@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbped4mnkoid5"]
+
+[ext_resource type="PackedScene" uid="uid://dpr1t07xmkg2l" path="res://garage/game_asset_generator.glb" id="1_vgqhj"]
+[ext_resource type="Texture2D" uid="uid://bglnv5lus383f" path="res://garage/halo.jpg" id="2_epg1x"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_epg1x"]
+particle_flag_align_y = true
+angle_min = 1.07288e-05
+angle_max = 360.0
+direction = Vector3(0, 180, 0)
+spread = 70.0
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, -4, 0)
+scale_min = 0.5
+scale_max = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgqhj"]
+blend_mode = 1
+albedo_color = Color(1, 0.43802, 0.0435106, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_epg1x"]
+material = SubResource("StandardMaterial3D_vgqhj")
+radius = 0.005
+height = 0.08
+radial_segments = 4
+rings = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epg1x"]
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 0.483341, 0.193475, 1)
+albedo_texture = ExtResource("2_epg1x")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_w8jn5"]
+material = SubResource("StandardMaterial3D_epg1x")
+size = Vector2(0.15, 0.05)
+
+[node name="Generator" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_vgqhj")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Model"]
+amount = 4
+lifetime = 0.5
+speed_scale = 1.5
+process_material = SubResource("ParticleProcessMaterial_epg1x")
+draw_passes = 2
+draw_pass_1 = SubResource("CapsuleMesh_epg1x")
+draw_pass_2 = SubResource("QuadMesh_w8jn5")

@@ -3,9 +3,10 @@
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="2_na8tc"]
 [ext_resource type="PackedScene" uid="uid://cyajgsox86emo" path="res://garage/low_poly_lada_2107.glb" id="3_1rd2p"]
 [ext_resource type="PackedScene" uid="uid://cxvm4to2xv0jp" path="res://garage/low_poly_metal_shelf_-_game_ready.glb" id="4_yi6jh"]
-[ext_resource type="PackedScene" uid="uid://dpr1t07xmkg2l" path="res://garage/game_asset_generator.glb" id="5_8xx0x"]
 [ext_resource type="PackedScene" uid="uid://dmi0hlb20wa0f" path="res://garage/3d_cardboard_lowpoly.glb" id="5_b08bt"]
+[ext_resource type="PackedScene" uid="uid://cbped4mnkoid5" path="res://garage/Generator.tscn" id="5_rovyt"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://RoomCamera.cs" id="6_ar06e"]
+[ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="6_i4k0b"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h52jo"]
 material = ExtResource("2_na8tc")
@@ -14,12 +15,6 @@ size = Vector2(7, 4.5)
 [sub_resource type="PlaneMesh" id="PlaneMesh_vmdk6"]
 material = ExtResource("2_na8tc")
 size = Vector2(7, 8.5)
-
-[sub_resource type="Environment" id="Environment_w6ly7"]
-adjustment_enabled = true
-adjustment_brightness = 0.5
-adjustment_contrast = 1.07
-adjustment_saturation = 0.1
 
 [node name="Garage" type="Node3D"]
 
@@ -75,11 +70,11 @@ transform = Transform3D(-0.969102, 0, 0.246661, 0, 1, 0, -0.246661, 0, -0.969102
 [node name="Sketchfab_Scene6" parent="." instance=ExtResource("5_b08bt")]
 transform = Transform3D(0.981019, 0, 0.193909, 0, 1, 0, -0.193909, 0, 0.981019, -0.445439, 0.0906693, 1.57487)
 
-[node name="Sketchfab_Scene7" parent="." instance=ExtResource("5_8xx0x")]
-transform = Transform3D(0.124966, 0, 0.0735429, 0, 0.145, 0, -0.0735429, 0, 0.124966, -1.29336, 0.132913, 0.505948)
+[node name="Generator" parent="." instance=ExtResource("5_rovyt")]
+transform = Transform3D(0.861833, 0, 0.507192, 0, 1, 0, -0.507192, 0, 0.861833, -1.29336, 0.132913, 0.505948)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Sketchfab_Scene7"]
-transform = Transform3D(6.89655, 0, -4.76837e-07, 0, 6.89655, 0, 4.76837e-07, 0, 6.89655, 1.44095, 1.73286, -0.950301)
+[node name="OmniLight3D" type="OmniLight3D" parent="Generator"]
+transform = Transform3D(6.89654, 0, -7.15256e-07, 0, 6.89655, 0, 7.15256e-07, 0, 6.89654, 1.44095, 1.73286, -0.950301)
 light_color = Color(0.836903, 0.181108, 0, 1)
 light_energy = 1.314
 light_volumetric_fog_energy = 0.0
@@ -90,7 +85,7 @@ omni_attenuation = 1.341
 
 [node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
 transform = Transform3D(-0.724169, 0.298288, -0.621774, -0.0284443, 0.887929, 0.4591, 0.689035, 0.350152, -0.634526, -2.95379, 2.38704, -2.13844)
-environment = SubResource("Environment_w6ly7")
+environment = ExtResource("6_i4k0b")
 fov = 78.75
 script = ExtResource("6_ar06e")
 

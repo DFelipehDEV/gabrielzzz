@@ -196,7 +196,6 @@ offset_top = -414.0
 offset_right = 166.0
 offset_bottom = 414.0
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("8_3mkx0")
 expand_mode = 1
 
@@ -208,7 +207,7 @@ offset_left = -2560.0
 offset_top = -900.0
 offset_right = 2394.0
 grow_horizontal = 2
-mouse_filter = 2
+mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
 [node name="Bottom" type="TextureRect" parent="Root/Phone/CameraUI"]
@@ -223,7 +222,6 @@ offset_bottom = 414.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
-mouse_filter = 2
 texture = ExtResource("9_pftie")
 
 [node name="Border" type="ColorRect" parent="Root/Phone/CameraUI/Bottom"]
@@ -237,7 +235,7 @@ offset_right = 2156.0
 offset_bottom = 900.0
 grow_horizontal = 2
 grow_vertical = 0
-mouse_filter = 2
+mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
 [node name="Camera" type="Camera3D" parent="Root" groups=["cameras"]]
@@ -256,7 +254,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Posterize" type="CanvasLayer" parent="Root/Camera"]
@@ -269,12 +267,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="FPSCounter" type="Label" parent="Root/Camera"]
 offset_right = 40.0
 offset_bottom = 23.0
+mouse_filter = 1
 text = "60
 "
 script = ExtResource("13_103y7")

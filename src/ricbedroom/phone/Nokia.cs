@@ -3,15 +3,11 @@ using Godot;
 public partial class Nokia : Node3D
 {
 	private TextureProgressBar progress;
-	private Area3D area;
 	private bool delayingAlarm = false;
 
 	public override void _Ready()
 	{
-		area = GetNode<Area3D>("Area");
-		progress = area.GetNode<TextureProgressBar>("Progress/SubViewport/ProgressBar");	
-		area.MouseEntered += OnMouseEntered;
-		area.MouseExited += OnMouseExited;
+		progress = GetNode<TextureProgressBar>("Progress/SubViewport/ProgressBar");	
 	}
 
 	public override void _Process(double delta)

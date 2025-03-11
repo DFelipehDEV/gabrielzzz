@@ -63,17 +63,21 @@ public partial class Player : Node3D
 				if (focused == null) {
 					if (currentCamera > 1)  {
 							cameras[currentCamera].Current = false;
+							cameras[currentCamera].Visible = false;
 							cameras[currentCamera].listener.ClearCurrent();
 							currentCamera--;
 							cameras[currentCamera].Current = true;
+							cameras[currentCamera].Visible = true;
 							cameras[currentCamera].listener.MakeCurrent();
 							cameras[currentCamera].Environment.TonemapExposure = 0.0f;
 					} else {
 							// Reset
 							cameras[currentCamera].Current = false;
+							cameras[currentCamera].Visible = false;
 							cameras[currentCamera].listener.ClearCurrent();
 							currentCamera = cameras.Count - 1;
 							cameras[currentCamera].Current = true;
+							cameras[currentCamera].Visible = true;
 							cameras[currentCamera].listener.MakeCurrent();
 					}
 				} else {
@@ -107,17 +111,21 @@ public partial class Player : Node3D
 				case States.CAMERA:
 					if (currentCamera < cameras.Count - 1)  {
 						cameras[currentCamera].Current = false;
+						cameras[currentCamera].Visible = false;
 						cameras[currentCamera].listener.ClearCurrent();
 						currentCamera++;
 						cameras[currentCamera].Current = true;
+						cameras[currentCamera].Visible = true;
 						cameras[currentCamera].listener.MakeCurrent();
 						cameras[currentCamera].Environment.TonemapExposure = 0.0f;
 					} else {
 						// Reset
 						cameras[currentCamera].Current = false;
+						cameras[currentCamera].Visible = false;
 						cameras[currentCamera].listener.ClearCurrent();
 						currentCamera = 0;
 						cameras[currentCamera].Current = true;
+						cameras[currentCamera].Visible = true;
 						cameras[currentCamera].listener.MakeCurrent();
 
 						State = States.NORMAL;

@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://bathroom/bathroomtile.tres" id="1_5u0wq"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="2_wh5l2"]
 [ext_resource type="PackedScene" uid="uid://2s6vckmj86pd" path="res://bathroom/toilet.tscn" id="4_s7480"]
+[ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="5_2j83b"]
 [ext_resource type="Texture2D" uid="uid://dn8fq0ok8ruq5" path="res://bathroom/shadowcock.jpg" id="5_vvix3"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://RoomCamera.cs" id="6_tnysf"]
 
@@ -51,12 +52,6 @@ _surfaces = [{
 "vertex_data": PackedByteArray("BYCPPGX8F79zYwK/BYCPPGX8Fz9zYwK/BYCPvGX8Fz9zYwK/BYCPPGX8Fz9zYwI/BYCPPESUFj0qx1K+BYCPPId3jbwqx1K+BYCPPESUFj0qx1K+BYCPPGX8Fz9zYwI/BYCPPGX8Fz9zYwK/BYCPPGX8Fz9zYwK/BYCPPESUFj2lO6i+BYCPPESUFj0qx1K+BYCPPGX8F79zYwK/BYCPPESUFj2lO6i+BYCPPGX8Fz9zYwK/BYCPPGX8Fz9zYwK/BYCPPGX8Fz9zYwI/BYCPvGX8Fz9zYwK/BYCPvGX8F79zYwI/BYCPvGX8F79zYwK/BYCPvGX8Fz9zYwK/BYCPPGX8F79zYwI/BYCPPGX8Fz9zYwI/BYCPPGX8F79zYwK/BYCPPGX8Fz9zYwI/BYCPPGX8F79zYwI/BYCPvGX8F79zYwI/BYCPvGX8F79zYwI/BYCPPGX8F79zYwI/BYCPPGX8F79zYwK/BYCPPGX8Fz9zYwI/BYCPPId3jbwqx1K+BYCPPGX8F79zYwK/BYCPvGX8F79zYwI/BYCPPGX8F79zYwK/BYCPvGX8F79zYwK/BYCPPGX8F79zYwK/BYCPvGX8Fz9zYwK/BYCPvGX8F79zYwK/BYCPvGX8Fz9zYwK/BYCPvGX8Fz9zYwI/BYCPvGX8F79zYwI/BYCPvGX8Fz9zYwI/BYCPPGX8Fz9zYwI/BYCPvGX8F79zYwI/BYCPvGX8Fz9zYwK/BYCPPGX8Fz9zYwI/BYCPvGX8Fz9zYwI/BYCPPGX8F79zYwK/BYCPPId3jbylO6i+BYCPPESUFj2lO6i+BYCPPGX8F79zYwK/BYCPPId3jbwqx1K+BYCPPId3jbylO6i+BYCPPESUFj2lO6i+BYCPPId3jbylO6i+1uXgPESUFj0OPqi+BYCPPId3jbylO6i+1uXgPId3jbwOPqi+1uXgPESUFj0OPqi+1uXgPESUFj0OPqi+DsLiPESUFj0YzFK+BYCPPESUFj2lO6i+DsLiPId3jbwYzFK+1uXgPESUFj0OPqi+1uXgPId3jbwOPqi+BYCPPESUFj0qx1K+BYCPPESUFj2lO6i+DsLiPESUFj0YzFK+BYCPPId3jbwqx1K+BYCPPESUFj0qx1K+DsLiPId3jbwYzFK+BYCPPESUFj0qx1K+DsLiPESUFj0YzFK+DsLiPId3jbwYzFK+DsLiPESUFj0YzFK+1uXgPESUFj0OPqi+DsLiPId3jbwYzFK+BYCPPId3jbylO6i+BYCPPId3jbwqx1K+1uXgPId3jbwOPqi+DsLiPId3jbwYzFK+1uXgPId3jbwOPqi+BYCPPId3jbwqx1K+/////wAA/z//////AAD/P/////8AAP8/////f/9//n////9//3/+f////3//f/5/////f/9//n////9//3/+f////3//f/5/////f/9//n////9//3/+f////3//f/5/////f/9//n////9//3/+f////3//f/5//3//////AAD/f/////8AAP9//////wAAAAD/f/9//n8AAP9//3/+fwAA/3//f/5/////f/9//n////9//3/+f////3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//38AAP//AAD/fwAA//8AAP9/AAD//wAA////f/9//n////9//3/+f////3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/////f/9//n////9//3/+f////3//f/5/AADC//9//n8AAML//3/+fwAAwv//f/5/AADC//9//n8AAML//3/+fwAAwv//f/5//3///zwA/z//f///PAD/P/9///88AP8///88gDyA/z///zyAPID/P///PIA8gP8//3///zwA/z//f///PAD/P/9///88AP8/PID/f/9//n88gP9//3/+fzyA/3//f/5/PID/f/9//n88gP9//3/+fzyA/3//f/5///88gDyA/z///zyAPID/P///PIA8gP8//38AADwA/z//fwAAPAD/P/9/AAA8AP8//38AADwA/z//fwAAPAD/P/9/AAA8AP8/")
 }]
 
-[sub_resource type="Environment" id="Environment_knmlv"]
-adjustment_enabled = true
-adjustment_brightness = 0.5
-adjustment_contrast = 1.07
-adjustment_saturation = 0.1
-
 [node name="Bathrooms" type="Node3D"]
 
 [node name="Wall" type="MeshInstance3D" parent="."]
@@ -84,7 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84373, -0.290472, -0.23809
 mesh = SubResource("PlaneMesh_vksfs")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, -2.85258e-07, 0, 1, 0, 2.85258e-07, 0, 1, -3.3785, 1.84812, -0.668365)
+transform = Transform3D(1, 0, -2.85258e-07, 0, 1, 0, 2.85258e-07, 0, 1, -3.3785, 1.88158, -0.668365)
 light_color = Color(0.959505, 0.757356, 0.684217, 1)
 light_energy = 3.9
 light_volumetric_fog_energy = 0.0
@@ -141,7 +136,7 @@ mesh = SubResource("ArrayMesh_hoo3s")
 
 [node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
 transform = Transform3D(0.860395, -0.212046, 0.463418, -0.0284443, 0.887929, 0.4591, -0.508833, -0.408189, 0.757939, -1.93881, 1.90971, -0.0274048)
-environment = SubResource("Environment_knmlv")
+environment = ExtResource("5_2j83b")
 fov = 70.0
 script = ExtResource("6_tnysf")
 
