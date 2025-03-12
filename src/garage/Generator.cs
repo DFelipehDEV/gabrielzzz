@@ -1,0 +1,76 @@
+using Godot;
+
+public partial class Generator : StaticBody3D
+{
+	[Export]
+	private GpuParticles3D brokenParticles;
+
+	[Export]
+	private TextureProgressBar progressBar;
+
+	private bool broken = false;
+	public bool Broken {
+		get {
+			return broken;
+		}
+
+		set {
+			broken = value;
+			brokenParticles.Emitting = broken;
+			progressBar.Visible = broken;
+		}
+	}
+
+	private bool beingFixed = false;
+	private double fixProgress = 0.0;
+
+	public override void _Ready()
+	{
+		base._Ready();
+		Broken = broken;
+	}
+
+	public override void _Process(double delta)
+	{
+		base._Process(delta);
+
+		if (broken && beingFixed) {
+			fixProgress += 10.0f * delta;
+
+			if (fixProgress >= 100.0) {
+				Broken = false;
+				fixProgress = 0.0;
+			}
+		}
+
+		progressBar.Value = fixProgress;
+	}
+
+	public override void _Input(InputEvent @event)
+	{
+		if (@event is InputEventMouseMotion mouseMotion)
+		{
+			var camera = GetViewport().GetCamera3D();
+			var from = camera.ProjectRayOrigin(mouseMotion.Position);
+			var to = from + camera.ProjectRayNormal(mouseMotion.Position) * 1000;
+
+			var spaceState = GetWorld3D().DirectSpaceState;
+			var result = spaceState.IntersectRay(new PhysicsRayQueryParameters3D
+			{
+				From = from,
+				To = to,
+				CollisionMask = 1
+			});
+
+			
+			if (result.Count > 0 && result["collider"].AsGodotObject() == this)
+			{
+				beingFixed = true;
+			}
+			else
+			{
+				beingFixed = false;
+			}
+		}
+	}
+}
