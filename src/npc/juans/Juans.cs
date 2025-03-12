@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 public partial class Juans : EnemyNPC
 {
@@ -15,6 +16,24 @@ public partial class Juans : EnemyNPC
 		flashLight = GetTree().Root.GetNode<Light3D>("Node3D/Player/Root/Phone/Flash");
 	}
 	public override void MovedToNewPosition(Node3D position) {
+		// Break generator
+        if (position.IsInGroup("garage"))
+        {
+            // 1 in 3 chance to break the generator
+            Random random = new Random();
+            int chance = random.Next(1, 4);
+
+            if (chance == 1) // 1 in 3 chance
+            {
+                Generator generator = (Generator)position.GetParent().FindChild("Generator", false);
+                if (generator != null)
+                {
+                    generator.Broken = true;
+                    GD.Print("Generator has been broken");
+                }
+            }
+		}
+
 		if (position.IsInGroup("kitchen")) {
 			faucetSound.Play();
 		}

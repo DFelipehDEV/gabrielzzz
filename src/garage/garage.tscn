@@ -73,16 +73,6 @@ transform = Transform3D(0.981019, 0, 0.193909, 0, 1, 0, -0.193909, 0, 0.981019, 
 [node name="Generator" parent="." instance=ExtResource("5_rovyt")]
 transform = Transform3D(0.861833, 0, 0.507192, 0, 1, 0, -0.507192, 0, 0.861833, -1.29336, 0.132913, 0.505948)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Generator"]
-transform = Transform3D(6.89654, 0, -7.15256e-07, 0, 6.89655, 0, 7.15256e-07, 0, 6.89654, 1.44095, 1.73286, -0.950301)
-light_color = Color(0.836903, 0.181108, 0, 1)
-light_energy = 1.314
-light_volumetric_fog_energy = 0.0
-light_size = 0.001
-light_bake_mode = 1
-omni_range = 3.5
-omni_attenuation = 1.341
-
 [node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
 transform = Transform3D(-0.724169, 0.298288, -0.621774, -0.0284443, 0.887929, 0.4591, 0.689035, 0.350152, -0.634526, -2.95379, 2.38704, -2.13844)
 environment = ExtResource("6_i4k0b")
@@ -95,5 +85,5 @@ transform = Transform3D(-0.902938, 0, -0.429771, 0, 1, 0, 0.429771, 0, -0.902938
 [node name="VitelsPos" type="Node3D" parent="." groups=["vitel_pos"]]
 transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561, -2.53635, -0.0556896, 1.3372)
 
-[node name="JuansPos" type="Node3D" parent="." groups=["juans_pos"]]
-transform = Transform3D(0.0720546, 0, 0.997401, 0, 1, 0, -0.997401, 0, 0.0720546, -0.13101, 0.742002, -0.82504)
+[node name="JuansPos" type="Node3D" parent="." groups=["garage", "juans_pos"]]
+transform = Transform3D(0.0720546, 0, 0.997401, 0, 1, 0, -0.997401, 0, 0.0720546, -0.13101, 1.21415, -0.82504)
