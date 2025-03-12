@@ -68,7 +68,8 @@ hide={
 [physics]
 
 2d/physics_engine="Dummy"
-3d/physics_engine="Dummy"
+3d/physics_engine="Jolt Physics"
+jolt_physics_3d/simulation/velocity_steps=2
 
 [rendering]
 
