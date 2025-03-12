@@ -70,7 +70,7 @@ transform = Transform3D(-0.969102, 0, 0.246661, 0, 1, 0, -0.246661, 0, -0.969102
 [node name="Sketchfab_Scene6" parent="." instance=ExtResource("5_b08bt")]
 transform = Transform3D(0.981019, 0, 0.193909, 0, 1, 0, -0.193909, 0, 0.981019, -0.445439, 0.0906693, 1.57487)
 
-[node name="Generator" parent="." instance=ExtResource("5_rovyt")]
+[node name="Generator" parent="." groups=["generator"] instance=ExtResource("5_rovyt")]
 transform = Transform3D(0.861833, 0, 0.507192, 0, 1, 0, -0.507192, 0, 0.861833, -1.29336, 0.132913, 0.505948)
 
 [node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
