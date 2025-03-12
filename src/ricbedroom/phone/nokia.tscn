@@ -11,7 +11,7 @@ size = Vector3(0.332504, 0.303955, 0.44696)
 [sub_resource type="ViewportTexture" id="ViewportTexture_xoi36"]
 viewport_path = NodePath("Alarm/SubViewport")
 
-[node name="Nokia" type="StaticBody3D" node_paths=PackedStringArray("progress")]
+[node name="Nokia" type="StaticBody3D" node_paths=PackedStringArray("progress") groups=["nokia"]]
 script = ExtResource("1_s675s")
 progress = NodePath("Alarm/SubViewport/ProgressBar")
 

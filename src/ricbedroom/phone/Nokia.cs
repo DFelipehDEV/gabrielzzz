@@ -11,18 +11,30 @@ public partial class Nokia : StaticBody3D
 	[Export]
 	private TextureProgressBar progress;
 
+	[Signal]
+	public delegate void AlarmFiredEventHandler();
+
 	private bool delayingAlarm = false;
 	private double alarmTimer = 100.0;
 
+	private bool alarmFired = false;
+
 	public override void _Process(double delta)
 	{
-		if (delayingAlarm)
+		if (!alarmFired) 
 		{
-			alarmTimer += AlarmIncreaseRate * delta;
-		}
-		else
-		{
-			alarmTimer -= AlarmDecreaseRate * delta;
+			if (delayingAlarm)
+			{
+				alarmTimer += AlarmIncreaseRate * delta;
+			}
+			else
+			{
+				alarmTimer -= AlarmDecreaseRate * delta;
+			}
+			if (alarmTimer <= 0) {
+				alarmFired = true;
+				EmitSignal(SignalName.AlarmFired);
+			}
 		}
 		alarmTimer = Mathf.Clamp(alarmTimer, 0, 100);
 
