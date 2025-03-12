@@ -1,12 +1,21 @@
+using System.Linq;
 using Godot;
 
 public partial class Generator : StaticBody3D
 {
+	[Signal]
+	public delegate void GeneratorBrokenEventHandler();
+
+	[Signal]
+	public delegate void GeneratorFixedEventHandler();
+
 	[Export]
 	private GpuParticles3D brokenParticles;
 
 	[Export]
 	private TextureProgressBar progressBar;
+
+	private OmniLight3D[] sceneLights;
 
 	private bool broken = false;
 	public bool Broken {
@@ -18,6 +27,14 @@ public partial class Generator : StaticBody3D
 			broken = value;
 			brokenParticles.Emitting = broken;
 			progressBar.Visible = broken;
+
+			if (broken) {
+				EmitSignal(SignalName.GeneratorBroken);
+			}
+
+			foreach (OmniLight3D light in sceneLights) {
+				light.Visible = !broken;
+			}
 		}
 	}
 
@@ -27,6 +44,16 @@ public partial class Generator : StaticBody3D
 	public override void _Ready()
 	{
 		base._Ready();
+
+		// Get all visible scene lights named "OmniLight3D"
+		// Its not a good practice to get all scene lights, but in this case its ok
+		// If a problem ever happens we will need to use groups
+		sceneLights = GetTree().Root.GetChild(0)
+			.FindChildren("OmniLight3D", nameof(OmniLight3D), true)
+			.Cast<OmniLight3D>()
+			.Where(light => light.Visible)
+			.ToArray();
+
 		Broken = broken;
 	}
 
@@ -40,6 +67,7 @@ public partial class Generator : StaticBody3D
 			if (fixProgress >= 100.0) {
 				Broken = false;
 				fixProgress = 0.0;
+				EmitSignal(SignalName.GeneratorFixed);
 			}
 		}
 
