@@ -172,23 +172,9 @@ transform = Transform3D(8.49408e-08, 0, -1.81527, 0, 1.48317, 0, -0.592278, 0, -
 
 [node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
 transform = Transform3D(-0.938143, -0.182267, 0.294393, -0.0284443, 0.887929, 0.4591, -0.345079, 0.422327, -0.838189, -0.00872707, 2.74855, -2.96603)
-visible = false
 environment = ExtResource("17_ynhpe")
 fov = 70.0
 script = ExtResource("13_nwlov")
-
-[node name="Delay" type="Button" parent="Cam"]
-z_index = 4096
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Delay"
 
 [node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, -3.05355, 0.162975, 0.308289)
