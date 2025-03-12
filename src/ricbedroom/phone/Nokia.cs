@@ -2,35 +2,32 @@ using Godot;
 
 public partial class Nokia : StaticBody3D
 {
-    [Export]
-    public double AlarmIncreaseRate = 9.5;
+	[Export]
+	public double AlarmIncreaseRate = 9.5;
 
-    [Export]
-    public double AlarmDecreaseRate = 3.5;
+	[Export]
+	public double AlarmDecreaseRate = 3.5;
 
-    private TextureProgressBar progress;
-    private bool delayingAlarm = false;
-    private double alarmTimer = 100.0;
+	[Export]
+	private TextureProgressBar progress;
 
-    public override void _Ready()
-    {
-        progress = GetNode<TextureProgressBar>("Alarm/SubViewport/ProgressBar");
-    }
+	private bool delayingAlarm = false;
+	private double alarmTimer = 100.0;
 
-    public override void _Process(double delta)
-    {
-        if (delayingAlarm)
-        {
-            alarmTimer += AlarmIncreaseRate * delta;
-        }
-        else
-        {
-            alarmTimer -= AlarmDecreaseRate * delta;
-        }
-        alarmTimer = Mathf.Clamp(alarmTimer, 0, 100);
+	public override void _Process(double delta)
+	{
+		if (delayingAlarm)
+		{
+			alarmTimer += AlarmIncreaseRate * delta;
+		}
+		else
+		{
+			alarmTimer -= AlarmDecreaseRate * delta;
+		}
+		alarmTimer = Mathf.Clamp(alarmTimer, 0, 100);
 
-        progress.Value = alarmTimer;
-    }
+		progress.Value = alarmTimer;
+	}
 
 	public override void _Input(InputEvent @event)
 	{
