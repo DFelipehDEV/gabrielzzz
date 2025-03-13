@@ -13,6 +13,7 @@ viewport_path = NodePath("Alarm/SubViewport")
 
 [node name="Nokia" type="StaticBody3D" node_paths=PackedStringArray("progress") groups=["nokia"]]
 script = ExtResource("1_s675s")
+AlarmDecreaseRate = 1.75
 progress = NodePath("Alarm/SubViewport/ProgressBar")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
