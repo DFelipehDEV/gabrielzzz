@@ -300,3 +300,6 @@ transform = Transform3D(-0.280184, -0.267237, 0.921999, 0.0390237, 0.956504, 0.2
 environment = ExtResource("19_lrpwn")
 fov = 78.75
 script = ExtResource("20_7m06a")
+
+[node name="SimonPos" type="Node3D" parent="." groups=["simon_pos"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.879869, 8.59367, 0.151753)

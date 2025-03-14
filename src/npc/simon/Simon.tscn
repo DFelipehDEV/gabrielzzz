@@ -7,6 +7,8 @@
 [node name="Simon" type="Node3D"]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 0, 0, 0)
 script = ExtResource("1_230gs")
+positionGroup = "simon_pos"
+timeToMove = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 modulate = Color(0.37918, 0.37918, 0.37918, 1)

@@ -53,6 +53,7 @@ stream = ExtResource("3_ivc52")
 unit_size = 5.0
 
 [node name="JumpScare" type="TextureRect" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
