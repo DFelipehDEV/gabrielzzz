@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ctne8xcpx4ycl"]
 
-[ext_resource type="Script" path="res://npc/EnemyNPC.cs" id="1_6pjq6"]
+[ext_resource type="Script" uid="uid://c1svefh7w5e" path="res://npc/juans/Juans.cs" id="1_a4d0e"]
 [ext_resource type="Texture2D" uid="uid://canjtaco5c3x5" path="res://npc/juans/Juans.png" id="2_2lvgu"]
 [ext_resource type="AudioStream" uid="uid://dct0wqgngfv8" path="res://npc/juans/DesligaIsso.mp3" id="3_8b7vj"]
 [ext_resource type="AudioStream" uid="uid://o8d2ht5gmucs" path="res://npc/juans/DevesQuererAlgumsCoisinha.mp3" id="4_2fo7g"]
@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dilmut5273oxp" path="res://npc/juans/YahMano.mp3" id="6_wa5rg"]
 
 [node name="Juans" type="Node3D"]
-script = ExtResource("1_6pjq6")
+script = ExtResource("1_a4d0e")
 positionGroup = "juans_pos"
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

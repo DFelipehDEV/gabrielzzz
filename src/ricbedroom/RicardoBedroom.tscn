@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://csx5s23kc2wel"]
+[gd_scene load_steps=26 format=4 uid="uid://csx5s23kc2wel"]
 
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://brick/BrickTex.tres" id="1_s2lc5"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://asphalt/AsphaltTex.tres" id="2_ymff6"]
@@ -8,14 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://btl6wam51aumj" path="res://simaobedroom/icespice_cringe.png" id="6_he4g4"]
 [ext_resource type="Material" uid="uid://cmyh1ifrbnn01" path="res://office/table/TableTex2.tres" id="6_ivn6v"]
 [ext_resource type="PackedScene" uid="uid://ui5y56mgsn0f" path="res://ricbedroom/lamp/old_ussr_lamp.glb" id="7_ofvxb"]
-[ext_resource type="PackedScene" uid="uid://bqweb6hhnjn8a" path="res://ricbedroom/phone/nokia_6230.glb" id="8_58w6p"]
+[ext_resource type="PackedScene" uid="uid://c6yun5pq6btsk" path="res://ricbedroom/phone/nokia.tscn" id="9_5sm6f"]
 [ext_resource type="PackedScene" uid="uid://cnqia0b2m1uf8" path="res://ricbedroom/bedside table/bedside_table.glb" id="9_vxoet"]
-[ext_resource type="Script" uid="uid://goiiyqjk84ne" path="res://ricbedroom/phone/Nokia.cs" id="10_5sm6f"]
 [ext_resource type="PackedScene" uid="uid://mgoyd6s3xou6" path="res://ricbedroom/rack/clothes_rack.glb" id="10_t822i"]
 [ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://ricbedroom/shirts/fcporto.glb" id="11_th8je"]
-[ext_resource type="Texture2D" uid="uid://ddxv2qx6a10xw" path="res://circular_meter/progress-bar-frame.png" id="11_xoi36"]
 [ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://ricbedroom/wood_clothes_hanger.glb" id="12_bpull"]
-[ext_resource type="Texture2D" uid="uid://bqa6koxf6hkc4" path="res://circular_meter/progress-bar-circle.png" id="12_ynhpe"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://RoomCamera.cs" id="13_nwlov"]
 [ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="17_ynhpe"]
 
@@ -87,9 +84,6 @@ _surfaces = [{
 "vertex_data": PackedByteArray("hlqbwBmMsb4G9oA+hlqbwBmMsb4G9oC+hlqbwBmMsT4G9oC+hlqbQBmMsb4G9oC+hlqbwBmMsb4G9oC+hlqbwBmMsb4G9oA+hlqbwBmMsT4G9oC+hlqbwBmMsb4G9oC+hlqbQBmMsb4G9oC+hlqbwBmMsT4G9oC+hlqbwBmMsT4G9oA+hlqbwBmMsb4G9oA+hlqbwBmMsb4G9oA+hlqbwBmMsT4G9oA+hlqbQBmMsT4G9oA+hlqbQBmMsT4G9oA+hlqbwBmMsT4G9oA+hlqbwBmMsT4G9oC+hlqbwBmMsb4G9oA+hlqbQBmMsb4G9oA+hlqbQBmMsb4G9oC+hlqbQBmMsT4G9oA+hlqbQBmMsb4G9oA+hlqbwBmMsb4G9oA+hlqbQBmMsb4G9oC+hlqbQBmMsb4G9oA+hlqbQBmMsT4G9oA+hlqbQBmMsb4G9oC+hlqbQBmMsT4G9oC+hlqbwBmMsT4G9oC+hlqbwBmMsT4G9oC+hlqbQBmMsT4G9oC+hlqbQBmMsT4G9oA+hlqbQBmMsT4G9oA+hlqbQBmMsT4G9oC+hlqbQBmMsb4G9oC+AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xoi36"]
-viewport_path = NodePath("Nokia/Progress/SubViewport")
-
 [node name="RicardoBedroom" type="Node3D"]
 
 [node name="Wall" type="MeshInstance3D" parent="."]
@@ -158,30 +152,8 @@ mesh = SubResource("ArrayMesh_ee6ay")
 transform = Transform3D(1.00004, 0, 0, 0, 1.00004, 0, -9.23706e-14, 0, 1.00004, 0.0195675, 0.19542, -0.853759)
 mesh = SubResource("ArrayMesh_ptq5o")
 
-[node name="Nokia" parent="." instance=ExtResource("8_58w6p")]
-transform = Transform3D(1.75137, -1.15668, 0.106276, 0, -0.0657945, -2.63932, 1.75199, 1.64409, -0.151059, 0.390406, 0.725374, 1.25922)
-script = ExtResource("10_5sm6f")
-
-[node name="Progress" type="Sprite3D" parent="Nokia"]
-transform = Transform3D(0.0124478, -0.00233443, 0.0991948, -0.0856951, 0.0501391, 0.0119337, -0.050014, -0.0864906, 0.00424074, -0.0629543, 0.142619, -0.0733205)
-billboard = 1
-double_sided = false
-texture = SubResource("ViewportTexture_xoi36")
-
-[node name="SubViewport" type="SubViewport" parent="Nokia/Progress"]
-transparent_bg = true
-size = Vector2i(128, 128)
-
-[node name="ProgressBar" type="TextureProgressBar" parent="Nokia/Progress/SubViewport"]
-offset_right = 128.0
-offset_bottom = 128.0
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-value = 100.0
-fill_mode = 4
-texture_under = ExtResource("11_xoi36")
-texture_progress = ExtResource("12_ynhpe")
-tint_progress = Color(0.174388, 0.708437, 0, 1)
+[node name="Nokia" parent="." instance=ExtResource("9_5sm6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.390406, 0.725374, 1.25922)
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("9_vxoet")]
 transform = Transform3D(-0.334571, 0, -5.66539e-08, 0, 0.261368, 0, 5.05189e-08, 0, -0.375202, 0.183854, 0.113849, 1.44617)
@@ -200,23 +172,9 @@ transform = Transform3D(8.49408e-08, 0, -1.81527, 0, 1.48317, 0, -0.592278, 0, -
 
 [node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
 transform = Transform3D(-0.938143, -0.182267, 0.294393, -0.0284443, 0.887929, 0.4591, -0.345079, 0.422327, -0.838189, -0.00872707, 2.74855, -2.96603)
-visible = false
 environment = ExtResource("17_ynhpe")
 fov = 70.0
 script = ExtResource("13_nwlov")
-
-[node name="Delay" type="Button" parent="Cam"]
-z_index = 4096
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Delay"
 
 [node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, -3.05355, 0.162975, 0.308289)
