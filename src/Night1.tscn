@@ -78,3 +78,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2059, 1.10052, -96.0635)
 
 [node name="Juans" parent="." instance=ExtResource("14_2s5vb")]
 transform = Transform3D(-0.621982, 0, -0.783032, 0, 1, 0, 0.783032, 0, -0.621982, 16.5233, 1.78506, -69.2824)
+timeToMove = 6.0
