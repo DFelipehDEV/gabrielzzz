@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c1svefh7w5e" path="res://npc/juans/Juans.cs" id="1_a4d0e"]
 [ext_resource type="Texture2D" uid="uid://canjtaco5c3x5" path="res://npc/juans/Juans.png" id="2_2lvgu"]
-[ext_resource type="AudioStream" uid="uid://dct0wqgngfv8" path="res://npc/juans/DesligaIsso.mp3" id="3_8b7vj"]
-[ext_resource type="AudioStream" uid="uid://o8d2ht5gmucs" path="res://npc/juans/DevesQuererAlgumsCoisinha.mp3" id="4_2fo7g"]
+[ext_resource type="AudioStream" uid="uid://d3nj0wgf65wbs" path="res://npc/juans/DesligaIsso.wav" id="3_a4d0e"]
+[ext_resource type="AudioStream" uid="uid://cijh7qi2olykb" path="res://npc/juans/DevesQuererAlgumsCoisinha.wav" id="4_a4d0e"]
+[ext_resource type="AudioStream" uid="uid://d06ff4kv4a4fc" path="res://npc/juans/YahMano.wav" id="5_a4d0e"]
 [ext_resource type="AudioStream" uid="uid://dgr8k8c2mj86h" path="res://Kitchen/Faucet.wav" id="6_4bgyi"]
-[ext_resource type="AudioStream" uid="uid://dilmut5273oxp" path="res://npc/juans/YahMano.mp3" id="6_wa5rg"]
 
 [node name="Juans" type="Node3D"]
 script = ExtResource("1_a4d0e")
@@ -18,15 +18,15 @@ pixel_size = 0.0034
 texture = ExtResource("2_2lvgu")
 
 [node name="FlashedSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_8b7vj")
+stream = ExtResource("3_a4d0e")
 unit_size = 5.0
 
 [node name="OfficeSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_2fo7g")
+stream = ExtResource("4_a4d0e")
 unit_size = 5.0
 
 [node name="PlayerHide" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("6_wa5rg")
+stream = ExtResource("5_a4d0e")
 unit_size = 5.0
 
 [node name="KitchenFaucet" type="AudioStreamPlayer3D" parent="."]

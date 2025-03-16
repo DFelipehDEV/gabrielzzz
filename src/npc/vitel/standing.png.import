@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr2ypxedfwgcx"
-path="res://.godot/imported/vitinha.png-ac579a012f0328b454822588f3314dd9.ctex"
+path="res://.godot/imported/standing.png-c76690746a0d8528efafbc7c8990fd21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://npc/vitinha/vitinha.png"
-dest_files=["res://.godot/imported/vitinha.png-ac579a012f0328b454822588f3314dd9.ctex"]
+source_file="res://npc/vitel/standing.png"
+dest_files=["res://.godot/imported/standing.png-c76690746a0d8528efafbc7c8990fd21.ctex"]
 
 [params]
 
