@@ -6,7 +6,8 @@ public partial class Player : Node3D
 	private PlayerCamera cam;
 	public Phone phone;
 	private AnimationPlayer animationPlayer;
-	private float rotationSpeed = 0.05f;
+
+	private float rotationSpeed = 2.5f;
 	private Vector2 targetRotation;
 	private Vector2 direction;
 
@@ -26,7 +27,7 @@ public partial class Player : Node3D
 		}
 	}
 
-	private float stateTimer = 0;
+	private float stateTimer = 0.0f;
 	private int currentCamera = 0;
 	private Godot.Collections.Array<RoomCamera> cameras;
 
@@ -34,11 +35,10 @@ public partial class Player : Node3D
 	{
 		cam = GetNode<PlayerCamera>("Root/Camera");
 		phone = GetNode<Phone>("Root/Phone");
+		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 
 		var camerasGroup = GetTree().GetNodesInGroup("cameras").Select(x => (RoomCamera)x).ToArray();
 		cameras = new Godot.Collections.Array<RoomCamera>(camerasGroup);
-
-		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 	}
 
 	public override void _Process(double delta)
@@ -46,8 +46,8 @@ public partial class Player : Node3D
 		switch (state) {
 			case States.NORMAL:
 				if (animationPlayer.CurrentAnimation == "") {
-					targetRotation.X = Mathf.Lerp(targetRotation.X, (-direction.X * 1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
-					targetRotation.Y = Mathf.Lerp(targetRotation.Y, (-direction.Y * 1.5f), (float)GetProcessDeltaTime() * 2.5f);
+					targetRotation.X = Mathf.Lerp(targetRotation.X, (-direction.X * 1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * rotationSpeed);
+					targetRotation.Y = Mathf.Lerp(targetRotation.Y, (-direction.Y * 1.5f), (float)GetProcessDeltaTime() * rotationSpeed);
 					Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
 				}
 
@@ -88,9 +88,7 @@ public partial class Player : Node3D
 				if (stateTimer > 0.4f) {
 					SwitchCamera(1);
 					State = States.CAMERA;
-					phone.cameraUI.Visible = true;
-					cam.posterize.Visible = true;
-					cam.grain.Visible = true;
+					ToggleCameraUI(true);
 				} 
 				break;
 
@@ -113,9 +111,7 @@ public partial class Player : Node3D
 
 						State = States.NORMAL;
 						phone.Animation = Phone.Animations.CLOSE_CAMERA;		
-						phone.cameraUI.Visible = false;
-						cam.posterize.Visible = false;
-						cam.grain.Visible = false;
+						ToggleCameraUI(false);
 					}
 				}
 
@@ -131,12 +127,10 @@ public partial class Player : Node3D
 	
 	public override void _Input(InputEvent @event)
 	{
-		if (@event is InputEventMouseMotion eventMouseMotion) {
-			Vector2 mousePos = eventMouseMotion.Position;
-		
-			Vector2 screenCenter = GetViewport().GetVisibleRect().Size  / 2;
-			direction.X = (mousePos.X - screenCenter.X) / screenCenter.X;
-			direction.Y = (mousePos.Y - screenCenter.Y) / screenCenter.Y;
+		if (@event is InputEventMouseMotion mouseMotion) {
+			Vector2 screenCenter = GetViewport().GetVisibleRect().Size / 2;
+			direction.X = (mouseMotion.Position.X - screenCenter.X) / screenCenter.X;
+			direction.Y = (mouseMotion.Position.Y - screenCenter.Y) / screenCenter.Y;
 		}
 	}	
 
@@ -155,5 +149,12 @@ public partial class Player : Node3D
 		if (cameras[currentCamera].Environment != null) {
 			cameras[currentCamera].Environment.TonemapExposure = 0.0f;
 		}
+	}
+
+	private void ToggleCameraUI(bool visible)
+	{
+		phone.cameraUI.Visible = visible;
+		cam.posterize.Visible = visible;
+		cam.grain.Visible = visible;
 	}
 }
