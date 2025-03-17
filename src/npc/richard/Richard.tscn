@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmjkd7r4hovsr"]
+[gd_scene load_steps=15 format=3 uid="uid://dmjkd7r4hovsr"]
 
 [ext_resource type="Script" uid="uid://cmgp64vg0k0yq" path="res://npc/richard/Richard.cs" id="1_qwevw"]
 [ext_resource type="Texture2D" uid="uid://cr1btv0ytp04g" path="res://npc/richard/standing.png" id="2_mwfsl"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bnjajegj01o2g" path="res://npc/richard/RicJumpscare7.png" id="10_v8n2p"]
 [ext_resource type="Texture2D" uid="uid://tgoeramhxnrk" path="res://npc/richard/RicJumpscare8.png" id="11_a1i40"]
 [ext_resource type="Texture2D" uid="uid://b85kt2ou683br" path="res://npc/richard/RicJumpscare9.png" id="12_0lgw6"]
+[ext_resource type="AudioStream" uid="uid://ccutqmglnr0cx" path="res://npc/richard/RichardJumpScare.mp3" id="13_x8f5y"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_gnc86"]
 frames = 9
@@ -53,6 +54,7 @@ stream = ExtResource("3_ivc52")
 unit_size = 5.0
 
 [node name="JumpScare" type="TextureRect" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -66,3 +68,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_gnc86")
 expand_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="JumpScare"]
+stream = ExtResource("13_x8f5y")
+volume_db = -11.885
+autoplay = true
