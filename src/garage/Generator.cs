@@ -14,6 +14,9 @@ public partial class Generator : StaticBody3D
 
 	[Export]
 	private TextureProgressBar progressBar;
+	
+	[Export]
+	private AudioStreamPlayer3D lightsOut;
 
 	private OmniLight3D[] sceneLights;
 
@@ -30,6 +33,7 @@ public partial class Generator : StaticBody3D
 
 			if (broken) {
 				EmitSignal(SignalName.GeneratorBroken);
+				lightsOut.Play();
 			}
 
 			foreach (OmniLight3D light in sceneLights) {

@@ -72,4 +72,3 @@ expand_mode = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="JumpScare"]
 stream = ExtResource("13_x8f5y")
 volume_db = -11.885
-autoplay = true

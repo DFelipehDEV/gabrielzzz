@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6yun5pq6btsk"]
+[gd_scene load_steps=8 format=3 uid="uid://c6yun5pq6btsk"]
 
 [ext_resource type="Script" uid="uid://goiiyqjk84ne" path="res://ricbedroom/phone/Nokia.cs" id="1_s675s"]
 [ext_resource type="PackedScene" uid="uid://bqweb6hhnjn8a" path="res://ricbedroom/phone/nokia_6230.glb" id="2_p3x7l"]
 [ext_resource type="Texture2D" uid="uid://ddxv2qx6a10xw" path="res://circular_meter/progress-bar-frame.png" id="3_t78r4"]
 [ext_resource type="Texture2D" uid="uid://bqa6koxf6hkc4" path="res://circular_meter/progress-bar-circle.png" id="4_ic2a1"]
+[ext_resource type="AudioStream" uid="uid://en1igbnvsu7d" path="res://ricbedroom/phone/NokiaAlarmFired.ogg" id="5_p3x7l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ynhpe"]
 size = Vector3(0.332504, 0.303955, 0.44696)
@@ -11,10 +12,11 @@ size = Vector3(0.332504, 0.303955, 0.44696)
 [sub_resource type="ViewportTexture" id="ViewportTexture_xoi36"]
 viewport_path = NodePath("Alarm/SubViewport")
 
-[node name="Nokia" type="StaticBody3D" node_paths=PackedStringArray("progress") groups=["nokia"]]
+[node name="Nokia" type="StaticBody3D" node_paths=PackedStringArray("progress", "alarmFiredAudio") groups=["nokia"]]
 script = ExtResource("1_s675s")
 AlarmDecreaseRate = 1.75
 progress = NodePath("Alarm/SubViewport/ProgressBar")
+alarmFiredAudio = NodePath("AlarmFired")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.108498, 0.110807, 0.0903015)
@@ -43,3 +45,7 @@ fill_mode = 4
 texture_under = ExtResource("3_t78r4")
 texture_progress = ExtResource("4_ic2a1")
 tint_progress = Color(0.174388, 0.708437, 0, 1)
+
+[node name="AlarmFired" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_p3x7l")
+unit_size = 7.15

@@ -11,6 +11,9 @@ public partial class Nokia : StaticBody3D
 	[Export]
 	private TextureProgressBar progress;
 
+	[Export]
+	private AudioStreamPlayer3D alarmFiredAudio;
+
 	[Signal]
 	public delegate void AlarmFiredEventHandler();
 
@@ -33,6 +36,7 @@ public partial class Nokia : StaticBody3D
 			}
 			if (alarmTimer <= 0) {
 				alarmFired = true;
+				alarmFiredAudio.Play();
 				EmitSignal(SignalName.AlarmFired);
 			}
 		}
