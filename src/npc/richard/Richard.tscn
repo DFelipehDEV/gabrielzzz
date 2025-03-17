@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmgp64vg0k0yq" path="res://npc/richard/Richard.cs" id="1_qwevw"]
 [ext_resource type="Texture2D" uid="uid://cr1btv0ytp04g" path="res://npc/richard/standing.png" id="2_mwfsl"]
-[ext_resource type="AudioStream" uid="uid://bodldjokvxp8t" path="res://npc/Walk.mp3" id="3_ivc52"]
+[ext_resource type="AudioStream" uid="uid://c73sgbqgilur8" path="res://npc/Walk.wav" id="3_b3eya"]
 [ext_resource type="Texture2D" uid="uid://by3duwhuvg8jj" path="res://npc/richard/RicJumpscare1.png" id="4_b3eya"]
 [ext_resource type="Texture2D" uid="uid://d3seir8bo8kiq" path="res://npc/richard/RicJumpscare2.png" id="5_x8f5y"]
 [ext_resource type="Texture2D" uid="uid://brbvawqp3xty0" path="res://npc/richard/RicJumpscare3.png" id="6_p8xrk"]
@@ -50,7 +50,7 @@ texture_filter = 0
 texture = ExtResource("2_mwfsl")
 
 [node name="WalkSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_ivc52")
+stream = ExtResource("3_b3eya")
 unit_size = 5.0
 
 [node name="JumpScare" type="TextureRect" parent="."]

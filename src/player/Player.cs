@@ -6,175 +6,155 @@ public partial class Player : Node3D
 	private PlayerCamera cam;
 	public Phone phone;
 	private AnimationPlayer animationPlayer;
-	private float rotationSpeed = 0.05f;
+
+	private float rotationSpeed = 2.5f;
 	private Vector2 targetRotation;
 	private Vector2 direction;
 
-	// TODO: Add flashlight state
 	public enum States {
 		NORMAL,
 		TOCAMERA,
 		CAMERA,
-		TOHIDDEN,
 		HIDDEN,
 	}
 
 	private States state = States.NORMAL;
 	public States State {
-		get {
-			return state;
-		}
+		get => state;
 		set {
 			state = value;
 			stateTimer = 0;
 		}
 	}
 
-	private float stateTimer = 0;
+	private float stateTimer = 0.0f;
 	private int currentCamera = 0;
 	private Godot.Collections.Array<RoomCamera> cameras;
-
-	private Node3D focused;
 
 	public override void _Ready()
 	{
 		cam = GetNode<PlayerCamera>("Root/Camera");
 		phone = GetNode<Phone>("Root/Phone");
+		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 
 		var camerasGroup = GetTree().GetNodesInGroup("cameras").Select(x => (RoomCamera)x).ToArray();
 		cameras = new Godot.Collections.Array<RoomCamera>(camerasGroup);
-
-		focused = null;
-		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 	}
 
 	public override void _Process(double delta)
 	{
-		if (state == States.NORMAL && animationPlayer.CurrentAnimation == "" ) {
-			targetRotation.X = Mathf.Lerp(targetRotation.X, (-direction.X * 1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
-			targetRotation.Y = Mathf.Lerp(targetRotation.Y, (-direction.Y * 1.5f), (float)GetProcessDeltaTime() * 2.5f);
-			Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
-		}
+		switch (state) {
+			case States.NORMAL:
+				if (animationPlayer.CurrentAnimation == "") {
+					targetRotation.X = Mathf.Lerp(targetRotation.X, (-direction.X * 1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * rotationSpeed);
+					targetRotation.Y = Mathf.Lerp(targetRotation.Y, (-direction.Y * 1.5f), (float)GetProcessDeltaTime() * rotationSpeed);
+					Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
+				}
 
-		if (Input.IsActionJustPressed("toggle_flash")) {
-			phone.Flash = !phone.Flash;
-			
-			if(state == States.CAMERA){
-				if (focused == null) {
-					if (currentCamera > 1)  {
-							cameras[currentCamera].Current = false;
-							cameras[currentCamera].Visible = false;
-							cameras[currentCamera].listener.ClearCurrent();
-							currentCamera--;
-							cameras[currentCamera].Current = true;
-							cameras[currentCamera].Visible = true;
-							cameras[currentCamera].listener.MakeCurrent();
-							cameras[currentCamera].Environment.TonemapExposure = 0.0f;
-					} else {
-							// Reset
-							cameras[currentCamera].Current = false;
-							cameras[currentCamera].Visible = false;
-							cameras[currentCamera].listener.ClearCurrent();
-							currentCamera = cameras.Count - 1;
-							cameras[currentCamera].Current = true;
-							cameras[currentCamera].Visible = true;
-							cameras[currentCamera].listener.MakeCurrent();
-					}
-				} else {
-					if (focused.Name == "Nokia") {
-						Sprite2D progressBar = focused.GetNode<Sprite2D>("Model/Progress");
+				// Flashlight
+				if (Input.IsActionJustPressed("toggle_flash")) {
+					phone.Flash = !phone.Flash;
+				}
 
-						progressBar.Visible = true;
+				// Hide
+				if (Input.IsActionJustPressed("hide")) {
+					if (animationPlayer.CurrentAnimation != "UnhideUnderTable") {
+						animationPlayer.Play("HideUnderTable");
+						state = States.HIDDEN;
 					}
 				}
-			}
-		}
-		
-		if (Input.IsActionJustPressed("hide")) {
-			if (state == States.NORMAL && animationPlayer.CurrentAnimation != "UnhideUnderTable") {
-				animationPlayer.Play("HideUnderTable");
-				state = States.TOHIDDEN;
-			} else {
-				animationPlayer.Play("UnhideUnderTable");
-				Rotation = new Vector3(Mathf.DegToRad(0), Mathf.DegToRad(180), Rotation.Z);
-				state = States.NORMAL;
-			}
-		}
 
-		if (Input.IsActionJustPressed("toggle_camera")) {
-			switch (State) {
-				case States.NORMAL:
+				if (Input.IsActionJustPressed("enter_camera")) {
 					State = States.TOCAMERA;
 					phone.Animation = Phone.Animations.OPEN_CAMERA;
-					break;
-				
-				case States.CAMERA:
-					if (currentCamera < cameras.Count - 1)  {
-						cameras[currentCamera].Current = false;
-						cameras[currentCamera].Visible = false;
-						cameras[currentCamera].listener.ClearCurrent();
-						currentCamera++;
-						cameras[currentCamera].Current = true;
-						cameras[currentCamera].Visible = true;
-						cameras[currentCamera].listener.MakeCurrent();
-						cameras[currentCamera].Environment.TonemapExposure = 0.0f;
+				}
+
+				break;
+			
+
+			case States.HIDDEN:
+				targetRotation.X = Mathf.Lerp(targetRotation.X, Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
+				targetRotation.Y = Mathf.Lerp(targetRotation.Y, Mathf.DegToRad(0 ), (float)GetProcessDeltaTime() * 2.5f);
+				Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
+				// Unhide
+				if (Input.IsActionJustPressed("hide") && animationPlayer.CurrentAnimation != "HideUnderTable") {
+					animationPlayer.Play("UnhideUnderTable");
+					Rotation = new Vector3(Mathf.DegToRad(0), Mathf.DegToRad(180), Rotation.Z);
+					state = States.NORMAL;
+				}
+				break;
+
+			case States.TOCAMERA:
+				if (stateTimer > 0.4f) {
+					SwitchCamera(1);
+					State = States.CAMERA;
+					ToggleCameraUI(true);
+				} 
+				break;
+
+			case States.CAMERA:		
+				// Change to previous camera
+				if(Input.IsActionJustPressed("previous_camera")){
+					if (currentCamera > 1)  {
+						SwitchCamera(currentCamera - 1);
 					} else {
-						// Reset
-						cameras[currentCamera].Current = false;
-						cameras[currentCamera].Visible = false;
-						cameras[currentCamera].listener.ClearCurrent();
-						currentCamera = 0;
-						cameras[currentCamera].Current = true;
-						cameras[currentCamera].Visible = true;
-						cameras[currentCamera].listener.MakeCurrent();
+						SwitchCamera(cameras.Count - 1);
+					}
+				}
+
+				// Change to next camera
+				if (Input.IsActionJustPressed("next_camera")) {
+					if (currentCamera < cameras.Count - 1)  {
+						SwitchCamera(currentCamera + 1);
+					} else {
+						SwitchCamera(0);
 
 						State = States.NORMAL;
 						phone.Animation = Phone.Animations.CLOSE_CAMERA;		
-						phone.cameraUI.Visible = false;
-						cam.posterize.Visible = false;
-						cam.grain.Visible = false;
+						ToggleCameraUI(false);
 					}
-					break;
-			}
-		}
+				}
 
-		switch (State) {
-				case States.TOCAMERA:
-					if (stateTimer > 0.4f) {
-						cameras[0].Current = false;
-						cameras[1].Current = true;
-						cameras[1].Environment.TonemapExposure = 0.0f;
-						currentCamera = 1;
-						State = States.CAMERA;
-						phone.cameraUI.Visible = true;
-						cam.posterize.Visible = true;
-						cam.grain.Visible = true;
-					} 
-					break;
-
-				case States.CAMERA:
+				if (cameras[currentCamera].Environment != null) {
 					if (cameras[currentCamera].Environment.TonemapExposure < 1.2f) {
 						cameras[currentCamera].Environment.TonemapExposure += 0.6f * (float)delta;
 					}
-					break;
-					
-				case States.TOHIDDEN:
-					targetRotation.X = Mathf.Lerp(targetRotation.X, Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
-					targetRotation.Y = Mathf.Lerp(targetRotation.Y, Mathf.DegToRad(0 ), (float)GetProcessDeltaTime() * 2.5f);
-					Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
-					break;
+				}
+				break;
 		}
 		stateTimer += 1.0f * (float)delta;
 	}
 	
 	public override void _Input(InputEvent @event)
 	{
-		if (@event is InputEventMouseMotion eventMouseMotion) {
-			Vector2 mousePos = eventMouseMotion.Position;
-		
-			Vector2 screenCenter = GetViewport().GetVisibleRect().Size  / 2;
-			direction.X = (mousePos.X - screenCenter.X) / screenCenter.X;
-			direction.Y = (mousePos.Y - screenCenter.Y) / screenCenter.Y;
+		if (@event is InputEventMouseMotion mouseMotion) {
+			Vector2 screenCenter = GetViewport().GetVisibleRect().Size / 2;
+			direction.X = (mouseMotion.Position.X - screenCenter.X) / screenCenter.X;
+			direction.Y = (mouseMotion.Position.Y - screenCenter.Y) / screenCenter.Y;
 		}
 	}	
+
+	private void SwitchCamera(int newCameraIndex)
+	{
+		cameras[currentCamera].Current = false;
+		cameras[currentCamera].Visible = false;
+		cameras[currentCamera].listener.ClearCurrent();
+
+		currentCamera = newCameraIndex;
+
+		cameras[currentCamera].Current = true;
+		cameras[currentCamera].Visible = true;
+		cameras[currentCamera].listener.MakeCurrent();
+
+		if (cameras[currentCamera].Environment != null) {
+			cameras[currentCamera].Environment.TonemapExposure = 0.0f;
+		}
+	}
+
+	private void ToggleCameraUI(bool visible)
+	{
+		phone.cameraUI.Visible = visible;
+		cam.posterize.Visible = visible;
+		cam.grain.Visible = visible;
+	}
 }

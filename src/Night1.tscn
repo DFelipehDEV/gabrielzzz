@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
-[ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://player/phone/Office.tscn" id="6_0w350"]
+[ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://office/Office.tscn" id="6_0w350"]
 [ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://office/estadioHD.tres" id="7_xuket"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://ricbedroom/RicardoBedroom.tscn" id="8_o0llk"]
 [ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://simaobedroom/SimaoBedroom.tscn" id="9_wg86v"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c0iaxr7trojl6" path="res://bathroom/bathroom.tscn" id="18_xasnv"]
 [ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://bathroom/bathroom2.tscn" id="19_okl6x"]
 [ext_resource type="PackedScene" uid="uid://dmjkd7r4hovsr" path="res://npc/richard/Richard.tscn" id="23_6cb46"]
-[ext_resource type="PackedScene" uid="uid://djoa8doagvvmr" path="res://npc/vitinha/Vitel.tscn" id="24_r4bhu"]
+[ext_resource type="PackedScene" uid="uid://djoa8doagvvmr" path="res://npc/vitel/Vitel.tscn" id="24_r4bhu"]
 [ext_resource type="PackedScene" uid="uid://cplcqpabsaj8i" path="res://garage/garage.tscn" id="26_syuee"]
 [ext_resource type="PackedScene" uid="uid://31378kkvbbck" path="res://Kitchen/Kitchen.tscn" id="27_1krh8"]
 [ext_resource type="PackedScene" uid="uid://4i3hsxwvngn7" path="res://npc/simon/Simon.tscn" id="28_ahubf"]
@@ -78,3 +78,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2059, 1.10052, -96.0635)
 
 [node name="Juans" parent="." instance=ExtResource("14_2s5vb")]
 transform = Transform3D(-0.621982, 0, -0.783032, 0, 1, 0, 0.783032, 0, -0.621982, 16.5233, 1.78506, -69.2824)
+timeToMove = 6.0

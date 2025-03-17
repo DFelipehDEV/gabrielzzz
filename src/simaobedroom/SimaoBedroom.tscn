@@ -224,3 +224,6 @@ transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819
 
 [node name="VitelsPos" type="Node3D" parent="." groups=["vitel_pos"]]
 transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561, -4.00827, 0.723127, -4.63149)
+
+[node name="SimonPos" type="Node3D" parent="." groups=["simon_pos"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00806, 0.545024, -3.4268)
