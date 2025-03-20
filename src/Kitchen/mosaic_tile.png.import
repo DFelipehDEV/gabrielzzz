@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq2hfkm7fr7et"
-path.s3tc="res://.godot/imported/mosaic_tile.png-74a64ac724c517fab38a4e09020f2a84.s3tc.ctex"
+path.s3tc="res://.godot/imported/mosaic_tile.png-43e0d10eade48df22f8223ca764f2cf9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Kitchen/mosaic_tile.png"
-dest_files=["res://.godot/imported/mosaic_tile.png-74a64ac724c517fab38a4e09020f2a84.s3tc.ctex"]
+source_file="res://kitchen/mosaic_tile.png"
+dest_files=["res://.godot/imported/mosaic_tile.png-43e0d10eade48df22f8223ca764f2cf9.s3tc.ctex"]
 
 [params]
 

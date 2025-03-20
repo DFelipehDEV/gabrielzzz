@@ -3,15 +3,15 @@
 importer="2d_array_texture"
 type="CompressedTexture2DArray"
 uid="uid://bl7myhjvtw2kq"
-path="res://.godot/imported/Kitchen.exr-ae0152e0ee48d30769d8786341908a1e.ctexarray"
+path="res://.godot/imported/Kitchen.exr-f98469a3d96ff254da7a6d700d695da1.ctexarray"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Kitchen/Kitchen.exr"
-dest_files=["res://.godot/imported/Kitchen.exr-ae0152e0ee48d30769d8786341908a1e.ctexarray"]
+source_file="res://kitchen/Kitchen.exr"
+dest_files=["res://.godot/imported/Kitchen.exr-f98469a3d96ff254da7a6d700d695da1.ctexarray"]
 
 [params]
 

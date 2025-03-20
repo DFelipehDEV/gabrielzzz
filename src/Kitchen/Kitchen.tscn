@@ -6,10 +6,10 @@
 [ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://glass/glass_mat.tres" id="3_pxkch"]
 [ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://office/retro_light/retro_light.glb" id="6_mn30a"]
 [ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="7_fxfkr"]
-[ext_resource type="Texture2D" uid="uid://bq2hfkm7fr7et" path="res://Kitchen/mosaic_tile.png" id="7_lkinp"]
+[ext_resource type="Texture2D" uid="uid://bq2hfkm7fr7et" path="res://kitchen/mosaic_tile.png" id="7_lkinp"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://RoomCamera.cs" id="8_yjim1"]
-[ext_resource type="AudioStream" uid="uid://so0x5cjd40d6" path="res://Kitchen/BreakGlass.wav" id="9_fxfkr"]
-[ext_resource type="Script" uid="uid://s464qonlxi21" path="res://Kitchen/BreakGlass.cs" id="10_knqvt"]
+[ext_resource type="AudioStream" uid="uid://so0x5cjd40d6" path="res://kitchen/BreakGlass.wav" id="9_fxfkr"]
+[ext_resource type="Script" uid="uid://s464qonlxi21" path="res://kitchen/BreakGlass.cs" id="10_knqvt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lalve"]
 material = ExtResource("1_ah2v2")

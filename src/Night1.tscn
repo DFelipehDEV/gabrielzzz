@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dmjkd7r4hovsr" path="res://npc/richard/Richard.tscn" id="23_6cb46"]
 [ext_resource type="PackedScene" uid="uid://djoa8doagvvmr" path="res://npc/vitel/Vitel.tscn" id="24_r4bhu"]
 [ext_resource type="PackedScene" uid="uid://cplcqpabsaj8i" path="res://garage/garage.tscn" id="26_syuee"]
-[ext_resource type="PackedScene" uid="uid://31378kkvbbck" path="res://Kitchen/Kitchen.tscn" id="27_1krh8"]
+[ext_resource type="PackedScene" uid="uid://31378kkvbbck" path="res://kitchen/Kitchen.tscn" id="27_1krh8"]
 [ext_resource type="PackedScene" uid="uid://4i3hsxwvngn7" path="res://npc/simon/Simon.tscn" id="28_ahubf"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]

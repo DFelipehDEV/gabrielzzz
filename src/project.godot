@@ -29,16 +29,17 @@ project/assembly_name="gabrielzzzgodot"
 [file_customization]
 
 folder_colors={
-"res://Kitchen/": "teal",
 "res://asphalt/": "gray",
 "res://bathroom/": "teal",
 "res://brick/": "gray",
 "res://garage/": "teal",
 "res://glass/": "gray",
+"res://kitchen/": "teal",
 "res://metal_fridge/": "gray",
 "res://office/": "teal",
 "res://ricbedroom/": "teal",
-"res://simaobedroom/": "teal"
+"res://simaobedroom/": "teal",
+"res://wood/": "gray"
 }
 
 [filesystem]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dgr8k8c2mj86h"
-path="res://.godot/imported/Faucet.wav-3ecc41931122376e37841c4e51315801.sample"
+path="res://.godot/imported/Faucet.wav-7e7d3956bf5d6a04e5658eeff1fdf383.sample"
 
 [deps]
 
-source_file="res://Kitchen/Faucet.wav"
-dest_files=["res://.godot/imported/Faucet.wav-3ecc41931122376e37841c4e51315801.sample"]
+source_file="res://kitchen/Faucet.wav"
+dest_files=["res://.godot/imported/Faucet.wav-7e7d3956bf5d6a04e5658eeff1fdf383.sample"]
 
 [params]
 
