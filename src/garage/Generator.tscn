@@ -100,5 +100,5 @@ light_bake_mode = 1
 omni_range = 3.5
 omni_attenuation = 1.341
 
-[node name="LightsOut" type="AudioStreamPlayer3D" parent="."]
+[node name="LightsOut" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_dm1v7")

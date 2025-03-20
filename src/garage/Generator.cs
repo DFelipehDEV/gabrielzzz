@@ -16,7 +16,7 @@ public partial class Generator : StaticBody3D
 	private TextureProgressBar progressBar;
 	
 	[Export]
-	private AudioStreamPlayer3D lightsOut;
+	private AudioStreamPlayer lightsOut;
 
 	private OmniLight3D[] sceneLights;
 

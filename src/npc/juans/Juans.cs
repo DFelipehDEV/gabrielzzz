@@ -23,7 +23,7 @@ public partial class Juans : EnemyNPC
 		if (position.IsInGroup("garage"))
 		{
 			// Break generator
-			if (generator != null) 
+			if (generator != null && !generator.Broken) 
 			{
 				// 1 in 3 chance to break the generator
 				Random random = new Random();
