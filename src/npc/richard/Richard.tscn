@@ -51,7 +51,7 @@ texture = ExtResource("2_mwfsl")
 
 [node name="WalkSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_b3eya")
-unit_size = 5.0
+unit_size = 3.0
 
 [node name="JumpScare" type="TextureRect" parent="."]
 visible = false

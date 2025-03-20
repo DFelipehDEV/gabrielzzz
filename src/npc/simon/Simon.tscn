@@ -17,4 +17,4 @@ texture = ExtResource("2_pharj")
 
 [node name="WalkSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_230gs")
-unit_size = 5.0
+unit_size = 3.0
