@@ -115,6 +115,46 @@ public partial class Player : Node3D
 					}
 				}
 
+				if (Input.IsActionJustPressed("goto_camera_1")) {
+					SwitchCamera(1);
+				}
+
+				if (Input.IsActionJustPressed("goto_camera_2")) {
+					SwitchCamera(2);
+				}
+
+				if (Input.IsActionJustPressed("goto_camera_3")) {
+					SwitchCamera(3);
+				}
+
+				if (Input.IsActionJustPressed("goto_camera_4")) {
+					SwitchCamera(4);
+				}
+
+				if (Input.IsActionJustPressed("goto_camera_5")) {
+					SwitchCamera(5);
+				}
+
+				if (Input.IsActionJustPressed("goto_camera_6")) {
+					SwitchCamera(6);
+				}
+
+				if (Input.IsActionJustPressed("goto_camera_7")) {
+					SwitchCamera(7);
+				}
+
+				if (Input.IsActionJustPressed("goto_camera_8")) {
+					SwitchCamera(8);
+				}
+
+				if (Input.IsActionJustPressed("leave_cameras")) {
+					SwitchCamera(0);
+
+					State = States.NORMAL;
+					phone.Animation = Phone.Animations.CLOSE_CAMERA;		
+					ToggleCameraUI(false);
+				}
+
 				if (cameras[currentCamera].Environment != null) {
 					if (cameras[currentCamera].Environment.TonemapExposure < 1.2f) {
 						cameras[currentCamera].Environment.TonemapExposure += 0.6f * (float)delta;
