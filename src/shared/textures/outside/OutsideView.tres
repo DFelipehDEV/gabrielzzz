@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://clbp2gnvyhpan"]
+
+[ext_resource type="Texture2D" uid="uid://dgkjf5udn2gvg" path="res://shared/textures/outside/OutsideView.png" id="1_fh4rq"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_fh4rq")

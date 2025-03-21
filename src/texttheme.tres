@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://dxor6bq5rdhns"]
 
-[ext_resource type="FontFile" uid="uid://d0qyx74x7o25a" path="res://Chakra_Petch/ChakraPetch-Medium.ttf" id="1_ck6lo"]
+[ext_resource type="FontFile" uid="uid://d0qyx74x7o25a" path="res://shared/fonts/Chakra_Petch/ChakraPetch-Medium.ttf" id="1_ck6lo"]
 
 [resource]
 default_font = ExtResource("1_ck6lo")

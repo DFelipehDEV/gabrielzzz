@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://d3nj0wgf65wbs" path="res://npc/juans/DesligaIsso.wav" id="3_a4d0e"]
 [ext_resource type="AudioStream" uid="uid://cijh7qi2olykb" path="res://npc/juans/DevesQuererAlgumsCoisinha.wav" id="4_a4d0e"]
 [ext_resource type="AudioStream" uid="uid://d06ff4kv4a4fc" path="res://npc/juans/YahMano.wav" id="5_a4d0e"]
-[ext_resource type="AudioStream" uid="uid://dgr8k8c2mj86h" path="res://kitchen/Faucet.wav" id="6_4bgyi"]
+[ext_resource type="AudioStream" uid="uid://dgr8k8c2mj86h" path="res://rooms/kitchen/Faucet.wav" id="6_4bgyi"]
 
 [node name="Juans" type="Node3D"]
 script = ExtResource("1_a4d0e")

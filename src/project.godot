@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gabrielzzz"
-run/main_scene="res://title/menu.tscn"
+run/main_scene="res://title_screen/TitleScreen.tscn"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/use_filter=false
@@ -29,17 +29,21 @@ project/assembly_name="gabrielzzzgodot"
 [file_customization]
 
 folder_colors={
-"res://asphalt/": "gray",
-"res://bathroom/": "teal",
-"res://brick/": "gray",
-"res://garage/": "teal",
-"res://glass/": "gray",
-"res://kitchen/": "teal",
-"res://metal_fridge/": "gray",
-"res://office/": "teal",
-"res://ricbedroom/": "teal",
-"res://simaobedroom/": "teal",
-"res://wood/": "gray"
+"res://rooms/": "teal",
+"res://rooms/bathroom/": "teal",
+"res://rooms/bathroom/textures/": "gray",
+"res://rooms/garage/": "teal",
+"res://rooms/kitchen/": "teal",
+"res://rooms/kitchen/metal_fridge/": "gray",
+"res://rooms/office/": "teal",
+"res://rooms/ric_bedroom/": "teal",
+"res://rooms/simon_bedroom/": "teal",
+"res://shared/textures/": "gray",
+"res://shared/textures/asphalt/": "gray",
+"res://shared/textures/brick/": "gray",
+"res://shared/textures/glass/": "gray",
+"res://shared/textures/outside/": "gray",
+"res://shared/textures/wood/": "gray"
 }
 
 [filesystem]

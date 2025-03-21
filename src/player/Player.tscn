@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bfbrtjtc0usvw" path="res://player/phone/PhoneCamera.png" id="8_3mkx0"]
 [ext_resource type="Texture2D" uid="uid://bj3eakylas5lg" path="res://player/phone/PhoneCameraBottom.png" id="9_pftie"]
 [ext_resource type="Script" uid="uid://b2j13qrivippj" path="res://player/PlayerCamera.cs" id="10_agyb6"]
-[ext_resource type="Shader" uid="uid://c6r275qs72yan" path="res://post_processing/SimpleGrain.gdshader" id="11_k8vgv"]
-[ext_resource type="Shader" uid="uid://bb1d414vgcd0y" path="res://post_processing/Posterize.gdshader" id="12_fhg7u"]
+[ext_resource type="Shader" uid="uid://c6r275qs72yan" path="res://shared/shaders/SimpleGrain.gdshader" id="11_k8vgv"]
+[ext_resource type="Shader" uid="uid://bb1d414vgcd0y" path="res://shared/shaders/Posterize.gdshader" id="12_fhg7u"]
 [ext_resource type="Script" uid="uid://citp8j7mpniah" path="res://FpsCounter.cs" id="13_103y7"]
 
 [sub_resource type="Animation" id="Animation_c1eah"]

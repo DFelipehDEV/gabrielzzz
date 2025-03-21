@@ -1,17 +1,17 @@
 [gd_scene load_steps=16 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
-[ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://office/Office.tscn" id="6_0w350"]
-[ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://office/estadioHD.tres" id="7_xuket"]
-[ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://ricbedroom/RicardoBedroom.tscn" id="8_o0llk"]
-[ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://simaobedroom/SimaoBedroom.tscn" id="9_wg86v"]
+[ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://rooms/office/Office.tscn" id="6_0w350"]
+[ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://shared/textures/outside/OutsideView.tres" id="7_xuket"]
+[ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://rooms/ric_bedroom/RicBedroom.tscn" id="8_o0llk"]
+[ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://rooms/simon_bedroom/SimonBedroom.tscn" id="9_wg86v"]
 [ext_resource type="PackedScene" uid="uid://ctne8xcpx4ycl" path="res://npc/juans/Juans.tscn" id="14_2s5vb"]
-[ext_resource type="PackedScene" uid="uid://c0iaxr7trojl6" path="res://bathroom/bathroom.tscn" id="18_xasnv"]
-[ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://bathroom/bathroom2.tscn" id="19_okl6x"]
+[ext_resource type="PackedScene" uid="uid://c0iaxr7trojl6" path="res://rooms/bathroom/bathroom.tscn" id="18_xasnv"]
+[ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://rooms/bathroom/bathroom2.tscn" id="19_okl6x"]
 [ext_resource type="PackedScene" uid="uid://dmjkd7r4hovsr" path="res://npc/richard/Richard.tscn" id="23_6cb46"]
 [ext_resource type="PackedScene" uid="uid://djoa8doagvvmr" path="res://npc/vitel/Vitel.tscn" id="24_r4bhu"]
-[ext_resource type="PackedScene" uid="uid://cplcqpabsaj8i" path="res://garage/garage.tscn" id="26_syuee"]
-[ext_resource type="PackedScene" uid="uid://31378kkvbbck" path="res://kitchen/Kitchen.tscn" id="27_1krh8"]
+[ext_resource type="PackedScene" uid="uid://cplcqpabsaj8i" path="res://rooms/garage/garage.tscn" id="26_syuee"]
+[ext_resource type="PackedScene" uid="uid://31378kkvbbck" path="res://rooms/kitchen/Kitchen.tscn" id="27_1krh8"]
 [ext_resource type="PackedScene" uid="uid://4i3hsxwvngn7" path="res://npc/simon/Simon.tscn" id="28_ahubf"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
@@ -39,7 +39,7 @@ size = Vector2(19, 10)
 environment = SubResource("Environment_bjlio")
 
 [node name="Stadium" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 5.34246e-12, -0.000122221, 0.000122221, 4.37114e-08, -1, 0, -1, -4.37114e-08, 0.175, 14.809, 23.177)
+transform = Transform3D(-1, 5.34246e-12, -0.000122221, 0.000122221, 4.37114e-08, -1, 0, -1, -4.37114e-08, 0.175, 15.3916, 23.177)
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_la8v7")
 
@@ -47,7 +47,7 @@ mesh = SubResource("PlaneMesh_la8v7")
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 12.823, 2.7)
 
 [node name="Office" parent="." instance=ExtResource("6_0w350")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121859, 3.82077, 3.50747)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12261, 3.82152, 3.50751)
 
 [node name="RichardBedroom" parent="." instance=ExtResource("8_o0llk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3495, 0, -91.6754)

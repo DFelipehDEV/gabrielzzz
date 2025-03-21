@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6yun5pq6btsk"]
+
+[ext_resource type="Script" uid="uid://goiiyqjk84ne" path="res://rooms/ric_bedroom/phone/Nokia.cs" id="1_s675s"]
+[ext_resource type="PackedScene" uid="uid://bqweb6hhnjn8a" path="res://rooms/ric_bedroom/phone/nokia_6230.glb" id="2_p3x7l"]
+[ext_resource type="Texture2D" uid="uid://ddxv2qx6a10xw" path="res://shared/circular_meter/progress-bar-frame.png" id="3_t78r4"]
+[ext_resource type="Texture2D" uid="uid://bqa6koxf6hkc4" path="res://shared/circular_meter/progress-bar-circle.png" id="4_ic2a1"]
+[ext_resource type="AudioStream" uid="uid://en1igbnvsu7d" path="res://rooms/ric_bedroom/phone/NokiaAlarmFired.ogg" id="5_p3x7l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ynhpe"]
+size = Vector3(0.332504, 0.303955, 0.44696)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xoi36"]
+viewport_path = NodePath("Alarm/SubViewport")
+
+[node name="Nokia" type="StaticBody3D" node_paths=PackedStringArray("progress", "alarmFiredAudio") groups=["nokia"]]
+script = ExtResource("1_s675s")
+AlarmDecreaseRate = 1.75
+progress = NodePath("Alarm/SubViewport/ProgressBar")
+alarmFiredAudio = NodePath("AlarmFired")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.108498, 0.110807, 0.0903015)
+shape = SubResource("BoxShape3D_ynhpe")
+
+[node name="Model" parent="." instance=ExtResource("2_p3x7l")]
+transform = Transform3D(1.75137, -1.15668, 0.106276, 0, -0.0657945, -2.63932, 1.75199, 1.64409, -0.151059, 0, 0, 0)
+
+[node name="Alarm" type="Sprite3D" parent="."]
+transform = Transform3D(0.115607, -0.0712752, 0.160374, 0.137641, 0.224977, -0.0119778, -0.111527, 0.0914085, 0.192768, -0.429605, 0.350429, 0)
+billboard = 1
+double_sided = false
+texture = SubResource("ViewportTexture_xoi36")
+
+[node name="SubViewport" type="SubViewport" parent="Alarm"]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Alarm/SubViewport"]
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+value = 100.0
+fill_mode = 4
+texture_under = ExtResource("3_t78r4")
+texture_progress = ExtResource("4_ic2a1")
+tint_progress = Color(0.174388, 0.708437, 0, 1)
+
+[node name="AlarmFired" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_p3x7l")
+unit_size = 7.15

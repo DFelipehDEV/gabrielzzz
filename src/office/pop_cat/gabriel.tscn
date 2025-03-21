@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://do7t5y2fmpuik"]
-
-[ext_resource type="PackedScene" uid="uid://7ddodint1by5" path="res://office/pop_cat/scene.gltf" id="1_8m3dd"]
-
-[node name="Sketchfab_Scene" instance=ExtResource("1_8m3dd")]
-
-[node name="cat_001_7" parent="Sketchfab_model/root/GLTF_SceneRootNode" index="2"]
-visible = false
