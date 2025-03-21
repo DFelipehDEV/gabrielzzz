@@ -141,4 +141,4 @@ fov = 70.0
 script = ExtResource("6_tnysf")
 
 [node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86042, -0.900575, -3.27528)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96019, 0.50754, -2.8607)

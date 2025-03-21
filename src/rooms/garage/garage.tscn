@@ -83,7 +83,7 @@ script = ExtResource("6_ar06e")
 transform = Transform3D(-0.902938, 0, -0.429771, 0, 1, 0, 0.429771, 0, -0.902938, -0.801525, 0.987533, 1.13087)
 
 [node name="VitelsPos" type="Node3D" parent="." groups=["vitel_pos"]]
-transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561, -2.53635, 1.34298, 1.3372)
+transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561, -2.53635, 0.500383, 1.3372)
 
 [node name="JuansPos" type="Node3D" parent="." groups=["garage", "juans_pos"]]
 transform = Transform3D(0.0720546, 0, 0.997401, 0, 1, 0, -0.997401, 0, 0.0720546, -0.13101, 1.72149, -0.82504)
