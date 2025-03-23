@@ -99,7 +99,7 @@ public partial class Phone : Node3D
 		timeLabel.Text = $"{hour:D2}:00";
 		if (hour == 6 && !nightEnded){
 			nightEnded = true;
-			var nightendScene = ResourceLoader.Load<PackedScene>("res://NightEnd/NightEnd.tscn").Instantiate();
+			var nightendScene = ResourceLoader.Load<PackedScene>("res://night_end/NightEnd.tscn").Instantiate();
 			GetTree().Root.AddChild(nightendScene);
 		}
 	}
