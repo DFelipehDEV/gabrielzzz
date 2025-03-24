@@ -280,10 +280,10 @@ transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558
 transform = Transform3D(-0.839573, 0, 0.543248, 0, 1, 0, -0.543248, 0, -0.839573, -16.2924, 8.61505, 0.0713904)
 
 [node name="VitelPos2" type="Node3D" parent="." groups=["vitel_pos"]]
-transform = Transform3D(-0.892916, 0, 0.450223, 0, 1, 0, -0.450223, 0, -0.892916, -3.87334, 8.4771, 0.0713904)
+transform = Transform3D(-0.892916, 0, 0.450223, 0, 1, 0, -0.450223, 0, -0.892916, -3.03359, 8.4771, 0.0713904)
 
 [node name="JuansPos" type="Node3D" parent="." groups=["juans_pos", "office"]]
-transform = Transform3D(0.908851, 0, -0.417122, 0, 1, 0, 0.417122, 0, 0.908851, -2.8401, 8.83081, 0.485148)
+transform = Transform3D(0.515397, 0, -0.856952, 0, 1, 0, 0.856952, 0, 0.515397, -2.8401, 8.83081, 0.485148)
 
 [node name="Hallway" type="Node3D" parent="."]
 
@@ -302,4 +302,4 @@ fov = 78.75
 script = ExtResource("20_7m06a")
 
 [node name="SimonPos" type="Node3D" parent="." groups=["simon_pos"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.879869, 8.59367, 0.151753)
+transform = Transform3D(0.821647, 0, 0.569997, 0, 1, 0, -0.569997, 0, 0.821647, 1.01634, 8.78123, 0.290183)

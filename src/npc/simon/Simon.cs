@@ -4,7 +4,12 @@ public partial class Simon : EnemyNPC
 {
 	private bool awake = false;
 	private Generator generator;
-    private Transform3D initialTransform;
+	private Transform3D initialTransform;
+
+	[Export] 
+	private AnimatedSprite3D sprite;
+
+	
 
 	public override void _Ready()
 	{
@@ -12,7 +17,7 @@ public partial class Simon : EnemyNPC
 		generator = (Generator)GetTree().GetFirstNodeInGroup("generator");
 		generator.Connect("GeneratorBroken", Callable.From(GeneratorBroken));
 		generator.Connect("GeneratorFixed", Callable.From(GeneratorFixed));
-        initialTransform = Transform;
+		initialTransform = Transform;
 	}
 
 	public override void _Process(double delta)
@@ -24,11 +29,17 @@ public partial class Simon : EnemyNPC
 	public void GeneratorBroken() {
 		awake = true;
 		GD.Print(Name + " is now awake");
+		sprite.Animation = "standing";
 	}
 
 	public void GeneratorFixed() {
 		awake = false;
-        Transform = initialTransform;
+		Transform = initialTransform;
 		GD.Print(Name + " is now asleep");
+	}
+
+	public override void MovedToNewPosition(Node3D position)
+	{
+		base.MovedToNewPosition(position);
 	}
 }
