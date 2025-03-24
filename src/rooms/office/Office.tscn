@@ -273,8 +273,8 @@ mesh = SubResource("BoxMesh_gp5kg")
 [node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
 transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558, 18.2454, 8.95701, 0.0257728)
 
-[node name="RichardPos2" type="Node3D" parent="." groups=["richard_pos"]]
-transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558, 3.59475, 8.8689, 0.0257728)
+[node name="RichardPos2" type="Node3D" parent="." groups=["office", "richard_pos"]]
+transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558, 2.64033, 8.8689, 0.0257728)
 
 [node name="VitelPos" type="Node3D" parent="." groups=["vitel_pos"]]
 transform = Transform3D(-0.839573, 0, 0.543248, 0, 1, 0, -0.543248, 0, -0.839573, -16.2924, 8.61505, 0.0713904)

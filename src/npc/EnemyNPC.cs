@@ -22,6 +22,8 @@ public partial class EnemyNPC : Node3D
 
 	private Random random = new Random();
 
+
+
 	public override void _Ready()
 	{
 		base._Ready();
@@ -70,4 +72,7 @@ public partial class EnemyNPC : Node3D
 	}
 
 	public virtual void MovedToNewPosition(Node3D position) {}
+
+	
+
 }
