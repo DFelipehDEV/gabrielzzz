@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://djoa8doagvvmr"]
 
-[ext_resource type="Script" uid="uid://vaaxho6oml81" path="res://npc/EnemyNPC.cs" id="1_4ixfv"]
+[ext_resource type="Script" uid="uid://btsof2vuobq61" path="res://npc/vitel/Vitel.cs" id="1_iaxre"]
 [ext_resource type="Texture2D" uid="uid://dr2ypxedfwgcx" path="res://npc/vitel/standing.png" id="2_wy1qd"]
 [ext_resource type="AudioStream" uid="uid://bid3sei7co0nf" path="res://npc/vitel/VitelWalk.wav" id="3_du87b"]
 [ext_resource type="Texture2D" uid="uid://b7seujtlnjpe7" path="res://npc/vitel/VitelsJumpScare-Sheet1.png" id="4_p7f12"]
@@ -13,29 +13,50 @@
 [ext_resource type="Texture2D" uid="uid://b0e3m8st7541c" path="res://npc/vitel/VitelsJumpScare-Sheet8.png" id="11_ohkj4"]
 [ext_resource type="AudioStream" uid="uid://ca0r8uxb812ev" path="res://npc/vitel/VitelJumpScare.wav" id="12_iaxre"]
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_bct3e"]
-frames = 8
-frame_0/texture = ExtResource("4_p7f12")
-frame_0/duration = 0.1
-frame_1/texture = ExtResource("5_iaxre")
-frame_1/duration = 0.1
-frame_2/texture = ExtResource("6_utpc6")
-frame_2/duration = 0.1
-frame_3/texture = ExtResource("7_838io")
-frame_3/duration = 0.1
-frame_4/texture = ExtResource("8_2wjnh")
-frame_4/duration = 0.1
-frame_5/texture = ExtResource("9_d85m1")
-frame_5/duration = 0.1
-frame_6/texture = ExtResource("10_p7feu")
-frame_6/duration = 0.1
-frame_7/texture = ExtResource("11_ohkj4")
-frame_7/duration = 0.1
+[sub_resource type="SpriteFrames" id="SpriteFrames_utpc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p7f12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iaxre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_utpc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_838io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2wjnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d85m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p7feu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ohkj4")
+}],
+"loop": false,
+"name": &"JumpScare",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"RESET",
+"speed": 5.0
+}]
 
-[node name="Vitel" type="Node3D" node_paths=PackedStringArray("walkSound")]
+[node name="Vitel" type="Node3D" node_paths=PackedStringArray("jumpScare", "jumpScareAudio", "walkSound")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9037, 1.0373, -146.253)
-script = ExtResource("1_4ixfv")
+script = ExtResource("1_iaxre")
+jumpScare = NodePath("Control/JumpScare")
+jumpScareAudio = NodePath("Control/JumpScare/AudioStreamPlayer")
 positionGroup = "vitel_pos"
+timeToMove = 50.0
 walkSound = NodePath("WalkSound")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -49,22 +70,23 @@ stream = ExtResource("3_du87b")
 volume_db = -20.81
 unit_size = 3.0
 
-[node name="JumpScare" type="TextureRect" parent="."]
-visible = false
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -321.5
-offset_top = -495.5
-offset_right = 321.5
-offset_bottom = 495.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AnimatedTexture_bct3e")
-expand_mode = 2
+scale = Vector2(3.5, 2.188)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="JumpScare"]
+[node name="JumpScare" type="AnimatedSprite2D" parent="Control"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_utpc6")
+animation = &"JumpScare"
+autoplay = "RESET"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control/JumpScare"]
 stream = ExtResource("12_iaxre")
 volume_db = -11.885
