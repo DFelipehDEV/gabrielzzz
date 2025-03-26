@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=4 uid="uid://cnhtsot846ueo"]
+[gd_scene load_steps=13 format=4 uid="uid://cnhtsot846ueo"]
 
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://rooms/bathroom/bathroomtile.tres" id="1_ik5xu"]
+[ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_ja0u6"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://shared/textures/asphalt/AsphaltTex.tres" id="2_osmsj"]
 [ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="4_2r6f3"]
 [ext_resource type="PackedScene" uid="uid://2s6vckmj86pd" path="res://rooms/bathroom/toilet.tscn" id="4_dfrx1"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="5_p4ixl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w1dgf"]
+size = Vector3(6.32446, 3.69836, 6.88055)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qu6jd"]
 material = ExtResource("1_ik5xu")
@@ -48,6 +52,15 @@ _surfaces = [{
 }]
 
 [node name="Bathrooms2" type="Node3D"]
+
+[node name="RoomArea" type="Area3D" parent="." node_paths=PackedStringArray("roomCamera")]
+script = ExtResource("1_ja0u6")
+roomCamera = NodePath("../Cam")
+metadata/_custom_type_script = "uid://co7iqtl1k25tk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.94788, 1.34918, -1.4003)
+shape = SubResource("BoxShape3D_w1dgf")
 
 [node name="Wall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.47224, 1.22345, -3.54599)
@@ -134,3 +147,6 @@ script = ExtResource("5_p4ixl")
 
 [node name="VitelsPos" type="Node3D" parent="." groups=["vitel_pos"]]
 transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561, -5.59416, -0.0556896, 1.51628)
+
+[connection signal="body_entered" from="RoomArea" to="RoomArea" method="_on_body_entered"]
+[connection signal="body_exited" from="RoomArea" to="RoomArea" method="_on_body_exited"]

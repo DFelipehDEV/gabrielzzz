@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=4 uid="uid://4r5da0qej73s"]
+[gd_scene load_steps=29 format=4 uid="uid://4r5da0qej73s"]
 
+[ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_73dtj"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_ls7v3"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://shared/textures/asphalt/AsphaltTex.tres" id="2_ynlpp"]
 [ext_resource type="Texture2D" uid="uid://btl6wam51aumj" path="res://rooms/simon_bedroom/icespice_cringe.png" id="3_hmakx"]
@@ -12,6 +13,9 @@
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="11_ev2n6"]
 [ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="11_s68xw"]
 [ext_resource type="Texture2D" uid="uid://bsiu8gfal4en4" path="res://rooms/simon_bedroom/chair.png" id="14_yx7aq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_erint"]
+size = Vector3(6.32446, 3.69836, 6.88055)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iae7x"]
 material = ExtResource("1_ls7v3")
@@ -131,6 +135,15 @@ _surfaces = [{
 
 [node name="SimonBedroom" type="Node3D"]
 
+[node name="RoomArea" type="Area3D" parent="." node_paths=PackedStringArray("roomCamera")]
+script = ExtResource("1_73dtj")
+roomCamera = NodePath("../Cam")
+metadata/_custom_type_script = "uid://co7iqtl1k25tk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.94788, 1.34918, -1.4003)
+shape = SubResource("BoxShape3D_erint")
+
 [node name="Wall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.86607, 2.22528, 1.92127)
 mesh = SubResource("PlaneMesh_iae7x")
@@ -227,3 +240,6 @@ transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561
 
 [node name="SimonPos" type="Node3D" parent="." groups=["simon_pos"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00806, 0.545024, -3.4268)
+
+[connection signal="body_entered" from="RoomArea" to="RoomArea" method="_on_body_entered"]
+[connection signal="body_exited" from="RoomArea" to="RoomArea" method="_on_body_exited"]

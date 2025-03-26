@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmjkd7r4hovsr"]
+[gd_scene load_steps=16 format=3 uid="uid://dmjkd7r4hovsr"]
 
 [ext_resource type="Script" uid="uid://cmgp64vg0k0yq" path="res://npc/richard/Richard.cs" id="1_qwevw"]
 [ext_resource type="Texture2D" uid="uid://cr1btv0ytp04g" path="res://npc/richard/standing.png" id="2_mwfsl"]
@@ -54,6 +54,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_x8f5y"]
+size = Vector3(0.518616, 1.77881, 0.537964)
+
 [node name="Richard" type="Node3D" node_paths=PackedStringArray("jumpScare", "jumpScareAudio", "walkSound")]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 11.8786, 0.986578, -152.096)
 script = ExtResource("1_qwevw")
@@ -62,6 +65,7 @@ jumpScareAudio = NodePath("Control/JumpScare/AudioStreamPlayer")
 positionGroup = "richard_pos"
 timeToMove = 20.0
 walkSound = NodePath("WalkSound")
+metadata/_custom_type_script = "uid://vaaxho6oml81"
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 cast_shadow = 0
@@ -94,3 +98,8 @@ autoplay = "RESET"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control/JumpScare"]
 stream = ExtResource("13_x8f5y")
 volume_db = -11.885
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_x8f5y")

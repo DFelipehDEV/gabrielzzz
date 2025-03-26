@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cplcqpabsaj8i"]
+[gd_scene load_steps=12 format=3 uid="uid://cplcqpabsaj8i"]
 
+[ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_khs1b"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://shared/textures/asphalt/AsphaltTex.tres" id="2_na8tc"]
 [ext_resource type="PackedScene" uid="uid://cyajgsox86emo" path="res://rooms/garage/low_poly_lada_2107.glb" id="3_1rd2p"]
 [ext_resource type="PackedScene" uid="uid://cxvm4to2xv0jp" path="res://rooms/garage/low_poly_metal_shelf_-_game_ready.glb" id="4_yi6jh"]
@@ -7,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cbped4mnkoid5" path="res://rooms/garage/Generator.tscn" id="5_rovyt"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="6_ar06e"]
 [ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="6_i4k0b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j7uop"]
+size = Vector3(6.32446, 3.69836, 6.88055)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h52jo"]
 material = ExtResource("2_na8tc")
@@ -17,6 +21,15 @@ material = ExtResource("2_na8tc")
 size = Vector2(7, 8.5)
 
 [node name="Garage" type="Node3D"]
+
+[node name="RoomArea" type="Area3D" parent="." node_paths=PackedStringArray("roomCamera")]
+script = ExtResource("1_khs1b")
+roomCamera = NodePath("../Cam")
+metadata/_custom_type_script = "uid://co7iqtl1k25tk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.94788, 1.34918, -1.4003)
+shape = SubResource("BoxShape3D_j7uop")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.86607, 2.22528, 1.92127)

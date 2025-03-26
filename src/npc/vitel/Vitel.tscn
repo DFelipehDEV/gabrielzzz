@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://djoa8doagvvmr"]
+[gd_scene load_steps=15 format=3 uid="uid://djoa8doagvvmr"]
 
 [ext_resource type="Script" uid="uid://btsof2vuobq61" path="res://npc/vitel/Vitel.cs" id="1_iaxre"]
 [ext_resource type="Texture2D" uid="uid://dr2ypxedfwgcx" path="res://npc/vitel/standing.png" id="2_wy1qd"]
@@ -50,6 +50,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_iaxre"]
+size = Vector3(0.518616, 1.77881, 0.537964)
+
 [node name="Vitel" type="Node3D" node_paths=PackedStringArray("jumpScare", "jumpScareAudio", "walkSound")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9037, 1.0373, -146.253)
 script = ExtResource("1_iaxre")
@@ -90,3 +93,8 @@ autoplay = "RESET"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control/JumpScare"]
 stream = ExtResource("12_iaxre")
 volume_db = -11.885
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_iaxre")
