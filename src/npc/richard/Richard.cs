@@ -50,6 +50,7 @@ public partial class Richard : EnemyNPC
 	}
 
 	public void JumpScareFinished() {
+		OS.DelayMsec(1000);
 		GetTree().ChangeSceneToFile("res://game_over/GameOver.tscn");
 	}
 
