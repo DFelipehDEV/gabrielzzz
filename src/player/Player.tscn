@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dmhe5g6euql60"]
+[gd_scene load_steps=22 format=3 uid="uid://dmhe5g6euql60"]
 
 [ext_resource type="Script" uid="uid://bjijivbohwud2" path="res://player/Player.cs" id="1_tfayh"]
 [ext_resource type="Script" uid="uid://ba5ia4wbr0j2i" path="res://player/phone/Phone.cs" id="2_aepcq"]
@@ -58,6 +58,28 @@ tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
+[sub_resource type="Animation" id="Animation_b32pr"]
+resource_name = "RecordTape"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.02, -0.2, 0.1333, 1, -0.1, 0.03, -0.3, 0.25, 1, -0.2, -0.01, -0.4, 0.4, 1, -0.3, 0.03, -0.6, 0.566667, 1, -0.4, 0, -0.8, 0.7, 1, -0.45, 0.03, -0.9, 0.833333, 1, -0.5, 0, -1.15, 1, 1, -0.5, 0, -1.3)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0349066, 0, 0), Vector3(-0.0872665, 0, 0), Vector3(-0.349066, -0.261799, 0), Vector3(-0.698132, -0.349066, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_2wknt"]
 resource_name = "UnhideTable"
 
@@ -88,6 +110,7 @@ tracks/1/keys = {
 _data = {
 &"HideUnderTable": SubResource("Animation_c1eah"),
 &"RESET": SubResource("Animation_7xgl7"),
+&"RecordTape": SubResource("Animation_b32pr"),
 &"UnhideTable": SubResource("Animation_2wknt"),
 &"UnhideUnderTable": SubResource("Animation_verti")
 }
@@ -106,7 +129,7 @@ shader_parameter/amount = 0.02
 shader = ExtResource("12_fhg7u")
 shader_parameter/posterization_levels = 37
 
-[node name="Player" type="Node3D"]
+[node name="Player" type="Node3D" groups=["player"]]
 script = ExtResource("1_tfayh")
 
 [node name="LOS" type="RayCast3D" parent="."]

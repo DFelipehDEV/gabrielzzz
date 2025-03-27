@@ -5,7 +5,7 @@ public partial class Player : Node3D
 {
 	private PlayerCamera cam;
 	public Phone phone;
-	private AnimationPlayer animationPlayer;
+	public AnimationPlayer animationPlayer;
 
 	private float rotationSpeed = 2.5f;
 	private Vector2 targetRotation;
@@ -16,6 +16,7 @@ public partial class Player : Node3D
 		TOCAMERA,
 		CAMERA,
 		HIDDEN,
+		RECORD,
 	}
 
 	private States state = States.NORMAL;
@@ -161,6 +162,12 @@ public partial class Player : Node3D
 					}
 				}
 				break;
+			case States.RECORD:
+				targetRotation.X = Mathf.Lerp(targetRotation.X, Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
+				targetRotation.Y = Mathf.Lerp(targetRotation.Y, Mathf.DegToRad(0 ), (float)GetProcessDeltaTime() * 2.5f);
+				Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
+				break;
+
 		}
 		stateTimer += 1.0f * (float)delta;
 	}
@@ -197,4 +204,5 @@ public partial class Player : Node3D
 		cam.posterize.Visible = visible;
 		cam.grain.Visible = visible;
 	}
+	
 }

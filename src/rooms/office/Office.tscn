@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://coc1glsj1410t"]
+[gd_scene load_steps=37 format=3 uid="uid://coc1glsj1410t"]
 
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_p5jth"]
 [ext_resource type="Material" uid="uid://d4l5vhgqqobbe" path="res://shared/textures/wood/wood.tres" id="2_7kt6n"]
@@ -20,7 +20,8 @@
 [ext_resource type="Script" uid="uid://sugwgf257hip" path="res://rooms/office/FlashingLight.cs" id="18_nxp38"]
 [ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="19_lrpwn"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="20_7m06a"]
-[ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="21_p7jih"]
+[ext_resource type="Script" path="res://rooms/RoomArea.cs" id="21_p7jih"]
+[ext_resource type="PackedScene" uid="uid://dxvea4vkt6get" path="res://rooms/office/tape_recorder/TapeRecorder.tscn" id="22_wkv8g"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xp0vg"]
 lightmap_size_hint = Vector2i(122, 12)
@@ -301,7 +302,6 @@ script = ExtResource("20_7m06a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7353, 9.19954, 0)
 script = ExtResource("21_p7jih")
 roomCamera = NodePath("../Cam")
-metadata/_custom_type_script = "uid://co7iqtl1k25tk"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hallway/RoomArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76794, 0.0704079, -0.351305)
@@ -319,7 +319,6 @@ script = ExtResource("20_7m06a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3682, 9.19954, 0)
 script = ExtResource("21_p7jih")
 roomCamera = NodePath("../Cam")
-metadata/_custom_type_script = "uid://co7iqtl1k25tk"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hallway2/RoomArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76794, 0.0704079, -0.351305)
@@ -327,6 +326,9 @@ shape = SubResource("BoxShape3D_wkv8g")
 
 [node name="SimonPos" type="Node3D" parent="." groups=["simon_pos"]]
 transform = Transform3D(0.821647, 0, 0.569997, 0, 1, 0, -0.569997, 0, 0.821647, 1.01634, 8.78123, 0.290183)
+
+[node name="TapeRecorder" parent="." instance=ExtResource("22_wkv8g")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.331435, 8.71954, 0.771839)
 
 [connection signal="body_entered" from="Hallway/RoomArea" to="Hallway/RoomArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Hallway/RoomArea" to="Hallway/RoomArea" method="_on_body_exited"]

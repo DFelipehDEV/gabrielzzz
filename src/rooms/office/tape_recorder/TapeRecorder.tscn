@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxvea4vkt6get"]
+
+[ext_resource type="Script" uid="uid://86wy1kyg8d0m" path="res://rooms/office/tape_recorder/TapeRecorder.cs" id="1_85lrj"]
+[ext_resource type="PackedScene" uid="uid://dwmv0ybtmcn82" path="res://rooms/office/tape_recorder/tape_recorder.glb" id="1_foepx"]
+[ext_resource type="Texture2D" uid="uid://ddxv2qx6a10xw" path="res://shared/circular_meter/progress-bar-frame.png" id="2_ug3jj"]
+[ext_resource type="Texture2D" uid="uid://bqa6koxf6hkc4" path="res://shared/circular_meter/progress-bar-circle.png" id="3_85lrj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_foepx"]
+size = Vector3(0.190319, 0.0588379, 0.152588)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85lrj"]
+size = Vector3(0.0410156, 0.0474548, 0.0343323)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pmadk"]
+viewport_path = NodePath("RecordUI/SubViewport")
+
+[node name="TapeRecorder" type="StaticBody3D" node_paths=PackedStringArray("progressBar", "recordButton")]
+script = ExtResource("1_85lrj")
+progressBar = NodePath("RecordUI/SubViewport/ProgressBar")
+recordButton = NodePath("RecordButtonHitbox")
+
+[node name="Model" parent="." instance=ExtResource("1_foepx")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0240116, 0.00720219, 0.00744632)
+shape = SubResource("BoxShape3D_foepx")
+
+[node name="RecordButtonHitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.315546, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RecordButtonHitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095459, 0.31575, 0.0435638)
+shape = SubResource("BoxShape3D_85lrj")
+debug_color = Color(0.997691, 0, 0.160244, 0.42)
+
+[node name="RecordUI" type="Sprite3D" parent="."]
+transform = Transform3D(0.211538, 0, 0, 0, 0.253082, 0, 0, 0, 0.251043, -0.0109677, 0.0796094, 0.136558)
+pixel_size = 0.005
+billboard = 1
+double_sided = false
+texture = SubResource("ViewportTexture_pmadk")
+
+[node name="SubViewport" type="SubViewport" parent="RecordUI"]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="RecordUI/SubViewport"]
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+fill_mode = 4
+texture_under = ExtResource("2_ug3jj")
+texture_progress = ExtResource("3_85lrj")
+tint_progress = Color(0.174388, 0.708437, 0, 1)
