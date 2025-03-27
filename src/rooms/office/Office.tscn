@@ -20,7 +20,7 @@
 [ext_resource type="Script" uid="uid://sugwgf257hip" path="res://rooms/office/FlashingLight.cs" id="18_nxp38"]
 [ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="19_lrpwn"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="20_7m06a"]
-[ext_resource type="Script" path="res://rooms/RoomArea.cs" id="21_p7jih"]
+[ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="21_p7jih"]
 [ext_resource type="PackedScene" uid="uid://dxvea4vkt6get" path="res://rooms/office/tape_recorder/TapeRecorder.tscn" id="22_wkv8g"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xp0vg"]
