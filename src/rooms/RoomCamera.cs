@@ -18,15 +18,15 @@ public partial class RoomCamera : Camera3D
 		AddChild(listener);
 	}
 
-    public override void _Process(double delta)
-    {
-        base._Process(delta);
+	public override void _Process(double delta)
+	{
+		base._Process(delta);
 		deactivatedTime = Mathf.Max(deactivatedTime - delta, 0.0);
 
 		if (Deactivated) {
 			Environment.TonemapExposure = 0;
 		}
-    }
+	}
 
 	public void Deactivate(double time) {
 		deactivatedTime = time;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://c0iaxr7trojl6"]
+[gd_scene load_steps=15 format=4 uid="uid://c0iaxr7trojl6"]
 
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://rooms/bathroom/bathroomtile.tres" id="1_5u0wq"]
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_8pxbd"]
@@ -7,8 +7,6 @@
 [ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="5_2j83b"]
 [ext_resource type="Texture2D" uid="uid://dn8fq0ok8ruq5" path="res://rooms/bathroom/shadowcock.jpg" id="5_vvix3"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="6_tnysf"]
-[ext_resource type="Script" uid="uid://6je3miseg0de" path="res://ide_tools/NPCPreviewTool.cs" id="7_wy4du"]
-[ext_resource type="PackedScene" uid="uid://dmjkd7r4hovsr" path="res://npc/richard/Richard.tscn" id="8_8pxbd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bh7fi"]
 size = Vector3(6.32446, 3.69836, 6.88055)
@@ -157,10 +155,6 @@ script = ExtResource("6_tnysf")
 
 [node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96019, 0.50754, -2.8607)
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource("7_wy4du")
-npcScene = ExtResource("8_8pxbd")
 
 [connection signal="body_entered" from="RoomArea" to="RoomArea" method="_on_body_entered"]
 [connection signal="body_exited" from="RoomArea" to="RoomArea" method="_on_body_exited"]

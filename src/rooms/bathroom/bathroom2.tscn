@@ -146,7 +146,7 @@ fov = 70.0
 script = ExtResource("5_p4ixl")
 
 [node name="VitelsPos" type="Node3D" parent="." groups=["vitel_pos"]]
-transform = Transform3D(-0.572561, 0, -0.819862, 0, 1, 0, 0.819862, 0, -0.572561, -5.59416, -0.0556896, 1.51628)
+transform = Transform3D(-0.991987, 0, 0.126338, 0, 1, 0, -0.126338, 0, -0.991987, -4.97766, 1.05412, 1.13446)
 
 [connection signal="body_entered" from="RoomArea" to="RoomArea" method="_on_body_entered"]
 [connection signal="body_exited" from="RoomArea" to="RoomArea" method="_on_body_exited"]
