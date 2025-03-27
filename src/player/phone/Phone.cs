@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public partial class Phone : Node3D
@@ -19,6 +20,7 @@ public partial class Phone : Node3D
 	private Vector3 normalPhonePosition;
 	
 	private bool nightEnded = false;
+
 
 	public enum Animations {
 		DEFAULT,
