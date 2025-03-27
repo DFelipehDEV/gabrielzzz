@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxvea4vkt6get"]
+[gd_scene load_steps=7 format=3 uid="uid://dxvea4vkt6get"]
 
 [ext_resource type="Script" uid="uid://86wy1kyg8d0m" path="res://rooms/office/tape_recorder/TapeRecorder.cs" id="1_85lrj"]
 [ext_resource type="PackedScene" uid="uid://dwmv0ybtmcn82" path="res://rooms/office/tape_recorder/tape_recorder.glb" id="1_foepx"]
@@ -8,30 +8,19 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_foepx"]
 size = Vector3(0.190319, 0.0588379, 0.152588)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_85lrj"]
-size = Vector3(0.0410156, 0.0474548, 0.0343323)
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_pmadk"]
 viewport_path = NodePath("RecordUI/SubViewport")
 
 [node name="TapeRecorder" type="StaticBody3D" node_paths=PackedStringArray("progressBar", "recordButton")]
 script = ExtResource("1_85lrj")
 progressBar = NodePath("RecordUI/SubViewport/ProgressBar")
-recordButton = NodePath("RecordButtonHitbox")
+recordButton = NodePath("")
 
 [node name="Model" parent="." instance=ExtResource("1_foepx")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0240116, 0.00720219, 0.00744632)
 shape = SubResource("BoxShape3D_foepx")
-
-[node name="RecordButtonHitbox" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.315546, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RecordButtonHitbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095459, 0.31575, 0.0435638)
-shape = SubResource("BoxShape3D_85lrj")
-debug_color = Color(0.997691, 0, 0.160244, 0.42)
 
 [node name="RecordUI" type="Sprite3D" parent="."]
 transform = Transform3D(0.211538, 0, 0, 0, 0.253082, 0, 0, 0, 0.251043, -0.0109677, 0.0796094, 0.136558)

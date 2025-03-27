@@ -9,19 +9,19 @@ public partial class TapeRecorder : StaticBody3D
 	[Export]
 	private Area3D recordButton;
 
-    private Player player;
+	private Player player;
 
 	private bool recorded = false;
 	private bool recording = false;
 	private double recordingProgress = 0.0;
 
-    public override void _Ready()
-    {
-        base._Ready();
-        player = (Player)GetTree().GetFirstNodeInGroup("player");
-    }
-    
-    public override void _Process(double delta)
+	public override void _Ready()
+	{
+		base._Ready();
+		player = (Player)GetTree().GetFirstNodeInGroup("player");
+	}
+	
+	public override void _Process(double delta)
 	{
 		base._Process(delta);
 
@@ -58,25 +58,26 @@ public partial class TapeRecorder : StaticBody3D
 			});
 
 			
+			
 			if (result.Count > 0)
 			{
 				var collider = result["collider"].AsGodotObject();
+				
 				if (collider == this) {
 					if (Input.IsActionJustPressed("toggle_flash")) {
 						if (player.State != Player.States.RECORD) {
 							player.animationPlayer.Play("RecordTape");
 							player.State = Player.States.RECORD;
+							recording = true;
 						} else {
 							player.animationPlayer.PlayBackwards("RecordTape");
 							player.State = Player.States.NORMAL;
+							recording = false;
 						}
 					}
 				}
-
-				recording = collider == recordButton;
-				GD.Print(recording);
 			}
-			
+
 		}
 	}
 }
