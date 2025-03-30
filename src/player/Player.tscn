@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmhe5g6euql60"]
+[gd_scene load_steps=21 format=3 uid="uid://dmhe5g6euql60"]
 
 [ext_resource type="Script" uid="uid://bjijivbohwud2" path="res://player/Player.cs" id="1_tfayh"]
 [ext_resource type="Script" uid="uid://ba5ia4wbr0j2i" path="res://player/phone/Phone.cs" id="2_aepcq"]
@@ -80,9 +80,6 @@ tracks/1/keys = {
 "values": [Vector3(-0.0349066, 0, 0), Vector3(-0.0872665, 0, 0), Vector3(-0.349066, -0.261799, 0), Vector3(-0.698132, -0.349066, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_2wknt"]
-resource_name = "UnhideTable"
-
 [sub_resource type="Animation" id="Animation_verti"]
 resource_name = "UnhideUnderTable"
 length = 1.65
@@ -111,7 +108,6 @@ _data = {
 &"HideUnderTable": SubResource("Animation_c1eah"),
 &"RESET": SubResource("Animation_7xgl7"),
 &"RecordTape": SubResource("Animation_b32pr"),
-&"UnhideTable": SubResource("Animation_2wknt"),
 &"UnhideUnderTable": SubResource("Animation_verti")
 }
 
