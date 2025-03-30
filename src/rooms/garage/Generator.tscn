@@ -49,6 +49,7 @@ viewport_path = NodePath("FixUI/SubViewport")
 
 [node name="Generator" type="StaticBody3D" node_paths=PackedStringArray("brokenParticles", "progressBar", "lightsOut")]
 script = ExtResource("1_f67u1")
+highlightColor = Color(0.0462196, 0.556041, 0.555869, 1)
 brokenParticles = NodePath("Model/BrokenParticles")
 progressBar = NodePath("FixUI/SubViewport/ProgressBar")
 lightsOut = NodePath("LightsOut")

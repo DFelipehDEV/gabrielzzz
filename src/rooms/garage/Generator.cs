@@ -1,7 +1,7 @@
 using System.Linq;
 using Godot;
 
-public partial class Generator : StaticBody3D
+public partial class Generator : StaticBody3D, Interactable
 {
 	[Signal]
 	public delegate void GeneratorBrokenEventHandler();
@@ -14,36 +14,61 @@ public partial class Generator : StaticBody3D
 
 	[Export]
 	private TextureProgressBar progressBar;
-	
+
 	[Export]
 	private AudioStreamPlayer lightsOut;
 
 	private OmniLight3D[] sceneLights;
 
 	private bool broken = false;
-	public bool Broken {
-		get {
+	public bool Broken
+	{
+		get
+		{
 			return broken;
 		}
 
-		set {
+		set
+		{
 			broken = value;
 			brokenParticles.Emitting = broken;
 			progressBar.Visible = broken;
 
-			if (broken) {
+			if (broken)
+			{
 				EmitSignal(SignalName.GeneratorBroken);
 				lightsOut.Play();
 			}
 
-			foreach (OmniLight3D light in sceneLights) {
+			foreach (OmniLight3D light in sceneLights)
+			{
 				light.Visible = !broken;
 			}
 		}
 	}
 
 	private bool beingFixed = false;
+	public bool BeingFixed
+	{
+		get => beingFixed;
+		set => beingFixed = value;
+	}
 	private double fixProgress = 0.0;
+
+	private bool isMouseOverGenerator = false;
+	private bool isMousePressed = false;
+
+	public bool IsInteractable => Broken;
+
+	public void StartInteract()
+	{
+		beingFixed = true;
+	}
+
+	public void StopInteract()
+	{
+		beingFixed = false;
+	}
 
 	public override void _Ready()
 	{
@@ -61,48 +86,54 @@ public partial class Generator : StaticBody3D
 		Broken = broken;
 	}
 
+
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
 
-		if (broken && beingFixed) {
-			fixProgress += 10.0f * delta;
+		if (broken)
+		{
+			if (beingFixed)
+			{
+				fixProgress += 10.0 * delta;
 
-			if (fixProgress >= 100.0) {
-				Broken = false;
-				fixProgress = 0.0;
-				EmitSignal(SignalName.GeneratorFixed);
+				if (fixProgress >= 100.0)
+				{
+					Broken = false;
+					fixProgress = 0.0;
+					EmitSignal(SignalName.GeneratorFixed);
+				}
 			}
+			progressBar.Value = fixProgress;
 		}
-
-		progressBar.Value = fixProgress;
 	}
 
-	public override void _Input(InputEvent @event)
+	public void Highlight()
 	{
-		if (@event is InputEventMouseMotion mouseMotion)
+		foreach (MeshInstance3D mesh in GetMeshes())
 		{
-			var camera = GetViewport().GetCamera3D();
-			var from = camera.ProjectRayOrigin(mouseMotion.Position);
-			var to = from + camera.ProjectRayNormal(mouseMotion.Position) * 1000;
-
-			var spaceState = GetWorld3D().DirectSpaceState;
-			var result = spaceState.IntersectRay(new PhysicsRayQueryParameters3D
+			var material = mesh.GetActiveMaterial(0);
+			if (material != null)
 			{
-				From = from,
-				To = to,
-				CollisionMask = 1
-			});
-
-			
-			if (result.Count > 0 && result["collider"].AsGodotObject() == this)
-			{
-				beingFixed = true;
-			}
-			else
-			{
-				beingFixed = false;
+				var newMat = material.Duplicate() as StandardMaterial3D;
+				newMat.AlbedoColor = new Color(4.0f, 4.0f, 4.0f);
+				mesh.MaterialOverride = newMat;
 			}
 		}
+	}
+
+	public void Unhighlight()
+	{
+		foreach (MeshInstance3D mesh in GetMeshes())
+		{
+			mesh.MaterialOverride = null;
+		}
+	}
+
+	private MeshInstance3D[] GetMeshes()
+	{
+		return FindChildren("*", "MeshInstance3D", true)
+				.Cast<MeshInstance3D>()
+				.ToArray();
 	}
 }

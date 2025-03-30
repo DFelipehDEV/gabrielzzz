@@ -14,6 +14,7 @@ viewport_path = NodePath("Alarm/SubViewport")
 
 [node name="Nokia" type="StaticBody3D" node_paths=PackedStringArray("progress", "alarmFiredAudio") groups=["nokia"]]
 script = ExtResource("1_s675s")
+highlightColor = Color(0.825897, 0.11887, 0.245866, 1)
 AlarmDecreaseRate = 1.75
 progress = NodePath("Alarm/SubViewport/ProgressBar")
 alarmFiredAudio = NodePath("AlarmFired")

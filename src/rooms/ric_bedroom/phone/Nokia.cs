@@ -1,6 +1,7 @@
 using Godot;
+using System.Linq;
 
-public partial class Nokia : StaticBody3D
+public partial class Nokia : StaticBody3D, Interactable
 {
 	[Export]
 	public double AlarmIncreaseRate = 9.5;
@@ -18,13 +19,37 @@ public partial class Nokia : StaticBody3D
 	public delegate void AlarmFiredEventHandler();
 
 	private bool delayingAlarm = false;
+	public bool DelayingAlarm
+	{
+		get => delayingAlarm;
+		set
+		{
+			delayingAlarm = value;
+		}
+	}
 	private double alarmTimer = 100.0;
 
 	private bool alarmFired = false;
+	public bool HasAlarmFired
+	{
+		get => alarmFired;
+	}
+
+	public bool IsInteractable => !alarmFired;
+
+	public void StartInteract()
+	{
+		delayingAlarm = true;
+	}
+
+	public void StopInteract()
+	{
+		delayingAlarm = false;
+	}
 
 	public override void _Process(double delta)
 	{
-		if (!alarmFired) 
+		if (!alarmFired)
 		{
 			if (delayingAlarm)
 			{
@@ -34,7 +59,8 @@ public partial class Nokia : StaticBody3D
 			{
 				alarmTimer -= AlarmDecreaseRate * delta;
 			}
-			if (alarmTimer <= 0) {
+			if (alarmTimer <= 0)
+			{
 				alarmFired = true;
 				alarmFiredAudio.Play();
 				EmitSignal(SignalName.AlarmFired);
@@ -45,30 +71,32 @@ public partial class Nokia : StaticBody3D
 		progress.Value = alarmTimer;
 	}
 
-	public override void _Input(InputEvent @event)
+	public void Highlight()
 	{
-		if (@event is InputEventMouseMotion mouseMotion)
+		foreach (MeshInstance3D mesh in GetMeshes())
 		{
-			var camera = GetViewport().GetCamera3D();
-			var from = camera.ProjectRayOrigin(mouseMotion.Position);
-			var to = from + camera.ProjectRayNormal(mouseMotion.Position) * 1000;
-
-			var spaceState = GetWorld3D().DirectSpaceState;
-			var result = spaceState.IntersectRay(new PhysicsRayQueryParameters3D
+			var material = mesh.GetActiveMaterial(0);
+			if (material != null)
 			{
-				From = from,
-				To = to,
-				CollisionMask = 1
-			});
-
-			if (result.Count > 0 && result["collider"].AsGodotObject() == this)
-			{
-				delayingAlarm = true;
-			}
-			else
-			{
-				delayingAlarm = false;
+				var newMat = material.Duplicate() as StandardMaterial3D;
+				newMat.AlbedoColor = new Color(4.0f, 4.0f, 4.0f);
+				mesh.MaterialOverride = newMat;
 			}
 		}
+	}
+
+	public void Unhighlight()
+	{
+		foreach (MeshInstance3D mesh in GetMeshes())
+		{
+			mesh.MaterialOverride = null;
+		}
+	}
+
+	private MeshInstance3D[] GetMeshes()
+	{
+		return FindChildren("*", "MeshInstance3D", true)
+				.Cast<MeshInstance3D>()
+				.ToArray();
 	}
 }
