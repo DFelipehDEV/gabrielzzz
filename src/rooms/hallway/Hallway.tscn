@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://ja2qq53m56k3"]
+
+[ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="1_gebyb"]
+[ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="2_ucjtl"]
+[ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="3_m78el"]
+[ext_resource type="Material" uid="uid://d4l5vhgqqobbe" path="res://shared/textures/wood/wood.tres" id="4_1nl05"]
+[ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="5_882r7"]
+[ext_resource type="Script" uid="uid://sugwgf257hip" path="res://rooms/office/FlashingLight.cs" id="6_fxegx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wkv8g"]
+size = Vector3(13.7561, 2.68556, 4.78256)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v1wk5"]
+material = ExtResource("4_1nl05")
+size = Vector2(18, 4)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_45d5x"]
+lightmap_size_hint = Vector2i(122, 12)
+size = Vector2(18, 3.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3todj"]
+lightmap_size_hint = Vector2i(122, 12)
+size = Vector2(18, 3.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v1wk5"]
+
+[node name="Hallway" type="Node3D"]
+
+[node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
+transform = Transform3D(-0.169032, 0.291467, -0.941528, 0.0390237, 0.956504, 0.289097, 0.984838, 0.0121248, -0.173054, -8.03635, -2.20933, -3.71694)
+environment = ExtResource("1_gebyb")
+fov = 78.75
+script = ExtResource("2_ucjtl")
+
+[node name="RoomArea" type="Area3D" parent="." node_paths=PackedStringArray("roomCamera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43525, -2.92025, -3.00412)
+script = ExtResource("3_m78el")
+roomCamera = NodePath("../Cam")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76794, 0.0704079, -0.351305)
+shape = SubResource("BoxShape3D_wkv8g")
+
+[node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
+transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558, -1.92515, -3.16278, -2.97834)
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -2.45342, -4.81976)
+mesh = SubResource("PlaneMesh_v1wk5")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.29585, -3.06492)
+material_override = ExtResource("5_882r7")
+mesh = SubResource("PlaneMesh_45d5x")
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, -1.74138, -3.065)
+material_override = ExtResource("4_1nl05")
+mesh = SubResource("PlaneMesh_3todj")
+
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, -2.45342, -1.30689)
+mesh = SubResource("PlaneMesh_v1wk5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.947174, 0, 0, 0, 0.110389, 0, 0, 0, 0.29281, -3.82688, -1.80473, -2.67443)
+mesh = SubResource("BoxMesh_v1wk5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D2"]
+transform = Transform3D(1, 1.0019e-11, 3.52934e-08, -1.00189e-11, 1, -7.15256e-10, -3.52934e-08, 7.15256e-10, 1, -0.324053, -10.7592, -0.764667)
+light_color = Color(0.905615, 0.665795, 0.500737, 1)
+light_energy = 5.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.495
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 10.0
+omni_range = 3.20391
+omni_attenuation = 3.0
+script = ExtResource("6_fxegx")
+
+[connection signal="body_entered" from="RoomArea" to="RoomArea" method="_on_body_entered"]
+[connection signal="body_exited" from="RoomArea" to="RoomArea" method="_on_body_exited"]

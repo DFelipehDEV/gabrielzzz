@@ -104,6 +104,7 @@ mesh = SubResource("BoxMesh_gp5kg")
 
 [node name="Wall3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.19249e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.19249e-08, -5.21253e-16, 11.2706, 9.22575, -0.705912)
+visible = false
 mesh = SubResource("PlaneMesh_s6fkk")
 
 [node name="Wall4" type="MeshInstance3D" parent="."]
@@ -253,4 +254,5 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.3314
 
 [node name="Wall5" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -8.86005, 9.22575, -0.383953)
+visible = false
 mesh = SubResource("PlaneMesh_s6fkk")
