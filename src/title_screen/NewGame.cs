@@ -13,7 +13,7 @@ public partial class NewGame : Button
 		FileAccess file = FileAccess.Open("user://nightdata.json", FileAccess.ModeFlags.Write);
 		file.StoreString("res://Night1.tscn");
 		file.Close();
-		GetTree().ChangeSceneToFile("res://Night1.tscn");
+		GetTree().ChangeSceneToFile("res://night_start/NightStart.tscn");
 	 }
 
 }
