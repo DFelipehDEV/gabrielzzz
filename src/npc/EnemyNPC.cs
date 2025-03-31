@@ -21,7 +21,7 @@ public partial class EnemyNPC : Node3D
 		set => timeToMove = value;
 	}
 
-	private double timeUntilNextPosition = 40.0;
+	private double timeUntilNextMove = 40.0;
 
 	[Export]
 	private AudioStreamPlayer3D walkSound;
@@ -31,7 +31,7 @@ public partial class EnemyNPC : Node3D
 	public override void _Ready()
 	{
 		base._Ready();
-		timeUntilNextPosition = timeToMove;
+		timeUntilNextMove = timeToMove;
 		if (!string.IsNullOrEmpty(positionGroup))
 		{
 			var positionsGroup = GetTree().GetNodesInGroup(positionGroup)
@@ -47,9 +47,9 @@ public partial class EnemyNPC : Node3D
 
 	public override void _Process(double delta)
 	{
-		timeUntilNextPosition -= delta;
+		timeUntilNextMove -= delta;
 
-		if (timeUntilNextPosition <= 0)
+		if (timeUntilNextMove <= 0)
 		{
 			MoveToNextPosition();
 			if (walkSound != null)
@@ -69,7 +69,7 @@ public partial class EnemyNPC : Node3D
 
 		nextPosition = positions[randomIndex];
 		currentPositionIndex = randomIndex;
-		timeUntilNextPosition = timeToMove * (0.8 + 0.4 * random.NextDouble());
+		timeUntilNextMove = timeToMove * (0.8 + 0.4 * random.NextDouble());
 	}
 
 	private void MoveToNextPosition()
