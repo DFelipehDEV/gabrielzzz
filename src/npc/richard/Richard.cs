@@ -55,10 +55,7 @@ public partial class Richard : EnemyNPC
 
 	public override void OnMovedToNewPosition(Node3D position)
 	{
-		if (position.IsInGroup("office"))
-		{
-			insideOffice = true;
-		}
+		insideOffice = position.IsInGroup("office");
 	}
 
 	public void JumpScareFinished()
