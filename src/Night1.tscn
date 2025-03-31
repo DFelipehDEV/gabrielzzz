@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=19 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://rooms/office/Office.tscn" id="6_0w350"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ctne8xcpx4ycl" path="res://npc/juans/Juans.tscn" id="14_2s5vb"]
 [ext_resource type="PackedScene" uid="uid://ja2qq53m56k3" path="res://rooms/hallway/Hallway.tscn" id="14_qku4a"]
 [ext_resource type="PackedScene" uid="uid://ddy4jc2rrsaw4" path="res://rooms/hallway/Hallway2.tscn" id="15_yvrbt"]
+[ext_resource type="Script" uid="uid://xac6h5x37ums" path="res://transitions/Fade.cs" id="16_yvrbt"]
 [ext_resource type="PackedScene" uid="uid://c0iaxr7trojl6" path="res://rooms/bathroom/bathroom.tscn" id="18_xasnv"]
 [ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://rooms/bathroom/bathroom2.tscn" id="19_okl6x"]
 [ext_resource type="PackedScene" uid="uid://dmjkd7r4hovsr" path="res://npc/richard/Richard.tscn" id="23_6cb46"]
@@ -86,3 +87,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0826, 15.9235, 6.3714)
 
 [node name="Hallway2" parent="." instance=ExtResource("15_yvrbt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9514, 15.9235, 6.3714)
+
+[node name="FadeIn" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 1)
+script = ExtResource("16_yvrbt")
+Speed = -0.3
+metadata/_custom_type_script = "uid://xac6h5x37ums"

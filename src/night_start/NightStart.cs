@@ -2,8 +2,12 @@ using Godot;
 
 public partial class NightStart : Control
 {
-	public string nextNight = "res://Night1.tscn";
+	[Export]
+	private PackedScene nextNight;
+	
 	private float time;
+
+	private Fade fadeOut;
 
 	[Export]
 	private Label dayLabel;
@@ -11,19 +15,22 @@ public partial class NightStart : Control
 	public override void _Ready()
 	{
 		base._Ready();
-		Modulate = new Color(Modulate.R, Modulate.G, Modulate.B, 0);
+		fadeOut = new Fade();
+		fadeOut.Initialize(0.3f, nextNight.ResourcePath, Colors.Black);
+		fadeOut.Modulate = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 	}
+
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
 		time += (float)delta;
-		Modulate = new Color(Modulate.R, Modulate.G, Modulate.B, Modulate.A + (1.0f * (float)delta));
-		if (time >= 5.0f)
+		if (time >= 4.5f && fadeOut.GetParent() == null)
 		{
 			FileAccess file = FileAccess.Open("user://nightdata.json", FileAccess.ModeFlags.Write);
-			file.StoreString(nextNight);
+			file.StoreString(nextNight.ResourcePath);
 			file.Close();
-			GetTree().ChangeSceneToFile(nextNight);
+			
+			GetTree().Root.GetChildren()[0].AddChild(fadeOut);
 		}
 	}
 }
