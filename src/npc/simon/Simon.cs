@@ -28,13 +28,14 @@ public partial class Simon : EnemyNPC
 
 	public void GeneratorBroken() {
 		awake = true;
-		GD.Print(Name + " is now awake");
 		sprite.Animation = "standing";
+		GD.Print(Name + " is now awake");
 	}
 
 	public void GeneratorFixed() {
 		awake = false;
 		Transform = initialTransform;
+		sprite.Animation = "sit";
 		GD.Print(Name + " is now asleep");
 	}
 
