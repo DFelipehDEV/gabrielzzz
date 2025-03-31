@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://css8o3q8odige"]
+[gd_scene load_steps=17 format=3 uid="uid://css8o3q8odige"]
 
 [ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://shared/textures/outside/OutsideView.tres" id="1_6qe0k"]
+[ext_resource type="Script" uid="uid://dduyldn3p66ej" path="res://shared/systems/NightTimeSystem.cs" id="1_pk7d2"]
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="2_pk7d2"]
 [ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://rooms/office/Office.tscn" id="3_14pbo"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://rooms/ric_bedroom/RicBedroom.tscn" id="4_5lllr"]
@@ -34,6 +35,10 @@ material = ExtResource("1_6qe0k")
 size = Vector2(19, 10)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="NightTimeSystem" type="Node" parent="."]
+script = ExtResource("1_pk7d2")
+metadata/_custom_type_script = "uid://dduyldn3p66ej"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bjlio")

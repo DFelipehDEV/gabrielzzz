@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 public partial class Phone : Node3D
@@ -22,11 +21,8 @@ public partial class Phone : Node3D
 	public Energy Energy { get; private set; }
 
 	private bool flash;
-	private double time = 0;
 	private Vector3 normalPhonePosition;
-	private bool nightEnded = false;
 	private Material offMaterial, onMaterial;
-
 
 	public enum Animations
 	{
@@ -36,10 +32,6 @@ public partial class Phone : Node3D
 	}
 
 	private Animations animation;
-
-	public static readonly float HOUR_LENGTH = 1.2f * 60.0f; // Takes 72 seconds to go from 00:00 to 01:00
-	public static readonly uint NIGHT_LENGTH = 6;
-
 	public Animations Animation
 	{
 		get => animation;
@@ -86,18 +78,13 @@ public partial class Phone : Node3D
 		// Store the original material and load the alternate material.
 		offMaterial = FlashIcon.Material;
 		onMaterial = (Material)GD.Load("res://player/phone/ui/FlashlightOnIcon.tres");
+
+		NightTimeSystem nightTimeSystem = GetTree().CurrentScene.GetNode<NightTimeSystem>("NightTimeSystem");
+		nightTimeSystem.HourChanged += OnHourChanged;
 	}
 
-	public override void _Process(double delta)
+	private void OnHourChanged(int hour)
 	{
-		time += (delta / HOUR_LENGTH);
-		int hour = ((int)time);
 		TimeLabel.Text = $"{hour:D2}:00";
-		if (hour == 6 && !nightEnded)
-		{
-			nightEnded = true;
-			var nightendScene = ResourceLoader.Load<PackedScene>("res://night_end/NightEnd.tscn").Instantiate();
-			GetTree().Root.AddChild(nightendScene);
-		}
 	}
 }
