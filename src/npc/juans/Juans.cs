@@ -19,7 +19,7 @@ public partial class Juans : EnemyNPC
 		officeSound = GetNode<AudioStreamPlayer3D>("OfficeSound");
 		flashLight = GetTree().Root.GetNode<Light3D>("Node3D/Player/Root/Phone/Flash");
 	}
-	public override void MovedToNewPosition(Node3D position) {
+	public override void OnMovedToNewPosition(Node3D position) {
 		if (position.IsInGroup("garage"))
 		{
 			// Break generator

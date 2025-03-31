@@ -39,8 +39,8 @@ public partial class Simon : EnemyNPC
 		GD.Print(Name + " is now asleep");
 	}
 
-	public override void MovedToNewPosition(Node3D position)
+	public override void OnMovedToNewPosition(Node3D position)
 	{
-		base.MovedToNewPosition(position);
+		base.OnMovedToNewPosition(position);
 	}
 }

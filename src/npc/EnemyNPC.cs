@@ -78,9 +78,9 @@ public partial class EnemyNPC : Node3D
 		{
 			currentPosition = nextPosition;
 			Transform = currentPosition.GlobalTransform;
-			MovedToNewPosition(currentPosition);
+			OnMovedToNewPosition(currentPosition);
 		}
 	}
 
-	public virtual void MovedToNewPosition(Node3D position) { }
+	public virtual void OnMovedToNewPosition(Node3D position) { }
 }
