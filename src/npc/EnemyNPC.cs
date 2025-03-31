@@ -7,6 +7,7 @@ public partial class EnemyNPC : Node3D
 {
 	[Export]
 	private string positionGroup;
+	
 	private Godot.Collections.Array<Node3D> positions;
 	private Node3D currentPosition;
 	private Node3D nextPosition;
@@ -25,8 +26,6 @@ public partial class EnemyNPC : Node3D
 	private AudioStreamPlayer3D walkSound;
 
 	private Random random = new Random();
-
-
 
 	public override void _Ready()
 	{
@@ -76,7 +75,4 @@ public partial class EnemyNPC : Node3D
 	}
 
 	public virtual void MovedToNewPosition(Node3D position) {}
-
-	
-
 }
