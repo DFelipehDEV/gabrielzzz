@@ -3,9 +3,20 @@ using System.Linq;
 
 public partial class Player : Node3D
 {
+	[Export]
 	private PlayerCamera cam;
-	public Phone phone;
-	public AnimationPlayer animationPlayer;
+
+	[Export]
+	private Phone phone;
+	public Phone Phone {
+		get => phone;
+	}
+
+	[Export]
+	private AnimationPlayer animationPlayer;
+	public AnimationPlayer AnimationPlayer {
+		get => animationPlayer;
+	}
 
 	private float rotationSpeed = 2.5f;
 	private Vector2 targetRotation;
@@ -36,17 +47,14 @@ public partial class Player : Node3D
 	private Godot.Collections.Array<RoomCamera> cameras;
 
 	private Interactable focusedInteractable;
-	public Interactable FocusedInteractable {
+	public Interactable FocusedInteractable
+	{
 		get => focusedInteractable;
 	}
 	private bool isMousePressed = false;
 
 	public override void _Ready()
 	{
-		cam = GetNode<PlayerCamera>("Root/Camera");
-		phone = GetNode<Phone>("Root/Phone");
-		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-
 		var camerasGroup = GetTree().GetNodesInGroup("cameras").Select(x => (RoomCamera)x).ToArray();
 		cameras = new Godot.Collections.Array<RoomCamera>(camerasGroup);
 	}

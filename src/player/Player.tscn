@@ -125,8 +125,11 @@ shader_parameter/amount = 0.02
 shader = ExtResource("12_fhg7u")
 shader_parameter/posterization_levels = 37
 
-[node name="Player" type="Node3D" groups=["player"]]
+[node name="Player" type="Node3D" node_paths=PackedStringArray("cam", "phone", "animationPlayer") groups=["player"]]
 script = ExtResource("1_tfayh")
+cam = NodePath("Root/Camera")
+phone = NodePath("Root/Phone")
+animationPlayer = NodePath("AnimationPlayer")
 
 [node name="LOS" type="RayCast3D" parent="."]
 transform = Transform3D(8.45148, -0.259744, -0.651916, -8.29047, -0.178064, -0.692755, 0.75753, 0.949119, -0.308376, 0, 0.0381517, 0)

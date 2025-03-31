@@ -20,7 +20,7 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	private int hour = 1;
 	private double time = 0.0;
 
-	public bool IsInteractable => player.animationPlayer.AssignedAnimation == "RecordTape";
+	public bool IsInteractable => player.AnimationPlayer.AssignedAnimation == "RecordTape";
 
 	private EnemyNPC[] enemies;
 
@@ -106,10 +106,10 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 					{
 						if (Input.IsActionJustPressed("toggle_flash")) {
 							if (player.State != Player.States.RECORD) {
-								player.animationPlayer.Play("RecordTape");
+								player.AnimationPlayer.Play("RecordTape");
 								player.State = Player.States.RECORD;
 							} else {
-								player.animationPlayer.PlayBackwards("RecordTape");
+								player.AnimationPlayer.PlayBackwards("RecordTape");
 								player.State = Player.States.NORMAL;
 							}
 						}
