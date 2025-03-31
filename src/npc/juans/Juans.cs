@@ -3,9 +3,10 @@ using System;
 
 public partial class Juans : EnemyNPC
 {
-	public AudioStreamPlayer3D faucetSound, flashedSound, officeSound;
-	public Light3D flashLight;
-	public bool flashed = false;
+	[Export]
+	private AudioStreamPlayer3D faucetSound, flashedSound, officeSound;
+
+	private Light3D flashLight;
 
 	private Generator generator;
 
@@ -14,16 +15,14 @@ public partial class Juans : EnemyNPC
 		base._Ready();
 		generator = (Generator)GetTree().GetFirstNodeInGroup("generator");
 
-		faucetSound = GetNode<AudioStreamPlayer3D>("KitchenFaucet");
-		flashedSound = GetNode<AudioStreamPlayer3D>("FlashedSound");
-		officeSound = GetNode<AudioStreamPlayer3D>("OfficeSound");
 		flashLight = GetTree().Root.GetNode<Light3D>("Node3D/Player/Root/Phone/Flash");
 	}
-	public override void OnMovedToNewPosition(Node3D position) {
+	public override void OnMovedToNewPosition(Node3D position)
+	{
 		if (position.IsInGroup("garage"))
 		{
 			// Break generator
-			if (generator != null && !generator.Broken) 
+			if (generator != null && !generator.Broken)
 			{
 				// 1 in 3 chance to break the generator
 				Random random = new Random();
@@ -37,14 +36,19 @@ public partial class Juans : EnemyNPC
 			}
 		}
 
-		if (position.IsInGroup("kitchen")) {
+		if (position.IsInGroup("kitchen"))
+		{
 			faucetSound.Play();
 		}
 
-		if (position.IsInGroup("office")) {
-			if (flashLight.Visible) {
+		if (position.IsInGroup("office"))
+		{
+			if (flashLight.Visible)
+			{
 				flashedSound.Play();
-			} else {
+			}
+			else
+			{
 				officeSound.Play();
 			}
 		}

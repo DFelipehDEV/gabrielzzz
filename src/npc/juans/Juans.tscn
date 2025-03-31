@@ -10,8 +10,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_a4d0e"]
 size = Vector3(0.518616, 1.77881, 0.537964)
 
-[node name="Juans" type="Node3D"]
+[node name="Juans" type="Node3D" node_paths=PackedStringArray("faucetSound", "flashedSound", "officeSound")]
 script = ExtResource("1_a4d0e")
+faucetSound = NodePath("KitchenFaucet")
+flashedSound = NodePath("FlashedSound")
+officeSound = NodePath("OfficeSound")
 positionGroup = "juans_pos"
 metadata/_custom_type_script = "uid://vaaxho6oml81"
 
