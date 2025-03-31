@@ -1,23 +1,24 @@
 using Godot;
+
 [GlobalClass]
 public partial class NightEnd : Control
 {
-	[Export]
 	private PackedScene nextNight;
-	public PackedScene NextNight {
+	public PackedScene NextNight
+	{
 		get => nextNight;
 		set => nextNight = value;
 	}
 
 	private float time = 0;
+	
+	[Export]
 	private Label timeLabel;
 
 	private Fade fadeOut;
-	
+
 	public override void _Ready()
 	{
-		timeLabel = GetNode<Label>("Time");
-
 		fadeOut = new Fade();
 		fadeOut.Initialize(0.3f, nextNight, Colors.Black);
 		fadeOut.Modulate = new Color(1.0f, 1.0f, 1.0f, 0.0f);

@@ -24,7 +24,7 @@ public partial class NightTimeSystem : Node
 
 	private bool nightEnded = false;
 
-	public static readonly float HOUR_LENGTH = 1.2f * 60.0f; // Takes 72 seconds to go from 00:00 to 01:00
+	public static readonly float HOUR_LENGTH = 70.0f;
 	public static readonly uint NIGHT_LENGTH = 6;
 
 	public override void _Process(double delta)
@@ -43,12 +43,18 @@ public partial class NightTimeSystem : Node
 			{
 				nightEnded = true;
 				EmitSignal(SignalName.NightEnded);
-				NightEnd nightEndNode = nightEndScene.Instantiate() as NightEnd;
-				if (nightEndNode != null) 
+				
+				Node currentScene = GetTree().CurrentScene;
+				var nightEndInstance = nightEndScene.Instantiate();
+				if (nightEndInstance is NightEnd nightEnd)
 				{
-					nightEndNode.NextNight = nextNightScene;
-					GetTree().Root.AddChild(nightEndNode);
+					nightEnd.NextNight = nextNightScene;
 				}
+
+				GetTree().Root.AddChild(nightEndInstance);
+				GetTree().CurrentScene = nightEndInstance;
+				
+				currentScene?.QueueFree();
 			}
 		}
 
