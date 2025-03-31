@@ -36,6 +36,9 @@ public partial class Player : Node3D
 	private Godot.Collections.Array<RoomCamera> cameras;
 
 	private Interactable focusedInteractable;
+	public Interactable FocusedInteractable {
+		get => focusedInteractable;
+	}
 	private bool isMousePressed = false;
 
 	public override void _Ready()

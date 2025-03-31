@@ -14,6 +14,10 @@ public partial class EnemyNPC : Node3D
 	
 	[Export]
 	private double timeToMove = 40.0;
+	public double TimeToMove {
+		get => timeToMove;
+		set => timeToMove = value;
+	}
 
 	private double timeUntilNextPosition = 40.0;
 	

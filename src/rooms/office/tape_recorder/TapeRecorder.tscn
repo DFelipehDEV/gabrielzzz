@@ -11,10 +11,9 @@ size = Vector3(0.190319, 0.0588379, 0.152588)
 [sub_resource type="ViewportTexture" id="ViewportTexture_pmadk"]
 viewport_path = NodePath("RecordUI/SubViewport")
 
-[node name="TapeRecorder" type="StaticBody3D" node_paths=PackedStringArray("progressBar", "recordButton")]
+[node name="TapeRecorder" type="StaticBody3D" node_paths=PackedStringArray("progressBar")]
 script = ExtResource("1_85lrj")
 progressBar = NodePath("RecordUI/SubViewport/ProgressBar")
-recordButton = NodePath("")
 
 [node name="Model" parent="." instance=ExtResource("1_foepx")]
 
