@@ -7,21 +7,22 @@ public partial class EnemyNPC : Node3D
 {
 	[Export]
 	private string positionGroup;
-	
+
 	private Godot.Collections.Array<Node3D> positions;
 	private Node3D currentPosition;
 	private Node3D nextPosition;
 	private int currentPositionIndex = 0;
-	
+
 	[Export]
 	private double timeToMove = 40.0;
-	public double TimeToMove {
+	public double TimeToMove
+	{
 		get => timeToMove;
 		set => timeToMove = value;
 	}
 
 	private double timeUntilNextPosition = 40.0;
-	
+
 	[Export]
 	private AudioStreamPlayer3D walkSound;
 
@@ -31,17 +32,22 @@ public partial class EnemyNPC : Node3D
 	{
 		base._Ready();
 		timeUntilNextPosition = timeToMove;
-		if (positionGroup != "") {
-			var positionsGroup = GetTree().GetNodesInGroup(positionGroup).Select(x => (Node3D)x).ToArray();
+		if (!string.IsNullOrEmpty(positionGroup))
+		{
+			var positionsGroup = GetTree().GetNodesInGroup(positionGroup)
+									.Select(x => (Node3D)x)
+									.ToArray();
 			positions = new Godot.Collections.Array<Node3D>(positionsGroup);
-		} else {
+		}
+		else
+		{
 			GD.PrintErr("Missing field 'positionGroup'");
 		}
 	}
 
 	public override void _Process(double delta)
 	{
-		timeUntilNextPosition -= 1.0 * delta;
+		timeUntilNextPosition -= delta;
 
 		if (timeUntilNextPosition <= 0)
 		{
@@ -55,7 +61,8 @@ public partial class EnemyNPC : Node3D
 	private void SelectNextPosition()
 	{
 		int randomIndex = random.Next(0, positions.Count);
-		while (randomIndex == currentPositionIndex) {
+		while (randomIndex == currentPositionIndex)
+		{
 			randomIndex = random.Next(0, positions.Count);
 		}
 		nextPosition = positions[randomIndex];
@@ -74,5 +81,5 @@ public partial class EnemyNPC : Node3D
 		}
 	}
 
-	public virtual void MovedToNewPosition(Node3D position) {}
+	public virtual void MovedToNewPosition(Node3D position) { }
 }
