@@ -4,15 +4,15 @@ using Godot;
 public partial class Fade : ColorRect
 {
 	[Export]
-	public float Speed = 0.15f;
+	public float speed = 0.15f;
 	
 	[Export]
-	public string NextScene = "";
+	public PackedScene nextScene;
 
 	// why doesnt godot like constructors :(
-	public void Initialize(float speed, string nextScene, Color color) {
-		Speed = speed;
-		NextScene = nextScene;
+	public void Initialize(float speed, PackedScene nextScene, Color color) {
+		this.speed = speed;
+		this.nextScene = nextScene;
 		Color = color;
 	}
 
@@ -26,20 +26,20 @@ public partial class Fade : ColorRect
 	public override void _Process(double delta)
 	{
 		Color modulate = Modulate;
-		modulate.A += Speed * (float)delta;
+		modulate.A += speed * (float)delta;
 		Modulate = modulate;
 		GD.Print(Modulate.A);
 
 		// Is fade complete
 		if (modulate.A > 1.0f || modulate.A < 0.0f)
 		{
-			if (NextScene == "")
+			if (nextScene == null)
 			{
 				QueueFree();
 			}
 			else
 			{
-				GetTree().ChangeSceneToFile(NextScene);
+				GetTree().ChangeSceneToPacked(nextScene);
 			}
 		}
 	}

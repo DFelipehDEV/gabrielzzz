@@ -16,7 +16,7 @@ public partial class NightStart : Control
 	{
 		base._Ready();
 		fadeOut = new Fade();
-		fadeOut.Initialize(0.3f, nextNight.ResourcePath, Colors.Black);
+		fadeOut.Initialize(0.3f, nextNight, Colors.Black);
 		fadeOut.Modulate = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 	}
 

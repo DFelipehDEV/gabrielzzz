@@ -2,6 +2,9 @@ using Godot;
 
 public partial class NewGame : Button
 {
+	[Export]
+	private PackedScene nextScene;
+	
 	public override void _Ready()
 	{
 		Pressed += NewNight;
@@ -13,7 +16,7 @@ public partial class NewGame : Button
 		file.StoreString("res://Night1.tscn");
 		file.Close();
 		Fade fadeOut = new Fade();
-		fadeOut.Initialize(0.3f, "res://night_start/NightStart.tscn", Colors.Black);
+		fadeOut.Initialize(0.3f, nextScene, Colors.Black);
 		fadeOut.Modulate = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 		GetTree().Root.GetChildren()[0].AddChild(fadeOut);
 	}
