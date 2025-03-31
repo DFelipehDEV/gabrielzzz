@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=21 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
 [ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://rooms/office/Office.tscn" id="6_0w350"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ddy4jc2rrsaw4" path="res://rooms/hallway/Hallway2.tscn" id="15_yvrbt"]
 [ext_resource type="Script" uid="uid://xac6h5x37ums" path="res://transitions/Fade.cs" id="16_yvrbt"]
 [ext_resource type="Script" uid="uid://dduyldn3p66ej" path="res://shared/systems/NightTimeSystem.cs" id="17_ykn2o"]
+[ext_resource type="AudioStream" uid="uid://drr868kkaf5tl" path="res://rooms/NightAmbience.ogg" id="18_j80jk"]
 [ext_resource type="PackedScene" uid="uid://c0iaxr7trojl6" path="res://rooms/bathroom/bathroom.tscn" id="18_xasnv"]
 [ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://rooms/bathroom/bathroom2.tscn" id="19_okl6x"]
 [ext_resource type="PackedScene" uid="uid://dmjkd7r4hovsr" path="res://npc/richard/Richard.tscn" id="23_6cb46"]
@@ -98,3 +99,9 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("16_yvrbt")
 speed = -0.35
 metadata/_custom_type_script = "uid://xac6h5x37ums"
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_j80jk")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true

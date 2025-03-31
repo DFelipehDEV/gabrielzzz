@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://css8o3q8odige"]
+[gd_scene load_steps=18 format=3 uid="uid://css8o3q8odige"]
 
 [ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://shared/textures/outside/OutsideView.tres" id="1_6qe0k"]
 [ext_resource type="Script" uid="uid://dduyldn3p66ej" path="res://shared/systems/NightTimeSystem.cs" id="1_pk7d2"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://djoa8doagvvmr" path="res://npc/vitel/Vitel.tscn" id="11_uniw0"]
 [ext_resource type="PackedScene" uid="uid://4i3hsxwvngn7" path="res://npc/simon/Simon.tscn" id="12_4sf6r"]
 [ext_resource type="PackedScene" uid="uid://ctne8xcpx4ycl" path="res://npc/juans/Juans.tscn" id="13_5sxak"]
+[ext_resource type="AudioStream" uid="uid://drr868kkaf5tl" path="res://rooms/NightAmbience.ogg" id="15_14pbo"]
 
 [sub_resource type="Environment" id="Environment_bjlio"]
 background_mode = 1
@@ -83,3 +84,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2059, 1.10052, -96.0635)
 
 [node name="Juans" parent="." instance=ExtResource("13_5sxak")]
 transform = Transform3D(-0.621982, 0, -0.783032, 0, 1, 0, 0.783032, 0, -0.621982, 16.5233, 1.78506, -69.2824)
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_14pbo")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
