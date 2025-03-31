@@ -1,0 +1,111 @@
+[gd_scene load_steps=23 format=3 uid="uid://d1o4lkpnxtmdh"]
+
+[ext_resource type="Script" uid="uid://dduyldn3p66ej" path="res://shared/systems/NightTimeSystem.cs" id="1_lv2c6"]
+[ext_resource type="PackedScene" uid="uid://ya5n4wjl52ap" path="res://night_end/NightEnd.tscn" id="2_v3ssd"]
+[ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://shared/textures/outside/OutsideView.tres" id="3_mve05"]
+[ext_resource type="PackedScene" uid="uid://6a6jxrmr7a5s" path="res://nights/Night2.tscn" id="3_v3ssd"]
+[ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="4_dun6g"]
+[ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://rooms/office/Office.tscn" id="5_lllae"]
+[ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://rooms/ric_bedroom/RicBedroom.tscn" id="6_wxo0h"]
+[ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://rooms/simon_bedroom/SimonBedroom.tscn" id="7_qoy85"]
+[ext_resource type="PackedScene" uid="uid://c0iaxr7trojl6" path="res://rooms/bathroom/bathroom.tscn" id="8_ygiq5"]
+[ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://rooms/bathroom/bathroom2.tscn" id="9_n2sui"]
+[ext_resource type="PackedScene" uid="uid://cplcqpabsaj8i" path="res://rooms/garage/garage.tscn" id="10_arxed"]
+[ext_resource type="PackedScene" uid="uid://31378kkvbbck" path="res://rooms/kitchen/Kitchen.tscn" id="11_2o57k"]
+[ext_resource type="PackedScene" uid="uid://dmjkd7r4hovsr" path="res://npc/richard/Richard.tscn" id="12_p4mxo"]
+[ext_resource type="PackedScene" uid="uid://djoa8doagvvmr" path="res://npc/vitel/Vitel.tscn" id="13_5kcb5"]
+[ext_resource type="PackedScene" uid="uid://4i3hsxwvngn7" path="res://npc/simon/Simon.tscn" id="14_gpefg"]
+[ext_resource type="PackedScene" uid="uid://ctne8xcpx4ycl" path="res://npc/juans/Juans.tscn" id="15_jn2yw"]
+[ext_resource type="Script" uid="uid://xac6h5x37ums" path="res://transitions/Fade.cs" id="16_5wkro"]
+[ext_resource type="AudioStream" uid="uid://drr868kkaf5tl" path="res://rooms/NightAmbience.ogg" id="17_csxxl"]
+[ext_resource type="PackedScene" uid="uid://ja2qq53m56k3" path="res://rooms/hallway/Hallway.tscn" id="18_eucfq"]
+[ext_resource type="PackedScene" uid="uid://ddy4jc2rrsaw4" path="res://rooms/hallway/Hallway2.tscn" id="19_2rm8u"]
+
+[sub_resource type="Environment" id="Environment_sq266"]
+background_mode = 1
+background_color = Color(0.0210681, 0.0365151, 0.0495568, 1)
+ambient_light_color = Color(0.0210681, 0.0365151, 0.0495568, 1)
+tonemap_mode = 3
+tonemap_exposure = 0.3
+tonemap_white = 3.0
+ssao_enabled = true
+ssil_sharpness = 1.0
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.1407
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+adjustment_enabled = true
+adjustment_saturation = 1.2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6ubmt"]
+material = ExtResource("3_mve05")
+size = Vector2(19, 10)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="NightTimeSystem" type="Node" parent="."]
+script = ExtResource("1_lv2c6")
+nightEndScene = ExtResource("2_v3ssd")
+nextNightScene = ExtResource("3_v3ssd")
+metadata/_custom_type_script = "uid://dduyldn3p66ej"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sq266")
+
+[node name="Stadium" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 5.34246e-12, -0.000122221, 0.000122221, 4.37114e-08, -1, 0, -1, -4.37114e-08, 0.175, 15.3916, 23.177)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_6ubmt")
+
+[node name="Player" parent="." instance=ExtResource("4_dun6g")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 12.823, 2.7)
+
+[node name="Office" parent="." instance=ExtResource("5_lllae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12261, 3.82152, 3.50751)
+
+[node name="RichardBedroom" parent="." instance=ExtResource("6_wxo0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3495, 0, -91.6754)
+
+[node name="SimonBedroom" parent="." instance=ExtResource("7_qoy85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1843, 0, -92.6383)
+
+[node name="Bathrooms" parent="." instance=ExtResource("8_ygiq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8691, -0.0159672, -53.2568)
+
+[node name="Bathrooms2" parent="." instance=ExtResource("9_n2sui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5289, -0.0159672, -70.2663)
+
+[node name="Garage" parent="." instance=ExtResource("10_arxed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5992, 0, -68.3832)
+
+[node name="Kitchen" parent="." instance=ExtResource("11_2o57k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2424, 0.0112858, -51.9179)
+
+[node name="Richard" parent="." groups=["enemy"] instance=ExtResource("12_p4mxo")]
+transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 15.9192, 0.977882, -90.8911)
+
+[node name="Vitel" parent="." groups=["enemy"] instance=ExtResource("13_5kcb5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5496, 1.07074, -69.109)
+
+[node name="Simon" parent="." groups=["enemy"] instance=ExtResource("14_gpefg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2059, 1.10052, -96.0635)
+
+[node name="Juans" parent="." groups=["enemy"] instance=ExtResource("15_jn2yw")]
+transform = Transform3D(-0.621982, 0, -0.783032, 0, 1, 0, 0.783032, 0, -0.621982, 16.5233, 1.78506, -69.2824)
+
+[node name="Hallway" parent="." instance=ExtResource("18_eucfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0826, 15.9235, 6.3714)
+
+[node name="Hallway2" parent="." instance=ExtResource("19_2rm8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9514, 15.9235, 6.3714)
+
+[node name="FadeIn" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 1)
+script = ExtResource("16_5wkro")
+speed = -0.35
+metadata/_custom_type_script = "uid://xac6h5x37ums"
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_csxxl")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true

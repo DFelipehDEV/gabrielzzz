@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnvm80rs1mdl3"]
 
 [ext_resource type="Script" uid="uid://bqiextwcaaa7r" path="res://night_start/NightStart.cs" id="1_6jj28"]
-[ext_resource type="PackedScene" uid="uid://d1o4lkpnxtmdh" path="res://Night1.tscn" id="2_mgw75"]
+[ext_resource type="PackedScene" uid="uid://d1o4lkpnxtmdh" path="res://nights/Night1.tscn" id="2_mgw75"]
 [ext_resource type="AudioStream" uid="uid://ddnv65whj2okn" path="res://night_start/NightStart.wav" id="3_g8c55"]
 [ext_resource type="FontFile" uid="uid://brb1emj0k07un" path="res://shared/fonts/Chakra_Petch/ChakraPetch-BoldItalic.ttf" id="3_k6iob"]
 [ext_resource type="Script" uid="uid://xac6h5x37ums" path="res://transitions/Fade.cs" id="5_mgw75"]
