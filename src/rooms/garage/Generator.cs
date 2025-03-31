@@ -7,7 +7,7 @@ public partial class Generator : StaticBody3D, Interactable
 	public delegate void GeneratorBrokenEventHandler();
 
 	[Signal]
-	public delegate void GeneratorFixedEventHandler();
+	public delegate void GeneratorRepairedEventHandler();
 
 	[Export]
 	private GpuParticles3D brokenParticles;
@@ -47,13 +47,13 @@ public partial class Generator : StaticBody3D, Interactable
 		}
 	}
 
-	private bool beingFixed = false;
-	public bool BeingFixed
+	private bool beingRepaired = false;
+	public bool BeingRepaired
 	{
-		get => beingFixed;
-		set => beingFixed = value;
+		get => beingRepaired;
+		set => beingRepaired = value;
 	}
-	private double fixProgress = 0.0;
+	private double repairProgress = 0.0;
 
 	private bool isMouseOverGenerator = false;
 	private bool isMousePressed = false;
@@ -62,12 +62,12 @@ public partial class Generator : StaticBody3D, Interactable
 
 	public void StartInteract()
 	{
-		beingFixed = true;
+		beingRepaired = true;
 	}
 
 	public void StopInteract()
 	{
-		beingFixed = false;
+		beingRepaired = false;
 	}
 
 	public override void _Ready()
@@ -93,18 +93,18 @@ public partial class Generator : StaticBody3D, Interactable
 
 		if (broken)
 		{
-			if (beingFixed)
+			if (beingRepaired)
 			{
-				fixProgress += 10.0 * delta;
+				repairProgress += 10.0 * delta;
 
-				if (fixProgress >= 100.0)
+				if (repairProgress >= 100.0)
 				{
 					Broken = false;
-					fixProgress = 0.0;
-					EmitSignal(SignalName.GeneratorFixed);
+					repairProgress = 0.0;
+					EmitSignal(SignalName.GeneratorRepaired);
 				}
 			}
-			progressBar.Value = fixProgress;
+			progressBar.Value = repairProgress;
 		}
 	}
 

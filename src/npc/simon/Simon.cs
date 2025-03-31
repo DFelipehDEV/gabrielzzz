@@ -16,7 +16,7 @@ public partial class Simon : EnemyNPC
 		base._Ready();
 		generator = (Generator)GetTree().GetFirstNodeInGroup("generator");
 		generator.Connect("GeneratorBroken", Callable.From(GeneratorBroken));
-		generator.Connect("GeneratorFixed", Callable.From(GeneratorFixed));
+		generator.Connect("GeneratorRepaired", Callable.From(GeneratorRepaired));
 		initialTransform = Transform;
 	}
 
@@ -32,7 +32,7 @@ public partial class Simon : EnemyNPC
 		GD.Print(Name + " is now awake");
 	}
 
-	public void GeneratorFixed() {
+	public void GeneratorRepaired() {
 		awake = false;
 		Transform = initialTransform;
 		sprite.Animation = "sit";
