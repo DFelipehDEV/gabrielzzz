@@ -49,5 +49,5 @@ text = "06:00"
 [node name="FadeIn" type="ColorRect" parent="."]
 color = Color(0, 0, 0, 1)
 script = ExtResource("4_nel1b")
-Speed = -0.3
+speed = -0.35
 metadata/_custom_type_script = "uid://xac6h5x37ums"

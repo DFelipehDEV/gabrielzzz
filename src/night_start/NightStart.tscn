@@ -48,8 +48,7 @@ stream = ExtResource("3_g8c55")
 autoplay = true
 
 [node name="FadeIn" type="ColorRect" parent="."]
-layout_mode = 1
 color = Color(0, 0, 0, 1)
 script = ExtResource("5_mgw75")
-Speed = -0.3
+speed = -0.35
 metadata/_custom_type_script = "uid://xac6h5x37ums"
