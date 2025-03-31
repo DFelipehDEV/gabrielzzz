@@ -9,6 +9,12 @@ public partial class NightTimeSystem : Node
 	[Signal]
 	public delegate void HourChangedEventHandler(int hour);
 
+	[Export]
+	private PackedScene nightEndScene;
+
+	[Export]
+	private PackedScene nextNightScene;
+
 	private double time;
 
 	private int hour;
@@ -37,8 +43,12 @@ public partial class NightTimeSystem : Node
 			{
 				nightEnded = true;
 				EmitSignal(SignalName.NightEnded);
-				var nightendScene = ResourceLoader.Load<PackedScene>("res://night_end/NightEnd.tscn").Instantiate();
-				GetTree().Root.AddChild(nightendScene);
+				NightEnd nightEndNode = nightEndScene.Instantiate() as NightEnd;
+				if (nightEndNode != null) 
+				{
+					nightEndNode.NextNight = nextNightScene;
+					GetTree().Root.AddChild(nightEndNode);
+				}
 			}
 		}
 

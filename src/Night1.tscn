@@ -1,6 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=23 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="1_jnati"]
+[ext_resource type="PackedScene" uid="uid://ya5n4wjl52ap" path="res://night_end/NightEnd.tscn" id="2_24cy4"]
+[ext_resource type="PackedScene" uid="uid://css8o3q8odige" path="res://Night2.tscn" id="3_q2tub"]
 [ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://rooms/office/Office.tscn" id="6_0w350"]
 [ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://shared/textures/outside/OutsideView.tres" id="7_xuket"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://rooms/ric_bedroom/RicBedroom.tscn" id="8_o0llk"]
@@ -42,6 +44,8 @@ size = Vector2(19, 10)
 
 [node name="NightTimeSystem" type="Node" parent="."]
 script = ExtResource("17_ykn2o")
+nightEndScene = ExtResource("2_24cy4")
+nextNightScene = ExtResource("3_q2tub")
 metadata/_custom_type_script = "uid://dduyldn3p66ej"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

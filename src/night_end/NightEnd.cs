@@ -4,6 +4,10 @@ public partial class NightEnd : Control
 {
 	[Export]
 	private PackedScene nextNight;
+	public PackedScene NextNight {
+		get => nextNight;
+		set => nextNight = value;
+	}
 
 	private float time = 0;
 	private Label timeLabel;
