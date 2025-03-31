@@ -13,6 +13,9 @@ public partial class Richard : EnemyNPC
 
 	private bool insideOffice = false;
 
+	[Export]
+	private double timeToJumpscare = 8.5;
+
 	private Player player;
 
 	public override void _Ready()
@@ -31,8 +34,8 @@ public partial class Richard : EnemyNPC
 
 		if (insideOffice && player.State != Player.States.Hidden)
 		{
-			timeInOffice += 1.0 * delta;
-			if (timeInOffice > 5.00)
+			timeInOffice += delta;
+			if (timeInOffice > timeToJumpscare)
 			{
 				if (!jumpScare.Visible)
 				{
