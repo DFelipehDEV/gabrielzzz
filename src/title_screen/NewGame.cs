@@ -18,6 +18,6 @@ public partial class NewGame : Button
 		Fade fadeOut = new Fade();
 		fadeOut.Initialize(0.3f, nextScene, Colors.Black);
 		fadeOut.Modulate = new Color(1.0f, 1.0f, 1.0f, 0.0f);
-		GetTree().Root.GetChildren()[0].AddChild(fadeOut);
+		GetTree().CurrentScene.AddChild(fadeOut);
 	}
 }

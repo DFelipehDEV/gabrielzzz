@@ -30,7 +30,7 @@ public partial class NightStart : Control
 			file.StoreString(nextNight.ResourcePath);
 			file.Close();
 			
-			GetTree().Root.GetChildren()[0].AddChild(fadeOut);
+			GetTree().CurrentScene.AddChild(fadeOut);
 		}
 	}
 }

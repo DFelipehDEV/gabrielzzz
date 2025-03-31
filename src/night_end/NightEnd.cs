@@ -28,7 +28,7 @@ public partial class NightEnd : Control
 			FileAccess file = FileAccess.Open("user://nightdata.json", FileAccess.ModeFlags.Write);
 			file.StoreString(nextNight.ResourcePath);
 			file.Close();
-			GetTree().Root.GetChildren()[0].AddChild(fadeOut);
+			GetTree().CurrentScene.AddChild(fadeOut);
 		}
 	}
 }
