@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://dmhe5g6euql60"]
+[gd_scene load_steps=22 format=3 uid="uid://dmhe5g6euql60"]
 
 [ext_resource type="Script" uid="uid://bjijivbohwud2" path="res://player/Player.cs" id="1_tfayh"]
 [ext_resource type="Script" uid="uid://ba5ia4wbr0j2i" path="res://player/phone/Phone.cs" id="2_aepcq"]
+[ext_resource type="Material" uid="uid://6m5jeifwot7o" path="res://player/phone/ui/FlashlightOnIcon.tres" id="3_hbkom"]
 [ext_resource type="PackedScene" uid="uid://clt1sfs0wbkeo" path="res://player/phone/Phone.glb" id="3_jiab2"]
 [ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://player/phone/PhoneTex.tres" id="4_ffrq7"]
 [ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://player/phone/ui/FlashlightIcon.tres" id="5_u8pa4"]
@@ -153,6 +154,7 @@ TimeLabel = NodePath("Time")
 FlashIcon = NodePath("FlashIcon")
 eye = NodePath("../Eye")
 Energy = NodePath("Energy")
+onMaterial = ExtResource("3_hbkom")
 
 [node name="Flash" type="SpotLight3D" parent="Root/Phone"]
 transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0271126, 0.0495281, -0.00421333)

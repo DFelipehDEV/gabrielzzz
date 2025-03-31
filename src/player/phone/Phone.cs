@@ -22,7 +22,10 @@ public partial class Phone : Node3D
 
 	private bool flash;
 	private Vector3 normalPhonePosition;
-	private Material offMaterial, onMaterial;
+	private Material offMaterial;
+
+	[Export]
+	private Material onMaterial;
 
 	public enum Animations
 	{
@@ -77,7 +80,6 @@ public partial class Phone : Node3D
 
 		// Store the original material and load the alternate material.
 		offMaterial = FlashIcon.Material;
-		onMaterial = (Material)GD.Load("res://player/phone/ui/FlashlightOnIcon.tres");
 
 		NightTimeSystem nightTimeSystem = GetTree().CurrentScene.GetNode<NightTimeSystem>("NightTimeSystem");
 		nightTimeSystem.HourChanged += OnHourChanged;
