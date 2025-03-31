@@ -28,7 +28,6 @@ public partial class Fade : ColorRect
 		Color modulate = Modulate;
 		modulate.A += speed * (float)delta;
 		Modulate = modulate;
-		GD.Print(Modulate.A);
 
 		// Is fade complete
 		if (modulate.A > 1.0f || modulate.A < 0.0f)
