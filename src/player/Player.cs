@@ -24,14 +24,14 @@ public partial class Player : Node3D
 
 	public enum States
 	{
-		NORMAL,
-		TOCAMERA,
-		CAMERA,
-		HIDDEN,
-		RECORD,
+		Default,
+		ToCamera,
+		Camera,
+		Hidden,
+		Record,
 	}
 
-	private States state = States.NORMAL;
+	private States state = States.Default;
 	public States State
 	{
 		get => state;
@@ -73,7 +73,7 @@ public partial class Player : Node3D
 
 		switch (state)
 		{
-			case States.NORMAL:
+			case States.Default:
 				if (animationPlayer.CurrentAnimation == "")
 				{
 					targetRotation.X = Mathf.Lerp(targetRotation.X, (-direction.X * 1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * rotationSpeed);
@@ -93,20 +93,20 @@ public partial class Player : Node3D
 					if (animationPlayer.CurrentAnimation != "UnhideUnderTable")
 					{
 						animationPlayer.Play("HideUnderTable");
-						state = States.HIDDEN;
+						state = States.Hidden;
 					}
 				}
 
 				if (Input.IsActionJustPressed("enter_camera"))
 				{
-					State = States.TOCAMERA;
-					phone.Animation = Phone.Animations.OPEN_CAMERA;
+					State = States.ToCamera;
+					phone.Animation = Phone.Animations.OpenCamera;
 				}
 
 				break;
 
 
-			case States.HIDDEN:
+			case States.Hidden:
 				targetRotation.X = Mathf.Lerp(targetRotation.X, Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
 				targetRotation.Y = Mathf.Lerp(targetRotation.Y, Mathf.DegToRad(0), (float)GetProcessDeltaTime() * 2.5f);
 				Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
@@ -115,20 +115,20 @@ public partial class Player : Node3D
 				{
 					animationPlayer.Play("UnhideUnderTable");
 					Rotation = new Vector3(Mathf.DegToRad(0), Mathf.DegToRad(180), Rotation.Z);
-					state = States.NORMAL;
+					state = States.Default;
 				}
 				break;
 
-			case States.TOCAMERA:
+			case States.ToCamera:
 				if (stateTimer > 0.4f)
 				{
 					SwitchCamera(1);
-					State = States.CAMERA;
+					State = States.Camera;
 					ToggleCameraUI(true);
 				}
 				break;
 
-			case States.CAMERA:
+			case States.Camera:
 				// Change to previous camera
 				if (Input.IsActionJustPressed("previous_camera") && focusedInteractable == null)
 				{
@@ -153,8 +153,8 @@ public partial class Player : Node3D
 					{
 						SwitchCamera(0);
 
-						State = States.NORMAL;
-						phone.Animation = Phone.Animations.CLOSE_CAMERA;
+						State = States.Default;
+						phone.Animation = Phone.Animations.CloseCamera;
 						ToggleCameraUI(false);
 					}
 				}
@@ -203,8 +203,8 @@ public partial class Player : Node3D
 				{
 					SwitchCamera(0);
 
-					State = States.NORMAL;
-					phone.Animation = Phone.Animations.CLOSE_CAMERA;
+					State = States.Default;
+					phone.Animation = Phone.Animations.CloseCamera;
 					ToggleCameraUI(false);
 				}
 
@@ -216,7 +216,7 @@ public partial class Player : Node3D
 					}
 				}
 				break;
-			case States.RECORD:
+			case States.Record:
 				targetRotation.X = Mathf.Lerp(targetRotation.X, Mathf.DegToRad(180), (float)GetProcessDeltaTime() * 2.5f);
 				targetRotation.Y = Mathf.Lerp(targetRotation.Y, Mathf.DegToRad(0), (float)GetProcessDeltaTime() * 2.5f);
 				Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
@@ -298,5 +298,4 @@ public partial class Player : Node3D
 		cam.Posterize.Visible = visible;
 		cam.Grain.Visible = visible;
 	}
-
 }

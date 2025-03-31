@@ -30,9 +30,9 @@ public partial class Phone : Node3D
 
 	public enum Animations
 	{
-		DEFAULT,
-		OPEN_CAMERA,
-		CLOSE_CAMERA,
+		Default,
+		OpenCamera,
+		CloseCamera,
 	}
 
 	private Animations animation;
@@ -49,14 +49,14 @@ public partial class Phone : Node3D
 
 			switch (animation)
 			{
-				case Animations.OPEN_CAMERA:
+				case Animations.OpenCamera:
 					Tween toEyePosition = CreateTween().SetTrans(Tween.TransitionType.Quad);
 					toEyePosition.TweenProperty(this, "position", eye.Position, 0.5);
 					Tween toEyeRotation = CreateTween().SetTrans(Tween.TransitionType.Quad);
 					toEyeRotation.TweenProperty(this, "rotation_degrees", new Vector3(0.0f, 0.0f, 90.0f), 0.4);
 					break;
 
-				case Animations.CLOSE_CAMERA:
+				case Animations.CloseCamera:
 					Tween toNormalPosition = CreateTween().SetTrans(Tween.TransitionType.Quad);
 					toNormalPosition.TweenProperty(this, "rotation_degrees", new Vector3(0.0f, 0.0f, 0.0f), 0.5);
 					Tween toNormalRotation = CreateTween().SetTrans(Tween.TransitionType.Quad);

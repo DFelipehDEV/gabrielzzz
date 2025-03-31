@@ -105,12 +105,12 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 					if (player.FocusedInteractable == null)  
 					{
 						if (Input.IsActionJustPressed("toggle_flash")) {
-							if (player.State != Player.States.RECORD) {
+							if (player.State != Player.States.Record) {
 								player.AnimationPlayer.Play("RecordTape");
-								player.State = Player.States.RECORD;
+								player.State = Player.States.Record;
 							} else {
 								player.AnimationPlayer.PlayBackwards("RecordTape");
-								player.State = Player.States.NORMAL;
+								player.State = Player.States.Default;
 							}
 						}
 					}
