@@ -167,6 +167,8 @@ mesh = SubResource("ArrayMesh_ptq5o")
 
 [node name="Nokia" parent="." instance=ExtResource("9_5sm6f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.390406, 0.725374, 1.25922)
+AlarmIncreaseRate = 9.75
+AlarmDecreaseRate = 1.5
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("9_vxoet")]
 transform = Transform3D(-0.334571, 0, -5.66539e-08, 0, 0.261368, 0, 5.05189e-08, 0, -0.375202, 0.183854, 0.113849, 1.44617)
