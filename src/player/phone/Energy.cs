@@ -1,15 +1,25 @@
 using Godot;
-using System;
 
 public partial class Energy : Label3D
 {
-	public double energy = 100.0;
-	public double wasteMultiplier = 1.0;
+    private double currentEnergy = 100.0;
+    private double wasteMultiplier = 1.0;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		energy -= (0.2 * wasteMultiplier) * delta;
-		Text = ((int)energy).ToString();
-	}
+    public double CurrentEnergy
+    {
+        get => currentEnergy;
+        set => currentEnergy = Mathf.Clamp(value, 0, 100);
+    }
+
+    public double WasteMultiplier
+    {
+        get => wasteMultiplier;
+        set => wasteMultiplier = Mathf.Max(value, 0);
+    }
+
+    public override void _Process(double delta)
+    {
+        CurrentEnergy -= 0.2 * WasteMultiplier * delta;
+        Text = ((int)CurrentEnergy).ToString();
+    }
 }

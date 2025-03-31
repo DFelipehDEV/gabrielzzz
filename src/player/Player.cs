@@ -294,9 +294,9 @@ public partial class Player : Node3D
 
 	private void ToggleCameraUI(bool visible)
 	{
-		phone.cameraUI.Visible = visible;
-		cam.posterize.Visible = visible;
-		cam.grain.Visible = visible;
+		phone.CameraUI.Visible = visible;
+		cam.Posterize.Visible = visible;
+		cam.Grain.Visible = visible;
 	}
 
 }
