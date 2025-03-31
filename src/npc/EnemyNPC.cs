@@ -60,14 +60,15 @@ public partial class EnemyNPC : Node3D
 
 	private void SelectNextPosition()
 	{
-		int randomIndex = random.Next(0, positions.Count);
-		while (randomIndex == currentPositionIndex)
-		{
-			randomIndex = random.Next(0, positions.Count);
-		}
+		int randomIndex;
+        do
+        {
+            randomIndex = random.Next(0, positions.Count);
+        } 
+        while (positions.Count > 1 && randomIndex == currentPositionIndex);
+
 		nextPosition = positions[randomIndex];
 		currentPositionIndex = randomIndex;
-
 		timeUntilNextPosition = timeToMove * (0.8 + 0.4 * random.NextDouble());
 	}
 
