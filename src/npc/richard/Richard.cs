@@ -13,10 +13,13 @@ public partial class Richard : EnemyNPC
 
 	private bool insideOffice = false;
 
+	private Player player;
 
 	public override void _Ready()
 	{
 		base._Ready();
+		player = (Player)GetTree().GetFirstNodeInGroup("player");
+
 		GetTree().GetFirstNodeInGroup("nokia").Connect("AlarmFired", Callable.From(AlarmFired));
 		jumpScare.AnimationFinished += JumpScareFinished;
 
@@ -26,7 +29,7 @@ public partial class Richard : EnemyNPC
 		if (awake)
 			base._Process(delta);
 
-		if (insideOffice)
+		if (insideOffice && player.State != Player.States.Hidden)
 		{
 			timeInOffice += 1.0 * delta;
 			if (timeInOffice > 5.00)

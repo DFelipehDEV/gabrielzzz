@@ -11,16 +11,20 @@ public partial class Vitel : EnemyNPC
 	private double timeInOffice = 0.0;
 	private bool insideOffice = false;
 
+	private Player player;
+
 	public override void _Ready()
 	{
 		base._Ready();
+		player = (Player)GetTree().GetFirstNodeInGroup("player");
+
 		jumpScare.AnimationFinished += JumpScareFinished;
 	}
 
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
-		if (insideOffice)
+		if (insideOffice && player.State != Player.States.Hidden)
 		{
 			timeInOffice += 1.0 * delta;
 			if (timeInOffice > 5.00)
