@@ -2,13 +2,13 @@ using Godot;
 
 public partial class Richard : EnemyNPC
 {
-	private bool awake = false;
-
 	[Export]
 	private AnimatedSprite2D jumpScare;
+
 	[Export]
 	private AudioStreamPlayer jumpScareAudio;
-	
+
+	private bool awake = false;
 	private double timeInOffice = 0.0;
 
 	private bool insideOffice = false;
@@ -26,10 +26,13 @@ public partial class Richard : EnemyNPC
 		if (awake)
 			base._Process(delta);
 
-		if (insideOffice) {
+		if (insideOffice)
+		{
 			timeInOffice += 1.0 * delta;
-			if (timeInOffice > 5.00) {
-				if (!jumpScare.Visible) {
+			if (timeInOffice > 5.00)
+			{
+				if (!jumpScare.Visible)
+				{
 					jumpScare.Visible = true;
 					jumpScare.Play("JumpScare");
 					jumpScareAudio.Play();
@@ -38,22 +41,23 @@ public partial class Richard : EnemyNPC
 		}
 	}
 
-	public void AlarmFired() {
+	public void AlarmFired()
+	{
 		awake = true;
 		GD.Print(Name + " is now awake");
 	}
 
-	public override void OnMovedToNewPosition(Node3D position) {
-		if (position.IsInGroup("office")) {
+	public override void OnMovedToNewPosition(Node3D position)
+	{
+		if (position.IsInGroup("office"))
+		{
 			insideOffice = true;
 		}
 	}
 
-	public void JumpScareFinished() {
+	public void JumpScareFinished()
+	{
 		OS.DelayMsec(1000);
 		GetTree().ChangeSceneToFile("res://game_over/GameOver.tscn");
 	}
-
-
-
 }
