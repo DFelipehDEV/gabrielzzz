@@ -26,6 +26,8 @@ public partial class Generator : StaticBody3D, Interactable
 		get => broken;
 		set
 		{
+			if (broken == value) return;
+			
 			broken = value;
 			brokenParticles.Emitting = broken;
 			progressBar.Visible = broken;
