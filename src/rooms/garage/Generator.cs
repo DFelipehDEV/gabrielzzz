@@ -23,11 +23,7 @@ public partial class Generator : StaticBody3D, Interactable
 	private bool broken = false;
 	public bool Broken
 	{
-		get
-		{
-			return broken;
-		}
-
+		get => broken;
 		set
 		{
 			broken = value;
@@ -54,9 +50,6 @@ public partial class Generator : StaticBody3D, Interactable
 		set => beingRepaired = value;
 	}
 	private double repairProgress = 0.0;
-
-	private bool isMouseOverGenerator = false;
-	private bool isMousePressed = false;
 
 	public bool IsInteractable => Broken;
 
