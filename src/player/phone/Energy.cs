@@ -2,6 +2,9 @@ using Godot;
 
 public partial class Energy : Label3D
 {
+	[Export] 
+	public double EnergyDrainRate { get; set; } = 0.2;
+	
     private double currentEnergy = 100.0;
     private double wasteMultiplier = 1.0;
 
@@ -19,7 +22,7 @@ public partial class Energy : Label3D
 
     public override void _Process(double delta)
     {
-        CurrentEnergy -= 0.2 * WasteMultiplier * delta;
+        CurrentEnergy -= EnergyDrainRate * WasteMultiplier * delta;
         Text = ((int)CurrentEnergy).ToString();
     }
 }
