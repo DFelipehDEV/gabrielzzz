@@ -2,14 +2,12 @@ using Godot;
 
 public partial class Simon : EnemyNPC
 {
-	private bool awake = false;
-	private Generator generator;
-	private Transform3D initialTransform;
-
 	[Export] 
 	private AnimatedSprite3D sprite;
 
-	
+	private bool awake = false;
+	private Generator generator;
+	private Transform3D initialTransform;
 
 	public override void _Ready()
 	{
@@ -37,10 +35,5 @@ public partial class Simon : EnemyNPC
 		Transform = initialTransform;
 		sprite.Animation = "sit";
 		GD.Print(Name + " is now asleep");
-	}
-
-	public override void OnMovedToNewPosition(Node3D position)
-	{
-		base.OnMovedToNewPosition(position);
 	}
 }
