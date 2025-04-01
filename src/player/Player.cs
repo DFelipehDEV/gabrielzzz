@@ -8,13 +8,15 @@ public partial class Player : Node3D
 
 	[Export]
 	private Phone phone;
-	public Phone Phone {
+	public Phone Phone
+	{
 		get => phone;
 	}
 
 	[Export]
 	private AnimationPlayer animationPlayer;
-	public AnimationPlayer AnimationPlayer {
+	public AnimationPlayer AnimationPlayer
+	{
 		get => animationPlayer;
 	}
 
@@ -63,7 +65,7 @@ public partial class Player : Node3D
 	{
 		if (focusedInteractable != null)
 		{
-			bool shouldInteract = isMousePressed && focusedInteractable.IsInteractable;
+			bool shouldInteract = Input.IsActionPressed("toggle_flash") && focusedInteractable.IsInteractable;
 
 			if (shouldInteract)
 				focusedInteractable.StartInteract();
@@ -268,6 +270,12 @@ public partial class Player : Node3D
 		if (result.Count > 0 && result["collider"].AsGodotObject() is Interactable interactable)
 		{
 			focusedInteractable = interactable;
+		}
+
+		// Stop previous interaction if focused interactable changed
+		if (focusedInteractable != previousFocused)
+		{
+			previousFocused.StopInteract();
 		}
 
 		if (previousFocused != null) previousFocused.Unhighlight();
