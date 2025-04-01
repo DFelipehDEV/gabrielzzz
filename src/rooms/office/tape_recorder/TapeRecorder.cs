@@ -18,7 +18,7 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 
 	private NightTimeSystem nightTimeSystem;
 
-	public bool IsInteractable => player.AnimationPlayer.AssignedAnimation == "RecordTape";
+	public bool IsInteractable => player.State == Player.States.Record;
 
 	private EnemyNPC[] enemies;
 
@@ -99,16 +99,15 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 								player.AnimationPlayer.Play("RecordTape");
 								player.State = Player.States.Record;
 							}
-							else
-							{
-								player.AnimationPlayer.PlayBackwards("RecordTape");
-								player.State = Player.States.Default;
-							}
 						}
 					}
 				}
 			}
-
+			else if (player.State == Player.States.Record)
+			{
+				player.AnimationPlayer.PlayBackwards("RecordTape");
+				player.State = Player.States.Default;
+			}
 		}
 	}
 	private void OnHourChanged(int hour)
