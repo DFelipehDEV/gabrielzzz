@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bqa6koxf6hkc4" path="res://shared/circular_meter/progress-bar-circle.png" id="3_85lrj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_foepx"]
-size = Vector3(0.190319, 0.0588379, 0.152588)
+size = Vector3(0.23432, 0.0742188, 0.152588)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_pmadk"]
 viewport_path = NodePath("RecordUI/SubViewport")
@@ -18,7 +18,7 @@ progressBar = NodePath("RecordUI/SubViewport/ProgressBar")
 [node name="Model" parent="." instance=ExtResource("1_foepx")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0240116, 0.00720219, 0.00744632)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00201127, 0.0148926, 0.00744632)
 shape = SubResource("BoxShape3D_foepx")
 
 [node name="RecordUI" type="Sprite3D" parent="."]

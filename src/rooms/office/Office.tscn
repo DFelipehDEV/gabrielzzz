@@ -160,7 +160,7 @@ transform = Transform3D(0.000204756, 0, 0.043451, 0, 0.07, 0, -0.0699992, 0, 0.0
 transform = Transform3D(-0.133332, 0, -0.000546856, 0, 0.133333, 0, 0.000546855, 0, -0.133332, 0.0583372, -0.0787544, -0.0401545)
 
 [node name="Radio" type="StaticBody3D" parent="Table"]
-transform = Transform3D(-0.620743, 0, -8.74223e-08, 0, 1, 0, 5.42671e-08, 0, -0.999994, 0.211812, 0.824244, 0.202632)
+transform = Transform3D(-0.620743, 0, -8.74223e-08, 0, 1, 0, 5.42671e-08, 0, -0.999994, 0.358177, 0.824244, 0.202632)
 script = ExtResource("10_nmgbb")
 
 [node name="Sketchfab_Scene" parent="Table/Radio" instance=ExtResource("11_c46c4")]

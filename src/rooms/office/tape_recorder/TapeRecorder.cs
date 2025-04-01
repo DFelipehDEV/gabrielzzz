@@ -36,30 +36,34 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	{
 		base._Ready();
 		player = (Player)GetTree().GetFirstNodeInGroup("player");
-		enemies = GetTree().GetNodesInGroup("enemy").Select(x  => (EnemyNPC)x).ToArray();
+		enemies = GetTree().GetNodesInGroup("enemy").Select(x => (EnemyNPC)x).ToArray();
 		nightTimeSystem = GetTree().CurrentScene.GetNode<NightTimeSystem>("NightTimeSystem");
 		nightTimeSystem.HourChanged += OnHourChanged;
 	}
-	
+
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
 		if (recordingFailed) return;
-		
 
-		if (!recorded) {
-			if (recording) {
+		if (!recorded)
+		{
+			if (recording)
+			{
 				recordingProgress += 5.0f * delta;
 
-				if (recordingProgress >= 100.0) {
+				if (recordingProgress >= 100.0)
+				{
 					recorded = true;
 					recordingProgress = 0.0;
 				}
-			} else {
+			}
+			else
+			{
 				recordingProgress -= 1.5f * delta;
 			}
 		}
-		
+
 		progressBar.Value = recordingProgress;
 	}
 
@@ -78,19 +82,25 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 				To = to,
 				CollisionMask = 1
 			});
-			
+
 			if (result.Count > 0)
 			{
 				var collider = result["collider"].AsGodotObject();
-				
-				if (collider == this) {
-					if (player.FocusedInteractable == null)  
+
+				if (collider == this)
+				{
+					if (!IsInteractable)
 					{
-						if (Input.IsActionJustPressed("toggle_flash")) {
-							if (player.State != Player.States.Record) {
+						if (Input.IsActionJustPressed("toggle_flash"))
+						{
+							GD.Print("clicked");
+							if (player.State != Player.States.Record)
+							{
 								player.AnimationPlayer.Play("RecordTape");
 								player.State = Player.States.Record;
-							} else {
+							}
+							else
+							{
 								player.AnimationPlayer.PlayBackwards("RecordTape");
 								player.State = Player.States.Default;
 							}
@@ -106,7 +116,8 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 		if (!recorded && !recordingFailed)
 		{
 			recordingFailed = true;
-			foreach (EnemyNPC enemy in enemies) {
+			foreach (EnemyNPC enemy in enemies)
+			{
 				enemy.TimeToMove -= 5;
 				GD.Print(enemy.Name + " now takes " + enemy.TimeToMove + " seconds to move");
 			}
