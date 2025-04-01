@@ -20,6 +20,9 @@ public partial class Player : Node3D
 		get => animationPlayer;
 	}
 
+	[Export]
+	private AudioStreamPlayer3D flashlightClickSound;
+
 	private float rotationSpeed = 2.5f;
 	private Vector2 targetRotation;
 	private Vector2 direction;
@@ -87,6 +90,7 @@ public partial class Player : Node3D
 				if (Input.IsActionJustPressed("toggle_flash"))
 				{
 					phone.Flash = !phone.Flash;
+					flashlightClickSound.Play();
 				}
 
 				// Hide

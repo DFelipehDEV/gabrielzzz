@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmhe5g6euql60"]
+[gd_scene load_steps=23 format=3 uid="uid://dmhe5g6euql60"]
 
 [ext_resource type="Script" uid="uid://bjijivbohwud2" path="res://player/Player.cs" id="1_tfayh"]
 [ext_resource type="Script" uid="uid://ba5ia4wbr0j2i" path="res://player/phone/Phone.cs" id="2_aepcq"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bfbrtjtc0usvw" path="res://player/phone/PhoneCamera.png" id="8_3mkx0"]
 [ext_resource type="Texture2D" uid="uid://bj3eakylas5lg" path="res://player/phone/PhoneCameraBottom.png" id="9_pftie"]
 [ext_resource type="Script" uid="uid://b2j13qrivippj" path="res://player/PlayerCamera.cs" id="10_agyb6"]
+[ext_resource type="AudioStream" uid="uid://byiq2187kyekm" path="res://player/phone/FlashlightClick.wav" id="10_d4g0h"]
 [ext_resource type="Shader" uid="uid://c6r275qs72yan" path="res://shared/shaders/SimpleGrain.gdshader" id="11_k8vgv"]
 [ext_resource type="Shader" uid="uid://bb1d414vgcd0y" path="res://shared/shaders/Posterize.gdshader" id="12_fhg7u"]
 [ext_resource type="Script" uid="uid://citp8j7mpniah" path="res://FpsCounter.cs" id="13_103y7"]
@@ -126,11 +127,12 @@ shader_parameter/amount = 0.02
 shader = ExtResource("12_fhg7u")
 shader_parameter/posterization_levels = 37
 
-[node name="Player" type="Node3D" node_paths=PackedStringArray("cam", "phone", "animationPlayer") groups=["player"]]
+[node name="Player" type="Node3D" node_paths=PackedStringArray("cam", "phone", "animationPlayer", "flashlightClickSound") groups=["player"]]
 script = ExtResource("1_tfayh")
 cam = NodePath("Root/Camera")
 phone = NodePath("Root/Phone")
 animationPlayer = NodePath("AnimationPlayer")
+flashlightClickSound = NodePath("Root/Phone/FlashlightClick")
 
 [node name="LOS" type="RayCast3D" parent="."]
 transform = Transform3D(8.45148, -0.259744, -0.651916, -8.29047, -0.178064, -0.692755, 0.75753, 0.949119, -0.308376, 0, 0.0381517, 0)
@@ -266,6 +268,9 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
 color = Color(0, 0, 0, 1)
+
+[node name="FlashlightClick" type="AudioStreamPlayer3D" parent="Root/Phone"]
+stream = ExtResource("10_d4g0h")
 
 [node name="Camera" type="Camera3D" parent="Root" node_paths=PackedStringArray("Posterize", "Grain") groups=["cameras"]]
 current = true
