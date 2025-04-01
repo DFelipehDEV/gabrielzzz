@@ -2,20 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvrguddua7dr6"
-path="res://.godot/imported/simon.png-eaa7e833a9a474b24cd67fa5a3625f33.ctex"
+uid="uid://qo4ewudld4bi"
+path.s3tc="res://.godot/imported/forearm_crutch_bakedtextured_0.jpg-4216f5c7a16b2b10b4e42c1e1977ef1e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "8816383cf2a4f172211e08427a430390"
 }
 
 [deps]
 
-source_file="res://npc/simon/simon.png"
-dest_files=["res://.godot/imported/simon.png-eaa7e833a9a474b24cd67fa5a3625f33.ctex"]
+source_file="res://npc/simon/forearm_crutch_bakedtextured_0.jpg"
+dest_files=["res://.godot/imported/forearm_crutch_bakedtextured_0.jpg-4216f5c7a16b2b10b4e42c1e1977ef1e.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
