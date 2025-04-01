@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://brb1emj0k07un" path="res://shared/fonts/Chakra_Petch/ChakraPetch-BoldItalic.ttf" id="2_qgcki"]
 [ext_resource type="Script" uid="uid://xac6h5x37ums" path="res://transitions/Fade.cs" id="4_nel1b"]
 
-[node name="NightEnd" type="Control"]
+[node name="NightEnd" type="Control" node_paths=PackedStringArray("timeLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7oe8v")
+timeLabel = NodePath("Time")
 metadata/_custom_type_script = "uid://gd32cf1kkgi3"
 
 [node name="ColorRect" type="ColorRect" parent="."]
