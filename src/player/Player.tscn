@@ -180,7 +180,9 @@ onMaterial = ExtResource("3_hbkom")
 
 [node name="Flash" type="SpotLight3D" parent="Root/Phone"]
 transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0271126, 0.0495281, -0.00421333)
-spot_range = 13.0
+light_energy = 1.5
+spot_range = 10.0
+spot_attenuation = 0.5
 spot_angle = 35.0
 
 [node name="PhoneModel" parent="Root/Phone" instance=ExtResource("3_jiab2")]
