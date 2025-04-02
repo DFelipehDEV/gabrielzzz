@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dmi0hlb20wa0f" path="res://rooms/garage/3d_cardboard_lowpoly.glb" id="5_b08bt"]
 [ext_resource type="PackedScene" uid="uid://cbped4mnkoid5" path="res://rooms/garage/Generator.tscn" id="5_rovyt"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="6_ar06e"]
-[ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="6_i4k0b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j7uop"]
 size = Vector3(6.32446, 3.69836, 6.88055)
@@ -19,6 +18,12 @@ size = Vector2(7, 4.5)
 [sub_resource type="PlaneMesh" id="PlaneMesh_vmdk6"]
 material = ExtResource("2_na8tc")
 size = Vector2(7, 8.5)
+
+[sub_resource type="Environment" id="Environment_j7uop"]
+adjustment_enabled = true
+adjustment_brightness = 0.5
+adjustment_contrast = 1.07
+adjustment_saturation = 0.35
 
 [node name="Garage" type="Node3D"]
 
@@ -88,7 +93,7 @@ transform = Transform3D(0.861833, 0, 0.507192, 0, 1, 0, -0.507192, 0, 0.861833, 
 
 [node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
 transform = Transform3D(-0.724169, 0.298288, -0.621774, -0.0284443, 0.887929, 0.4591, 0.689035, 0.350152, -0.634526, -2.95379, 2.38704, -2.13844)
-environment = ExtResource("6_i4k0b")
+environment = SubResource("Environment_j7uop")
 fov = 78.75
 script = ExtResource("6_ar06e")
 

@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://rooms/ric_bedroom/shirts/fcporto.glb" id="11_th8je"]
 [ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://rooms/ric_bedroom/wood_clothes_hanger.glb" id="12_bpull"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="13_nwlov"]
-[ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="17_ynhpe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2botc"]
 size = Vector3(6.32446, 3.69836, 6.88055)
@@ -85,6 +84,12 @@ _surfaces = [{
 "vertex_count": 36,
 "vertex_data": PackedByteArray("hlqbwBmMsb4G9oA+hlqbwBmMsb4G9oC+hlqbwBmMsT4G9oC+hlqbQBmMsb4G9oC+hlqbwBmMsb4G9oC+hlqbwBmMsb4G9oA+hlqbwBmMsT4G9oC+hlqbwBmMsb4G9oC+hlqbQBmMsb4G9oC+hlqbwBmMsT4G9oC+hlqbwBmMsT4G9oA+hlqbwBmMsb4G9oA+hlqbwBmMsb4G9oA+hlqbwBmMsT4G9oA+hlqbQBmMsT4G9oA+hlqbQBmMsT4G9oA+hlqbwBmMsT4G9oA+hlqbwBmMsT4G9oC+hlqbwBmMsb4G9oA+hlqbQBmMsb4G9oA+hlqbQBmMsb4G9oC+hlqbQBmMsT4G9oA+hlqbQBmMsb4G9oA+hlqbwBmMsb4G9oA+hlqbQBmMsb4G9oC+hlqbQBmMsb4G9oA+hlqbQBmMsT4G9oA+hlqbQBmMsb4G9oC+hlqbQBmMsT4G9oC+hlqbwBmMsT4G9oC+hlqbwBmMsT4G9oC+hlqbQBmMsT4G9oC+hlqbQBmMsT4G9oA+hlqbQBmMsT4G9oA+hlqbQBmMsT4G9oC+hlqbQBmMsb4G9oC+AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
 }]
+
+[sub_resource type="Environment" id="Environment_iewhm"]
+adjustment_enabled = true
+adjustment_brightness = 0.5
+adjustment_contrast = 1.07
+adjustment_saturation = 0.35
 
 [node name="RicBedroom" type="Node3D"]
 
@@ -185,7 +190,7 @@ transform = Transform3D(8.49408e-08, 0, -1.81527, 0, 1.48317, 0, -0.592278, 0, -
 
 [node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
 transform = Transform3D(-0.938143, -0.182267, 0.294393, -0.0284443, 0.887929, 0.4591, -0.345079, 0.422327, -0.838189, -0.00872707, 2.74855, -2.96603)
-environment = ExtResource("17_ynhpe")
+environment = SubResource("Environment_iewhm")
 fov = 70.0
 script = ExtResource("13_nwlov")
 

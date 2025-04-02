@@ -6,7 +6,6 @@
 [ext_resource type="Material" uid="uid://bkt54124upwjx" path="res://rooms/kitchen/metal_fridge/Fridge.tres" id="3_6yf06"]
 [ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://shared/textures/glass/glass_mat.tres" id="3_pxkch"]
 [ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://rooms/office/retro_light/retro_light.glb" id="6_mn30a"]
-[ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="7_fxfkr"]
 [ext_resource type="Texture2D" uid="uid://bq2hfkm7fr7et" path="res://rooms/kitchen/mosaic_tile.png" id="7_lkinp"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="8_yjim1"]
 [ext_resource type="AudioStream" uid="uid://so0x5cjd40d6" path="res://rooms/kitchen/BreakGlass.wav" id="9_fxfkr"]
@@ -575,6 +574,12 @@ size = Vector2(3, 3)
 [sub_resource type="PlaneMesh" id="PlaneMesh_jguxw"]
 size = Vector2(1, 2.6)
 
+[sub_resource type="Environment" id="Environment_flaey"]
+adjustment_enabled = true
+adjustment_brightness = 0.5
+adjustment_contrast = 1.07
+adjustment_saturation = 0.35
+
 [node name="Kitchen" type="Node3D"]
 
 [node name="RoomArea" type="Area3D" parent="." node_paths=PackedStringArray("roomCamera")]
@@ -786,7 +791,7 @@ mesh = SubResource("PlaneMesh_jguxw")
 
 [node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
 transform = Transform3D(-0.983209, -0.00639081, 0.182373, -0.00702153, 0.999971, -0.00281296, -0.18235, -0.00404626, -0.983225, -0.165899, 1.67495, -3.38047)
-environment = ExtResource("7_fxfkr")
+environment = SubResource("Environment_flaey")
 fov = 78.75
 script = ExtResource("8_yjim1")
 

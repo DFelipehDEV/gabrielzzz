@@ -1,11 +1,16 @@
 [gd_scene load_steps=12 format=3 uid="uid://ja2qq53m56k3"]
 
-[ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="1_gebyb"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="2_ucjtl"]
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="3_m78el"]
 [ext_resource type="Material" uid="uid://d4l5vhgqqobbe" path="res://shared/textures/wood/wood.tres" id="4_1nl05"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="5_882r7"]
 [ext_resource type="Script" uid="uid://sugwgf257hip" path="res://rooms/office/FlashingLight.cs" id="6_fxegx"]
+
+[sub_resource type="Environment" id="Environment_tftex"]
+adjustment_enabled = true
+adjustment_brightness = 0.5
+adjustment_contrast = 1.07
+adjustment_saturation = 0.35
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wkv8g"]
 size = Vector3(13.7561, 2.68556, 4.78256)
@@ -28,7 +33,7 @@ size = Vector2(18, 3.5)
 
 [node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
 transform = Transform3D(-0.169032, 0.291467, -0.941528, 0.0390237, 0.956504, 0.289097, 0.984838, 0.0121248, -0.173054, -8.03635, -2.20933, -3.71694)
-environment = ExtResource("1_gebyb")
+environment = SubResource("Environment_tftex")
 fov = 78.75
 script = ExtResource("2_ucjtl")
 

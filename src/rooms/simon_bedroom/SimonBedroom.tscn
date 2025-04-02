@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dteexo2fu8iva" path="res://rooms/simon_bedroom/psx_monitor.glb" id="7_hm2vn"]
 [ext_resource type="Texture2D" uid="uid://bwelkxl5g7tti" path="res://rooms/simon_bedroom/roblox.png" id="8_sh0y1"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="11_ev2n6"]
-[ext_resource type="Environment" uid="uid://dy20daa4a1ygl" path="res://player/phone/CameraEnvironment.tres" id="11_s68xw"]
 [ext_resource type="Texture2D" uid="uid://bsiu8gfal4en4" path="res://rooms/simon_bedroom/chair.png" id="14_yx7aq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_erint"]
@@ -131,6 +130,12 @@ _surfaces = [{
 "vertex_data": PackedByteArray("8xsGvgLwk77/P6I+8xsGvgLwk77/P6K+8xsGvgLwkz7/P6K+8xsGPgLwk77/P6K+8xsGvgLwk77/P6K+8xsGvgLwk77/P6I+8xsGvgLwkz7/P6K+8xsGvgLwk77/P6K+8xsGPgLwk77/P6K+8xsGvgLwkz7/P6K+8xsGvgLwkz7/P6I+8xsGvgLwk77/P6I+8xsGvgLwk77/P6I+8xsGvgLwkz7/P6I+8xsGPgLwkz7/P6I+8xsGPgLwkz7/P6I+8xsGvgLwkz7/P6I+8xsGvgLwkz7/P6K+8xsGvgLwk77/P6I+8xsGPgLwk77/P6I+8xsGPgLwk77/P6K+8xsGPgLwkz7/P6I+8xsGPgLwk77/P6I+8xsGvgLwk77/P6I+8xsGPgLwk77/P6K+8xsGPgLwk77/P6I+8xsGPgLwkz7/P6I+8xsGPgLwk77/P6K+8xsGPgLwkz7/P6K+8xsGvgLwkz7/P6K+8xsGvgLwkz7/P6K+8xsGPgLwkz7/P6K+8xsGPgLwkz7/P6I+8xsGPgLwkz7/P6I+8xsGPgLwkz7/P6K+8xsGPgLwk77/P6K+AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
 }]
 
+[sub_resource type="Environment" id="Environment_55wex"]
+adjustment_enabled = true
+adjustment_brightness = 0.5
+adjustment_contrast = 1.07
+adjustment_saturation = 0.35
+
 [node name="SimonBedroom" type="Node3D"]
 
 [node name="RoomArea" type="Area3D" parent="." node_paths=PackedStringArray("roomCamera")]
@@ -226,7 +231,7 @@ mesh = SubResource("ArrayMesh_8elbx")
 
 [node name="Cam" type="Camera3D" parent="." groups=["cameras"]]
 transform = Transform3D(0.995942, 0.0125702, -0.0891144, 0.0168729, 0.946559, 0.32209, 0.0884007, -0.322287, 0.942505, -3.64225, 1.89338, -0.499649)
-environment = ExtResource("11_s68xw")
+environment = SubResource("Environment_55wex")
 fov = 87.8
 script = ExtResource("11_ev2n6")
 
