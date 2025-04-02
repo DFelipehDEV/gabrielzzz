@@ -86,7 +86,7 @@ timeToMove = 15.0
 
 [node name="Vitel" parent="." groups=["enemy"] instance=ExtResource("13_lqsaw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5496, 1.07074, -69.109)
-timeToMove = 35.0
+timeToMove = 30.0
 
 [node name="Simon" parent="." groups=["enemy"] instance=ExtResource("14_cw2p8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2059, 1.10052, -96.0635)

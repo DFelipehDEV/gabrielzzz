@@ -86,14 +86,14 @@ timeToMove = 15.0
 
 [node name="Vitel" parent="." groups=["enemy"] instance=ExtResource("13_g01id")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5496, 1.07074, -69.109)
-timeToMove = 42.0
+timeToMove = 34.0
 
 [node name="Simon" parent="." groups=["enemy"] instance=ExtResource("14_xr01n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2059, 1.10052, -96.0635)
 
 [node name="Juans" parent="." groups=["enemy"] instance=ExtResource("15_d23gh")]
 transform = Transform3D(-0.621982, 0, -0.783032, 0, 1, 0, 0.783032, 0, -0.621982, 16.5233, 1.78506, -69.2824)
-timeToMove = 35.0
+timeToMove = 32.0
 
 [node name="Hallway" parent="." instance=ExtResource("18_gnwdn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0826, 15.9235, 6.3714)
