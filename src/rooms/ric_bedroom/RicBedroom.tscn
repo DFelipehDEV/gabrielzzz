@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://csx5s23kc2wel"]
+[gd_scene load_steps=27 format=4 uid="uid://csx5s23kc2wel"]
 
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_bbc1y"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_s2lc5"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://e8k054gwup0q" path="res://rooms/ric_bedroom/diogocosta.jpg" id="3_pj1rq"]
 [ext_resource type="Texture2D" uid="uid://chotu7n3fgt4f" path="res://rooms/ric_bedroom/bandeira_fcp.png" id="4_ornu8"]
 [ext_resource type="PackedScene" uid="uid://dprqhntw5wkt7" path="res://rooms/ric_bedroom/pillow/pillow.glb" id="5_vfk3l"]
-[ext_resource type="Texture2D" uid="uid://btl6wam51aumj" path="res://rooms/simon_bedroom/icespice_cringe.png" id="6_he4g4"]
 [ext_resource type="Material" uid="uid://cmyh1ifrbnn01" path="res://rooms/office/table/TableTex2.tres" id="6_ivn6v"]
 [ext_resource type="PackedScene" uid="uid://ui5y56mgsn0f" path="res://rooms/ric_bedroom/lamp/old_ussr_lamp.glb" id="7_ofvxb"]
 [ext_resource type="PackedScene" uid="uid://c6yun5pq6btsk" path="res://rooms/ric_bedroom/phone/nokia.tscn" id="9_5sm6f"]
@@ -39,7 +38,6 @@ size = Vector2(1, 1)
 albedo_texture = ExtResource("4_ornu8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etwhk"]
-albedo_texture = ExtResource("6_he4g4")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xoi36"]
 _surfaces = [{

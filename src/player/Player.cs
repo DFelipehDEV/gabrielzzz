@@ -87,7 +87,7 @@ public partial class Player : Node3D
 				}
 
 				// Flashlight
-				if (Input.IsActionJustPressed("toggle_flash"))
+				if (Input.IsActionJustPressed("toggle_flash") && phone.On)
 				{
 					phone.Flash = !phone.Flash;
 					flashlightClickSound.Play();
@@ -103,7 +103,7 @@ public partial class Player : Node3D
 					}
 				}
 
-				if (Input.IsActionJustPressed("enter_camera"))
+				if (Input.IsActionJustPressed("enter_camera") && phone.On)
 				{
 					State = States.ToCamera;
 					phone.Animation = Phone.Animations.OpenCamera;
@@ -205,7 +205,7 @@ public partial class Player : Node3D
 					SwitchCamera(8);
 				}
 
-				if (Input.IsActionJustPressed("leave_cameras"))
+				if (Input.IsActionJustPressed("leave_cameras") || !phone.On)
 				{
 					SwitchCamera(0);
 

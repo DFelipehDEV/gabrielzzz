@@ -12,7 +12,7 @@ public partial class Phone : Node3D
 	public Label3D TimeLabel { get; private set; }
 
 	[Export]
-	public CsgBox3D FlashIcon { get; private set; }
+	public MeshInstance3D FlashIcon { get; private set; }
 
 	[Export]
 	private Node3D eye;
@@ -20,12 +20,28 @@ public partial class Phone : Node3D
 	[Export]
 	public Energy Energy { get; private set; }
 
+	[Export]
+	public MeshInstance3D Screen { get; private set; }
+
 	private bool flash;
 	private Vector3 normalPhonePosition;
 	private Material offMaterial;
 
 	[Export]
 	private Material onMaterial;
+
+	private bool on = true;
+	public bool On {
+		get => on;
+		set {
+			on = value;
+			if (!on) 
+			{
+				Screen.Visible = false;
+				Light.Visible = false;
+			}
+		}
+	}
 
 	public enum Animations
 	{
@@ -69,7 +85,7 @@ public partial class Phone : Node3D
 			flash = value;
 			Light.Visible = value;
 			Energy.WasteMultiplier = value ? 2.0f : 1.0f;
-			FlashIcon.Material = value ? onMaterial : offMaterial;
+			FlashIcon.MaterialOverride = value ? onMaterial : offMaterial;
 		}
 	}
 
@@ -79,11 +95,22 @@ public partial class Phone : Node3D
 		normalPhonePosition = Position;
 
 		// Store the original material and load the alternate material.
-		offMaterial = FlashIcon.Material;
+		offMaterial = FlashIcon.MaterialOverride;
 
 		NightTimeSystem nightTimeSystem = GetTree().CurrentScene.GetNode<NightTimeSystem>("NightTimeSystem");
 		nightTimeSystem.HourChanged += OnHourChanged;
 	}
+
+	public override void _Process(double delta)
+	{
+		base._Process(delta);
+		
+		if (Energy.CurrentEnergy == 0)
+		{
+			On = false;
+		}
+	}
+
 
 	private void OnHourChanged(int hour)
 	{
