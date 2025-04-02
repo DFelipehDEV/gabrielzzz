@@ -1,9 +1,8 @@
-[gd_scene load_steps=28 format=4 uid="uid://4r5da0qej73s"]
+[gd_scene load_steps=27 format=4 uid="uid://4r5da0qej73s"]
 
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_73dtj"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_ls7v3"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://shared/textures/asphalt/AsphaltTex.tres" id="2_ynlpp"]
-[ext_resource type="Texture2D" uid="uid://btl6wam51aumj" path="res://rooms/simon_bedroom/icespice_cringe.png" id="3_hmakx"]
 [ext_resource type="PackedScene" uid="uid://dprqhntw5wkt7" path="res://rooms/ric_bedroom/pillow/pillow.glb" id="4_1ln04"]
 [ext_resource type="Material" uid="uid://cmyh1ifrbnn01" path="res://rooms/office/table/TableTex2.tres" id="5_j0t6x"]
 [ext_resource type="PackedScene" uid="uid://e5ru1cmfwlbn" path="res://rooms/simon_bedroom/computer_desk.glb" id="6_vrp6x"]
@@ -25,7 +24,7 @@ material = ExtResource("2_ynlpp")
 size = Vector2(7, 8.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etwhk"]
-albedo_texture = ExtResource("3_hmakx")
+albedo_color = Color(0.26292, 0.283622, 0.310297, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0r3l2"]
 _surfaces = [{
