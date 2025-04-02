@@ -143,7 +143,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"standing"]
+"values": [&"sit"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hwymf"]
@@ -171,7 +171,7 @@ unit_size = 3.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109754, 0)
 pixel_size = 0.0025
 sprite_frames = SubResource("SpriteFrames_28f36")
-animation = &"standing"
+animation = &"sit"
 autoplay = "sit"
 
 [node name="Area3D" type="Area3D" parent="."]
