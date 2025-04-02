@@ -134,11 +134,6 @@ phone = NodePath("Root/Phone")
 animationPlayer = NodePath("AnimationPlayer")
 flashlightClickSound = NodePath("Root/Phone/FlashlightClick")
 
-[node name="LOS" type="RayCast3D" parent="."]
-transform = Transform3D(8.45148, -0.259744, -0.651916, -8.29047, -0.178064, -0.692755, 0.75753, 0.949119, -0.308376, 0, 0.0381517, 0)
-debug_shape_custom_color = Color(1, 1, 1, 1)
-debug_shape_thickness = 1
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_cks78")
