@@ -170,6 +170,7 @@ unit_size = 3.0
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109754, 0)
 pixel_size = 0.0025
+billboard = 2
 sprite_frames = SubResource("SpriteFrames_28f36")
 animation = &"sit"
 autoplay = "sit"
