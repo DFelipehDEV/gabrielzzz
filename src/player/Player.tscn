@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dmhe5g6euql60"]
+[gd_scene load_steps=26 format=4 uid="uid://dmhe5g6euql60"]
 
 [ext_resource type="Script" uid="uid://bjijivbohwud2" path="res://player/Player.cs" id="1_tfayh"]
 [ext_resource type="Script" uid="uid://ba5ia4wbr0j2i" path="res://player/phone/Phone.cs" id="2_aepcq"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b2j13qrivippj" path="res://player/PlayerCamera.cs" id="10_agyb6"]
 [ext_resource type="AudioStream" uid="uid://byiq2187kyekm" path="res://player/phone/FlashlightClick.wav" id="10_d4g0h"]
 [ext_resource type="Shader" uid="uid://c6r275qs72yan" path="res://shared/shaders/SimpleGrain.gdshader" id="11_k8vgv"]
+[ext_resource type="AudioStream" uid="uid://dgc7hgd5cocdx" path="res://player/phone/OpenCamera.wav" id="11_v4f8b"]
 [ext_resource type="Shader" uid="uid://bb1d414vgcd0y" path="res://shared/shaders/Posterize.gdshader" id="12_fhg7u"]
 [ext_resource type="Script" uid="uid://citp8j7mpniah" path="res://FpsCounter.cs" id="13_103y7"]
 
@@ -151,12 +152,13 @@ shader_parameter/amount = 0.02
 shader = ExtResource("12_fhg7u")
 shader_parameter/posterization_levels = 37
 
-[node name="Player" type="Node3D" node_paths=PackedStringArray("cam", "phone", "animationPlayer", "flashlightClickSound") groups=["player"]]
+[node name="Player" type="Node3D" node_paths=PackedStringArray("cam", "phone", "animationPlayer", "flashlightClickSound", "openCameraSound") groups=["player"]]
 script = ExtResource("1_tfayh")
 cam = NodePath("Root/Camera")
 phone = NodePath("Root/Phone")
 animationPlayer = NodePath("AnimationPlayer")
 flashlightClickSound = NodePath("Root/Phone/FlashlightClick")
+openCameraSound = NodePath("Root/Phone/OpenCamera")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -166,7 +168,7 @@ autoplay = "RESET"
 
 [node name="Root" type="Node3D" parent="."]
 
-[node name="Phone" type="Node3D" parent="Root" node_paths=PackedStringArray("Light", "CameraUI", "TimeLabel", "FlashIcon", "eye", "Energy", "Screen")]
+[node name="Phone" type="Node3D" parent="Root" node_paths=PackedStringArray("Light", "CameraUI", "TimeLabel", "FlashIcon", "eye", "Energy")]
 transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 3.27826e-07, 4.29861e-07, 0.999999, 0.0793167, -0.0236454, -0.156882)
 script = ExtResource("2_aepcq")
 Light = NodePath("Flash")
@@ -175,7 +177,6 @@ TimeLabel = NodePath("Screen/Time")
 FlashIcon = NodePath("Screen/FlashIcon")
 eye = NodePath("../Eye")
 Energy = NodePath("Screen/Energy")
-Screen = NodePath("Screen")
 onMaterial = ExtResource("3_hbkom")
 
 [node name="Flash" type="SpotLight3D" parent="Root/Phone"]
@@ -286,6 +287,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="FlashlightClick" type="AudioStreamPlayer3D" parent="Root/Phone"]
 stream = ExtResource("10_d4g0h")
+
+[node name="OpenCamera" type="AudioStreamPlayer3D" parent="Root/Phone"]
+stream = ExtResource("11_v4f8b")
 
 [node name="Camera" type="Camera3D" parent="Root" node_paths=PackedStringArray("Posterize", "Grain") groups=["cameras"]]
 current = true

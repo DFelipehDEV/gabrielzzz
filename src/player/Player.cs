@@ -22,6 +22,9 @@ public partial class Player : Node3D
 
 	[Export]
 	private AudioStreamPlayer3D flashlightClickSound;
+	
+	[Export]
+	private AudioStreamPlayer3D openCameraSound;
 
 	private float rotationSpeed = 2.5f;
 	private Vector2 targetRotation;
@@ -107,6 +110,7 @@ public partial class Player : Node3D
 				{
 					State = States.ToCamera;
 					phone.Animation = Phone.Animations.OpenCamera;
+					openCameraSound.Play();
 				}
 
 				break;
