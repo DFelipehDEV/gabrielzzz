@@ -14,6 +14,18 @@ public partial class Player : Node3D
 	}
 
 	[Export]
+	private float phoneRotationSwayAmount = 20.0f;
+
+	[Export]
+	private float phoneRotationSwaySpeed = 2.5f;
+
+	[Export]
+	private float phonePositionSwayAmount = 0.01f;
+
+	[Export]
+	private float phonePositionSwaySpeed = 1.25f;
+
+	[Export]
 	private AnimationPlayer animationPlayer;
 	public AnimationPlayer AnimationPlayer
 	{
@@ -29,6 +41,8 @@ public partial class Player : Node3D
 	private float rotationSpeed = 2.5f;
 	private Vector2 targetRotation;
 	private Vector2 direction;
+
+	private Vector2 mouseMovement;
 
 	public enum States
 	{
@@ -87,6 +101,22 @@ public partial class Player : Node3D
 					targetRotation.X = Mathf.Lerp(targetRotation.X, (-direction.X * 1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * rotationSpeed);
 					targetRotation.Y = Mathf.Lerp(targetRotation.Y, (-direction.Y * 1.5f), (float)GetProcessDeltaTime() * rotationSpeed);
 					Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
+
+					Vector2 swayInput = mouseMovement * 0.05f;
+					Vector3 phoneSwayRotation = new Vector3(
+						Mathf.Clamp(-swayInput.Y, -0.5f, 0.5f) * Mathf.DegToRad(phoneRotationSwayAmount),
+						0.0f,
+						Mathf.Clamp(-swayInput.X, -0.5f, 0.5f) * Mathf.DegToRad(phoneRotationSwayAmount)
+					);
+					phone.Holder.Rotation = phone.Holder.Rotation.Lerp(phoneSwayRotation, phoneRotationSwaySpeed * (float)delta);
+
+					Vector3 phoneSwayPosition = new Vector3(
+						Mathf.Clamp(swayInput.X, -phonePositionSwayAmount, phonePositionSwayAmount),
+						Mathf.Clamp(swayInput.Y, -phonePositionSwayAmount, phonePositionSwayAmount),
+						0.0f
+					);
+
+					phone.Holder.Position = phone.Holder.Position.Lerp(phoneSwayPosition, phonePositionSwaySpeed * (float)delta);
 				}
 
 				// Flashlight
@@ -243,6 +273,8 @@ public partial class Player : Node3D
 			Vector2 screenCenter = GetViewport().GetVisibleRect().Size / 2;
 			direction.X = (mouseMotion.Position.X - screenCenter.X) / screenCenter.X;
 			direction.Y = (mouseMotion.Position.Y - screenCenter.Y) / screenCenter.Y;
+
+			mouseMovement = mouseMotion.Relative;
 
 			// Update mouse over state
 			UpdateMouseOver(mouseMotion.Position);

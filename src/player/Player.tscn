@@ -168,37 +168,41 @@ autoplay = "RESET"
 
 [node name="Root" type="Node3D" parent="."]
 
-[node name="Phone" type="Node3D" parent="Root" node_paths=PackedStringArray("Light", "CameraUI", "TimeLabel", "FlashIcon", "eye", "Energy")]
+[node name="Phone" type="Node3D" parent="Root" node_paths=PackedStringArray("Holder", "Light", "CameraUI", "TimeLabel", "FlashIcon", "eye", "Energy")]
 transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 3.27826e-07, 4.29861e-07, 0.999999, 0.0793167, -0.0236454, -0.156882)
 script = ExtResource("2_aepcq")
-Light = NodePath("Flash")
+Holder = NodePath("PhoneHolder")
+Light = NodePath("PhoneHolder/Flash")
 CameraUI = NodePath("CameraUI")
-TimeLabel = NodePath("Screen/Time")
-FlashIcon = NodePath("Screen/FlashIcon")
+TimeLabel = NodePath("PhoneHolder/Screen/Time")
+FlashIcon = NodePath("PhoneHolder/Screen/FlashIcon")
 eye = NodePath("../Eye")
-Energy = NodePath("Screen/Energy")
+Energy = NodePath("PhoneHolder/Screen/Energy")
 onMaterial = ExtResource("3_hbkom")
 
-[node name="Flash" type="SpotLight3D" parent="Root/Phone"]
-transform = Transform3D(0.999999, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 0.999999, 0.0271126, 0.0495281, -0.00421333)
+[node name="PhoneHolder" type="Node3D" parent="Root/Phone"]
+
+[node name="Flash" type="SpotLight3D" parent="Root/Phone/PhoneHolder"]
+transform = Transform3D(1, -1.60366e-06, -5.66244e-07, -3.55267e-15, 1, -5.49069e-07, 1.78814e-07, -2.84217e-13, 1, 0.0271126, 0.0495281, -0.00421333)
 light_energy = 1.5
 spot_range = 10.0
 spot_attenuation = 0.5
 spot_angle = 35.0
 
-[node name="PhoneModel" parent="Root/Phone" instance=ExtResource("3_jiab2")]
-transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+[node name="PhoneModel" parent="Root/Phone/PhoneHolder" instance=ExtResource("3_jiab2")]
+transform = Transform3D(0.001, -2.56217e-17, 0, 1.64313e-17, 0.001, 0, 0, 2.77556e-17, 0.001, 0, 0, 0)
 
-[node name="Screen" type="MeshInstance3D" parent="Root/Phone"]
-transform = Transform3D(-1, 6.90368e-12, 5.36442e-07, 1.56462e-11, -1, 4.36273e-12, -2.68221e-07, 0, -1, -0.000854596, 0.00178337, 0.00364208)
+[node name="Screen" type="MeshInstance3D" parent="Root/Phone/PhoneHolder"]
+transform = Transform3D(-1, 6.90368e-12, 5.36442e-07, 1.55893e-11, -1, 4.36273e-12, -2.68221e-07, 0, -1, -0.000854596, 0.00178337, 0.00364208)
 mesh = SubResource("ArrayMesh_d4g0h")
-
-[node name="FlashIcon" type="MeshInstance3D" parent="Root/Phone/Screen"]
-transform = Transform3D(-0.999998, -9.43939e-13, -2.38419e-07, 3.29798e-11, -1, -2.69296e-12, -2.35438e-06, -1.44951e-12, -1, 0.0235925, 0.0524702, -0.000178844)
-mesh = SubResource("ArrayMesh_v4f8b")
 skeleton = NodePath("../..")
 
-[node name="Time" type="Label3D" parent="Root/Phone/Screen"]
+[node name="FlashIcon" type="MeshInstance3D" parent="Root/Phone/PhoneHolder/Screen"]
+transform = Transform3D(-0.999998, -9.43939e-13, -2.38419e-07, 3.29798e-11, -1, -2.69296e-12, -2.35438e-06, -1.44951e-12, -1, 0.0235925, 0.0524702, -0.000178844)
+mesh = SubResource("ArrayMesh_v4f8b")
+skeleton = NodePath("../../..")
+
+[node name="Time" type="Label3D" parent="Root/Phone/PhoneHolder/Screen"]
 transform = Transform3D(-1, -6.57144e-12, -5.36442e-07, -1.52518e-11, -1, -4.32721e-12, 2.68221e-07, 0, -1, -0.000854552, -0.03586, -0.000520945)
 pixel_size = 0.0006
 double_sided = false
@@ -208,7 +212,7 @@ text = "00:00"
 font = SubResource("SystemFont_bakc2")
 outline_size = 0
 
-[node name="Date" type="Label3D" parent="Root/Phone/Screen"]
+[node name="Date" type="Label3D" parent="Root/Phone/PhoneHolder/Screen"]
 transform = Transform3D(-1, -6.45775e-12, -5.36442e-07, -1.51381e-11, -1, -4.31299e-12, 2.68221e-07, 0, -1, -0.000854567, -0.0484705, -0.000520945)
 pixel_size = 0.0006
 double_sided = false
@@ -220,7 +224,7 @@ font = SubResource("SystemFont_bakc2")
 font_size = 16
 outline_size = 0
 
-[node name="Energy" type="Label3D" parent="Root/Phone/Screen"]
+[node name="Energy" type="Label3D" parent="Root/Phone/PhoneHolder/Screen"]
 transform = Transform3D(-1, -6.17353e-12, -5.36442e-07, -1.48539e-11, -1, -4.27747e-12, 2.68221e-07, 0, -1, -0.0258591, -0.059453, -0.000520959)
 pixel_size = 0.0006
 double_sided = false

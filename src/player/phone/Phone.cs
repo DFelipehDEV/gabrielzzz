@@ -3,6 +3,9 @@ using Godot;
 public partial class Phone : Node3D
 {
 	[Export]
+	public Node3D Holder { get; private set; }
+
+	[Export]
 	public Light3D Light { get; private set; }
 
 	[Export]
