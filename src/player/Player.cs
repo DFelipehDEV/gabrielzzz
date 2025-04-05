@@ -300,7 +300,7 @@ public partial class Player : Node3D
 
 		if (cameras[currentCamera].Environment != null)
 		{
-			cameras[currentCamera].Environment.TonemapExposure = 0.0f;
+			cameras[currentCamera].Environment.TonemapExposure = 0.075f;
 		}
 	}
 
