@@ -3,7 +3,10 @@ using Godot;
 [GlobalClass]
 public partial class RoomCamera : Camera3D
 {
-	public AudioListener3D listener;
+	private AudioListener3D listener;
+	public AudioListener3D Listener {
+		get => listener;
+	}
 
 	public bool Deactivated {
 		get {

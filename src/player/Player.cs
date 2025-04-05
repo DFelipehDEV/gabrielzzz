@@ -294,13 +294,13 @@ public partial class Player : Node3D
 	{
 		cameras[currentCamera].Current = false;
 		cameras[currentCamera].Visible = false;
-		cameras[currentCamera].listener.ClearCurrent();
+		cameras[currentCamera].Listener.ClearCurrent();
 
 		currentCamera = newCameraIndex;
 
 		cameras[currentCamera].Current = true;
 		cameras[currentCamera].Visible = true;
-		cameras[currentCamera].listener.MakeCurrent();
+		cameras[currentCamera].Listener.MakeCurrent();
 
 		if (cameras[currentCamera].Environment != null)
 		{
