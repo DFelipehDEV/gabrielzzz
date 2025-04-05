@@ -40,7 +40,7 @@ adjustment_saturation = 1.2
 material = ExtResource("3_mve05")
 size = Vector2(19, 10)
 
-[node name="Node3D" type="Node3D"]
+[node name="Night1" type="Node3D"]
 
 [node name="NightTimeSystem" type="Node" parent="."]
 script = ExtResource("1_lv2c6")
