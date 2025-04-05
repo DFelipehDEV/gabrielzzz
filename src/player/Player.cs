@@ -292,15 +292,11 @@ public partial class Player : Node3D
 
 	private void SwitchCamera(int newCameraIndex)
 	{
-		cameras[currentCamera].Current = false;
-		cameras[currentCamera].Visible = false;
-		cameras[currentCamera].Listener.ClearCurrent();
+		cameras[currentCamera].Used = false;
 
 		currentCamera = newCameraIndex;
 
-		cameras[currentCamera].Current = true;
-		cameras[currentCamera].Visible = true;
-		cameras[currentCamera].Listener.MakeCurrent();
+		cameras[currentCamera].Used = true;
 
 		if (cameras[currentCamera].Environment != null)
 		{

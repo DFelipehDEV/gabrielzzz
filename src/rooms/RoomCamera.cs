@@ -8,6 +8,18 @@ public partial class RoomCamera : Camera3D
 		get => listener;
 	}
 
+	public bool Used {
+		get => Current;
+		set {
+			Current = value;
+			Visible = value;
+			if (value)
+				listener.MakeCurrent();
+			else 
+				listener.ClearCurrent();
+		}
+	}
+
 	public bool Deactivated {
 		get {
 			return deactivatedTime > 0;
