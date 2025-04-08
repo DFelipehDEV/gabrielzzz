@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dgkjf5udn2gvg" path="res://shared/textures/outside/OutsideView.png" id="2_37ufg"]
 [ext_resource type="Texture2D" uid="uid://o34obope75uq" path="res://title_screen/richis.png" id="3_jaltp"]
 [ext_resource type="Script" uid="uid://bqnk3rveay4jt" path="res://title_screen/NewGame.cs" id="4_eluts"]
-[ext_resource type="Theme" uid="uid://dxor6bq5rdhns" path="res://texttheme.tres" id="4_k2kbh"]
+[ext_resource type="Theme" uid="uid://dxor6bq5rdhns" path="res://shared/styles/texttheme.tres" id="4_k2kbh"]
 [ext_resource type="Texture2D" uid="uid://c5af7f8h0en5u" path="res://title_screen/static.png" id="5_1ly6i"]
 [ext_resource type="Script" uid="uid://ddjgm7twjfue" path="res://title_screen/Continue.cs" id="5_37ufg"]
 [ext_resource type="PackedScene" uid="uid://cnvm80rs1mdl3" path="res://night_start/NightStart.tscn" id="5_jaltp"]
