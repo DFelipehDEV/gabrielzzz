@@ -56,7 +56,7 @@ public partial class Simon : EnemyNPC
 
 	public void GeneratorBroken() {
 		awake = true;
-		animationPlayer.Play("Stand");
+		animationPlayer.Play("Standing");
 		GD.Print(Name + " is now awake");
 	}
 
