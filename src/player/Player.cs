@@ -313,7 +313,7 @@ public partial class Player : Node3D
 		}
 
 		// Stop previous interaction if focused interactable changed
-		if (focusedInteractable != previousFocused)
+		if (previousFocused != null && focusedInteractable != previousFocused)
 		{
 			previousFocused.StopInteract();
 		}
