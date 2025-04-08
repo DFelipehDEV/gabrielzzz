@@ -60,7 +60,7 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 			}
 			else
 			{
-				recordingProgress -= 1.5f * delta;
+				recordingProgress = Mathf.Max(recordingProgress - 1.5f * delta, 0);
 			}
 		}
 
