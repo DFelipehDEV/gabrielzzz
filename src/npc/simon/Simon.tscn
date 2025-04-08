@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://4i3hsxwvngn7"]
+[gd_scene load_steps=21 format=3 uid="uid://4i3hsxwvngn7"]
 
 [ext_resource type="Script" uid="uid://byjo6a5j1ssx" path="res://npc/simon/Simon.cs" id="1_230gs"]
 [ext_resource type="Texture2D" uid="uid://n00rv7pb6lu3" path="res://npc/simon/sit.png" id="2_pharj"]
@@ -146,17 +146,89 @@ tracks/2/keys = {
 "values": [&"sit"]
 }
 
+[sub_resource type="Animation" id="Animation_hwymf"]
+resource_name = "Sit"
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Crutch")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.11803, -0.239483, -0.0174418)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Crutch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.92016, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite3D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"sit"]
+}
+
+[sub_resource type="Animation" id="Animation_j6luw"]
+resource_name = "Standing"
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Crutch")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.11803, -0.239483, -0.0174418)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Crutch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.92016, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite3D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"standing"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hwymf"]
 _data = {
 &"JumpScare": SubResource("Animation_ad7xw"),
-&"RESET": SubResource("Animation_meqxe")
+&"RESET": SubResource("Animation_meqxe"),
+&"Sit": SubResource("Animation_hwymf"),
+&"Standing": SubResource("Animation_j6luw")
 }
 
-[node name="Simon" type="Node3D" node_paths=PackedStringArray("sprite", "jumpScare", "jumpScareAudio", "walkSound")]
+[node name="Simon" type="Node3D" node_paths=PackedStringArray("sprite", "animationPlayer", "jumpScareAudio", "walkSound")]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 0, 0, 0)
 script = ExtResource("1_230gs")
 sprite = NodePath("AnimatedSprite3D")
-jumpScare = NodePath("AnimationPlayer")
+animationPlayer = NodePath("AnimationPlayer")
 jumpScareAudio = NodePath("Crutch/AudioStreamPlayer")
 positionGroup = "simon_pos"
 timeToMove = 10.0

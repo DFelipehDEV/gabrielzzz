@@ -7,7 +7,7 @@ public partial class Simon : EnemyNPC
 	private AnimatedSprite3D sprite;
 
 	[Export]
-	private AnimationPlayer jumpScare;
+	private AnimationPlayer animationPlayer;
 
 	[Export]
 	private AudioStreamPlayer jumpScareAudio;
@@ -29,7 +29,7 @@ public partial class Simon : EnemyNPC
 		generator = (Generator)GetTree().GetFirstNodeInGroup("generator");
 		generator.Connect("GeneratorBroken", Callable.From(GeneratorBroken));
 		generator.Connect("GeneratorRepaired", Callable.From(GeneratorRepaired));
-		jumpScare.AnimationFinished += JumpScareFinished;
+		animationPlayer.AnimationFinished += JumpScareFinished;
 		initialTransform = Transform;
 	}
 
@@ -45,9 +45,9 @@ public partial class Simon : EnemyNPC
 			timeInOffice += delta;
 			if (timeInOffice > timeToJumpscare)
 			{
-				if (jumpScare.CurrentAnimation != "JumpScare")
+				if (animationPlayer.CurrentAnimation != "JumpScare")
 				{
-					jumpScare.Play("JumpScare");
+					animationPlayer.Play("JumpScare");
 					jumpScareAudio.Play();
 				}
 			}
@@ -56,14 +56,14 @@ public partial class Simon : EnemyNPC
 
 	public void GeneratorBroken() {
 		awake = true;
-		sprite.Animation = "standing";
+		animationPlayer.Play("Stand");
 		GD.Print(Name + " is now awake");
 	}
 
 	public void GeneratorRepaired() {
 		awake = false;
 		Transform = initialTransform;
-		sprite.Animation = "sit";
+		animationPlayer.Play("Sit");
 		GD.Print(Name + " is now asleep");
 	}
 
