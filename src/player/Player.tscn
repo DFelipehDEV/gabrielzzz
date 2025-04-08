@@ -14,7 +14,7 @@
 [ext_resource type="Shader" uid="uid://c6r275qs72yan" path="res://shared/shaders/SimpleGrain.gdshader" id="11_k8vgv"]
 [ext_resource type="AudioStream" uid="uid://dgc7hgd5cocdx" path="res://player/phone/OpenCamera.wav" id="11_v4f8b"]
 [ext_resource type="Shader" uid="uid://bb1d414vgcd0y" path="res://shared/shaders/Posterize.gdshader" id="12_fhg7u"]
-[ext_resource type="Script" uid="uid://citp8j7mpniah" path="res://FpsCounter.cs" id="13_103y7"]
+[ext_resource type="Script" uid="uid://citp8j7mpniah" path="res://shared/ui/FpsCounter.cs" id="13_103y7"]
 
 [sub_resource type="Animation" id="Animation_c1eah"]
 resource_name = "HideUnderTable"
