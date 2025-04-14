@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dmhe5g6euql60"]
+[gd_scene load_steps=29 format=4 uid="uid://dmhe5g6euql60"]
 
 [ext_resource type="Script" uid="uid://bjijivbohwud2" path="res://player/Player.cs" id="1_tfayh"]
 [ext_resource type="Script" uid="uid://ba5ia4wbr0j2i" path="res://player/phone/Phone.cs" id="2_aepcq"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dgc7hgd5cocdx" path="res://player/phone/OpenCamera.wav" id="11_v4f8b"]
 [ext_resource type="Shader" uid="uid://bb1d414vgcd0y" path="res://shared/shaders/Posterize.gdshader" id="12_fhg7u"]
 [ext_resource type="Script" uid="uid://citp8j7mpniah" path="res://shared/ui/FpsCounter.cs" id="13_103y7"]
+[ext_resource type="Texture2D" uid="uid://bqa6koxf6hkc4" path="res://shared/circular_meter/progress-bar-circle.png" id="13_yu5hk"]
 [ext_resource type="AudioStream" uid="uid://3ymud63u7upr" path="res://player/Footstep.wav" id="16_t8epa"]
 
 [sub_resource type="Animation" id="Animation_c1eah"]
@@ -227,13 +228,15 @@ shader_parameter/amount = 0.02
 shader = ExtResource("12_fhg7u")
 shader_parameter/posterization_levels = 37
 
-[node name="Player" type="Node3D" node_paths=PackedStringArray("cam", "phone", "animationPlayer", "flashlightClickSound", "openCameraSound") groups=["player"]]
+[node name="Player" type="Node3D" node_paths=PackedStringArray("cam", "phone", "animationPlayer", "flashlightClickSound", "openCameraSound", "exitCamerasProgressBar") groups=["player"]]
 script = ExtResource("1_tfayh")
 cam = NodePath("Root/Camera")
 phone = NodePath("Root/Phone")
 animationPlayer = NodePath("AnimationPlayer")
 flashlightClickSound = NodePath("Root/Phone/FlashlightClick")
 openCameraSound = NodePath("Root/Phone/OpenCamera")
+timeToExitCameras = 1.0
+exitCamerasProgressBar = NodePath("Root/Phone/CameraUI/ProgressBar")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -259,6 +262,7 @@ onMaterial = ExtResource("3_hbkom")
 
 [node name="Flash" type="SpotLight3D" parent="Root/Phone/PhoneHolder"]
 transform = Transform3D(1, -1.60366e-06, -5.66244e-07, -3.55267e-15, 1, -5.49069e-07, 1.78814e-07, -2.84217e-13, 1, 0.0271126, 0.0495281, -0.00421333)
+visible = false
 light_energy = 1.5
 spot_range = 10.0
 spot_attenuation = 0.5
@@ -363,6 +367,14 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
 color = Color(0, 0, 0, 1)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Root/Phone/CameraUI"]
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(0.25, 0.25)
+fill_mode = 4
+texture_progress = ExtResource("13_yu5hk")
+tint_progress = Color(0, 0.609321, 0.636214, 1)
 
 [node name="FlashlightClick" type="AudioStreamPlayer3D" parent="Root/Phone"]
 stream = ExtResource("10_d4g0h")

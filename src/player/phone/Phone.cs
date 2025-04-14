@@ -26,7 +26,6 @@ public partial class Phone : Node3D
 	[Export]
 	public MeshInstance3D Screen { get; private set; }
 
-	private bool flash;
 	private Vector3 normalPhonePosition;
 	private Material offMaterial;
 
@@ -82,10 +81,9 @@ public partial class Phone : Node3D
 
 	public bool Flash
 	{
-		get => flash;
+		get => Light.Visible;
 		set
 		{
-			flash = value;
 			Light.Visible = value;
 			Energy.WasteMultiplier = value ? 2.0f : 1.0f;
 			FlashIcon.MaterialOverride = value ? onMaterial : offMaterial;

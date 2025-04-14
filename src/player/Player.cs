@@ -34,15 +34,23 @@ public partial class Player : Node3D
 
 	[Export]
 	private AudioStreamPlayer3D flashlightClickSound;
-	
+
 	[Export]
 	private AudioStreamPlayer3D openCameraSound;
+
+	[Export]
+	private double timeToExitCameras = 0.75;
+
+	[Export]
+	private TextureProgressBar exitCamerasProgressBar;
 
 	private float rotationSpeed = 2.5f;
 	private Vector2 targetRotation;
 	private Vector2 direction;
 
 	private Vector2 mouseMovement;
+
+	private double exitClickHoldTime = 0.0f;
 
 	public enum States
 	{
@@ -161,7 +169,7 @@ public partial class Player : Node3D
 
 			case States.Camera:
 				// Change to previous camera
-				if (Input.IsActionJustPressed("previous_camera") && focusedInteractable == null)
+				if (Input.IsActionJustReleased("previous_camera") && focusedInteractable == null)
 				{
 					if (currentCamera > 1)
 					{
@@ -174,13 +182,38 @@ public partial class Player : Node3D
 				}
 
 				// Change to next camera
-				if (Input.IsActionJustPressed("next_camera"))
+				if (Input.IsActionJustReleased("next_camera"))
 				{
 					if (currentCamera < cameras.Count - 1)
 					{
 						SwitchCamera(currentCamera + 1);
 					}
 					else
+					{
+						SwitchCamera(1);
+					}
+				}
+
+				
+				if (Input.IsActionPressed("previous_camera") && !Input.IsActionJustPressed("previous_camera")
+				|| Input.IsActionPressed("next_camera") && !Input.IsActionJustPressed("next_camera"))
+				{
+					exitClickHoldTime += 1.0 * delta;
+				}
+				else
+				{
+					exitClickHoldTime = 0.0;
+					exitCamerasProgressBar.Visible = false;
+				}
+
+				// Have a delay to avoid visual clutter
+				if (exitClickHoldTime > 0.2) {
+					exitCamerasProgressBar.Visible = true;
+					exitCamerasProgressBar.Value = exitClickHoldTime * 100 * timeToExitCameras;
+					exitCamerasProgressBar.GlobalPosition = GetViewport().GetMousePosition();
+
+					// Hold to exit the cameras
+					if (exitClickHoldTime > timeToExitCameras)
 					{
 						SwitchCamera(0);
 
