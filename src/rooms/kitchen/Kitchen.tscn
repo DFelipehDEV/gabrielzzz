@@ -796,7 +796,7 @@ fov = 78.75
 script = ExtResource("8_yjim1")
 
 [node name="VitelsPos" type="Node3D" parent="." groups=["vitel_pos"]]
-transform = Transform3D(-0.998454, 0, -0.055595, 0, 1, 0, 0.055595, 0, -0.998454, -2.21379, 0.875923, 0.366039)
+transform = Transform3D(-0.998454, 0, -0.055595, 0, 1, 0, 0.055595, 0, -0.998454, -2.21379, 0.875923, 0.864046)
 
 [node name="JuansPos" type="Node3D" parent="." groups=["juans_pos", "kitchen"]]
 transform = Transform3D(0.999911, 0, 0.013421, 0, 1, 0, -0.013421, 0, 0.999911, -1.02261, 0.955485, 1.08071)
