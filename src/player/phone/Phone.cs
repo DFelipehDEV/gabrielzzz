@@ -12,6 +12,9 @@ public partial class Phone : Node3D
 	public CanvasLayer CameraUI { get; private set; }
 
 	[Export]
+	public Label3D DayLabel { get; private set; }
+
+	[Export]
 	public Label3D TimeLabel { get; private set; }
 
 	[Export]
@@ -100,6 +103,8 @@ public partial class Phone : Node3D
 
 		NightTimeSystem nightTimeSystem = GetTree().CurrentScene.GetNode<NightTimeSystem>("NightTimeSystem");
 		nightTimeSystem.HourChanged += OnHourChanged;
+
+		DayLabel.Text = (GetTree().CurrentScene as Night).Day;
 	}
 
 	public override void _Process(double delta)

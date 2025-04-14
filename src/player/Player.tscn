@@ -246,12 +246,13 @@ autoplay = "RESET"
 
 [node name="Root" type="Node3D" parent="."]
 
-[node name="Phone" type="Node3D" parent="Root" node_paths=PackedStringArray("Holder", "Light", "CameraUI", "TimeLabel", "FlashIcon", "eye", "Energy")]
+[node name="Phone" type="Node3D" parent="Root" node_paths=PackedStringArray("Holder", "Light", "CameraUI", "DayLabel", "TimeLabel", "FlashIcon", "eye", "Energy")]
 transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 3.27826e-07, 4.29861e-07, 0.999999, 0.0793167, -0.0236454, -0.156882)
 script = ExtResource("2_aepcq")
 Holder = NodePath("PhoneHolder")
 Light = NodePath("PhoneHolder/Flash")
 CameraUI = NodePath("CameraUI")
+DayLabel = NodePath("PhoneHolder/Screen/Date")
 TimeLabel = NodePath("PhoneHolder/Screen/Time")
 FlashIcon = NodePath("PhoneHolder/Screen/FlashIcon")
 eye = NodePath("../Eye")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://crsby5toa0ybq"]
+[gd_scene load_steps=24 format=3 uid="uid://crsby5toa0ybq"]
 
+[ext_resource type="Script" uid="uid://cy3460eo7gl4s" path="res://nights/Night.cs" id="1_5pcuo"]
 [ext_resource type="Script" uid="uid://dduyldn3p66ej" path="res://shared/systems/NightTimeSystem.cs" id="1_oyj7j"]
 [ext_resource type="PackedScene" uid="uid://ya5n4wjl52ap" path="res://night_end/NightEnd.tscn" id="2_s1bl3"]
 [ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://shared/textures/outside/OutsideView.tres" id="3_5pcuo"]
@@ -41,6 +42,9 @@ material = ExtResource("3_5pcuo")
 size = Vector2(19, 10)
 
 [node name="Night4" type="Node3D"]
+script = ExtResource("1_5pcuo")
+Day = "qui., 04"
+metadata/_custom_type_script = "uid://cy3460eo7gl4s"
 
 [node name="NightTimeSystem" type="Node" parent="."]
 script = ExtResource("1_oyj7j")
