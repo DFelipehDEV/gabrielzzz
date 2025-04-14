@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://csx5s23kc2wel"]
+[gd_scene load_steps=28 format=4 uid="uid://csx5s23kc2wel"]
 
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_bbc1y"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_s2lc5"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://rooms/ric_bedroom/shirts/fcporto.glb" id="11_th8je"]
 [ext_resource type="PackedScene" uid="uid://cn851m3mfnxi5" path="res://rooms/ric_bedroom/wood_clothes_hanger.glb" id="12_bpull"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="13_nwlov"]
+[ext_resource type="Texture2D" uid="uid://ba1nc6asxcq5u" path="res://rooms/ric_bedroom/cat.png" id="15_mf0eu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2botc"]
 size = Vector3(6.32446, 3.69836, 6.88055)
@@ -196,6 +197,14 @@ script = ExtResource("13_nwlov")
 
 [node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, -3.05355, 0.162975, 0.308289)
+
+[node name="Cat" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60508, 0.812703, 1.17955)
+pixel_size = 0.0045
+billboard = 2
+shaded = true
+double_sided = false
+texture = ExtResource("15_mf0eu")
 
 [connection signal="body_entered" from="RoomArea" to="RoomArea" method="_on_body_entered"]
 [connection signal="body_exited" from="RoomArea" to="RoomArea" method="_on_body_exited"]
