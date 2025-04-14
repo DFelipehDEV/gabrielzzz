@@ -41,20 +41,14 @@ public partial class NightTimeSystem : Node
 
 			if (hour == 6 && !nightEnded)
 			{
-				nightEnded = true;
-				EmitSignal(SignalName.NightEnded);
-				
-				Node currentScene = GetTree().CurrentScene;
-				var nightEndInstance = nightEndScene.Instantiate();
-				if (nightEndInstance is NightEnd nightEnd)
-				{
-					nightEnd.NextNight = nextNightScene;
-				}
-
-				GetTree().Root.AddChild(nightEndInstance);
-				GetTree().CurrentScene = nightEndInstance;
-				
-				currentScene?.QueueFree();
+                nightEnded = true;
+                EmitSignal(SignalName.NightEnded);
+                
+                var nightEndInstance = nightEndScene.Instantiate<NightEnd>();
+                nightEndInstance.NextNight = nextNightScene;
+                GetTree().Root.AddChild(nightEndInstance);
+                GetTree().CurrentScene.QueueFree();
+                GetTree().CurrentScene = nightEndInstance;
 			}
 		}
 

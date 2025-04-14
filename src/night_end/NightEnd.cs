@@ -3,6 +3,9 @@ using Godot;
 [GlobalClass]
 public partial class NightEnd : Control
 {
+	[Export]
+	private PackedScene nightStartScene;
+
 	private PackedScene nextNight;
 	public PackedScene NextNight
 	{
@@ -32,6 +35,7 @@ public partial class NightEnd : Control
 		{
 			FileAccess file = FileAccess.Open("user://nightdata.json", FileAccess.ModeFlags.Write);
 			file.StoreString(nextNight.ResourcePath);
+			file.StoreString(nextNight.GetMeta("NightDate").ToString());
 			file.Close();
 			GetTree().CurrentScene.AddChild(fadeOut);
 		}

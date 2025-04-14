@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ya5n4wjl52ap"]
+[gd_scene load_steps=6 format=3 uid="uid://ya5n4wjl52ap"]
 
 [ext_resource type="Script" uid="uid://gd32cf1kkgi3" path="res://night_end/NightEnd.cs" id="1_7oe8v"]
 [ext_resource type="AudioStream" uid="uid://bg6bf4fs3u4ei" path="res://night_end/NightEnd.ogg" id="1_vdygn"]
+[ext_resource type="PackedScene" uid="uid://cnvm80rs1mdl3" path="res://night_start/NightStart.tscn" id="2_i5jgj"]
 [ext_resource type="FontFile" uid="uid://brb1emj0k07un" path="res://shared/fonts/Chakra_Petch/ChakraPetch-BoldItalic.ttf" id="2_qgcki"]
 [ext_resource type="Script" uid="uid://xac6h5x37ums" path="res://transitions/Fade.cs" id="4_nel1b"]
 
@@ -13,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7oe8v")
+nightStartScene = ExtResource("2_i5jgj")
 timeLabel = NodePath("Time")
 metadata/_custom_type_script = "uid://gd32cf1kkgi3"
 

@@ -3,6 +3,9 @@ using Godot;
 [GlobalClass]
 public partial class Fade : ColorRect
 {
+	[Signal]
+	public delegate void FadedEventHandler();
+
 	[Export]
 	public float speed = 0.15f;
 	
@@ -40,6 +43,7 @@ public partial class Fade : ColorRect
 			{
 				GetTree().ChangeSceneToPacked(nextScene);
 			}
+			EmitSignal(SignalName.Faded);
 		}
 	}
 }

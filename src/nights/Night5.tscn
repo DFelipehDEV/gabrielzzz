@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://mucfu0ru8fl0"]
+[gd_scene load_steps=24 format=3 uid="uid://mucfu0ru8fl0"]
 
 [ext_resource type="Script" uid="uid://cy3460eo7gl4s" path="res://nights/Night.cs" id="1_dr3uh"]
 [ext_resource type="Script" uid="uid://dduyldn3p66ej" path="res://shared/systems/NightTimeSystem.cs" id="1_kvhk7"]
 [ext_resource type="PackedScene" uid="uid://ya5n4wjl52ap" path="res://night_end/NightEnd.tscn" id="2_dr3uh"]
 [ext_resource type="Material" uid="uid://clbp2gnvyhpan" path="res://shared/textures/outside/OutsideView.tres" id="3_cubgy"]
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="4_57rd6"]
+[ext_resource type="PackedScene" uid="uid://cnvm80rs1mdl3" path="res://night_start/NightStart.tscn" id="4_cubgy"]
 [ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://rooms/office/Office.tscn" id="5_06508"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://rooms/ric_bedroom/RicBedroom.tscn" id="6_jc7is"]
 [ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://rooms/simon_bedroom/SimonBedroom.tscn" id="7_o7kfa"]
@@ -49,6 +50,9 @@ metadata/_custom_type_script = "uid://cy3460eo7gl4s"
 script = ExtResource("1_kvhk7")
 nightEndScene = ExtResource("2_dr3uh")
 metadata/_custom_type_script = "uid://dduyldn3p66ej"
+
+[node name="NightStart" parent="." instance=ExtResource("4_cubgy")]
+date = "sex., 05"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sq266")
