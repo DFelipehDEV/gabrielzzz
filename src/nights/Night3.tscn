@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c1up1m1sdrqvh"]
+[gd_scene load_steps=26 format=3 uid="uid://c1up1m1sdrqvh"]
 
 [ext_resource type="Script" uid="uid://dduyldn3p66ej" path="res://shared/systems/NightTimeSystem.cs" id="1_13dgj"]
 [ext_resource type="Script" uid="uid://cy3460eo7gl4s" path="res://nights/Night.cs" id="1_xiswv"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dmhe5g6euql60" path="res://player/Player.tscn" id="4_pu43u"]
 [ext_resource type="PackedScene" uid="uid://coc1glsj1410t" path="res://rooms/office/Office.tscn" id="5_mlf4t"]
 [ext_resource type="PackedScene" uid="uid://cnvm80rs1mdl3" path="res://night_start/NightStart.tscn" id="5_pu43u"]
+[ext_resource type="PackedScene" uid="uid://bkvdelt1exj6v" path="res://shared/ui/ControlOverlay.tscn" id="6_mlf4t"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://rooms/ric_bedroom/RicBedroom.tscn" id="6_yjqlj"]
 [ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://rooms/simon_bedroom/SimonBedroom.tscn" id="7_6t8ox"]
 [ext_resource type="PackedScene" uid="uid://c0iaxr7trojl6" path="res://rooms/bathroom/bathroom.tscn" id="8_becl2"]
@@ -56,6 +57,8 @@ metadata/_custom_type_script = "uid://dduyldn3p66ej"
 [node name="NightStart" parent="." instance=ExtResource("5_pu43u")]
 date = "qua., 03"
 
+[node name="ControlOverlay" parent="." instance=ExtResource("6_mlf4t")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sq266")
 
@@ -64,8 +67,9 @@ transform = Transform3D(-1, 5.34246e-12, -0.000122221, 0.000122221, 4.37114e-08,
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_6ubmt")
 
-[node name="Player" parent="." instance=ExtResource("4_pu43u")]
+[node name="Player" parent="." node_paths=PackedStringArray("controlOverlay") instance=ExtResource("4_pu43u")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 12.823, 2.7)
+controlOverlay = NodePath("../ControlOverlay")
 
 [node name="Office" parent="." instance=ExtResource("5_mlf4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12261, 3.82152, 3.50751)

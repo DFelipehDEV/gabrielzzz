@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://dxor6bq5rdhns" path="res://shared/styles/texttheme.tres" id="4_k2kbh"]
 [ext_resource type="Texture2D" uid="uid://c5af7f8h0en5u" path="res://title_screen/static.png" id="5_1ly6i"]
 [ext_resource type="Script" uid="uid://ddjgm7twjfue" path="res://title_screen/Continue.cs" id="5_37ufg"]
-[ext_resource type="PackedScene" uid="uid://cnvm80rs1mdl3" path="res://night_start/NightStart.tscn" id="5_jaltp"]
+[ext_resource type="PackedScene" uid="uid://d1o4lkpnxtmdh" path="res://nights/Night1.tscn" id="5_k2kbh"]
 [ext_resource type="Script" uid="uid://3qriac6rpst2" path="res://title_screen/Static.cs" id="6_mqppy"]
 [ext_resource type="Shader" uid="uid://blqh78bh552oj" path="res://title_screen/static.gdshader" id="7_t8ux1"]
 [ext_resource type="AudioStream" uid="uid://6t2pno2v34yo" path="res://title_screen/TitleScreen.ogg" id="10_k2kbh"]
@@ -128,7 +128,7 @@ text = "New Game"
 alignment = 0
 text_direction = 2
 script = ExtResource("4_eluts")
-nextScene = ExtResource("5_jaltp")
+nextScene = ExtResource("5_k2kbh")
 
 [node name="Continue" type="Button" parent="Panel"]
 layout_mode = 1

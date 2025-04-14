@@ -1,0 +1,38 @@
+[gd_scene load_steps=13 format=3 uid="uid://bkvdelt1exj6v"]
+
+[ext_resource type="Script" uid="uid://drnmdx5hpd238" path="res://shared/ui/ControlOverlay.cs" id="1_1jnf1"]
+[ext_resource type="Texture2D" uid="uid://duhjipl5234u" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/mouse/lb.png" id="2_5w2gq"]
+[ext_resource type="Texture2D" uid="uid://cqxd5nn7ee0dp" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/mouse/rb.png" id="3_30y8d"]
+[ext_resource type="Texture2D" uid="uid://b1f0i20533gs" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/key/alphanum/_/one.png" id="4_8hmd2"]
+[ext_resource type="Texture2D" uid="uid://bsy66sj3css3y" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/key/alphanum/_/two.png" id="5_31gnk"]
+[ext_resource type="Texture2D" uid="uid://dup51f8pdnntg" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/key/alphanum/_/three.png" id="6_q70tu"]
+[ext_resource type="Texture2D" uid="uid://3iknou8k74y" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/key/alphanum/_/four.png" id="7_m8x5a"]
+[ext_resource type="Texture2D" uid="uid://b4lwdrrnhccak" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/key/alphanum/_/five.png" id="8_8fp2c"]
+[ext_resource type="Texture2D" uid="uid://bqfb0y0h7y3pb" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/key/alphanum/_/six.png" id="9_w72m2"]
+[ext_resource type="Texture2D" uid="uid://qaxmc1uupqms" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/key/alphanum/_/seven.png" id="10_hgdu4"]
+[ext_resource type="Texture2D" uid="uid://ctxqvv4ohde7e" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/key/alphanum/_/eight.png" id="11_r77jp"]
+[ext_resource type="Texture2D" uid="uid://dnfcs53vysnt1" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/key/layout/1-8.png" id="12_31gnk"]
+
+[node name="ControlOverlay" type="VBoxContainer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -168.0
+offset_right = -168.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_1jnf1")
+LeftClick = ExtResource("2_5w2gq")
+RightClick = ExtResource("3_30y8d")
+Number1 = ExtResource("4_8hmd2")
+Number2 = ExtResource("5_31gnk")
+Number3 = ExtResource("6_q70tu")
+Number4 = ExtResource("7_m8x5a")
+Number5 = ExtResource("8_8fp2c")
+Number6 = ExtResource("9_w72m2")
+Number7 = ExtResource("10_hgdu4")
+Number8 = ExtResource("11_r77jp")
+Layout1to8 = ExtResource("12_31gnk")
+metadata/_custom_type_script = "uid://drnmdx5hpd238"

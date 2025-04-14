@@ -44,6 +44,9 @@ public partial class Player : Node3D
 	[Export]
 	private TextureProgressBar exitCamerasProgressBar;
 
+	[Export]
+	private ControlOverlay controlOverlay;
+
 	private float rotationSpeed = 2.5f;
 	private Vector2 targetRotation;
 	private Vector2 direction;
@@ -69,6 +72,31 @@ public partial class Player : Node3D
 		{
 			state = value;
 			stateTimer = 0;
+
+			controlOverlay.Clear();
+			switch (state) {
+				case States.Default:
+				case States.ToCamera:
+					controlOverlay.Add(new ControlOverlay.Control("Toggle Flashlight", controlOverlay.LeftClick));
+					controlOverlay.Add(new ControlOverlay.Control("Open Cameras", controlOverlay.RightClick));
+					break;
+				
+				case States.Camera:
+					controlOverlay.Add(new ControlOverlay.Control("Exit (Hold)", controlOverlay.LeftClick));
+					controlOverlay.Add(new ControlOverlay.Control("Previous Camera", controlOverlay.LeftClick));
+					controlOverlay.Add(new ControlOverlay.Control("Next Camera", controlOverlay.RightClick));
+					controlOverlay.Add(new ControlOverlay.Control("Select Camera 1–8", controlOverlay.Layout1to8));
+					break;
+				
+				case States.Hidden:
+					controlOverlay.Add(new ControlOverlay.Control("Exit", controlOverlay.LeftClick));
+					break;
+
+				case States.Record:
+					controlOverlay.Add(new ControlOverlay.Control("Exit", controlOverlay.LeftClick));
+					controlOverlay.Add(new ControlOverlay.Control("Record (When Hovering)", controlOverlay.LeftClick));
+					break;
+			}
 		}
 	}
 
@@ -85,6 +113,8 @@ public partial class Player : Node3D
 
 	public override void _Ready()
 	{
+		// This is to force the control overlay to show the controls
+		State = States.Default;
 		var camerasGroup = GetTree().GetNodesInGroup("cameras").Select(x => (RoomCamera)x).ToArray();
 		cameras = new Godot.Collections.Array<RoomCamera>(camerasGroup);
 	}
@@ -154,7 +184,7 @@ public partial class Player : Node3D
 				{
 					animationPlayer.Play("UnhideUnderTable");
 					Rotation = new Vector3(Mathf.DegToRad(0), Mathf.DegToRad(180), Rotation.Z);
-					state = States.Default;
+					State = States.Default;
 				}
 				break;
 
