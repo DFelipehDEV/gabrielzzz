@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=4 uid="uid://dmhe5g6euql60"]
+[gd_scene load_steps=28 format=4 uid="uid://dmhe5g6euql60"]
 
 [ext_resource type="Script" uid="uid://bjijivbohwud2" path="res://player/Player.cs" id="1_tfayh"]
 [ext_resource type="Script" uid="uid://ba5ia4wbr0j2i" path="res://player/phone/Phone.cs" id="2_aepcq"]
 [ext_resource type="Material" uid="uid://6m5jeifwot7o" path="res://player/phone/ui/FlashlightOnIcon.tres" id="3_hbkom"]
 [ext_resource type="PackedScene" uid="uid://clt1sfs0wbkeo" path="res://player/phone/Phone.glb" id="3_jiab2"]
+[ext_resource type="AudioStream" uid="uid://b1h55ef0bvb4l" path="res://player/Footstep2.wav" id="3_w24id"]
 [ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://player/phone/PhoneTex.tres" id="4_ffrq7"]
 [ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://player/phone/ui/FlashlightIcon.tres" id="5_u8pa4"]
 [ext_resource type="Script" uid="uid://bd0jythy2btlj" path="res://player/phone/Energy.cs" id="6_s61wf"]
@@ -15,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dgc7hgd5cocdx" path="res://player/phone/OpenCamera.wav" id="11_v4f8b"]
 [ext_resource type="Shader" uid="uid://bb1d414vgcd0y" path="res://shared/shaders/Posterize.gdshader" id="12_fhg7u"]
 [ext_resource type="Script" uid="uid://citp8j7mpniah" path="res://shared/ui/FpsCounter.cs" id="13_103y7"]
+[ext_resource type="AudioStream" uid="uid://3ymud63u7upr" path="res://player/Footstep.wav" id="16_t8epa"]
 
 [sub_resource type="Animation" id="Animation_c1eah"]
 resource_name = "HideUnderTable"
@@ -38,6 +40,29 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.1309, 0, 0), Vector3(-0.0610865, 0, 0), Vector3(-0.1309, 0, 0), Vector3(-0.0610865, 0, 0), Vector3(0, 3.14159, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Root/FootstepSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16_t8epa")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_w24id")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16_t8epa")
+}],
+"times": PackedFloat32Array(0.0166666, 0.3, 0.6)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_7xgl7"]
 length = 0.001
@@ -82,6 +107,29 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-0.0349066, 0, 0), Vector3(-0.0872665, 0, 0), Vector3(-0.349066, -0.261799, 0), Vector3(-0.698132, -0.349066, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Root/FootstepSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16_t8epa")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_w24id")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16_t8epa")
+}],
+"times": PackedFloat32Array(0, 0.283333, 0.583333)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_verti"]
 resource_name = "UnhideUnderTable"
@@ -105,6 +153,33 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 3.14159, 0), Vector3(0, 0, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Root/FootstepSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16_t8epa")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_w24id")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16_t8epa")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_w24id")
+}],
+"times": PackedFloat32Array(0.0833333, 0.366667, 0.666667, 0.933333)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cks78"]
 _data = {
@@ -339,3 +414,6 @@ script = ExtResource("13_103y7")
 
 [node name="Eye" type="Node3D" parent="Root"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30572e-09, 0, -0.0492518)
+
+[node name="FootstepSound" type="AudioStreamPlayer3D" parent="Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
