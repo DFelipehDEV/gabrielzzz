@@ -194,7 +194,7 @@ public partial class Player : Node3D
 					}
 				}
 
-				
+
 				if (Input.IsActionPressed("previous_camera") && !Input.IsActionJustPressed("previous_camera")
 				|| Input.IsActionPressed("next_camera") && !Input.IsActionJustPressed("next_camera"))
 				{
@@ -207,7 +207,8 @@ public partial class Player : Node3D
 				}
 
 				// Have a delay to avoid visual clutter
-				if (exitClickHoldTime > 0.2) {
+				if (exitClickHoldTime > 0.2 && focusedInteractable == null)
+				{
 					exitCamerasProgressBar.Visible = true;
 					exitCamerasProgressBar.Value = exitClickHoldTime * 100 * timeToExitCameras;
 					exitCamerasProgressBar.GlobalPosition = GetViewport().GetMousePosition();
