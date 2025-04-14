@@ -195,8 +195,8 @@ public partial class Player : Node3D
 				}
 
 
-				if (Input.IsActionPressed("previous_camera") && !Input.IsActionJustPressed("previous_camera")
-				|| Input.IsActionPressed("next_camera") && !Input.IsActionJustPressed("next_camera"))
+				if ((Input.IsActionPressed("previous_camera") && !Input.IsActionJustPressed("previous_camera")
+				|| Input.IsActionPressed("next_camera") && !Input.IsActionJustPressed("next_camera")) && focusedInteractable == null)
 				{
 					exitClickHoldTime += 1.0 * delta;
 				}
