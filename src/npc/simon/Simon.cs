@@ -19,6 +19,7 @@ public partial class Simon : EnemyNPC
 	[Export]
 	private double timeToJumpscare = 4.5;
 
+	[Export]
 	private bool awake = false;
 	private Generator generator;
 	private Transform3D initialTransform;
