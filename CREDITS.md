@@ -1,0 +1,15 @@
+### Assets:
+- [Tape Recorder with Cassetes](https://sketchfab.com/varvaradolgova) by **Varvara Dolgova**
+- [Vintage Microphone](https://sketchfab.com/Klasy) by **Klasy**
+- [Speakers Low Poly](https://sketchfab.com/killercondo99) by **Condo**
+- [Key with Tag](https://sketchfab.com/AxonDesigns) by **AxonDesigns**
+- [Chair](https://sketchfab.com/topfrank2013) by **Francesco Coldesina**
+- [Water Bottles](https://sketchfab.com/sousinho) by **Sousinho**
+- [Retro Light](https://sketchfab.com/alexorlans) by **Alexandre Orlans**
+- [PSX Monitor](https://sketchfab.com/charlesmoch) by **Charckes**
+- [Computer Desk](https://sketchfab.com/draakon_4d) by **draakon_4d**
+- [3D Cardboard (Lowpoly)](https://sketchfab.com/erdogantaskurt) by **Erdogan Taskurt**
+- [Generator](https://sketchfab.com/Daniel_Baku) by **Daniel_Bakunin**
+- [Low Poly Lada 2107](https://sketchfab.com/ynesolefru) by **kulonee**
+- [Low Poly Metal Shelf - Game Ready](https://sketchfab.com/rashad-brahimli) by **Rashad Ibrahimli**
+- [Forearm Crutch Baked/Textured](https://sketchfab.com/ShariffButler726) by **Shariff Butler Jr.**
