@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=26 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="Script" uid="uid://dduyldn3p66ej" path="res://shared/systems/NightTimeSystem.cs" id="1_lv2c6"]
 [ext_resource type="Script" uid="uid://cy3460eo7gl4s" path="res://nights/Night.cs" id="1_mve05"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bkvdelt1exj6v" path="res://shared/ui/ControlOverlay.tscn" id="6_lllae"]
 [ext_resource type="PackedScene" uid="uid://csx5s23kc2wel" path="res://rooms/ric_bedroom/RicBedroom.tscn" id="6_wxo0h"]
 [ext_resource type="PackedScene" uid="uid://4r5da0qej73s" path="res://rooms/simon_bedroom/SimonBedroom.tscn" id="7_qoy85"]
-[ext_resource type="Texture2D" uid="uid://dnfcs53vysnt1" path="res://shared/ui/input-prompts-1.1.1/256_png/pc/dark/key/layout/1-8.png" id="7_wxo0h"]
 [ext_resource type="PackedScene" uid="uid://c0iaxr7trojl6" path="res://rooms/bathroom/bathroom.tscn" id="8_ygiq5"]
 [ext_resource type="PackedScene" uid="uid://cnhtsot846ueo" path="res://rooms/bathroom/bathroom2.tscn" id="9_n2sui"]
 [ext_resource type="PackedScene" uid="uid://cplcqpabsaj8i" path="res://rooms/garage/garage.tscn" id="10_arxed"]
@@ -59,7 +58,6 @@ metadata/_custom_type_script = "uid://dduyldn3p66ej"
 date = "seg., 01"
 
 [node name="ControlOverlay" parent="." instance=ExtResource("6_lllae")]
-Layout1to8 = ExtResource("7_wxo0h")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sq266")
