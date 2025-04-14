@@ -126,7 +126,8 @@ public partial class Player : Node3D
 					flashlightClickSound.Play();
 				}
 
-				if (Input.IsActionJustPressed("enter_camera") && phone.On)
+				// See Cameras
+				if (Input.IsActionJustPressed("enter_camera") && stateTimer > 0.75f && phone.On)
 				{
 					State = States.ToCamera;
 					phone.Animation = Phone.Animations.OpenCamera;
