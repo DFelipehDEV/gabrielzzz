@@ -225,7 +225,7 @@ _data = {
 }
 
 [node name="Simon" type="Node3D" node_paths=PackedStringArray("sprite", "animationPlayer", "jumpScareAudio", "walkSound")]
-transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_230gs")
 sprite = NodePath("AnimatedSprite3D")
 animationPlayer = NodePath("AnimationPlayer")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://4r5da0qej73s"]
+[gd_scene load_steps=24 format=4 uid="uid://4r5da0qej73s"]
 
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_73dtj"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_ls7v3"]
@@ -88,31 +88,6 @@ _surfaces = [{
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 36,
 "vertex_data": PackedByteArray("BBzevgIoJr4HABg8BBzevgIoJr4HABi8BBzevgIoJj4HABi8BBzePgIoJr4HABi8BBzevgIoJr4HABi8BBzevgIoJr4HABg8BBzevgIoJj4HABi8BBzevgIoJr4HABi8BBzePgIoJr4HABi8BBzevgIoJj4HABi8BBzevgIoJj4HABg8BBzevgIoJr4HABg8BBzevgIoJr4HABg8BBzevgIoJj4HABg8BBzePgIoJj4HABg8BBzePgIoJj4HABg8BBzevgIoJj4HABg8BBzevgIoJj4HABi8BBzevgIoJr4HABg8BBzePgIoJr4HABg8BBzePgIoJr4HABi8BBzePgIoJj4HABg8BBzePgIoJr4HABg8BBzevgIoJr4HABg8BBzePgIoJr4HABi8BBzePgIoJr4HABg8BBzePgIoJj4HABg8BBzePgIoJr4HABi8BBzePgIoJj4HABi8BBzevgIoJj4HABi8BBzevgIoJj4HABi8BBzePgIoJj4HABi8BBzePgIoJj4HABg8BBzePgIoJj4HABg8BBzePgIoJj4HABi8BBzePgIoJr4HABi8AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
-}]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v052v"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rini5"]
-specular_mode = 2
-disable_ambient_light = true
-disable_fog = true
-albedo_color = Color(0.443137, 0.556863, 0.576471, 1)
-normal_texture = SubResource("CompressedTexture2D_v052v")
-uv1_scale = Vector3(0.745, 0.745, 0.745)
-texture_filter = 1
-texture_repeat = false
-disable_receive_shadows = true
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_s68xw"]
-_surfaces = [{
-"aabb": AABB(-0.186935, -0.00347901, -0.337864, 0.373869, 0.00695801, 0.675728),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
-"format": 34359738391,
-"material": SubResource("StandardMaterial3D_rini5"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 36,
-"vertex_data": PackedByteArray("wms/vgUAZLuD/Kw+wms/vgUAZLuD/Ky+wms/vgUAZDuD/Ky+wms/PgUAZLuD/Ky+wms/vgUAZLuD/Ky+wms/vgUAZLuD/Kw+wms/vgUAZDuD/Ky+wms/vgUAZLuD/Ky+wms/PgUAZLuD/Ky+wms/vgUAZDuD/Ky+wms/vgUAZDuD/Kw+wms/vgUAZLuD/Kw+wms/vgUAZLuD/Kw+wms/vgUAZDuD/Kw+wms/PgUAZDuD/Kw+wms/PgUAZDuD/Kw+wms/vgUAZDuD/Kw+wms/vgUAZDuD/Ky+wms/vgUAZLuD/Kw+wms/PgUAZLuD/Kw+wms/PgUAZLuD/Ky+wms/PgUAZDuD/Kw+wms/PgUAZLuD/Kw+wms/vgUAZLuD/Kw+wms/PgUAZLuD/Ky+wms/PgUAZLuD/Kw+wms/PgUAZDuD/Kw+wms/PgUAZLuD/Ky+wms/PgUAZDuD/Ky+wms/vgUAZDuD/Ky+wms/vgUAZDuD/Ky+wms/PgUAZDuD/Ky+wms/PgUAZDuD/Kw+wms/PgUAZDuD/Kw+wms/PgUAZDuD/Ky+wms/PgUAZLuD/Ky+AAD/f/9//78AAP9//3//vwAA/3//f/+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+///////9/AID//////38AgP//////fwCAAAD/f/9//78AAP9//3//vwAA/3//f/+//3//f/9/AID/f/9//38AgP9//3//fwCA/3///wAA/7//f///AAD/v/9///8AAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3//f/9/AID/f/9//38AgP9//3//fwCA////f/9//7////9//3//v////3//f/+///////9/AID//////38AgP//////fwCA/3///wAA/7//f///AAD/v/9///8AAP+/////f/9//7////9//3//v////3//f/+/")
 }]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orkou"]
@@ -208,16 +183,12 @@ mesh = SubResource("ArrayMesh_ojwk5")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="desk/monitor"]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.0628037, 0.408174, 0.103691)
-light_color = Color(0.537575, 0.458551, 0.415734, 1)
-light_energy = 1.5
+light_color = Color(0.964783, 0.999967, 1, 1)
+light_energy = 0.7
 light_size = 0.2
 light_specular = 1.0
 light_bake_mode = 1
 omni_range = 3.91422
-
-[node name="Mousepad" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.37114e-08, 0, -1, 0, -1, 0, 1, 0, 4.37114e-08, -4.00183, 1.03079, -3.71186)
-mesh = SubResource("ArrayMesh_s68xw")
 
 [node name="Chair" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02156, 0.793644, -3.08672)
