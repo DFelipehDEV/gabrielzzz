@@ -126,16 +126,6 @@ public partial class Player : Node3D
 					flashlightClickSound.Play();
 				}
 
-				// Hide
-				if (Input.IsActionJustPressed("hide"))
-				{
-					if (animationPlayer.CurrentAnimation != "UnhideUnderTable")
-					{
-						animationPlayer.Play("HideUnderTable");
-						state = States.Hidden;
-					}
-				}
-
 				if (Input.IsActionJustPressed("enter_camera") && phone.On)
 				{
 					State = States.ToCamera;
@@ -151,7 +141,7 @@ public partial class Player : Node3D
 				targetRotation.Y = Mathf.Lerp(targetRotation.Y, Mathf.DegToRad(0), (float)GetProcessDeltaTime() * 2.5f);
 				Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
 				// Unhide
-				if (Input.IsActionJustPressed("hide") && animationPlayer.CurrentAnimation != "HideUnderTable")
+				if (Input.IsActionJustPressed("toggle_flash") && animationPlayer.CurrentAnimation != "HideUnderTable")
 				{
 					animationPlayer.Play("UnhideUnderTable");
 					Rotation = new Vector3(Mathf.DegToRad(0), Mathf.DegToRad(180), Rotation.Z);

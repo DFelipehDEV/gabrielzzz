@@ -110,6 +110,7 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 			}
 		}
 	}
+	
 	private void OnHourChanged(int hour)
 	{
 		if (!recorded && !recordingFailed)
