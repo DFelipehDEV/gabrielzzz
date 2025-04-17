@@ -54,10 +54,10 @@ nightEndScene = ExtResource("2_s1bl3")
 nextNightScene = ExtResource("3_s1bl3")
 metadata/_custom_type_script = "uid://dduyldn3p66ej"
 
+[node name="ControlOverlay" parent="." instance=ExtResource("6_dhub5")]
+
 [node name="NightStart" parent="." instance=ExtResource("5_oake5")]
 date = "qui., 04"
-
-[node name="ControlOverlay" parent="." instance=ExtResource("6_dhub5")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sq266")
