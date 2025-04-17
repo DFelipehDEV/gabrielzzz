@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d1o4lkpnxtmdh"]
+[gd_scene load_steps=25 format=3 uid="uid://d1o4lkpnxtmdh"]
 
 [ext_resource type="Script" uid="uid://dduyldn3p66ej" path="res://shared/systems/NightTimeSystem.cs" id="1_lv2c6"]
 [ext_resource type="Script" uid="uid://cy3460eo7gl4s" path="res://nights/Night.cs" id="1_mve05"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://djoa8doagvvmr" path="res://npc/vitel/Vitel.tscn" id="13_5kcb5"]
 [ext_resource type="PackedScene" uid="uid://4i3hsxwvngn7" path="res://npc/simon/Simon.tscn" id="14_gpefg"]
 [ext_resource type="PackedScene" uid="uid://ctne8xcpx4ycl" path="res://npc/juans/Juans.tscn" id="15_jn2yw"]
-[ext_resource type="Script" uid="uid://xac6h5x37ums" path="res://transitions/Fade.cs" id="16_5wkro"]
 [ext_resource type="AudioStream" uid="uid://drr868kkaf5tl" path="res://rooms/NightAmbience.ogg" id="17_csxxl"]
 [ext_resource type="PackedScene" uid="uid://ja2qq53m56k3" path="res://rooms/hallway/Hallway.tscn" id="18_eucfq"]
 [ext_resource type="PackedScene" uid="uid://ddy4jc2rrsaw4" path="res://rooms/hallway/Hallway2.tscn" id="19_2rm8u"]
@@ -111,12 +110,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0826, 15.9235, 6.3714)
 
 [node name="Hallway2" parent="." instance=ExtResource("19_2rm8u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9514, 15.9235, 6.3714)
-
-[node name="FadeIn" type="ColorRect" parent="."]
-color = Color(0, 0, 0, 1)
-script = ExtResource("16_5wkro")
-speed = -0.35
-metadata/_custom_type_script = "uid://xac6h5x37ums"
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_csxxl")
