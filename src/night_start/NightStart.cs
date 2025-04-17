@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Godot;
 
 public partial class NightStart : Control
@@ -18,7 +19,7 @@ public partial class NightStart : Control
 		fadeOut = new Fade();
 		fadeOut.Initialize(0.3f, null, Colors.Black);
 		fadeOut.Modulate = new Color(1.0f, 1.0f, 1.0f, 0.0f);
-		fadeOut.Faded += OnFaded;
+		fadeOut.Faded += OnFadeOutFaded;
 
 		dayLabel.Text = date;
 	}
@@ -33,8 +34,13 @@ public partial class NightStart : Control
 		}
 	}
 
-	private void OnFaded()
+	private void OnFadeOutFaded()
 	{
+		Fade fadeIn = new Fade();
+		fadeIn.Initialize(-0.3f, null, Colors.Black);
+		fadeIn.Modulate = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+		GetParent().AddChild(fadeIn);
+		
 		QueueFree();
 	}
 }
