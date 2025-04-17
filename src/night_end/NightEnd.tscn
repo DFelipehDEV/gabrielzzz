@@ -27,8 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="NightEnd" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1169, 320)
+[node name="NightEnd" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_vdygn")
 autoplay = true
 
