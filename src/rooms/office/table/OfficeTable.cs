@@ -7,7 +7,7 @@ public partial class OfficeTable : StaticBody3D, Interactable
 	private Sprite3D hideOverlay;
 
 	private Player player;
-	public bool IsInteractable => player.State != Player.States.Hidden;
+	public bool IsInteractable => player.State == Player.States.Default;
 
 	public override void _Ready()
 	{
