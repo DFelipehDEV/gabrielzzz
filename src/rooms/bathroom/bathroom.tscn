@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c0iaxr7trojl6"]
+[gd_scene load_steps=16 format=4 uid="uid://c0iaxr7trojl6"]
 
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://rooms/bathroom/bathroomtile.tres" id="1_5u0wq"]
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_8pxbd"]
@@ -60,6 +60,9 @@ adjustment_enabled = true
 adjustment_brightness = 0.5
 adjustment_contrast = 1.07
 adjustment_saturation = 0.35
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_41rb6"]
+size = Vector3(6.32446, 2.80116, 6.59915)
 
 [node name="Bathrooms" type="Node3D"]
 
@@ -160,6 +163,10 @@ script = ExtResource("6_tnysf")
 
 [node name="RichardPos" type="Node3D" parent="." groups=["richard_pos"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96019, 0.50754, -2.8607)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.70182, 1.09598, -0.565481)
+occluder = SubResource("BoxOccluder3D_41rb6")
 
 [connection signal="body_entered" from="RoomArea" to="RoomArea" method="_on_body_entered"]
 [connection signal="body_exited" from="RoomArea" to="RoomArea" method="_on_body_exited"]

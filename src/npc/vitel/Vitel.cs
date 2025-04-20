@@ -40,6 +40,10 @@ public partial class Vitel : EnemyNPC
 				}
 			}
 		}
+		else
+		{
+			timeInOffice = 0;
+		}
 	}
 
 	public void JumpScareFinished()

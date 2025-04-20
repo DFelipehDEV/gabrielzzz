@@ -8,7 +8,8 @@ public partial class Richard : EnemyNPC
 	[Export]
 	private AudioStreamPlayer jumpScareAudio;
 
-	private bool awake = false;
+	[Export]
+	private bool awake = true;
 	private double timeInOffice = 0.0;
 
 	private bool insideOffice = false;
@@ -44,6 +45,10 @@ public partial class Richard : EnemyNPC
 					jumpScareAudio.Play();
 				}
 			}
+		}
+		else
+		{
+			timeInOffice = 0;
 		}
 	}
 

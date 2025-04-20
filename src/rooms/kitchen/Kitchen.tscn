@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://31378kkvbbck"]
+[gd_scene load_steps=62 format=4 uid="uid://31378kkvbbck"]
 
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_ah2v2"]
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_x7070"]
@@ -580,6 +580,9 @@ adjustment_brightness = 0.5
 adjustment_contrast = 1.07
 adjustment_saturation = 0.35
 
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_flaey"]
+size = Vector3(6.32446, 4.77582, 8.29587)
+
 [node name="Kitchen" type="Node3D"]
 
 [node name="RoomArea" type="Area3D" parent="." node_paths=PackedStringArray("roomCamera")]
@@ -806,6 +809,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19059, 1.57297, 1.29533)
 stream = ExtResource("9_fxfkr")
 unit_size = 3.0
 script = ExtResource("10_knqvt")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03842, 1.73241, -1.63453)
+occluder = SubResource("BoxOccluder3D_flaey")
 
 [connection signal="body_entered" from="RoomArea" to="RoomArea" method="_on_body_entered"]
 [connection signal="body_exited" from="RoomArea" to="RoomArea" method="_on_body_exited"]

@@ -26,15 +26,8 @@ public partial class Juans : EnemyNPC
 			// Break generator
 			if (generator != null && !generator.Broken)
 			{
-				// 1 in 3 chance to break the generator
-				Random random = new Random();
-				int chance = random.Next(1, 4);
-
-				if (chance == 1) // 1 in 3 chance
-				{
-					generator.Broken = true;
-					GD.Print("Generator has been broken");
-				}
+				generator.Broken = true;
+				GD.Print("Generator has been broken");
 			}
 		}
 
