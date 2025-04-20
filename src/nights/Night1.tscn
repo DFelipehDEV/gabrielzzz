@@ -104,7 +104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7691, 1.07074, -41.7187)
 timeToMove = 40.0
 
 [node name="Simon" parent="." groups=["enemy"] instance=ExtResource("14_gpefg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4254, 1.10052, -68.6732)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.425, 1, -67.4)
 
 [node name="Juans" parent="." groups=["enemy"] instance=ExtResource("15_jn2yw")]
 transform = Transform3D(-0.621982, 0, -0.783032, 0, 1, 0, 0.783032, 0, -0.621982, 16.5233, 1.78506, -41.8921)
