@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://coc1glsj1410t"]
+[gd_scene load_steps=37 format=3 uid="uid://coc1glsj1410t"]
 
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_p5jth"]
 [ext_resource type="Material" uid="uid://d4l5vhgqqobbe" path="res://shared/textures/wood/wood.tres" id="2_7kt6n"]
@@ -92,64 +92,61 @@ bottom_radius = 1.3
 height = 3.5
 radial_segments = 6
 
-[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_s6fkk"]
-size = Vector3(24.3559, 5.50683, 4.80399)
-
 [node name="Office" type="Node3D"]
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.28043, 0, 0, 0, 1, 0, 0, 0, 1.80874, 0, 8, 0)
+transform = Transform3D(2.28043, 0, 0, 0, 1, 0, 0, 0, 1.80874, 0, 0.135322, 0)
 material_override = ExtResource("1_p5jth")
 mesh = SubResource("PlaneMesh_xp0vg")
 
 [node name="Wall" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.19818, 9.22575, -1.73915)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.19818, 1.36107, -1.73915)
 mesh = SubResource("PlaneMesh_7jnia")
 
 [node name="Wall2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24519, 8.71338, 1.90931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24519, 0.848702, 1.90931)
 mesh = SubResource("BoxMesh_gp5kg")
 
 [node name="Wall3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.19249e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.19249e-08, -5.21253e-16, 11.2706, 9.22575, -0.705912)
+transform = Transform3D(1.19249e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.19249e-08, -5.21253e-16, 11.2706, 1.36107, -0.705912)
 visible = false
 mesh = SubResource("PlaneMesh_s6fkk")
 
 [node name="Wall4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.04215, 8.7732, 1.90931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.04215, 0.908522, 1.90931)
 mesh = SubResource("BoxMesh_gp5kg")
 
 [node name="Ceiling2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 1.08097, 10.61, 0.120521)
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 1.08097, 2.74532, 0.120521)
 material_override = ExtResource("2_7kt6n")
 mesh = SubResource("PlaneMesh_01doi")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038, 8.388, 2.16979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038, 0.523321, 2.16979)
 mesh = SubResource("BoxMesh_bd0ue")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038, 10.5998, 2.16979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038, 2.73512, 2.16979)
 mesh = SubResource("BoxMesh_bd0ue")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89505, 9.60643, 2.17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89505, 1.74175, 2.17)
 mesh = SubResource("BoxMesh_7pha6")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63527, 9.60643, 2.17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63527, 1.74175, 2.17)
 mesh = SubResource("BoxMesh_7pha6")
 
 [node name="Window" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.124657, 9.48782, 1.78264)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.124657, 1.62314, 1.78264)
 mesh = SubResource("PlaneMesh_cpnjw")
 
 [node name="Poster" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, -8.74228e-08, -4.37114e-08, 3.442e-08, 0.103591, -0.99462, 9.14806e-08, -0.99462, -0.103591, 1.76035, 9.48588, 1.63704)
+transform = Transform3D(-1, -8.74228e-08, -4.37114e-08, 3.442e-08, 0.103591, -0.99462, 9.14806e-08, -0.99462, -0.103591, 1.76035, 1.6212, 1.63704)
 mesh = SubResource("PlaneMesh_dxvot")
 
 [node name="OfficeTable" type="StaticBody3D" parent="." node_paths=PackedStringArray("hideOverlay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0572006, 7.92655, 0.961303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0572006, 0.0618718, 0.961303)
 script = ExtResource("6_7jnia")
 hideOverlay = NodePath("Sprite3D")
 
@@ -167,23 +164,23 @@ pixel_size = 0.0045
 texture = ExtResource("7_s6fkk")
 
 [node name="Bottle" parent="." instance=ExtResource("6_l5d34")]
-transform = Transform3D(-0.000761718, -0.00832511, -0.00860882, -0.0119474, -6.53674e-05, 0.00112033, -0.000824137, 0.00864223, -0.00828449, -0.186615, 8.74038, 0.84582)
+transform = Transform3D(-0.000761718, -0.00832511, -0.00860882, -0.0119474, -6.53674e-05, 0.00112033, -0.000824137, 0.00864223, -0.00828449, -0.186615, 0.875702, 0.84582)
 
 [node name="Key" parent="." instance=ExtResource("7_468ua")]
-transform = Transform3D(1.30015, 0.0214486, -1.68368, -0.097451, 1.38254, -0.0270854, 1.78206, 0.0599553, 1.2269, 0.122997, 8.71058, 0.754312)
+transform = Transform3D(1.30015, 0.0214486, -1.68368, -0.097451, 1.38254, -0.0270854, 1.78206, 0.0599553, 1.2269, 0.122997, 0.845902, 0.754312)
 
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("8_kdj2r")]
-transform = Transform3D(-0.025, 0, 3.24414e-05, 0, 0.025, 0, -3.24415e-05, 0, -0.025, -0.63817, 8.72194, 1.08178)
+transform = Transform3D(-0.025, 0, 3.24414e-05, 0, 0.025, 0, -3.24415e-05, 0, -0.025, -0.63817, 0.857262, 1.08178)
 visible = false
 
 [node name="Microphone" type="Node3D" parent="."]
-transform = Transform3D(0.000329859, 0, 0.0699991, 0, 0.07, 0, -0.0699992, 0, 0.000329859, 0.119906, 8.67556, 0.705104)
+transform = Transform3D(0.000329859, 0, 0.0699991, 0, 0.07, 0, -0.0699992, 0, 0.000329859, 0.119906, 0.810882, 0.705104)
 
 [node name="Sketchfab_Scene2" parent="Microphone" instance=ExtResource("9_j7x3q")]
 transform = Transform3D(-0.133332, 0, -0.000546856, 0, 0.133333, 0, 0.000546855, 0, -0.133332, 0.0583372, -0.0787544, -0.0401545)
 
 [node name="Radio" type="StaticBody3D" parent="."]
-transform = Transform3D(-1.00001, 0, -1.50615e-07, 0, 1, 0, 7.13214e-08, 0, -0.999994, 0.63422, 8.75079, 1.16393)
+transform = Transform3D(-1.00001, 0, -1.50615e-07, 0, 1, 0, 7.13214e-08, 0, -0.999994, 0.63422, 0.886111, 1.16393)
 script = ExtResource("10_nmgbb")
 
 [node name="Sketchfab_Scene" parent="Radio" instance=ExtResource("11_c46c4")]
@@ -198,7 +195,7 @@ stream = ExtResource("12_yyiif")
 volume_db = -27.769
 
 [node name="retro_light_-_oldclean_model" parent="." instance=ExtResource("13_kbb41")]
-transform = Transform3D(-0.00399997, 0, 1.64057e-05, 0, 0.004, 0, -1.64057e-05, 0, -0.00399997, -0.221762, 9.82125, 0.576201)
+transform = Transform3D(-0.00399997, 0, 1.64057e-05, 0, 0.004, 0, -1.64057e-05, 0, -0.00399997, -0.221762, 1.95657, 0.576201)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="retro_light_-_oldclean_model"]
 transform = Transform3D(1, 0, 3.67165e-08, 0, 1, 0, -3.67165e-08, 0, 1, -96.7507, -123.625, 2.18802)
@@ -219,13 +216,13 @@ mesh = SubResource("CylinderMesh_mqexd")
 skeleton = NodePath("../..")
 
 [node name="Chair" type="Node3D" parent="."]
-transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 9.73317, 0.282123)
+transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 1.86849, 0.282123)
 
 [node name="Sketchfab_Scene2" parent="Chair" instance=ExtResource("14_df44k")]
 transform = Transform3D(-0.000999992, 0, -4.10142e-06, 0, 0.001, 0, 4.10142e-06, 0, -0.000999992, -0.736256, -1.36022, 0.382617)
 
 [node name="Speakers" type="Node3D" parent="."]
-transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 9.35288, 0.282123)
+transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, 0, 1.4882, 0.282123)
 
 [node name="speakers_low_poly1" parent="Speakers" instance=ExtResource("15_n7e8k")]
 transform = Transform3D(0.274876, 0, -0.417664, 0, 0.5, 0, 0.417664, 0, 0.274876, -1.7424, 0.402699, -1.34927)
@@ -234,7 +231,7 @@ transform = Transform3D(0.274876, 0, -0.417664, 0, 0.5, 0, 0.417664, 0, 0.274876
 transform = Transform3D(-0.279596, 0, -0.414519, 0, 0.5, 0, 0.414519, 0, -0.279596, 2.01603, 0.403, -0.997455)
 
 [node name="Webs" type="Node3D" parent="."]
-transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, -6.51926e-09, 10.0095, 1.84944)
+transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, -6.51926e-09, 2.14482, 1.84944)
 
 [node name="Web" type="Sprite3D" parent="Webs"]
 transform = Transform3D(-0.0119625, -0.0806175, 0.5907, 0.12231, -0.0123367, -0.00409053, 0.00930657, 0.0585097, 0.813033, -2.00656, -1.44181, 0.344748)
@@ -245,7 +242,7 @@ double_sided = false
 texture = ExtResource("16_ojthm")
 
 [node name="OnAir" type="Sprite3D" parent="."]
-transform = Transform3D(-0.200286, 0, -8.78195e-08, 0, 0.168389, 0, 1.75095e-08, 0, -1.00454, 0.145171, 10.3245, 1.66896)
+transform = Transform3D(-0.200286, 0, -8.78195e-08, 0, 0.168389, 0, 1.75095e-08, 0, -1.00454, 0.145171, 2.45982, 1.66896)
 transparent = false
 shaded = true
 double_sided = false
@@ -261,25 +258,21 @@ omni_range = 1.47567
 omni_attenuation = 0.478
 
 [node name="RichardPos2" type="Node3D" parent="." groups=["office", "richard_pos"]]
-transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558, 2.64033, 8.8689, 0.0257728)
+transform = Transform3D(0.0871558, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871558, 2.64033, 1.00422, 0.0257728)
 
 [node name="VitelPos2" type="Node3D" parent="." groups=["office", "vitel_pos"]]
-transform = Transform3D(-0.892916, 0, 0.450223, 0, 1, 0, -0.450223, 0, -0.892916, -3.03359, 8.4771, 0.0713904)
+transform = Transform3D(-0.892916, 0, 0.450223, 0, 1, 0, -0.450223, 0, -0.892916, -3.03359, 0.612422, 0.0713904)
 
 [node name="JuansPos" type="Node3D" parent="." groups=["juans_pos", "office"]]
-transform = Transform3D(0.515397, 0, -0.856952, 0, 1, 0, 0.856952, 0, 0.515397, -2.8401, 8.83081, 0.485148)
+transform = Transform3D(0.515397, 0, -0.856952, 0, 1, 0, 0.856952, 0, 0.515397, -2.8401, 0.966131, 0.485148)
 
 [node name="SimonPos" type="Node3D" parent="." groups=["office", "simon_pos"]]
-transform = Transform3D(0.821647, 0, 0.569997, 0, 1, 0, -0.569997, 0, 0.821647, 1.01634, 8.78123, 0.290183)
+transform = Transform3D(0.821647, 0, 0.569997, 0, 1, 0, -0.569997, 0, 0.821647, 1.01634, 0.916552, 0.290183)
 
 [node name="TapeRecorder" parent="." instance=ExtResource("22_wkv8g")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.331435, 8.71954, 0.771839)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.331435, 0.854861, 0.771839)
 
 [node name="Wall5" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -8.86005, 9.22575, -0.383953)
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -8.86005, 1.36107, -0.383953)
 visible = false
 mesh = SubResource("PlaneMesh_s6fkk")
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113392, 8.49101, 0.180794)
-occluder = SubResource("BoxOccluder3D_s6fkk")
