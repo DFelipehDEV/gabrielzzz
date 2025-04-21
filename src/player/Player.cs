@@ -170,6 +170,7 @@ public partial class Player : Node3D
 				{
 					State = States.ToCamera;
 					phone.Animation = Phone.Animations.OpenCamera;
+					phone.Flash = false;
 					openCameraSound.Play();
 				}
 

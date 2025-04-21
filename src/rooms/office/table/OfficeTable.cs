@@ -21,6 +21,7 @@ public partial class OfficeTable : StaticBody3D, Interactable
 		{
 			player.AnimationPlayer.Play("HideUnderTable");
 			player.State = Player.States.Hidden;
+			player.Phone.Flash = false;
 		}
 	}
 
