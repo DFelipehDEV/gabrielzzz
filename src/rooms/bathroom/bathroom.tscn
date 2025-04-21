@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://c0iaxr7trojl6"]
+[gd_scene load_steps=13 format=4 uid="uid://c0iaxr7trojl6"]
 
 [ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://rooms/bathroom/bathroomtile.tres" id="1_5u0wq"]
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_8pxbd"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://shared/textures/asphalt/AsphaltTex.tres" id="2_wh5l2"]
 [ext_resource type="PackedScene" uid="uid://2s6vckmj86pd" path="res://rooms/bathroom/toilet.tscn" id="4_s7480"]
-[ext_resource type="Texture2D" uid="uid://dn8fq0ok8ruq5" path="res://rooms/bathroom/shadowcock.jpg" id="5_vvix3"]
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="6_tnysf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bh7fi"]
@@ -27,21 +26,6 @@ _surfaces = [{
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 36,
 "vertex_data": PackedByteArray("9n/JvOcdI79pUhI/9n/JvOcdI79pUhK/9n/JvOcdIz9pUhK/9n/JPOcdI79pUhK/9n/JvOcdI79pUhK/9n/JvOcdI79pUhI/9n/JvOcdIz9pUhK/9n/JvOcdI79pUhK/9n/JPOcdI79pUhK/9n/JvOcdIz9pUhK/9n/JvOcdIz9pUhI/9n/JvOcdI79pUhI/9n/JvOcdI79pUhI/9n/JvOcdIz9pUhI/9n/JPOcdIz9pUhI/9n/JPOcdIz9pUhI/9n/JvOcdIz9pUhI/9n/JvOcdIz9pUhK/9n/JvOcdI79pUhI/9n/JPOcdI79pUhI/9n/JPOcdI79pUhK/9n/JPOcdIz9pUhI/9n/JPOcdI79pUhI/9n/JvOcdI79pUhI/9n/JPOcdI79pUhK/9n/JPOcdI79pUhI/9n/JPOcdIz9pUhI/9n/JPOcdI79pUhK/9n/JPOcdIz9pUhK/9n/JvOcdIz9pUhK/9n/JvOcdIz9pUhK/9n/JPOcdIz9pUhK/9n/JPOcdIz9pUhI/9n/JPOcdIz9pUhI/9n/JPOcdIz9pUhK/9n/JPOcdI79pUhK/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
-}]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8l7dj"]
-albedo_texture = ExtResource("5_vvix3")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_wvgdb"]
-_surfaces = [{
-"aabb": AABB(-0.180836, -0.244781, -0.0183106, 0.361671, 0.489563, 0.0366211),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
-"format": 34359738391,
-"material": SubResource("StandardMaterial3D_8l7dj"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 36,
-"vertex_data": PackedByteArray("8Sw5vgCoer4CAJY88Sw5vgCoer4CAJa88Sw5vgCoej4CAJa88Sw5PgCoer4CAJa88Sw5vgCoer4CAJa88Sw5vgCoer4CAJY88Sw5vgCoej4CAJa88Sw5vgCoer4CAJa88Sw5PgCoer4CAJa88Sw5vgCoej4CAJa88Sw5vgCoej4CAJY88Sw5vgCoer4CAJY88Sw5vgCoer4CAJY88Sw5vgCoej4CAJY88Sw5PgCoej4CAJY88Sw5PgCoej4CAJY88Sw5vgCoej4CAJY88Sw5vgCoej4CAJa88Sw5vgCoer4CAJY88Sw5PgCoer4CAJY88Sw5PgCoer4CAJa88Sw5PgCoej4CAJY88Sw5PgCoer4CAJY88Sw5vgCoer4CAJY88Sw5PgCoer4CAJa88Sw5PgCoer4CAJY88Sw5PgCoej4CAJY88Sw5PgCoer4CAJa88Sw5PgCoej4CAJa88Sw5vgCoej4CAJa88Sw5vgCoej4CAJa88Sw5PgCoej4CAJa88Sw5PgCoej4CAJY88Sw5PgCoej4CAJY88Sw5PgCoej4CAJa88Sw5PgCoer4CAJa8AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
 }]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hoo3s"]
@@ -118,10 +102,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328218, 0, -0.642746)
 [node name="RightWall" type="MeshInstance3D" parent="box"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.640974, 0.557063, -0.508972)
 mesh = SubResource("ArrayMesh_2j83b")
-
-[node name="nicecock" type="MeshInstance3D" parent="box"]
-transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, -1, 0.151337, 0.89294, -1.00554)
-mesh = SubResource("ArrayMesh_wvgdb")
 
 [node name="Door" type="MeshInstance3D" parent="box"]
 transform = Transform3D(-0.693402, 0, -0.720551, 0, 1, 0, 0.720551, 0, -0.693402, -0.089304, 0.506624, 0.213486)
