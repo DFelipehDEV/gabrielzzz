@@ -63,7 +63,7 @@ script = ExtResource("1_qwevw")
 jumpScare = NodePath("Control/JumpScare")
 jumpScareAudio = NodePath("Control/JumpScare/AudioStreamPlayer")
 positionGroup = "richard_pos"
-timeToMove = 20.0
+timeToMove = 30.0
 walkSound = NodePath("WalkSound")
 metadata/_custom_type_script = "uid://vaaxho6oml81"
 

@@ -98,7 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.242, 0, -25)
 
 [node name="Richard" parent="." groups=["enemy"] instance=ExtResource("12_q6kxp")]
 transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 15.9192, 0.977882, -63.5008)
-timeToMove = 12.5
+timeToMove = 17.5
 
 [node name="Vitel" parent="." groups=["enemy"] instance=ExtResource("13_w380r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7691, 1.07074, -41.7187)
