@@ -229,8 +229,9 @@ script = ExtResource("1_230gs")
 sprite = NodePath("AnimatedSprite3D")
 animationPlayer = NodePath("AnimationPlayer")
 jumpScareAudio = NodePath("Crutch/AudioStreamPlayer")
+timeToJumpscare = 10.0
 positionGroup = "simon_pos"
-timeToMove = 10.0
+timeToMove = 16.0
 walkSound = NodePath("WalkSound")
 metadata/_custom_type_script = "uid://vaaxho6oml81"
 

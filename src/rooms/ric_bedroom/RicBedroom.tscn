@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://csx5s23kc2wel"]
+[gd_scene load_steps=28 format=4 uid="uid://csx5s23kc2wel"]
 
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_bbc1y"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_s2lc5"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dprqhntw5wkt7" path="res://rooms/ric_bedroom/pillow/pillow.glb" id="5_vfk3l"]
 [ext_resource type="Material" uid="uid://cmyh1ifrbnn01" path="res://rooms/office/table/TableTex2.tres" id="6_ivn6v"]
 [ext_resource type="PackedScene" uid="uid://ui5y56mgsn0f" path="res://rooms/ric_bedroom/lamp/old_ussr_lamp.glb" id="7_ofvxb"]
-[ext_resource type="PackedScene" uid="uid://c6yun5pq6btsk" path="res://rooms/ric_bedroom/phone/nokia.tscn" id="9_5sm6f"]
 [ext_resource type="PackedScene" uid="uid://cnqia0b2m1uf8" path="res://rooms/ric_bedroom/bedside_table/bedside_table.glb" id="9_vxoet"]
 [ext_resource type="PackedScene" uid="uid://mgoyd6s3xou6" path="res://rooms/ric_bedroom/rack/clothes_rack.glb" id="10_t822i"]
 [ext_resource type="PackedScene" uid="uid://dtnhuaamxxapr" path="res://rooms/ric_bedroom/shirts/fcporto.glb" id="11_th8je"]
@@ -171,11 +170,6 @@ mesh = SubResource("ArrayMesh_ee6ay")
 [node name="FrontWood" type="MeshInstance3D" parent="Bed"]
 transform = Transform3D(1.00004, 0, 0, 0, 1.00004, 0, -9.23706e-14, 0, 1.00004, 0.0195675, 0.19542, -0.853759)
 mesh = SubResource("ArrayMesh_ptq5o")
-
-[node name="Nokia" parent="." instance=ExtResource("9_5sm6f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.390406, 0.725374, 1.25922)
-AlarmIncreaseRate = 9.75
-AlarmDecreaseRate = 1.8
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("9_vxoet")]
 transform = Transform3D(-0.334571, 0, -5.66539e-08, 0, 0.261368, 0, 5.05189e-08, 0, -0.375202, 0.183854, 0.113849, 1.44617)
