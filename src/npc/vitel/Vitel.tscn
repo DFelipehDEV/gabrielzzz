@@ -71,7 +71,7 @@ texture = ExtResource("2_wy1qd")
 [node name="WalkSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_du87b")
 volume_db = -20.81
-unit_size = 3.0
+unit_size = 2.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

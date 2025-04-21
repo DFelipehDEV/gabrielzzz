@@ -28,15 +28,15 @@ texture = ExtResource("2_2lvgu")
 
 [node name="FlashedSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_a4d0e")
-unit_size = 3.0
+unit_size = 1.5
 
 [node name="OfficeSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_a4d0e")
-unit_size = 3.0
+unit_size = 1.5
 
 [node name="PlayerHide" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_a4d0e")
-unit_size = 3.0
+unit_size = 1.5
 
 [node name="KitchenFaucet" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.999909, 0, -0.013421, 0, 1, 0, 0.013421, 0, 0.999909, 0, 0, 0)
