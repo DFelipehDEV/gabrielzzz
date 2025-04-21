@@ -73,10 +73,10 @@ controlOverlay = NodePath("../ControlOverlay")
 [node name="Office" parent="." instance=ExtResource("5_lllae")]
 
 [node name="Hallway" parent="." instance=ExtResource("18_eucfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.083, 4.324, -5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.5, 4.45, -10.8)
 
 [node name="Hallway2" parent="." instance=ExtResource("19_2rm8u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.951, 4.324, -5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.5, 4.45, -10.8)
 
 [node name="RichardBedroom" parent="." instance=ExtResource("6_wxo0h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.35, 0, -64)

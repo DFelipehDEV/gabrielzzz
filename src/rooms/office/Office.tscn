@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://coc1glsj1410t"]
+[gd_scene load_steps=36 format=3 uid="uid://coc1glsj1410t"]
 
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_p5jth"]
 [ext_resource type="Material" uid="uid://d4l5vhgqqobbe" path="res://shared/textures/wood/wood.tres" id="2_7kt6n"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://d7dsrbal2sia" path="res://rooms/office/bottle/water_bottles.glb" id="6_l5d34"]
 [ext_resource type="PackedScene" uid="uid://bynsbt2jagfue" path="res://rooms/office/key/key_with_tag.glb" id="7_468ua"]
 [ext_resource type="Texture2D" uid="uid://42uqawbic2tu" path="res://rooms/office/table/hide_overlay.png" id="7_s6fkk"]
-[ext_resource type="PackedScene" uid="uid://do7t5y2fmpuik" path="res://rooms/office/pop_cat/gabriel.tscn" id="8_kdj2r"]
 [ext_resource type="PackedScene" uid="uid://8jk288s6fb2r" path="res://rooms/office/microphone/vintage_microphone.glb" id="9_j7x3q"]
 [ext_resource type="Script" uid="uid://dvfsusekvdk7r" path="res://rooms/office/radio/Radio.cs" id="10_nmgbb"]
 [ext_resource type="PackedScene" uid="uid://b6dgq7thgy31w" path="res://rooms/office/radio/grundig_radio_fr-250_free_am_fm_sw.glb" id="11_c46c4"]
@@ -27,11 +26,11 @@ size = Vector2(10, 2)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7jnia"]
 material = ExtResource("2_7kt6n")
-size = Vector2(20, 4)
+size = Vector2(16, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gp5kg"]
 material = ExtResource("2_7kt6n")
-size = Vector3(10, 4, 1.5)
+size = Vector3(8, 4, 1.5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s6fkk"]
 material = ExtResource("2_7kt6n")
@@ -39,7 +38,7 @@ size = Vector2(4, 4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_01doi"]
 lightmap_size_hint = Vector2i(122, 12)
-size = Vector2(20, 3.5)
+size = Vector2(22, 3.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bd0ue"]
 material = ExtResource("2_7kt6n")
@@ -100,24 +99,27 @@ material_override = ExtResource("1_p5jth")
 mesh = SubResource("PlaneMesh_xp0vg")
 
 [node name="Wall" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.19818, 1.36107, -1.73915)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.361, -1.739)
 mesh = SubResource("PlaneMesh_7jnia")
 
 [node name="Wall2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24519, 0.848702, 1.90931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.849, 1.909)
 mesh = SubResource("BoxMesh_gp5kg")
 
 [node name="Wall3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.19249e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.19249e-08, -5.21253e-16, 11.2706, 1.36107, -0.705912)
-visible = false
+transform = Transform3D(1.19249e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.19249e-08, -5.21253e-16, 11.25, 1.361, -0.706)
 mesh = SubResource("PlaneMesh_s6fkk")
 
 [node name="Wall4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.04215, 0.908522, 1.90931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.909, 1.909)
 mesh = SubResource("BoxMesh_gp5kg")
 
+[node name="Wall5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -11.5, 1.361, -0.384)
+mesh = SubResource("PlaneMesh_s6fkk")
+
 [node name="Ceiling2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 1.08097, 2.74532, 0.120521)
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.745, 0.121)
 material_override = ExtResource("2_7kt6n")
 mesh = SubResource("PlaneMesh_01doi")
 
@@ -169,15 +171,8 @@ transform = Transform3D(-0.000761718, -0.00832511, -0.00860882, -0.0119474, -6.5
 [node name="Key" parent="." instance=ExtResource("7_468ua")]
 transform = Transform3D(1.30015, 0.0214486, -1.68368, -0.097451, 1.38254, -0.0270854, 1.78206, 0.0599553, 1.2269, 0.122997, 0.845902, 0.754312)
 
-[node name="Sketchfab_Scene2" parent="." instance=ExtResource("8_kdj2r")]
-transform = Transform3D(-0.025, 0, 3.24414e-05, 0, 0.025, 0, -3.24415e-05, 0, -0.025, -0.63817, 0.857262, 1.08178)
-visible = false
-
-[node name="Microphone" type="Node3D" parent="."]
-transform = Transform3D(0.000329859, 0, 0.0699991, 0, 0.07, 0, -0.0699992, 0, 0.000329859, 0.119906, 0.810882, 0.705104)
-
-[node name="Sketchfab_Scene2" parent="Microphone" instance=ExtResource("9_j7x3q")]
-transform = Transform3D(-0.133332, 0, -0.000546856, 0, 0.133333, 0, 0.000546855, 0, -0.133332, 0.0583372, -0.0787544, -0.0401545)
+[node name="Microphone" parent="." instance=ExtResource("9_j7x3q")]
+transform = Transform3D(-5.7014e-06, 0, -0.0093333, 0, 0.00933331, 0, 0.00933331, 0, -5.70127e-06, 0, 0.811, 0.705)
 
 [node name="Radio" type="StaticBody3D" parent="."]
 transform = Transform3D(-1.00001, 0, -1.50615e-07, 0, 1, 0, 7.13214e-08, 0, -0.999994, 0.725563, 0.886111, 1.16393)
@@ -234,7 +229,7 @@ transform = Transform3D(-0.279596, 0, -0.414519, 0, 0.5, 0, 0.414519, 0, -0.2795
 transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, -6.51926e-09, 2.14482, 1.84944)
 
 [node name="Web" type="Sprite3D" parent="Webs"]
-transform = Transform3D(-0.0119625, -0.0806175, 0.5907, 0.12231, -0.0123367, -0.00409053, 0.00930657, 0.0585097, 0.813033, -2.00656, -1.44181, 0.344748)
+transform = Transform3D(-0.0119625, -0.0806175, 0.5907, 0.12231, -0.0123367, -0.00409053, 0.00930657, 0.0585097, 0.813033, -1.76124, -1.44181, 0.343742)
 cast_shadow = 0
 gi_mode = 0
 shaded = true
@@ -271,8 +266,3 @@ transform = Transform3D(0.821647, 0, 0.569997, 0, 1, 0, -0.569997, 0, 0.821647, 
 
 [node name="TapeRecorder" parent="." instance=ExtResource("22_wkv8g")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.331435, 0.854861, 0.771839)
-
-[node name="Wall5" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -8.86005, 1.36107, -0.383953)
-visible = false
-mesh = SubResource("PlaneMesh_s6fkk")
