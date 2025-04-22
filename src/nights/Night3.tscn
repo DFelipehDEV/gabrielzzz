@@ -101,14 +101,14 @@ transform = Transform3D(-0.33882, 0, 0.940851, 0, 1, 0, -0.940851, 0, -0.33882, 
 timeToMove = 20.0
 
 [node name="Vitel" parent="." groups=["enemy"] instance=ExtResource("13_lqsaw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7691, 1.07074, -41.7187)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 1, -43.716)
 timeToMove = 30.0
 
 [node name="Simon" parent="." groups=["enemy"] instance=ExtResource("14_cw2p8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.425, 1, -67.4)
 
 [node name="Juans" parent="." groups=["enemy"] instance=ExtResource("15_hfwx7")]
-transform = Transform3D(-0.621982, 0, -0.783032, 0, 1, 0, 0.783032, 0, -0.621982, 16.5233, 1.78506, -41.8921)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5233, 1.78506, -45.8701)
 timeToMove = 30.0
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
