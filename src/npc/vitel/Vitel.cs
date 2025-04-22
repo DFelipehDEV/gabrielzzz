@@ -14,6 +14,9 @@ public partial class Vitel : EnemyNPC
 	[Export]
 	private double timeToJumpscare = 8.5;
 
+	private double defaultTimeToMove;
+	private double timeToMoveInOffice;
+
 	private Player player;
 
 	public override void _Ready()
@@ -22,6 +25,9 @@ public partial class Vitel : EnemyNPC
 		player = (Player)GetTree().GetFirstNodeInGroup("player");
 
 		jumpScare.AnimationFinished += JumpScareFinished;
+
+		defaultTimeToMove = TimeToMove;
+		timeToMoveInOffice = defaultTimeToMove * 0.5;
 	}
 
 	public override void _Process(double delta)
@@ -55,5 +61,6 @@ public partial class Vitel : EnemyNPC
 	public override void OnMovedToNewPosition(Node3D position)
 	{
 		insideOffice = position.IsInGroup("office");
+		TimeToMove = insideOffice ? timeToMoveInOffice : defaultTimeToMove;
 	}
 }

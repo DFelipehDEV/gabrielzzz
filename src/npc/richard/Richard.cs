@@ -17,6 +17,9 @@ public partial class Richard : EnemyNPC
 	[Export]
 	private double timeToJumpscare = 8.5;
 
+	private double defaultTimeToMove;
+	private double timeToMoveInOffice;
+
 	private Player player;
 
 	public override void _Ready()
@@ -24,10 +27,12 @@ public partial class Richard : EnemyNPC
 		base._Ready();
 		player = (Player)GetTree().GetFirstNodeInGroup("player");
 
-		GetTree().GetFirstNodeInGroup("nokia").Connect("AlarmFired", Callable.From(AlarmFired));
 		jumpScare.AnimationFinished += JumpScareFinished;
 
+		defaultTimeToMove = TimeToMove;
+		timeToMoveInOffice = defaultTimeToMove * 0.5;
 	}
+	
 	public override void _Process(double delta)
 	{
 		if (awake)
@@ -61,6 +66,7 @@ public partial class Richard : EnemyNPC
 	public override void OnMovedToNewPosition(Node3D position)
 	{
 		insideOffice = position.IsInGroup("office");
+		TimeToMove = insideOffice ? timeToMoveInOffice : defaultTimeToMove;
 	}
 
 	public void JumpScareFinished()

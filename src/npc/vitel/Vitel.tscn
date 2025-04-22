@@ -57,6 +57,7 @@ size = Vector3(0.518616, 1.77881, 0.537964)
 script = ExtResource("1_iaxre")
 jumpScare = NodePath("Control/JumpScare")
 jumpScareAudio = NodePath("Control/JumpScare/AudioStreamPlayer")
+timeToJumpscare = 13.0
 positionGroup = "vitel_pos"
 timeToMove = 50.0
 walkSound = NodePath("WalkSound")
