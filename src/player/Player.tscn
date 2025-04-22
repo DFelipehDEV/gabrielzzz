@@ -316,7 +316,7 @@ font = SubResource("SystemFont_bakc2")
 font_size = 10
 outline_size = 0
 script = ExtResource("6_s61wf")
-EnergyDrainRate = 0.08
+EnergyDrainRate = 0.13
 
 [node name="CameraUI" type="CanvasLayer" parent="Root/Phone"]
 visible = false

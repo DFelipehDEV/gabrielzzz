@@ -88,7 +88,7 @@ public partial class Phone : Node3D
 		set
 		{
 			Light.Visible = value;
-			Energy.WasteMultiplier = value ? 2.0f : 1.0f;
+			Energy.WasteMultiplier = value ? 5.0f : 1.0f;
 			FlashIcon.MaterialOverride = value ? onMaterial : offMaterial;
 		}
 	}
