@@ -123,6 +123,10 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 			}
 			GD.Print("Failed to record at " + hour);
 		}
+		else
+		{
+			recorded = false;
+		}
 	}
 
 	public void Highlight()
