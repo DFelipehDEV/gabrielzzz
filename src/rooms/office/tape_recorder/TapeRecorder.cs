@@ -7,7 +7,7 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	private TextureProgressBar progressBar;
 
 	[Export]
-	private Area3D recordButton;
+	private AudioStreamPlayer3D recordSound;
 
 	private Player player;
 
@@ -24,12 +24,18 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 
 	public void StartInteract()
 	{
-		recording = true;
+		if (!recorded) 
+		{
+			recording = true;
+			if (!recordSound.Playing)
+				recordSound.Play();
+		}
 	}
 
 	public void StopInteract()
 	{
 		recording = false;
+		recordSound.Stop();
 	}
 
 	public override void _Ready()
@@ -55,6 +61,7 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 				if (recordingProgress >= 100.0)
 				{
 					recorded = true;
+					recordSound.Stop();
 					recordingProgress = 0.0;
 				}
 			}
