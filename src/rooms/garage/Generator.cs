@@ -18,6 +18,9 @@ public partial class Generator : StaticBody3D, Interactable
 	[Export]
 	private AudioStreamPlayer lightsOut;
 
+	[Export]
+	private double repairRate = 15.0f;
+
 	private OmniLight3D[] sceneLights;
 
 	private bool broken = false;
@@ -90,7 +93,7 @@ public partial class Generator : StaticBody3D, Interactable
 		{
 			if (beingRepaired)
 			{
-				repairProgress += 10.0 * delta;
+				repairProgress += repairRate * delta;
 
 				if (repairProgress >= 100.0)
 				{
