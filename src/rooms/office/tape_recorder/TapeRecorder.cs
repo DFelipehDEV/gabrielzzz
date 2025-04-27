@@ -1,4 +1,5 @@
 using Godot;
+using System;
 using System.Linq;
 
 public partial class TapeRecorder : StaticBody3D, Interactable
@@ -15,8 +16,23 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	private Player player;
 
 	private bool recorded = false;
+	public bool Recorded {
+		get => recorded;
+		set {
+			recorded = value;
+			if (recorded) 
+			{
+				recordSound.Stop();
+				recordingProgress = 0.0;
+			}
+
+			nightTimeSystem.CanEndNight = recorded;
+		}
+	}
 	private bool recording = false;
 	private double recordingProgress = 0.0;
+
+	private double timeUntilReset = 0.0;
 
 	private NightTimeSystem nightTimeSystem;
 
@@ -49,7 +65,7 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	{
 		base._Process(delta);
 
-		if (!recorded)
+		if (!Recorded)
 		{
 			if (recording)
 			{
@@ -57,15 +73,23 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 
 				if (recordingProgress >= 100.0)
 				{
-					recorded = true;
-					recordSound.Stop();
-					recordingProgress = 0.0;
-					nightTimeSystem.CanEndNight = true;
+					Recorded = true;
+					timeUntilReset = new Random().Next(70, 100);
 				}
 			}
+			progressBar.Value = recordingProgress;
 		}
+		else
+		{
+			timeUntilReset -= delta;
 
-		progressBar.Value = recordingProgress;
+			if (timeUntilReset <= 0)
+			{
+				Recorded = false;
+			}
+
+			progressBar.Value = 100.0f;
+		}
 	}
 
 	public override void _Input(InputEvent @event)
