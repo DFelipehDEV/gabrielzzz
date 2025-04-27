@@ -1,14 +1,13 @@
-[gd_scene load_steps=29 format=4 uid="uid://dmhe5g6euql60"]
+[gd_scene load_steps=31 format=3 uid="uid://dmhe5g6euql60"]
 
 [ext_resource type="Script" uid="uid://bjijivbohwud2" path="res://player/Player.cs" id="1_tfayh"]
 [ext_resource type="Script" uid="uid://ba5ia4wbr0j2i" path="res://player/phone/Phone.cs" id="2_aepcq"]
-[ext_resource type="Material" uid="uid://6m5jeifwot7o" path="res://player/phone/ui/FlashlightOnIcon.tres" id="3_hbkom"]
 [ext_resource type="PackedScene" uid="uid://clt1sfs0wbkeo" path="res://player/phone/Phone.glb" id="3_jiab2"]
 [ext_resource type="AudioStream" uid="uid://b1h55ef0bvb4l" path="res://player/Footstep2.wav" id="3_w24id"]
-[ext_resource type="Material" uid="uid://bwn12igadl8cf" path="res://player/phone/PhoneTex.tres" id="4_ffrq7"]
-[ext_resource type="Material" uid="uid://dqug2ykuis3fh" path="res://player/phone/ui/FlashlightIcon.tres" id="5_u8pa4"]
-[ext_resource type="Script" uid="uid://bd0jythy2btlj" path="res://player/phone/Energy.cs" id="6_s61wf"]
+[ext_resource type="Texture2D" uid="uid://dwvvj3rr8vwbk" path="res://player/phone/ui/FlashlightOnIcon.png" id="5_w24id"]
+[ext_resource type="Texture2D" uid="uid://bus5n0fxsjb8e" path="res://player/phone/ui/FlashlightIcon.png" id="7_w24id"]
 [ext_resource type="Texture2D" uid="uid://bfbrtjtc0usvw" path="res://player/phone/PhoneCamera.png" id="8_3mkx0"]
+[ext_resource type="Texture2D" uid="uid://bw8sut7f2umov" path="res://player/phone/ui/CameraIcon.png" id="8_w24id"]
 [ext_resource type="Texture2D" uid="uid://bj3eakylas5lg" path="res://player/phone/PhoneCameraBottom.png" id="9_pftie"]
 [ext_resource type="Script" uid="uid://b2j13qrivippj" path="res://player/PlayerCamera.cs" id="10_agyb6"]
 [ext_resource type="AudioStream" uid="uid://byiq2187kyekm" path="res://player/phone/FlashlightClick.wav" id="10_d4g0h"]
@@ -190,35 +189,33 @@ _data = {
 &"UnhideUnderTable": SubResource("Animation_verti")
 }
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_d4g0h"]
-_surfaces = [{
-"aabb": AABB(-0.0320312, -0.065155, -0.0005, 0.0640625, 0.13031, 0.001),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
-"format": 34359738391,
-"material": ExtResource("4_ffrq7"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 36,
-"vertex_data": PackedByteArray("MzMDvfxvhb1vEgM6MzMDvfxvhb1vEgO6MzMDvfxvhT1vEgO6MzMDPfxvhb1vEgO6MzMDvfxvhb1vEgO6MzMDvfxvhb1vEgM6MzMDvfxvhT1vEgO6MzMDvfxvhb1vEgO6MzMDPfxvhb1vEgO6MzMDvfxvhT1vEgO6MzMDvfxvhT1vEgM6MzMDvfxvhb1vEgM6MzMDvfxvhb1vEgM6MzMDvfxvhT1vEgM6MzMDPfxvhT1vEgM6MzMDPfxvhT1vEgM6MzMDvfxvhT1vEgM6MzMDvfxvhT1vEgO6MzMDvfxvhb1vEgM6MzMDPfxvhb1vEgM6MzMDPfxvhb1vEgO6MzMDPfxvhT1vEgM6MzMDPfxvhb1vEgM6MzMDvfxvhb1vEgM6MzMDPfxvhb1vEgO6MzMDPfxvhb1vEgM6MzMDPfxvhT1vEgM6MzMDPfxvhb1vEgO6MzMDPfxvhT1vEgO6MzMDvfxvhT1vEgO6MzMDvfxvhT1vEgO6MzMDPfxvhT1vEgO6MzMDPfxvhT1vEgM6MzMDPfxvhT1vEgM6MzMDPfxvhT1vEgO6MzMDPfxvhb1vEgO6AAD/f/9//78AAP9//3//vwAA/3//f/+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+///////9/AID//////38AgP//////fwCAAAD/f/9//78AAP9//3//vwAA/3//f/+//3//f/9/AID/f/9//38AgP9//3//fwCA/3///wAA/7//f///AAD/v/9///8AAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3//f/9/AID/f/9//38AgP9//3//fwCA////f/9//7////9//3//v////3//f/+///////9/AID//////38AgP//////fwCA/3///wAA/7//f///AAD/v/9///8AAP+/////f/9//7////9//3//v////3//f/+/")
-}]
+[sub_resource type="ViewportTexture" id="ViewportTexture_uewl2"]
+viewport_path = NodePath("Root/Phone/PhoneHolder/2DScreen/SubViewport")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_v4f8b"]
-_surfaces = [{
-"aabb": AABB(-0.005, -0.005, -0.0005, 0.01, 0.01, 0.001),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
-"format": 34359738391,
-"material": ExtResource("5_u8pa4"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 36,
-"vertex_data": PackedByteArray("CtejuwrXo7tvEgM6CtejuwrXo7tvEgO6CtejuwrXoztvEgO6CtejOwrXo7tvEgO6CtejuwrXo7tvEgO6CtejuwrXo7tvEgM6CtejuwrXoztvEgO6CtejuwrXo7tvEgO6CtejOwrXo7tvEgO6CtejuwrXoztvEgO6CtejuwrXoztvEgM6CtejuwrXo7tvEgM6CtejuwrXo7tvEgM6CtejuwrXoztvEgM6CtejOwrXoztvEgM6CtejOwrXoztvEgM6CtejuwrXoztvEgM6CtejuwrXoztvEgO6CtejuwrXo7tvEgM6CtejOwrXo7tvEgM6CtejOwrXo7tvEgO6CtejOwrXoztvEgM6CtejOwrXo7tvEgM6CtejuwrXo7tvEgM6CtejOwrXo7tvEgO6CtejOwrXo7tvEgM6CtejOwrXoztvEgM6CtejOwrXo7tvEgO6CtejOwrXoztvEgO6CtejuwrXoztvEgO6CtejuwrXoztvEgO6CtejOwrXoztvEgO6CtejOwrXoztvEgM6CtejOwrXoztvEgM6CtejOwrXoztvEgO6CtejOwrXo7tvEgO6AAD/f/9//78AAP9//3//vwAA/3//f/+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+///////9/AID//////38AgP//////fwCAAAD/f/9//78AAP9//3//vwAA/3//f/+//3//f/9/AID/f/9//38AgP9//3//fwCA/3///wAA/7//f///AAD/v/9///8AAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3//f/9/AID/f/9//38AgP9//3//fwCA////f/9//7////9//3//v////3//f/+///////9/AID//////38AgP//////fwCA/3///wAA/7//f///AAD/v/9///8AAP+/////f/9//7////9//3//v////3//f/+/")
-}]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yu5hk"]
+resource_local_to_scene = true
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = SubResource("ViewportTexture_uewl2")
 
-[sub_resource type="SystemFont" id="SystemFont_bakc2"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_q6miu"]
+size = Vector2(0.06, 0.13)
+
+[sub_resource type="SystemFont" id="SystemFont_uewl2"]
 font_names = PackedStringArray("Calibri")
 hinting = 0
 subpixel_positioning = 0
 oversampling = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_uewl2"]
+font = SubResource("SystemFont_uewl2")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ofhxi"]
+font = SubResource("SystemFont_uewl2")
+font_size = 72
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hw0io"]
 shader = ExtResource("11_k8vgv")
@@ -246,19 +243,19 @@ autoplay = "RESET"
 
 [node name="Root" type="Node3D" parent="."]
 
-[node name="Phone" type="Node3D" parent="Root" node_paths=PackedStringArray("Holder", "Light", "CameraUI", "DayLabel", "TimeLabel", "FlashIcon", "eye", "Energy", "Screen")]
+[node name="Phone" type="Node3D" parent="Root" node_paths=PackedStringArray("Holder", "Light", "CameraUI", "DateLabel", "TimeLabel", "EnergyLabel", "FlashIcon", "eye", "Screen")]
 transform = Transform3D(1, 8.58606e-07, 5.96046e-08, 7.45058e-07, 1, 1.19209e-07, 3.27826e-07, 4.29861e-07, 0.999999, 0.0793167, -0.0236454, -0.156882)
 script = ExtResource("2_aepcq")
 Holder = NodePath("PhoneHolder")
 Light = NodePath("PhoneHolder/Flash")
 CameraUI = NodePath("CameraUI")
-DayLabel = NodePath("PhoneHolder/Screen/Date")
-TimeLabel = NodePath("PhoneHolder/Screen/Time")
-FlashIcon = NodePath("PhoneHolder/Screen/FlashIcon")
+DateLabel = NodePath("PhoneHolder/2DScreen/SubViewport/Control/Date")
+TimeLabel = NodePath("PhoneHolder/2DScreen/SubViewport/Control/Time")
+EnergyLabel = NodePath("PhoneHolder/2DScreen/SubViewport/Control/Energy")
+FlashIcon = NodePath("PhoneHolder/2DScreen/SubViewport/Flashlight")
 eye = NodePath("../Eye")
-Energy = NodePath("PhoneHolder/Screen/Energy")
-Screen = NodePath("PhoneHolder/Screen")
-onMaterial = ExtResource("3_hbkom")
+Screen = NodePath("PhoneHolder/2DScreen")
+flashOnTexture = ExtResource("5_w24id")
 
 [node name="PhoneHolder" type="Node3D" parent="Root/Phone"]
 
@@ -273,50 +270,85 @@ spot_angle = 35.0
 [node name="PhoneModel" parent="Root/Phone/PhoneHolder" instance=ExtResource("3_jiab2")]
 transform = Transform3D(0.001, -2.56217e-17, 0, 1.64313e-17, 0.001, 0, 0, 2.77556e-17, 0.001, 0, 0, 0)
 
-[node name="Screen" type="MeshInstance3D" parent="Root/Phone/PhoneHolder"]
-transform = Transform3D(-1, 6.90368e-12, 5.36442e-07, 1.55893e-11, -1, 4.36273e-12, -2.68221e-07, 0, -1, -0.000854596, 0.00178337, 0.00364208)
-mesh = SubResource("ArrayMesh_d4g0h")
-skeleton = NodePath("../..")
+[node name="2DScreen" type="MeshInstance3D" parent="Root/Phone/PhoneHolder"]
+transform = Transform3D(1, -7.10543e-15, 1.41914e-13, -9.59233e-14, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.00445642)
+material_override = SubResource("StandardMaterial3D_yu5hk")
+mesh = SubResource("PlaneMesh_q6miu")
 
-[node name="FlashIcon" type="MeshInstance3D" parent="Root/Phone/PhoneHolder/Screen"]
-transform = Transform3D(-0.999998, -9.43939e-13, -2.38419e-07, 3.29798e-11, -1, -2.69296e-12, -2.35438e-06, -1.44951e-12, -1, 0.0235925, 0.0524702, -0.000178844)
-mesh = SubResource("ArrayMesh_v4f8b")
-skeleton = NodePath("../../..")
+[node name="SubViewport" type="SubViewport" parent="Root/Phone/PhoneHolder/2DScreen"]
+transparent_bg = true
+size = Vector2i(256, 512)
 
-[node name="Time" type="Label3D" parent="Root/Phone/PhoneHolder/Screen"]
-transform = Transform3D(-1, -6.57144e-12, -5.36442e-07, -1.52518e-11, -1, -4.32721e-12, 2.68221e-07, 0, -1, -0.000854552, -0.03586, -0.000520945)
-pixel_size = 0.0006
-double_sided = false
-texture_filter = 0
-outline_modulate = Color(0, 0, 0, 0)
+[node name="Flashlight" type="TextureRect" parent="Root/Phone/PhoneHolder/2DScreen/SubViewport"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+offset_right = 132.0
+offset_bottom = 46.0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_w24id")
+
+[node name="Camera" type="TextureRect" parent="Root/Phone/PhoneHolder/2DScreen/SubViewport"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -87.0
+offset_right = 76.0
+offset_bottom = 46.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_w24id")
+
+[node name="Control" type="Control" parent="Root/Phone/PhoneHolder/2DScreen/SubViewport"]
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Date" type="Label" parent="Root/Phone/PhoneHolder/2DScreen/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 48.0
+offset_right = 50.0
+offset_bottom = 80.0
+grow_horizontal = 2
+text = "seg., 01"
+label_settings = SubResource("LabelSettings_uewl2")
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="Root/Phone/PhoneHolder/2DScreen/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.0
+offset_top = 76.0
+offset_right = 83.0
+offset_bottom = 148.0
+grow_horizontal = 2
 text = "00:00"
-font = SubResource("SystemFont_bakc2")
-outline_size = 0
+label_settings = SubResource("LabelSettings_ofhxi")
+horizontal_alignment = 1
 
-[node name="Date" type="Label3D" parent="Root/Phone/PhoneHolder/Screen"]
-transform = Transform3D(-1, -6.45775e-12, -5.36442e-07, -1.51381e-11, -1, -4.31299e-12, 2.68221e-07, 0, -1, -0.000854567, -0.0484705, -0.000520945)
-pixel_size = 0.0006
-double_sided = false
-texture_filter = 0
-outline_modulate = Color(0, 0, 0, 0)
-text = "seg., 01
-"
-font = SubResource("SystemFont_bakc2")
-font_size = 16
-outline_size = 0
-
-[node name="Energy" type="Label3D" parent="Root/Phone/PhoneHolder/Screen"]
-transform = Transform3D(-1, -6.17353e-12, -5.36442e-07, -1.48539e-11, -1, -4.27747e-12, 2.68221e-07, 0, -1, -0.0258591, -0.059453, -0.000520959)
-pixel_size = 0.0006
-double_sided = false
-texture_filter = 0
-outline_modulate = Color(0, 0, 0, 0)
+[node name="Energy" type="Label" parent="Root/Phone/PhoneHolder/2DScreen/SubViewport/Control"]
+layout_mode = 1
+offset_right = 100.0
+offset_bottom = 32.0
 text = "100"
-font = SubResource("SystemFont_bakc2")
-font_size = 10
-outline_size = 0
-script = ExtResource("6_s61wf")
-EnergyDrainRate = 0.13
+label_settings = SubResource("LabelSettings_uewl2")
+horizontal_alignment = 2
 
 [node name="CameraUI" type="CanvasLayer" parent="Root/Phone"]
 visible = false
@@ -420,6 +452,7 @@ mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="FPSCounter" type="Label" parent="Root/Camera"]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 mouse_filter = 1

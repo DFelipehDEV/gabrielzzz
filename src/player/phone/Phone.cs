@@ -12,28 +12,28 @@ public partial class Phone : Node3D
 	public CanvasLayer CameraUI { get; private set; }
 
 	[Export]
-	public Label3D DayLabel { get; private set; }
+	public Label DateLabel { get; private set; }
 
 	[Export]
-	public Label3D TimeLabel { get; private set; }
+	public Label TimeLabel { get; private set; }
 
 	[Export]
-	public MeshInstance3D FlashIcon { get; private set; }
+	public Label EnergyLabel { get; private set; }
+
+	[Export]
+	public TextureRect FlashIcon { get; private set; }
 
 	[Export]
 	private Node3D eye;
 
 	[Export]
-	public Energy Energy { get; private set; }
-
-	[Export]
 	public MeshInstance3D Screen { get; private set; }
 
 	private Vector3 normalPhonePosition;
-	private Material offMaterial;
+	private Texture2D flashOffTexture;
 
 	[Export]
-	private Material onMaterial;
+	private Texture2D flashOnTexture;
 
 	private bool on = true;
 	public bool On {
@@ -82,36 +82,42 @@ public partial class Phone : Node3D
 		}
 	}
 
+	private Energy energy;
+
 	public bool Flash
 	{
 		get => Light.Visible;
 		set
 		{
 			Light.Visible = value;
-			Energy.WasteMultiplier = value ? 5.0f : 1.0f;
-			FlashIcon.MaterialOverride = value ? onMaterial : offMaterial;
+			energy.WasteMultiplier = value ? 5.0f : 1.0f;
+			FlashIcon.Texture = value ? flashOnTexture : flashOffTexture;
 		}
 	}
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		energy = new Energy();
 		normalPhonePosition = Position;
 
-		// Store the original material and load the alternate material.
-		offMaterial = FlashIcon.MaterialOverride;
+		// Store the original Texture and load the alternate Texture.
+		flashOffTexture = FlashIcon.Texture;
 
 		NightTimeSystem nightTimeSystem = GetTree().CurrentScene.GetNode<NightTimeSystem>("NightTimeSystem");
 		nightTimeSystem.HourChanged += OnHourChanged;
 
-		DayLabel.Text = (GetTree().CurrentScene as Night).Day;
+		DateLabel.Text = (GetTree().CurrentScene as Night).Day;
 	}
 
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
+
+		energy.Update(delta);
+		EnergyLabel.Text = energy.ToString();
 		
-		if (Energy.CurrentEnergy == 0)
+		if (energy.CurrentEnergy == 0)
 		{
 			On = false;
 		}

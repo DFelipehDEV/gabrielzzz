@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class Energy : Label3D
+public partial class Energy
 {
 	[Export] 
 	public double EnergyDrainRate { get; set; } = 0.2;
@@ -20,9 +20,12 @@ public partial class Energy : Label3D
         set => wasteMultiplier = Mathf.Max(value, 0);
     }
 
-    public override void _Process(double delta)
+    public void Update(double delta)
     {
         CurrentEnergy -= EnergyDrainRate * WasteMultiplier * delta;
-        Text = ((int)CurrentEnergy).ToString();
+    }
+
+    public override string ToString() {
+        return ((int)CurrentEnergy).ToString();
     }
 }

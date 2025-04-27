@@ -10,7 +10,7 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	private AudioStreamPlayer3D recordSound;
 
 	[Export]
-	private double recordIncreaseRate = 2.5;
+	private double recordIncreaseRate = 1.75;
 
 	private Player player;
 
