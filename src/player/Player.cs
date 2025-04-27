@@ -376,7 +376,7 @@ public partial class Player : Node3D
 		}
 
 		if (previousFocused != null) previousFocused.Unhighlight();
-		if (focusedInteractable != null && focusedInteractable.IsInteractable) focusedInteractable.Highlight();
+		if (focusedInteractable != null) focusedInteractable.Highlight();
 	}
 
 	private void SwitchCamera(int newCameraIndex)
