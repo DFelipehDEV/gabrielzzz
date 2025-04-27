@@ -22,6 +22,13 @@ public partial class NightTimeSystem : Node
 		get => hour;
 	}
 
+	private bool canEndNight = false;
+	public bool CanEndNight 
+	{
+		get => canEndNight;
+		set => canEndNight = value;
+	}
+
 	private bool nightEnded = false;
 
 	public static readonly float HOUR_LENGTH = 70.0f;
@@ -39,7 +46,7 @@ public partial class NightTimeSystem : Node
 			hour = newHour;
 			EmitSignal(SignalName.HourChanged, hour);
 
-			if (hour == 6 && !nightEnded)
+			if (hour >= 6 && canEndNight && !nightEnded)
 			{
                 nightEnded = true;
                 EmitSignal(SignalName.NightEnded);

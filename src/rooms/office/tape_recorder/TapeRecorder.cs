@@ -9,18 +9,18 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	[Export]
 	private AudioStreamPlayer3D recordSound;
 
+	[Export]
+	private double recordIncreaseRate = 2.5;
+
 	private Player player;
 
 	private bool recorded = false;
 	private bool recording = false;
 	private double recordingProgress = 0.0;
-	private bool recordingFailed = false;
 
 	private NightTimeSystem nightTimeSystem;
 
 	public bool IsInteractable => player.State == Player.States.Record;
-
-	private EnemyNPC[] enemies;
 
 	public void StartInteract()
 	{
@@ -42,32 +42,26 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	{
 		base._Ready();
 		player = (Player)GetTree().GetFirstNodeInGroup("player");
-		enemies = GetTree().GetNodesInGroup("enemy").Select(x => (EnemyNPC)x).ToArray();
 		nightTimeSystem = GetTree().CurrentScene.GetNode<NightTimeSystem>("NightTimeSystem");
-		nightTimeSystem.HourChanged += OnHourChanged;
 	}
 
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
-		if (recordingFailed) return;
 
 		if (!recorded)
 		{
 			if (recording)
 			{
-				recordingProgress += 5.0f * delta;
+				recordingProgress += recordIncreaseRate * delta;
 
 				if (recordingProgress >= 100.0)
 				{
 					recorded = true;
 					recordSound.Stop();
 					recordingProgress = 0.0;
+					nightTimeSystem.CanEndNight = true;
 				}
-			}
-			else
-			{
-				recordingProgress = Mathf.Max(recordingProgress - 1.5f * delta, 0);
 			}
 		}
 
@@ -115,24 +109,6 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 				player.AnimationPlayer.PlayBackwards("RecordTape");
 				player.State = Player.States.Default;
 			}
-		}
-	}
-	
-	private void OnHourChanged(int hour)
-	{
-		if (!recorded && !recordingFailed)
-		{
-			recordingFailed = true;
-			foreach (EnemyNPC enemy in enemies)
-			{
-				enemy.TimeToMove -= 5;
-				GD.Print(enemy.Name + " now takes " + enemy.TimeToMove + " seconds to move");
-			}
-			GD.Print("Failed to record at " + hour);
-		}
-		else
-		{
-			recorded = false;
 		}
 	}
 
