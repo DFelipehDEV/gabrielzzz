@@ -13,8 +13,12 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	[Export]
 	private double recordIncreaseRate = 1.75;
 
+	[Export]
+	private ProgressBar timeUntilFailProgressBar;
+
 	private Player player;
 
+	private bool canRecord = true;
 	private bool recorded = false;
 	public bool Recorded {
 		get => recorded;
@@ -26,17 +30,28 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 				recordingProgress = 0.0;
 			}
 
+			timeUntilFailProgressBar.Visible = !recorded;
+
 			nightTimeSystem.CanEndNight = recorded;
 		}
 	}
 	private bool recording = false;
 	private double recordingProgress = 0.0;
 
+	private double timeUntilFail = 99.0;
+	public double TimeUntilFail {
+		get => timeUntilFail;
+		set {
+			timeUntilFail = value;
+		}
+	}
 	private double timeUntilReset = 0.0;
 
 	private NightTimeSystem nightTimeSystem;
 
 	public bool IsInteractable => player.State == Player.States.Record;
+
+	public Color[] timeUntilFailColors;
 
 	public void StartInteract()
 	{
@@ -57,6 +72,11 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	public override void _Ready()
 	{
 		base._Ready();
+		timeUntilFailColors = new Color[3] {
+			Colors.Red,
+			Colors.Yellow,
+			Colors.White,
+		};
 		player = (Player)GetTree().GetFirstNodeInGroup("player");
 		nightTimeSystem = GetTree().CurrentScene.GetNode<NightTimeSystem>("NightTimeSystem");
 	}
@@ -65,8 +85,9 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	{
 		base._Process(delta);
 
-		if (!Recorded)
+		if (!Recorded && canRecord)
 		{
+			timeUntilFail -= delta;
 			if (recording)
 			{
 				recordingProgress += recordIncreaseRate * delta;
@@ -78,6 +99,13 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 				}
 			}
 			progressBar.Value = recordingProgress;
+
+			timeUntilFailProgressBar.Value = timeUntilFail;
+
+			StyleBoxFlat style = new StyleBoxFlat();
+			style.BgColor = timeUntilFailColors[(int)(timeUntilFailProgressBar.Value / 33.33f)];
+			timeUntilFailProgressBar.AddThemeStyleboxOverride("fill", style);
+			
 		}
 		else
 		{
@@ -86,6 +114,12 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 			if (timeUntilReset <= 0)
 			{
 				Recorded = false;
+				TimeUntilFail = 99.0;
+			}
+
+			if (TimeUntilFail <= 0)
+			{
+				canRecord = false;
 			}
 
 			progressBar.Value = 100.0f;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxvea4vkt6get"]
+[gd_scene load_steps=10 format=3 uid="uid://dxvea4vkt6get"]
 
 [ext_resource type="Script" uid="uid://86wy1kyg8d0m" path="res://rooms/office/tape_recorder/TapeRecorder.cs" id="1_85lrj"]
 [ext_resource type="PackedScene" uid="uid://dwmv0ybtmcn82" path="res://rooms/office/tape_recorder/tape_recorder.glb" id="1_foepx"]
@@ -9,14 +9,21 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_foepx"]
 size = Vector3(0.268527, 0.103638, 0.166626)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_pmadk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_eku1x"]
 viewport_path = NodePath("RecordUI/SubViewport")
 
-[node name="TapeRecorder" type="StaticBody3D" node_paths=PackedStringArray("progressBar", "recordSound")]
+[sub_resource type="ViewportTexture" id="ViewportTexture_pmadk"]
+viewport_path = NodePath("TimeUI/SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmadk"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="TapeRecorder" type="StaticBody3D" node_paths=PackedStringArray("progressBar", "recordSound", "timeUntilFailProgressBar")]
 script = ExtResource("1_85lrj")
 progressBar = NodePath("RecordUI/SubViewport/ProgressBar")
 recordSound = NodePath("RecordSound")
 recordIncreaseRate = 2.0
+timeUntilFailProgressBar = NodePath("TimeUI/SubViewport/Time")
 
 [node name="Model" parent="." instance=ExtResource("1_foepx")]
 
@@ -29,7 +36,7 @@ transform = Transform3D(0.211538, 0, 0, 0, 0.253082, 0, 0, 0, 0.251043, -0.01096
 pixel_size = 0.005
 billboard = 1
 double_sided = false
-texture = SubResource("ViewportTexture_pmadk")
+texture = SubResource("ViewportTexture_eku1x")
 
 [node name="SubViewport" type="SubViewport" parent="RecordUI"]
 transparent_bg = true
@@ -44,6 +51,24 @@ fill_mode = 4
 texture_under = ExtResource("2_ug3jj")
 texture_progress = ExtResource("3_85lrj")
 tint_progress = Color(0.174388, 0.708437, 0, 1)
+
+[node name="TimeUI" type="Sprite3D" parent="."]
+transform = Transform3D(0.211538, 0, 0, 0, 0.253082, 0, 0, 0, 0.251043, -0.0109677, 0.0796094, -0.168894)
+pixel_size = 0.005
+billboard = 1
+double_sided = false
+texture = SubResource("ViewportTexture_pmadk")
+
+[node name="SubViewport" type="SubViewport" parent="TimeUI"]
+transparent_bg = true
+size = Vector2i(32, 192)
+
+[node name="Time" type="ProgressBar" parent="TimeUI/SubViewport"]
+offset_right = 32.0
+offset_bottom = 192.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_pmadk")
+value = 99.0
+fill_mode = 3
 
 [node name="RecordSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_pmadk")
