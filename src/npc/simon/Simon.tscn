@@ -54,7 +54,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_xlehk")
 }],
 "loop": true,
-"name": &"jumpScare",
+"name": &"JumpScare",
 "speed": 5.0
 }, {
 "frames": [{
@@ -79,13 +79,14 @@ size = Vector3(0.518616, 1.77881, 0.537964)
 
 [sub_resource type="Animation" id="Animation_ad7xw"]
 resource_name = "JumpScare"
+length = 0.75
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Crutch")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.12, -0.239, -0.02, 0.5, 1, 0.129, 0.4, 1, 1, 1, 0.129, -0.686, 2)
+tracks/0/keys = PackedFloat32Array(0, 1, 0.12, -0.239, -0.02, 0.3, 1, 0.129, 0.4, 1, 0.733333, 1, 0.129, -0.686, 2)
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
@@ -93,7 +94,7 @@ tracks/1/path = NodePath("Crutch:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.533333, 0.9),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.333333, 0.633333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 3.49066, 0), Vector3(0.380482, 3.49066, 0), Vector3(0.401426, 3.49066, 0), Vector3(-2.0944, 3.49066, 0), Vector3(-6.28319, 3.49066, 0)]
@@ -101,14 +102,26 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite3D:animation")
+tracks/2/path = NodePath("AnimatedSprite3D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite3D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"jumpScare"]
+"values": [&"JumpScare"]
 }
 
 [sub_resource type="Animation" id="Animation_meqxe"]
@@ -144,6 +157,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"sit"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite3D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_hwymf"]
