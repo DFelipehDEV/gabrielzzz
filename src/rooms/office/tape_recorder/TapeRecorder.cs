@@ -55,7 +55,12 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 		{
 			state = States.Recording;
 			if (!recordSound.Playing)
-				recordSound.Play();
+			{
+				if (recordSound.StreamPaused)
+					recordSound.StreamPaused = false;
+				else
+					recordSound.Play();
+			}
 		}
 	}
 
@@ -64,7 +69,7 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 		if (state != States.Cooldown) 
 		{
 			state = States.Idle;
-			recordSound.Stop();
+			recordSound.StreamPaused = true;
 		}
 	}
 

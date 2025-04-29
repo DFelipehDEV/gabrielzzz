@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dwmv0ybtmcn82" path="res://rooms/office/tape_recorder/tape_recorder.glb" id="1_foepx"]
 [ext_resource type="Texture2D" uid="uid://ddxv2qx6a10xw" path="res://shared/circular_meter/progress-bar-frame.png" id="2_ug3jj"]
 [ext_resource type="Texture2D" uid="uid://bqa6koxf6hkc4" path="res://shared/circular_meter/progress-bar-circle.png" id="3_85lrj"]
-[ext_resource type="AudioStream" uid="uid://3j87noh5swb" path="res://rooms/office/tape_recorder/RecordTape2.wav" id="5_pmadk"]
+[ext_resource type="AudioStream" uid="uid://106t7kv51x26" path="res://rooms/office/tape_recorder/RecordTape.wav" id="5_pmadk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_foepx"]
 size = Vector3(0.268527, 0.103638, 0.166626)
