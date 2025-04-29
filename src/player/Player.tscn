@@ -232,11 +232,11 @@ shader_parameter/amount = 0.02
 shader = ExtResource("12_fhg7u")
 shader_parameter/posterization_levels = 37
 
-[node name="Player" type="Node3D" node_paths=PackedStringArray("cam", "phone", "animationPlayer", "flashlightClickSound", "openCameraSound", "exitCamerasProgressBar") groups=["player"]]
+[node name="Player" type="Node3D" node_paths=PackedStringArray("cam", "Phone", "AnimationPlayer", "flashlightClickSound", "openCameraSound", "exitCamerasProgressBar") groups=["player"]]
 script = ExtResource("1_tfayh")
 cam = NodePath("Root/Camera")
-phone = NodePath("Root/Phone")
-animationPlayer = NodePath("AnimationPlayer")
+Phone = NodePath("Root/Phone")
+AnimationPlayer = NodePath("AnimationPlayer")
 flashlightClickSound = NodePath("Root/Phone/FlashlightClick")
 openCameraSound = NodePath("Root/Phone/OpenCamera")
 timeToExitCameras = 1.0

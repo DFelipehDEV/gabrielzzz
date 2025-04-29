@@ -1,5 +1,4 @@
 using Godot;
-using System;
 using System.Linq;
 
 public partial class Player : Node3D
@@ -8,11 +7,7 @@ public partial class Player : Node3D
 	private PlayerCamera cam;
 
 	[Export]
-	private Phone phone;
-	public Phone Phone
-	{
-		get => phone;
-	}
+	public Phone Phone { get; private set; }
 
 	[Export]
 	private float phoneRotationSwayAmount = 20.0f;
@@ -27,11 +22,7 @@ public partial class Player : Node3D
 	private float phonePositionSwaySpeed = 1.25f;
 
 	[Export]
-	private AnimationPlayer animationPlayer;
-	public AnimationPlayer AnimationPlayer
-	{
-		get => animationPlayer;
-	}
+	public AnimationPlayer AnimationPlayer { get; private set; }
 
 	[Export]
 	private AudioStreamPlayer3D flashlightClickSound;
@@ -138,7 +129,7 @@ public partial class Player : Node3D
 		switch (state)
 		{
 			case States.Default:
-				if (animationPlayer.CurrentAnimation == "")
+				if (AnimationPlayer.CurrentAnimation == "")
 				{
 					targetRotation.X = Mathf.Lerp(targetRotation.X, (-direction.X * 1.5f) + Mathf.DegToRad(180), (float)GetProcessDeltaTime() * rotationSpeed);
 					targetRotation.Y = Mathf.Lerp(targetRotation.Y, (-direction.Y * 1.5f), (float)GetProcessDeltaTime() * rotationSpeed);
@@ -150,7 +141,7 @@ public partial class Player : Node3D
 						0.0f,
 						Mathf.Clamp(-swayInput.X, -0.5f, 0.5f) * Mathf.DegToRad(phoneRotationSwayAmount)
 					);
-					phone.Holder.Rotation = phone.Holder.Rotation.Lerp(phoneSwayRotation, phoneRotationSwaySpeed * (float)delta);
+					Phone.Holder.Rotation = Phone.Holder.Rotation.Lerp(phoneSwayRotation, phoneRotationSwaySpeed * (float)delta);
 
 					Vector3 phoneSwayPosition = new Vector3(
 						Mathf.Clamp(swayInput.X, -phonePositionSwayAmount, phonePositionSwayAmount),
@@ -158,22 +149,22 @@ public partial class Player : Node3D
 						0.0f
 					);
 
-					phone.Holder.Position = phone.Holder.Position.Lerp(phoneSwayPosition, phonePositionSwaySpeed * (float)delta);
+					Phone.Holder.Position = Phone.Holder.Position.Lerp(phoneSwayPosition, phonePositionSwaySpeed * (float)delta);
 				}
 
 				// Flashlight
-				if (Input.IsActionJustPressed("toggle_flash") && phone.On)
+				if (Input.IsActionJustPressed("toggle_flash") && Phone.On)
 				{
-					phone.Flash = !phone.Flash;
+					Phone.Flash = !Phone.Flash;
 					flashlightClickSound.Play();
 				}
 
 				// See Cameras
-				if (Input.IsActionJustPressed("enter_camera") && stateTimer > 0.75f && phone.On)
+				if (Input.IsActionJustPressed("enter_camera") && stateTimer > 0.75f && Phone.On)
 				{
 					State = States.ToCamera;
-					phone.Animation = Phone.Animations.OpenCamera;
-					phone.Flash = false;
+					Phone.Animation = Phone.Animations.OpenCamera;
+					Phone.Flash = false;
 					openCameraSound.Play();
 				}
 
@@ -185,9 +176,9 @@ public partial class Player : Node3D
 				targetRotation.Y = Mathf.Lerp(targetRotation.Y, Mathf.DegToRad(0), (float)GetProcessDeltaTime() * 2.5f);
 				Rotation = new Vector3(targetRotation.Y, targetRotation.X, Rotation.Z);
 				// Unhide
-				if (Input.IsActionJustPressed("toggle_flash") && animationPlayer.CurrentAnimation != "HideUnderTable")
+				if (Input.IsActionJustPressed("toggle_flash") && AnimationPlayer.CurrentAnimation != "HideUnderTable")
 				{
-					animationPlayer.Play("UnhideUnderTable");
+					AnimationPlayer.Play("UnhideUnderTable");
 					Rotation = new Vector3(Mathf.DegToRad(0), Mathf.DegToRad(180), Rotation.Z);
 					State = States.Default;
 				}
@@ -254,7 +245,7 @@ public partial class Player : Node3D
 						SwitchCamera(0);
 
 						State = States.Default;
-						phone.Animation = Phone.Animations.CloseCamera;
+						Phone.Animation = Phone.Animations.CloseCamera;
 						ToggleCameraUI(false);
 					}
 				}
@@ -265,12 +256,12 @@ public partial class Player : Node3D
 						SwitchCamera(i);
 				}
 
-				if (Input.IsActionJustPressed("leave_cameras") || !phone.On)
+				if (Input.IsActionJustPressed("leave_cameras") || !Phone.On)
 				{
 					SwitchCamera(0);
 
 					State = States.Default;
-					phone.Animation = Phone.Animations.CloseCamera;
+					Phone.Animation = Phone.Animations.CloseCamera;
 					ToggleCameraUI(false);
 				}
 
@@ -364,7 +355,7 @@ public partial class Player : Node3D
 
 	private void ToggleCameraUI(bool visible)
 	{
-		phone.CameraUI.Visible = visible;
+		Phone.CameraUI.Visible = visible;
 		cam.Posterize.Visible = visible;
 		cam.Grain.Visible = visible;
 	}
