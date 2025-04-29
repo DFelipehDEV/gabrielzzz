@@ -22,7 +22,7 @@ bg_color = Color(1, 0, 0, 1)
 script = ExtResource("1_85lrj")
 progressBar = NodePath("RecordUI/SubViewport/ProgressBar")
 recordSound = NodePath("RecordSound")
-recordIncreaseRate = 2.0
+recordIncreaseRate = 15.0
 timeUntilFailProgressBar = NodePath("TimeUI/SubViewport/Time")
 
 [node name="Model" parent="." instance=ExtResource("1_foepx")]

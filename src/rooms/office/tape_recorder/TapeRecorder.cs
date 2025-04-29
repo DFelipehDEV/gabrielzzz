@@ -21,23 +21,6 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	private Player player;
 
 	private bool canRecord = true;
-	private bool recorded = false;
-	public bool Recorded {
-		get => recorded;
-		set {
-			recorded = value;
-			if (recorded) 
-			{
-				recordSound.Stop();
-				recordingProgress = 0.0;
-			}
-
-			timeUntilFailProgressBar.Visible = !recorded;
-
-			nightTimeSystem.CanEndNight = recorded;
-		}
-	}
-	private bool recording = false;
 	private double recordingProgress = 0.0;
 
 	private double timeUntilFail = 99.0;
@@ -51,17 +34,26 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 
 	private NightTimeSystem nightTimeSystem;
 
-	public bool IsInteractable => player.State == Player.States.Record;
+	public bool IsInteractable => state != States.Cooldown && player.State == Player.States.Record;
 
 	[Export]
 	private Color[] failColors = new Color[] { Colors.Red, Colors.Yellow, Colors.White };
 	public Color[] FailProgressBarColors => failColors;
 
+	public enum States
+	{
+		Idle,
+		Recording,
+		Cooldown
+	}
+
+	private States state = States.Idle;
+
 	public void StartInteract()
 	{
-		if (!recorded) 
+		if (state != States.Cooldown && canRecord) 
 		{
-			recording = true;
+			state = States.Recording;
 			if (!recordSound.Playing)
 				recordSound.Play();
 		}
@@ -69,8 +61,11 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 
 	public void StopInteract()
 	{
-		recording = false;
-		recordSound.Stop();
+		if (state != States.Cooldown) 
+		{
+			state = States.Idle;
+			recordSound.Stop();
+		}
 	}
 
 	public override void _Ready()
@@ -86,44 +81,52 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	{
 		base._Process(delta);
 
-		if (!Recorded && canRecord)
+		switch (state)
 		{
-			timeUntilFail -= delta;
-			if (recording)
-			{
+			case States.Recording:
 				recordingProgress += recordIncreaseRate * delta;
+				progressBar.Value = recordingProgress;
 
 				if (recordingProgress >= 100.0)
 				{
-					Recorded = true;
+					state = States.Cooldown;
 					timeUntilReset = new Random().Next(70, 100);
+
+					timeUntilFailProgressBar.Visible = false;
+					recordingProgress = 0.0;
+					recordSound.Stop();
 				}
-			}
-			progressBar.Value = recordingProgress;
+				break;
 
-			timeUntilFailProgressBar.Value = timeUntilFail;
+			case States.Cooldown:
+				timeUntilReset -= delta;
+				if (timeUntilReset <= 0)
+				{
+					state = States.Idle;
+					timeUntilFailProgressBar.Visible = true;
+					TimeUntilFail = 99.0;
+					recordingProgress = 0.0;
+				}
 
-			failStyleBox.BgColor = FailProgressBarColors[
-				Mathf.Clamp((int)(timeUntilFailProgressBar.Value / (100.0f / FailProgressBarColors.Length)), 0, FailProgressBarColors.Length - 1)
-			];
+				progressBar.Value = 100.0f;
+				break;
 		}
-		else
+
+		if (timeUntilFailProgressBar.Visible)
 		{
-			timeUntilReset -= delta;
-
-			if (timeUntilReset <= 0)
-			{
-				Recorded = false;
-				TimeUntilFail = 99.0;
-			}
-
-			if (TimeUntilFail <= 0)
-			{
-				canRecord = false;
-			}
-
-			progressBar.Value = 100.0f;
+			timeUntilFail -= delta;
+			timeUntilFailProgressBar.Value = timeUntilFail;
 		}
+
+		failStyleBox.BgColor = FailProgressBarColors[
+			Mathf.Clamp((int)(timeUntilFailProgressBar.Value / (100.0f / FailProgressBarColors.Length)), 0, FailProgressBarColors.Length - 1)
+		];
+		if (TimeUntilFail <= 0)
+		{
+			canRecord = false;
+		}
+		nightTimeSystem.CanEndNight = state == States.Cooldown;
+
 	}
 
 	public override void _Input(InputEvent @event)
