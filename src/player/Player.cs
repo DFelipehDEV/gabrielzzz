@@ -259,44 +259,10 @@ public partial class Player : Node3D
 					}
 				}
 
-				if (Input.IsActionJustPressed("goto_camera_1"))
+				for (int i = 1; i <= 8; i++)
 				{
-					SwitchCamera(1);
-				}
-
-				if (Input.IsActionJustPressed("goto_camera_2"))
-				{
-					SwitchCamera(2);
-				}
-
-				if (Input.IsActionJustPressed("goto_camera_3"))
-				{
-					SwitchCamera(3);
-				}
-
-				if (Input.IsActionJustPressed("goto_camera_4"))
-				{
-					SwitchCamera(4);
-				}
-
-				if (Input.IsActionJustPressed("goto_camera_5"))
-				{
-					SwitchCamera(5);
-				}
-
-				if (Input.IsActionJustPressed("goto_camera_6"))
-				{
-					SwitchCamera(6);
-				}
-
-				if (Input.IsActionJustPressed("goto_camera_7"))
-				{
-					SwitchCamera(7);
-				}
-
-				if (Input.IsActionJustPressed("goto_camera_8"))
-				{
-					SwitchCamera(8);
+					if (Input.IsActionJustPressed("goto_camera_" + i.ToString()))
+						SwitchCamera(i);
 				}
 
 				if (Input.IsActionJustPressed("leave_cameras") || !phone.On)
