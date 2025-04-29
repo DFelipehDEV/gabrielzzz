@@ -95,20 +95,22 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 					timeUntilFailProgressBar.Visible = false;
 					recordingProgress = 0.0;
 					recordSound.Stop();
+
+					progressBar.Value = 100.0f;
 				}
 				break;
 
 			case States.Cooldown:
 				timeUntilReset -= delta;
+
 				if (timeUntilReset <= 0)
 				{
 					state = States.Idle;
 					timeUntilFailProgressBar.Visible = true;
 					TimeUntilFail = 99.0;
 					recordingProgress = 0.0;
+					progressBar.Value = 0.0f;
 				}
-
-				progressBar.Value = 100.0f;
 				break;
 		}
 
