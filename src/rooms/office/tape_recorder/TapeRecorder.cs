@@ -79,6 +79,7 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 			Colors.Yellow,
 			Colors.White,
 		];
+		failStyleBox = new StyleBoxFlat();
 		timeUntilFailProgressBar.AddThemeStyleboxOverride("fill", failStyleBox);
 		player = GetTree().GetFirstNodeInGroup("player") as Player;
 		nightTimeSystem = GetTree().CurrentScene.GetNode<NightTimeSystem>("NightTimeSystem");
