@@ -53,7 +53,9 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 
 	public bool IsInteractable => player.State == Player.States.Record;
 
-	public Color[] timeUntilFailColors;
+	[Export]
+	private Color[] failColors = new Color[] { Colors.Red, Colors.Yellow, Colors.White };
+	public Color[] FailProgressBarColors => failColors;
 
 	public void StartInteract()
 	{
@@ -74,11 +76,6 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 	public override void _Ready()
 	{
 		base._Ready();
-		timeUntilFailColors = [
-			Colors.Red,
-			Colors.Yellow,
-			Colors.White,
-		];
 		failStyleBox = new StyleBoxFlat();
 		timeUntilFailProgressBar.AddThemeStyleboxOverride("fill", failStyleBox);
 		player = GetTree().GetFirstNodeInGroup("player") as Player;
@@ -106,8 +103,8 @@ public partial class TapeRecorder : StaticBody3D, Interactable
 
 			timeUntilFailProgressBar.Value = timeUntilFail;
 
-			failStyleBox.BgColor = timeUntilFailColors[
-				Mathf.Clamp((int)(timeUntilFailProgressBar.Value / (100.0f / timeUntilFailColors.Length)), 0, timeUntilFailColors.Length - 1)
+			failStyleBox.BgColor = FailProgressBarColors[
+				Mathf.Clamp((int)(timeUntilFailProgressBar.Value / (100.0f / FailProgressBarColors.Length)), 0, FailProgressBarColors.Length - 1)
 			];
 		}
 		else
