@@ -3,7 +3,7 @@ using Godot;
 
 public partial class Simon : EnemyNPC
 {
-	[Export] 
+	[Export]
 	private AnimatedSprite3D sprite;
 
 	[Export]
@@ -21,12 +21,15 @@ public partial class Simon : EnemyNPC
 
 	[Export]
 	private bool awake = false;
+
+	private Player player;
 	private Generator generator;
 	private Transform3D initialTransform;
 
 	public override void _Ready()
 	{
 		base._Ready();
+		player = GetTree().GetFirstNodeInGroup("player") as Player;
 		generator = GetTree().GetFirstNodeInGroup("generator") as Generator;
 		generator.Connect("GeneratorBroken", Callable.From(GeneratorBroken));
 		generator.Connect("GeneratorRepaired", Callable.From(GeneratorRepaired));
@@ -34,37 +37,42 @@ public partial class Simon : EnemyNPC
 		initialTransform = Transform;
 	}
 
-   
+
 	public override void _Process(double delta)
 	{
-		if (awake)
+		if (awake && animationPlayer.AssignedAnimation != "JumpScare" && animationPlayer.AssignedAnimation != "JumpScareTable")
 			base._Process(delta);
-
 
 		if (insideOffice)
 		{
 			timeInOffice += delta;
 			if (timeInOffice > timeToJumpscare)
 			{
-				if (animationPlayer.CurrentAnimation != "JumpScare")
+				string jumpScareAnimationName = player.State == Player.States.Hidden ? "JumpScareTable" : "JumpScare";
+				if (animationPlayer.CurrentAnimation != jumpScareAnimationName)
 				{
-					animationPlayer.Play("JumpScare");
-					jumpScareAudio.Play();
+					animationPlayer.Play(jumpScareAnimationName);
 				}
 			}
 		}
+		else
+		{
+			timeInOffice = 0;
+		}
 	}
 
-	public void GeneratorBroken() {
+	public void GeneratorBroken()
+	{
 		awake = true;
 		animationPlayer.Play("Standing");
 		GD.Print(Name + " is now awake");
 	}
 
-	public void GeneratorRepaired() {
+	public void GeneratorRepaired()
+	{
 		awake = false;
 		Transform = initialTransform;
-		animationPlayer.Play("Sit");
+		animationPlayer.Play("RESET");
 		GD.Print(Name + " is now asleep");
 	}
 
@@ -75,8 +83,8 @@ public partial class Simon : EnemyNPC
 
 	public void JumpScareFinished(StringName animName)
 	{
-		if (animName != "JumpScare") return;
-		
+		if (animName != "JumpScare" && animName != "JumpScareTable") return;
+
 		OS.DelayMsec(1000);
 		GetTree().ChangeSceneToFile("res://game_over/GameOver.tscn");
 	}

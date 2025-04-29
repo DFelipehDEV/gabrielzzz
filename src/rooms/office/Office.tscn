@@ -262,7 +262,7 @@ transform = Transform3D(-0.892916, 0, 0.450223, 0, 1, 0, -0.450223, 0, -0.892916
 transform = Transform3D(0.515397, 0, -0.856952, 0, 1, 0, 0.856952, 0, 0.515397, -2.8401, 0.966131, 0.485148)
 
 [node name="SimonPos" type="Node3D" parent="." groups=["office", "simon_pos"]]
-transform = Transform3D(0.821647, 0, 0.569997, 0, 1, 0, -0.569997, 0, 0.821647, 1.01634, 0.916552, 0.290183)
+transform = Transform3D(-0.560292, 0, -0.828295, 0, 1, 0, 0.828295, 0, -0.560292, 1.01634, 0.916552, 0.290183)
 
 [node name="TapeRecorder" parent="." instance=ExtResource("22_wkv8g")]
 transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, 0.331435, 0.854861, 0.771839)
