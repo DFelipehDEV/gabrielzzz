@@ -22,7 +22,7 @@ public partial class Vitel : EnemyNPC
 	public override void _Ready()
 	{
 		base._Ready();
-		player = (Player)GetTree().GetFirstNodeInGroup("player");
+		player = GetTree().GetFirstNodeInGroup("player") as Player;
 
 		jumpScare.AnimationFinished += JumpScareFinished;
 

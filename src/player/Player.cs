@@ -116,7 +116,10 @@ public partial class Player : Node3D
 	{
 		// This is to force the control overlay to show the controls
 		State = States.Default;
-		var camerasGroup = GetTree().GetNodesInGroup("cameras").OfType<RoomCamera>().OrderBy(camera => camera.GlobalTransform.Origin.DistanceTo(GlobalTransform.Origin)).ToArray();
+		var camerasGroup = GetTree().GetNodesInGroup("cameras")
+				.OfType<RoomCamera>()
+				.OrderBy(camera => camera.GlobalTransform.Origin.DistanceTo(GlobalTransform.Origin))
+				.ToArray();
 		cameras = new Godot.Collections.Array<RoomCamera>(camerasGroup);
 	}
 

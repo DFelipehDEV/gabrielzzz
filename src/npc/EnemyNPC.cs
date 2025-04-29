@@ -35,7 +35,7 @@ public partial class EnemyNPC : Node3D
 		if (!string.IsNullOrEmpty(positionGroup))
 		{
 			var positionsGroup = GetTree().GetNodesInGroup(positionGroup)
-									.Select(x => (Node3D)x)
+									.OfType<Node3D>()
 									.ToArray();
 			positions = new Godot.Collections.Array<Node3D>(positionsGroup);
 		}

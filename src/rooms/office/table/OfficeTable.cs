@@ -12,7 +12,7 @@ public partial class OfficeTable : StaticBody3D, Interactable
 	public override void _Ready()
 	{
 		base._Ready();
-		player = (Player)GetTree().GetFirstNodeInGroup("player");
+		player = GetTree().GetFirstNodeInGroup("player") as Player;
 	}
 	
 	public void StartInteract()

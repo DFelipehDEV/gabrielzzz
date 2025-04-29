@@ -27,7 +27,7 @@ public partial class Simon : EnemyNPC
 	public override void _Ready()
 	{
 		base._Ready();
-		generator = (Generator)GetTree().GetFirstNodeInGroup("generator");
+		generator = GetTree().GetFirstNodeInGroup("generator") as Generator;
 		generator.Connect("GeneratorBroken", Callable.From(GeneratorBroken));
 		generator.Connect("GeneratorRepaired", Callable.From(GeneratorRepaired));
 		animationPlayer.AnimationFinished += JumpScareFinished;

@@ -15,8 +15,8 @@ public partial class Juans : EnemyNPC
 	public override void _Ready()
 	{
 		base._Ready();
-		generator = (Generator)GetTree().GetFirstNodeInGroup("generator");
-		player = (Player)GetTree().GetFirstNodeInGroup("player");
+		generator = GetTree().GetFirstNodeInGroup("generator") as Generator;
+		player = GetTree().GetFirstNodeInGroup("player") as Player;
 		flashLight = player.Phone.Light;
 	}
 	public override void OnMovedToNewPosition(Node3D position)
