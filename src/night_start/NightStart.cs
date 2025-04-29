@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using Godot;
 
 public partial class NightStart : Control
@@ -17,7 +16,7 @@ public partial class NightStart : Control
 	{
 		base._Ready();
 		fadeOut = new Fade();
-		fadeOut.Initialize(0.3f, null, Colors.Black);
+		fadeOut.Initialize(0.5f, null, Colors.Black);
 		fadeOut.Modulate = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 		fadeOut.Faded += OnFadeOutFaded;
 
@@ -28,7 +27,7 @@ public partial class NightStart : Control
 	{
 		base._Process(delta);
 		time += (float)delta;
-		if (time >= 4.5f && fadeOut.GetParent() == null)
+		if (time >= 3.25f && fadeOut.GetParent() == null)
 		{
 			GetTree().CurrentScene.AddChild(fadeOut);
 		}
@@ -37,7 +36,7 @@ public partial class NightStart : Control
 	private void OnFadeOutFaded()
 	{
 		Fade fadeIn = new Fade();
-		fadeIn.Initialize(-0.3f, null, Colors.Black);
+		fadeIn.Initialize(-0.5f, null, Colors.Black);
 		fadeIn.Modulate = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 		GetParent().AddChild(fadeIn);
 		
