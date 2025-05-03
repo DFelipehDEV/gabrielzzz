@@ -628,119 +628,119 @@ mesh = SubResource("ArrayMesh_knqvt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0279813, 2.29553, 1.8015)
 mesh = SubResource("ArrayMesh_u3lk6")
 
-[node name="Móveis" type="Node3D" parent="."]
+[node name="Props" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3749, 0, 0)
 
-[node name="Counter" type="Node3D" parent="Móveis"]
+[node name="Counter" type="Node3D" parent="Props"]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 1.59742, 0, -0.473484)
 
-[node name="Counter" type="MeshInstance3D" parent="Móveis/Counter"]
+[node name="Counter" type="MeshInstance3D" parent="Props/Counter"]
 transform = Transform3D(1.13478, 0, 0, 0, 0.7351, 0, 0, 0, 1, -0.472697, 0.407696, 1.65006)
 mesh = SubResource("ArrayMesh_noc86")
 
-[node name="Counter2" type="MeshInstance3D" parent="Móveis/Counter"]
+[node name="Counter2" type="MeshInstance3D" parent="Props/Counter"]
 transform = Transform3D(-0.0172711, 0, 1.00387, 0, 0.7351, 0, -1.29685, 0, -0.0133692, -0.402737, 0.393155, 1.04233)
 mesh = SubResource("ArrayMesh_uoefy")
 
-[node name="Counter3" type="MeshInstance3D" parent="Móveis/Counter"]
+[node name="Counter3" type="MeshInstance3D" parent="Props/Counter"]
 transform = Transform3D(-0.0133165, 0, 0.999911, 0, 1, 0, -0.999911, 0, -0.0133165, -0.4075, 0.415472, 0.319231)
 mesh = SubResource("ArrayMesh_2tf1j")
 
-[node name="Counter4" type="MeshInstance3D" parent="Móveis/Counter"]
+[node name="Counter4" type="MeshInstance3D" parent="Props/Counter"]
 transform = Transform3D(-0.585648, 0, -0.0162502, 0, 1, 0, 0.0156017, 0, -0.60999, -0.529579, 0.420628, -0.124153)
 mesh = SubResource("ArrayMesh_kiiy3")
 
-[node name="Counter5" type="MeshInstance3D" parent="Móveis/Counter"]
+[node name="Counter5" type="MeshInstance3D" parent="Props/Counter"]
 transform = Transform3D(0.769231, 0, 0, 0, 0.769231, 0, 0, 0, 0.769231, -1.83405, 0.121204, 1.6812)
 mesh = SubResource("ArrayMesh_jqlwe")
 skeleton = NodePath("../..")
 
-[node name="Counter6" type="MeshInstance3D" parent="Móveis/Counter"]
+[node name="Counter6" type="MeshInstance3D" parent="Props/Counter"]
 transform = Transform3D(-3.01101e-08, 0, -0.769231, 0, 0.769231, 0, 0.688838, 0, -3.36242e-08, -1.79208, 0.164428, 0.168394)
 mesh = SubResource("ArrayMesh_fpyw6")
 skeleton = NodePath("../..")
 
-[node name="Stove" type="MeshInstance3D" parent="Móveis"]
+[node name="Stove" type="MeshInstance3D" parent="Props"]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0.0979919, 0.364935, 1.75211)
 mesh = SubResource("ArrayMesh_x3gee")
 
-[node name="Fridge" type="MeshInstance3D" parent="Móveis"]
+[node name="Fridge" type="MeshInstance3D" parent="Props"]
 transform = Transform3D(-6.99382e-08, 0, -2.03479, 0, 1.6, 0, 1.6, 0, -8.89433e-08, -0.840493, 1.15379, -1.14101)
 mesh = SubResource("ArrayMesh_0ly4x")
 
-[node name="KnifeHolder" type="MeshInstance3D" parent="Móveis"]
+[node name="KnifeHolder" type="MeshInstance3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.202754, 1.6875, 1.91384)
 mesh = SubResource("ArrayMesh_j6avb")
 
-[node name="Cabinets" type="Node3D" parent="Móveis"]
+[node name="Cabinets" type="Node3D" parent="Props"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.964587, 2.60437, 1.81674)
 
-[node name="Cabinet" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39, 0, 0)
 mesh = SubResource("ArrayMesh_wuugq")
 skeleton = NodePath("")
 
-[node name="Cabinet2" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet2" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68, 0, 0)
 mesh = SubResource("ArrayMesh_r46kt")
 skeleton = NodePath("")
 
-[node name="Cabinet3" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet3" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(1.86442, 0, 0, 0, 1, 0, 0, 0, 1, 1.08935, 0, 0)
 mesh = SubResource("ArrayMesh_x8yd0")
 skeleton = NodePath("")
 
-[node name="Cabinet4" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet4" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(1.31688, 0, 0, 0, 1, 0, 0, 0, 1, 1.48296, 0, -0.201467)
 mesh = SubResource("ArrayMesh_x7lab")
 skeleton = NodePath("")
 
-[node name="Cabinet5" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet5" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(1.31688, 0, 0, 0, 1, 0, 0, 0, 1, 1.48296, 0, -0.516277)
 mesh = SubResource("ArrayMesh_855f3")
 skeleton = NodePath("")
 
-[node name="Cabinet6" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet6" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(1.31688, 0, 0, 0, 1, 0, 0, 0, 2.1468, 1.48296, 0, -1.01207)
 mesh = SubResource("ArrayMesh_fv5cu")
 skeleton = NodePath("")
 
-[node name="Cabinet7" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet7" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.084981, -0.0781249, 0.00639057)
 mesh = SubResource("ArrayMesh_hmfx5")
 skeleton = NodePath("")
 
-[node name="Cabinet8" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet8" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.237235, -0.29363, 0.00639057)
 mesh = SubResource("ArrayMesh_ynrgf")
 skeleton = NodePath("")
 
-[node name="Cabinet9" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet9" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.121549, 0.0979571, -0.229415)
 mesh = SubResource("ArrayMesh_rwaxi")
 skeleton = NodePath("")
 
-[node name="Cabinet10" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet10" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.121549, 0.0979571, -0.519354)
 mesh = SubResource("ArrayMesh_y10xh")
 skeleton = NodePath("")
 
-[node name="Cabinet11" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet11" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.121549, 0.0979571, -0.808101)
 mesh = SubResource("ArrayMesh_8mpjj")
 skeleton = NodePath("")
 
-[node name="Cabinet12" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet12" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.121549, 0.0979571, -1.09747)
 mesh = SubResource("ArrayMesh_qe04s")
 skeleton = NodePath("")
 
-[node name="Cabinet13" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet13" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.121549, 0.0979571, -1.38741)
 mesh = SubResource("ArrayMesh_257m5")
 skeleton = NodePath("")
 
-[node name="Cabinet14" type="MeshInstance3D" parent="Móveis/Cabinets"]
+[node name="Cabinet14" type="MeshInstance3D" parent="Props/Cabinets"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.121549, 0.0979571, -1.67616)
 mesh = SubResource("ArrayMesh_poc63")
 skeleton = NodePath("")
@@ -749,7 +749,7 @@ skeleton = NodePath("")
 transform = Transform3D(-0.006, -6.06136e-06, -3.68542e-07, -6.05926e-06, 0.00599991, -3.26647e-05, 4.01535e-07, -3.26643e-05, -0.00599991, -2.03211, 2.4784, 0.748093)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="retro_light_-_oldclean_model"]
-transform = Transform3D(166.667, -2.07958e-07, 5.87758e-06, 4.31355e-08, 166.667, 3.57628e-07, -5.88782e-06, 4.17233e-07, 166.667, -96.6371, -162.469, 0.775406)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.6371, -162.469, 0.775406)
 light_color = Color(0.905615, 0.665795, 0.500737, 1)
 light_energy = 5.0
 light_volumetric_fog_energy = 0.0

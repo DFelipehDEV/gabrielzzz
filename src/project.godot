@@ -34,7 +34,6 @@ folder_colors={
 "res://rooms/bathroom/textures/": "gray",
 "res://rooms/garage/": "teal",
 "res://rooms/kitchen/": "teal",
-"res://rooms/kitchen/metal_fridge/": "gray",
 "res://rooms/office/": "teal",
 "res://rooms/ric_bedroom/": "teal",
 "res://rooms/simon_bedroom/": "teal",
