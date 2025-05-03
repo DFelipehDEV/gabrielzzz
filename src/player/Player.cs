@@ -314,7 +314,7 @@ public partial class Player : Node3D
 
 		var camera = GetViewport().GetCamera3D();
 		var from = camera.ProjectRayOrigin(mousePosition);
-		var to = from + camera.ProjectRayNormal(mousePosition) * 1000;
+		var to = from + camera.ProjectRayNormal(mousePosition) * 10;
 
 		var spaceState = GetWorld3D().DirectSpaceState;
 		var result = spaceState.IntersectRay(new PhysicsRayQueryParameters3D
