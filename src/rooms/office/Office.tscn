@@ -123,19 +123,19 @@ transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.7
 material_override = ExtResource("2_7kt6n")
 mesh = SubResource("PlaneMesh_01doi")
 
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+[node name="Wall6" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038, 0.523321, 2.16979)
 mesh = SubResource("BoxMesh_bd0ue")
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+[node name="Wall7" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038, 2.73512, 2.16979)
 mesh = SubResource("BoxMesh_bd0ue")
 
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+[node name="Wall8" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89505, 1.74175, 2.17)
 mesh = SubResource("BoxMesh_7pha6")
 
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+[node name="Wall9" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63527, 1.74175, 2.17)
 mesh = SubResource("BoxMesh_7pha6")
 
@@ -225,14 +225,11 @@ transform = Transform3D(0.274876, 0, -0.417664, 0, 0.5, 0, 0.417664, 0, 0.274876
 [node name="speakers_low_poly2" parent="Speakers" instance=ExtResource("15_n7e8k")]
 transform = Transform3D(-0.279596, 0, -0.414519, 0, 0.5, 0, 0.414519, 0, -0.279596, 2.01603, 0.403, -0.997455)
 
-[node name="Webs" type="Node3D" parent="."]
-transform = Transform3D(-0.999992, 0, 0.00410142, 0, 1, 0, -0.00410142, 0, -0.999992, -6.51926e-09, 2.14482, 1.84944)
-
-[node name="Web" type="Sprite3D" parent="Webs"]
-transform = Transform3D(-0.0119625, -0.0806175, 0.5907, 0.12231, -0.0123367, -0.00409053, 0.00930657, 0.0585097, 0.813033, -1.76124, -1.44181, 0.343742)
+[node name="Web" type="Sprite3D" parent="."]
+transform = Transform3D(0.0120006, 0.0808568, -0.587361, 0.12231, -0.0123367, -0.00409053, -0.00925743, -0.0581786, -0.815449, 1.76264, 0.70301, 1.51292)
 cast_shadow = 0
 gi_mode = 0
-shaded = true
+pixel_size = 0.02
 double_sided = false
 texture = ExtResource("16_ojthm")
 
@@ -245,7 +242,7 @@ texture_filter = 0
 texture = ExtResource("17_n5igf")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="OnAir"]
-transform = Transform3D(4.99286, 0, -1.67119e-09, 0, 5.93863, 0, 8.38189e-09, 0, 0.995483, -0.134109, -0.0361099, 0.0672877)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06)
 light_color = Color(1, 0, 0, 1)
 light_energy = 1.557
 light_bake_mode = 1
