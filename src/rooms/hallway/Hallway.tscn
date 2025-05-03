@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cda3hg5yc2tq0" path="res://rooms/RoomCamera.cs" id="2_ucjtl"]
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="3_m78el"]
-[ext_resource type="Material" uid="uid://d4l5vhgqqobbe" path="res://shared/textures/wood/wood.tres" id="4_1nl05"]
+[ext_resource type="Material" uid="uid://d4l5vhgqqobbe" path="res://shared/textures/wood/WoodTex.tres" id="4_1nl05"]
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="5_882r7"]
 [ext_resource type="Script" uid="uid://sugwgf257hip" path="res://rooms/office/FlashingLight.cs" id="6_fxegx"]
 

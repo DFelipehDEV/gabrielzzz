@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://d4l5vhgqqobbe"]
+
+[ext_resource type="Texture2D" uid="uid://chqs84rd15obd" path="res://shared/textures/wood/WoodAlbedo.png" id="1_xcvm4"]
+[ext_resource type="Texture2D" uid="uid://bkn2or4q1q3j0" path="res://shared/textures/wood/WoodAO.png" id="2_27tj4"]
+[ext_resource type="Texture2D" uid="uid://bki1x264bemtl" path="res://shared/textures/wood/WoodBump.png" id="3_iv74t"]
+[ext_resource type="Texture2D" uid="uid://cxy03nk7pqfg" path="res://shared/textures/wood/WoodSpecular.png" id="4_u2vmo"]
+[ext_resource type="Texture2D" uid="uid://csool00od7tj8" path="res://shared/textures/wood/WoodNormal.png" id="5_buhpe"]
+[ext_resource type="Texture2D" uid="uid://kotnm14f7335" path="res://shared/textures/wood/WoodRoughness.png" id="6_3uy8i"]
+
+[resource]
+albedo_texture = ExtResource("1_xcvm4")
+metallic = 1.0
+metallic_texture = ExtResource("4_u2vmo")
+roughness_texture = ExtResource("6_3uy8i")
+normal_enabled = true
+normal_texture = ExtResource("5_buhpe")
+ao_enabled = true
+ao_light_affect = 0.22
+ao_texture = ExtResource("2_27tj4")
+heightmap_texture = ExtResource("3_iv74t")
+uv1_triplanar = true
+uv1_world_triplanar = true

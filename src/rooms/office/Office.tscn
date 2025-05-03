@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=3 uid="uid://coc1glsj1410t"]
 
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_p5jth"]
-[ext_resource type="Material" uid="uid://d4l5vhgqqobbe" path="res://shared/textures/wood/wood.tres" id="2_7kt6n"]
+[ext_resource type="Material" uid="uid://d4l5vhgqqobbe" path="res://shared/textures/wood/WoodTex.tres" id="2_7kt6n"]
 [ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://shared/textures/glass/glass_mat.tres" id="3_dcjln"]
 [ext_resource type="Texture2D" uid="uid://d0f25fnfbbdg" path="res://rooms/office/RicardoTex1.jpg" id="4_m6c3y"]
 [ext_resource type="PackedScene" uid="uid://2qwayfumykvg" path="res://rooms/office/table/Table.glb" id="5_mpx70"]
