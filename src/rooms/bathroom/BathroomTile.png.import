@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do0tr3twb40cr"
-path.s3tc="res://.godot/imported/bathroomtile_1.jpg-44f3d64b691e3d2dff458459b2748a47.s3tc.ctex"
+uid="uid://b7gi2k0dro2mp"
+path.s3tc="res://.godot/imported/BathroomTile.png-68a492815bf3e893d91825a76fb63cff.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "44d0401acc20f6ec0fdf95b7e67e907e"
-}
 
 [deps]
 
-source_file="res://rooms/bathroom/bathroomtile_1.jpg"
-dest_files=["res://.godot/imported/bathroomtile_1.jpg-44f3d64b691e3d2dff458459b2748a47.s3tc.ctex"]
+source_file="res://rooms/bathroom/BathroomTile.png"
+dest_files=["res://.godot/imported/BathroomTile.png-68a492815bf3e893d91825a76fb63cff.s3tc.ctex"]
 
 [params]
 

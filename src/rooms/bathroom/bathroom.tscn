@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://c0iaxr7trojl6"]
 
-[ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://rooms/bathroom/bathroomtile.tres" id="1_5u0wq"]
+[ext_resource type="Material" uid="uid://bctkw8s1ttpye" path="res://rooms/bathroom/BathroomTileTex.tres" id="1_5u0wq"]
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_8pxbd"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://shared/textures/asphalt/AsphaltTex.tres" id="2_wh5l2"]
 [ext_resource type="PackedScene" uid="uid://2s6vckmj86pd" path="res://rooms/bathroom/toilet.tscn" id="4_s7480"]
