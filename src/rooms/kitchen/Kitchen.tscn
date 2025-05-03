@@ -1,9 +1,8 @@
-[gd_scene load_steps=61 format=4 uid="uid://31378kkvbbck"]
+[gd_scene load_steps=62 format=4 uid="uid://31378kkvbbck"]
 
 [ext_resource type="Material" uid="uid://db8hmdquqlcsx" path="res://shared/textures/brick/BrickTex.tres" id="1_ah2v2"]
 [ext_resource type="Script" uid="uid://co7iqtl1k25tk" path="res://rooms/RoomArea.cs" id="1_x7070"]
 [ext_resource type="Material" uid="uid://bcw41uy4v1soc" path="res://shared/textures/asphalt/AsphaltTex.tres" id="2_if5ic"]
-[ext_resource type="Material" uid="uid://bkt54124upwjx" path="res://rooms/kitchen/metal_fridge/Fridge.tres" id="3_6yf06"]
 [ext_resource type="Material" uid="uid://pte74tu1bb1a" path="res://shared/textures/glass/glass_mat.tres" id="3_pxkch"]
 [ext_resource type="PackedScene" uid="uid://mxtx2sqotpct" path="res://rooms/office/retro_light/retro_light.glb" id="6_mn30a"]
 [ext_resource type="Texture2D" uid="uid://bq2hfkm7fr7et" path="res://rooms/kitchen/mosaic_tile.png" id="7_lkinp"]
@@ -304,6 +303,15 @@ metallic = 1.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dw28h"]
 albedo_color = Color(0.106782, 0.15128, 0.232176, 1)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0p5jo"]
+load_path = "res://.godot/imported/modern_fridge_1.png-62997d11da7f8dbde446c36cbb8aa624.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flaey"]
+resource_name = "Fridge"
+albedo_color = Color(0.396889, 0.396889, 0.396889, 1)
+roughness = 0.5
+ao_texture = SubResource("CompressedTexture2D_0p5jo")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_0ly4x"]
 _surfaces = [{
 "aabb": AABB(-0.322266, -0.677185, -0.156739, 0.644531, 1.35437, 0.313477),
@@ -327,7 +335,7 @@ _surfaces = [{
 "aabb": AABB(-0.335354, -0.575252, -0.16632, 0.671361, 1.2205, 0.1883),
 "attribute_data": PackedByteArray("AAAAAAAAgD8EMHo+AACAPwAAAAAC938/AACAPwAAAAA7x3Q/LrtLPwAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAgD+7U1E9Avd/PwAAgD8AAIA/AACAPwAAgD8AAAAAMqB0Pyu2fz8AAIA/AAAAAMTqcj8AAAAAO8d0P56B/z4AAIA/AAAAAEBUbT+egf8+AACAPwAAAAAyoHQ/K7Z/PwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/MqB0Pyu2fz8AAAAAAACAPwAAgD8AAIA/O8d0P56B/z47x3Q/LrtLPwAAgD8AAAAAMqB0Pyu2fz8AAAAAWNl/PwAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AAAAAAAAAAAAAAAAf6AaOjKgdD9mqZM6MqB0P2apkzoAAIA/AAAAAAAAAAAAAAAAQFRtP56B/z4AAIA/AAAAAAAAAAAAAAAAf6AaOgAAAAAAAAAAAACAP3+gGjoAAIA/f6AaOgAAAAAAAAAAAAAAAAAAAAAAAIA/xOpyPwAAgD8AAIA/AAAAADKgdD9mqZM6AAAAAAAAAAAAAAAAu1NRPQAAgD+7U1E9QFRtPy67Sz8AAAAAAAAAAAAAgD8AAIA/AAAAAP9zQT8AAAAAAACAPwAAgD8AAIA/Avd/PwAAgD8AAIA/AAAAAAL3fz8AAAAAAACAPwAAgD8AAIA//3NBPwAAAAD/c0E/QFRtPy67Sz8AAIA/AACAPzvHdD8uu0s/AAAAADblDzkEMHo+AAAAAAAAAAAAAAAAxOpyPwAAgD8AAIA/AACAPwAAgD8AAAAAQFRtP56B/z4AAAAAAAAAAEBUbT8uu0s/AAAAAAAAAABKoHQ/7ZOnPAAAgD8AAAAASqB0P2HDej8AAIA/AAAAALDqcj8el5s8AACAPwAAAACajnc/yPVCPgAAgD8AAIA/AAAAAIXJnzyw6nI/HpebPAAAAAAAAAAASqB0P2HDej8AAAAAAACAPwAAgD8AAIA/+BxtP0fMQT8AAAAAAAAAAAAAgD8AAIA/sOpyPx6XmzwAAIA/AAAAAAAAAAAAAAAAAAAAADDlej8AAAAAAACAP0qgdD9hw3o/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAABKoHQ/7ZOnPLDqcj9HI3s/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AAAAAPdZozxKoHQ/7ZOnPAAAAAAAAAAAAACAPwAAAACw6nI/RyN7PwAAgD8AAIA/AAAAAAAAgD/3WaM8AACAPwAAAAAAAAAAAAAAAAAAAAD3WaM8AACAP/dZozwAAAAAtAF7PwAAgD8AAIA/AAAAALQBez8AAAAAAACAPwAAgD8AAIA/AAAAALQBez8AAIA/AAAAAAAAAAD4HG0/R8xBP/gcbT/I9UI+AAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAJqOdz/I9UI+AAAAAAAAAAD4HG0/yPVCPpqOdz/I9UI+AACAPwAAgD8AAAAAtAF7PwAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD+w6nI/RyN7PwAAAAC0AXs/+BxtP0fMQT8AAIA/AACAP5qOdz9HzEE/mo53P0fMQT8AAIA/AACAP5qOdz/I9UI+SqB0P2HDej8AAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
 "format": 34359738391,
-"material": ExtResource("3_6yf06"),
+"material": SubResource("StandardMaterial3D_flaey"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 168,
