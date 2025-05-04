@@ -24,7 +24,6 @@ public partial class Simon : EnemyNPC
 
 	private Player player;
 	private Generator generator;
-	private Transform3D initialTransform;
 
 	public override void _Ready()
 	{
@@ -34,7 +33,6 @@ public partial class Simon : EnemyNPC
 		generator.Connect("GeneratorBroken", Callable.From(GeneratorBroken));
 		generator.Connect("GeneratorRepaired", Callable.From(GeneratorRepaired));
 		animationPlayer.AnimationFinished += JumpScareFinished;
-		initialTransform = Transform;
 	}
 
 
@@ -71,7 +69,7 @@ public partial class Simon : EnemyNPC
 	public void GeneratorRepaired()
 	{
 		awake = false;
-		Transform = initialTransform;
+		MoveToPosition(1);
 		animationPlayer.Play("RESET");
 		GD.Print(Name + " is now asleep");
 	}

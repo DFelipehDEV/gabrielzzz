@@ -9,8 +9,7 @@ public partial class EnemyNPC : Node3D
 	private string positionGroup;
 
 	private Godot.Collections.Array<Node3D> positions;
-	private Node3D currentPosition;
-	private Node3D nextPosition;
+	private int nextPositionIndex;
 	private int currentPositionIndex = 0;
 
 	[Export]
@@ -67,19 +66,27 @@ public partial class EnemyNPC : Node3D
         } 
         while (positions.Count > 1 && randomIndex == currentPositionIndex);
 
-		nextPosition = positions[randomIndex];
-		currentPositionIndex = randomIndex;
+		nextPositionIndex = randomIndex;
 		timeUntilNextMove = timeToMove * (0.8 + 0.4 * random.NextDouble());
 	}
 
 	private void MoveToNextPosition()
 	{
-		if (nextPosition != null)
+		if (nextPositionIndex >= 0)
 		{
-			currentPosition = nextPosition;
-			Transform = currentPosition.GlobalTransform;
-			OnMovedToNewPosition(currentPosition);
+			MoveToPosition(nextPositionIndex);
+			OnMovedToNewPosition(positions[currentPositionIndex]);
 		}
+	}
+
+	public void MoveToPosition(int index)
+	{
+		if (index < 0)
+			return;
+
+		currentPositionIndex = index;
+		Transform = positions[index].GlobalTransform;
+		OnMovedToNewPosition(positions[index]);
 	}
 
 	public virtual void OnMovedToNewPosition(Node3D position) { }
