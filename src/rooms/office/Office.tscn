@@ -230,6 +230,7 @@ transform = Transform3D(0.0120006, 0.0808568, -0.587361, 0.12231, -0.0123367, -0
 cast_shadow = 0
 gi_mode = 0
 pixel_size = 0.02
+shaded = true
 double_sided = false
 texture = ExtResource("16_ojthm")
 

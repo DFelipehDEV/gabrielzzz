@@ -90,7 +90,7 @@ public partial class Phone : Node3D
 		set
 		{
 			Light.Visible = value;
-			energy.WasteMultiplier = value ? 5.0f : 1.0f;
+			energy.WasteMultiplier = value ? 4.0 : 1.0;
 			FlashIcon.Texture = value ? flashOnTexture : flashOffTexture;
 		}
 	}
