@@ -42,6 +42,8 @@ public partial class EnemyNPC : Node3D
 		{
 			GD.PrintErr("Missing field 'positionGroup'");
 		}
+
+		SelectNextPosition();
 	}
 
 	public override void _Process(double delta)
@@ -60,11 +62,10 @@ public partial class EnemyNPC : Node3D
 	private void SelectNextPosition()
 	{
 		int randomIndex;
-        do
-        {
-            randomIndex = random.Next(0, positions.Count);
-        } 
-        while (positions.Count > 1 && randomIndex == currentPositionIndex);
+		do
+		{
+			randomIndex = random.Next(0, positions.Count);
+		} while (positions.Count > 1 && randomIndex == currentPositionIndex);
 
 		nextPositionIndex = randomIndex;
 		timeUntilNextMove = timeToMove * (0.8 + 0.4 * random.NextDouble());
