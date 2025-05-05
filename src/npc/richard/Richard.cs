@@ -30,7 +30,7 @@ public partial class Richard : EnemyNPC
 		jumpScare.AnimationFinished += JumpScareFinished;
 
 		defaultTimeToMove = TimeToMove;
-		timeToMoveInOffice = defaultTimeToMove * 0.5;
+		timeToMoveInOffice = Mathf.Max(timeToJumpscare + 1.0, defaultTimeToMove * 0.5);
 	}
 	
 	public override void _Process(double delta)
