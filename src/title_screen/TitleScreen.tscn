@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://b3dfhfd3aoh87"]
+[gd_scene load_steps=19 format=3 uid="uid://b3dfhfd3aoh87"]
 
 [ext_resource type="Texture2D" uid="uid://dgkjf5udn2gvg" path="res://shared/textures/outside/OutsideView.png" id="2_37ufg"]
+[ext_resource type="FontFile" uid="uid://cq5np641mh8o6" path="res://shared/fonts/Chakra_Petch/ChakraPetch-Bold.ttf" id="3_1ly6i"]
 [ext_resource type="Texture2D" uid="uid://o34obope75uq" path="res://title_screen/richis.png" id="3_jaltp"]
 [ext_resource type="Script" uid="uid://bqnk3rveay4jt" path="res://title_screen/NewGame.cs" id="4_eluts"]
 [ext_resource type="Theme" uid="uid://dxor6bq5rdhns" path="res://shared/styles/texttheme.tres" id="4_k2kbh"]
@@ -17,6 +18,10 @@ script/source = "extends Control
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6kpf5"]
 texture = ExtResource("2_37ufg")
+
+[sub_resource type="Theme" id="Theme_mqppy"]
+default_font = ExtResource("3_1ly6i")
+default_font_size = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xti2u"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -75,22 +80,16 @@ texture = ExtResource("3_jaltp")
 
 [node name="Title" type="Label" parent="Panel"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0911458
-anchor_top = 0.0648148
-anchor_right = 1.09115
-anchor_bottom = 1.06481
-offset_right = 6.10352e-05
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_k2kbh")
+offset_top = 42.0
+offset_right = 388.0
+offset_bottom = 274.0
+theme = SubResource("Theme_mqppy")
 theme_override_font_sizes/font_size = 50
-text = "Cinco
-Noches
-con
-Richards
+text = "Cinco Noches con Richards
 "
-metadata/_edit_use_anchors_ = true
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
 
 [node name="Cp" type="Label" parent="Panel"]
 layout_mode = 1
