@@ -20,6 +20,12 @@ public partial class Energy
         set => wasteMultiplier = Mathf.Max(value, 0);
     }
 
+    public Energy(double value, double drainRate)
+    {
+        CurrentEnergy = value;
+        EnergyDrainRate = drainRate;
+    }
+
     public void Update(double delta)
     {
         CurrentEnergy -= EnergyDrainRate * WasteMultiplier * delta;

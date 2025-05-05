@@ -98,7 +98,7 @@ public partial class Phone : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		energy = new Energy();
+		energy = new Energy(100.0, 0.1);
 		normalPhonePosition = Position;
 
 		// Store the original Texture and load the alternate Texture.
