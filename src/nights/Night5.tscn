@@ -107,7 +107,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.425, 1, -67.4)
 
 [node name="Juans" parent="." groups=["enemy"] instance=ExtResource("15_4wcxd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5233, 1.78506, -45.8701)
-timeToMove = 15.0
+timeToMove = 18.0
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_0rmju")
