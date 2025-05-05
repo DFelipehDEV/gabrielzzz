@@ -61,6 +61,16 @@ public partial class Richard : EnemyNPC
 	{
 		insideOffice = position.IsInGroup("office");
 		TimeToMove = insideOffice ? timeToMoveInOffice : defaultTimeToMove;
+
+		// Reset time in office again just to make sure
+		if (!insideOffice)
+    	{
+        	timeInOffice = 0.0;
+    	}
+		else
+		{
+			GD.Print(Name + " is in office");
+		}
 	}
 
 	public void JumpScareFinished()
