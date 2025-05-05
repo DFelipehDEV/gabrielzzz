@@ -57,12 +57,6 @@ public partial class Richard : EnemyNPC
 		}
 	}
 
-	public void AlarmFired()
-	{
-		awake = true;
-		GD.Print(Name + " is now awake");
-	}
-
 	public override void OnMovedToNewPosition(Node3D position)
 	{
 		insideOffice = position.IsInGroup("office");
