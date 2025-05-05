@@ -76,7 +76,6 @@ public partial class EnemyNPC : Node3D
 		if (nextPositionIndex >= 0)
 		{
 			MoveToPosition(nextPositionIndex);
-			OnMovedToNewPosition(positions[currentPositionIndex]);
 		}
 	}
 
